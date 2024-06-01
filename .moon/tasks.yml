@@ -5,8 +5,10 @@ tasks:
     - ~:cleanup
   cleanup:
     command: rimraf lib
+  format:
+    command: pnpm biome format ./
   lint:
-    command: eslint .
+    command: pnpm biome lint ./
   test:
     command: jest
     env:

@@ -4,9 +4,6 @@
 # Dependency directories
 node_modules/
 
-# Optional eslint cache
-.eslintcache
-
 # Coverage report
 coverage
 
@@ -22,20 +19,16 @@ lib
 # OS X temporary files
 .DS_Store
 
-# Rush temporary files
-common/deploy/
-common/temp/
-common/autoinstallers/*/.npmrc
-**/.rush/temp/
-
 # Visual Studio Code
 .vscode
 
 # MikroORM temporary directory
 modules/*/temp
 test/temp
+
 # moon
 .moon/cache
 .moon/docker
 
+# TypeScript
 *.tsbuildinfo
