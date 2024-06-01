@@ -1,0 +1,13 @@
+dependsOn:
+  - id: 'common'
+    scope: 'production'
+  - id: 'cli'
+    scope: 'peer'
+language: typescript
+project: 
+  name: Heart MySQL
+  description: Store the results of analysis into a MySQL database
+stack: backend
+tags:
+  - listener
+type: application

@@ -1,0 +1,13 @@
+dependsOn:
+  - id: 'common'
+    scope: 'production'
+  - id: 'cli'
+    scope: 'peer'
+language: typescript
+project: 
+  name: Heart Slack
+  description: Send the analysis results into a Slack channel
+stack: backend
+tags:
+  - listener
+type: application

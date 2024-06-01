@@ -1,0 +1,13 @@
+dependsOn:
+  - id: 'common'
+    scope: 'production'
+  - id: 'cli'
+    scope: 'peer'
+language: typescript
+project: 
+  name: Heart SSLLabs Server
+  description: Analyses URLs with Qualys SSL Labs server
+stack: backend
+tags:
+  - analysis
+type: application

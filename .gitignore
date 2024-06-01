@@ -34,3 +34,6 @@ common/autoinstallers/*/.npmrc
 # MikroORM temporary directory
 modules/*/temp
 test/temp
+# moon
+.moon/cache
+.moon/docker
