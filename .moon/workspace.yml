@@ -30,3 +30,12 @@ vcs:
   provider: github
   
   syncHooks: true
+
+  hooks:
+    pre-commit:
+      # --affected with the tasks options affectedFiles: true and affectedPassInputs: true allows to reduce the set of files needed to allow a project to match.
+      # https://moonrepo.dev/docs/guides/vcs-hooks#pre-commit
+      # 
+      # --staged will run the operation only on the staged files that match the biome.jssonc::files.includes patterns
+      # https://biomejs.dev/reference/cli/#biome-lint
+      - 'moon run :lint :format --affected --status=staged -- --staged --files-ignore-unknown=true --no-errors-on-unmatched'
