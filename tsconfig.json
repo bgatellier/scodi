@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.options.json",
+  "files": [],
+  "references": [
+    {
+      "path": "modules/api"
+    },
+    {
+      "path": "modules/cli"
+    },
+    {
+      "path": "modules/common"
+    },
+    {
+      "path": "modules/greenit"
+    },
+    {
+      "path": "modules/lighthouse"
+    },
+    {
+      "path": "modules/mysql"
+    },
+    {
+      "path": "modules/observatory"
+    },
+    {
+      "path": "modules/slack"
+    },
+    {
+      "path": "modules/ssllabs-server"
+    }
+  ]
+}

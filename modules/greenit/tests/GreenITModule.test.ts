@@ -1,7 +1,7 @@
 import type { ModuleMetadata } from "@fabernovel/heart-common"
 import { jest } from "@jest/globals"
 import { Conf } from "./data/Conf.js"
-import SuccessResult from "./data/SuccessResult.json" assert { type: "json" }
+import SuccessResult from "./data/SuccessResult.json" with { type: "json" }
 
 jest.unstable_mockModule("greenit-cli/cli-core/analysis.js", () => ({
   createJsonReports: jest.fn(),

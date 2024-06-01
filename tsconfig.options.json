@@ -1,6 +1,8 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
 
+  "extends": "tsconfig-moon/tsconfig.json",
+
   "compilerOptions": {
     // Disable error reporting for unreachable code.
     "allowUnreachableCode": false,
@@ -22,7 +24,5 @@
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "target": "ESNext"
-  },
-
-  "exclude": ["node_modules", "lib"]
+  }
 }

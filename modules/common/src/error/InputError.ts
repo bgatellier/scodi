@@ -1,7 +1,7 @@
 import type { ErrorObject } from "ajv"
 
 export class InputError extends Error {
-  cause: ErrorObject[] = []
+  override cause: ErrorObject[] = []
 
   constructor(errors: ErrorObject[]) {
     super("Something went wrong with the input validation")
