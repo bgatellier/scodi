@@ -1,6 +1,3 @@
-dependsOn:
-  - id: 'common'
-    scope: 'production'
 language: typescript
 project: 
   name: Heart CLI
