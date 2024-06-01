@@ -1,0 +1,13 @@
+tasks:
+  build:
+    command: tsc --project tsconfig.build.json
+    deps:
+    - ~:cleanup
+  cleanup:
+    command: rimraf lib
+  lint:
+    command: eslint .
+  test:
+    command: jest
+    env:
+      NODE_OPTIONS: --experimental-vm-modules

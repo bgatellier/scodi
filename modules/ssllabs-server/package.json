@@ -27,11 +27,7 @@
     ".env.schema.json"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc --project tsconfig.build.json",
-    "build:watch": "npm run build --watch",
-    "lint": "eslint .",
-    "prepublishOnly": "npm run build",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --passWithNoTests"
+    "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
     "@fabernovel/heart-common": "workspace:^4.0.0"
