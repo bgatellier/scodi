@@ -19,9 +19,6 @@ lib
 # OS X temporary files
 .DS_Store
 
-# Visual Studio Code
-.vscode
-
 # MikroORM temporary directory
 modules/*/temp
 test/temp
