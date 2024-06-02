@@ -1,7 +1,7 @@
 {
-  "name": "@fabernovel/heart-tpl",
+  "name": "@fabernovel/heart-{{ name | slugify }}",
   "version": "4.0.0",
-  "description": "",
+  "description": "{{ name }}",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
     "url": "https://github.com/faberNovel/heart/issues"
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/faberNovel/heart.git",
-    "directory": "modules/tpl"
+    "directory": "modules/{{ name | slugify }}"
   },
   "license": "MIT",
   "contributors": [],
@@ -20,16 +20,10 @@
     "lib": "lib"
   },
   "files": [
-    "lib/**/*",
-    ".env.default",
-    ".env.schema.json"
+    "lib/**/*"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc --project tsconfig.build.json",
-    "build:watch": "npm run build --watch",
-    "lint": "eslint .",
-    "prepublishOnly": "npm run build",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest --passWithNoTests"
+    "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
     "@fabernovel/heart-common": "workspace:^4.0.0"
@@ -44,11 +38,11 @@
     "node": ">=18 <22"
   },
   "heart": {
-    "id": "tpl",
-    "name": "Heart Tpl",
+    "id": "{{ name | slugify }}",
+    "name": "Heart {{ name }}",
     "service": {
-      "name": "Tpl",
-      "logoUrl": "https://raw.githubusercontent.com/faberNovel/heart/main/assets/images/logos/Tpl.png?v=20221126"
+      "name": "{{ name }}",
+      "logoUrl": "https://raw.githubusercontent.com/faberNovel/heart/main/assets/images/logos/{{ name | pascal_case }}.png?v=20221126"
     }
   }
 }
