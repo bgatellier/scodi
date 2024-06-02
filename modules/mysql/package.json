@@ -38,7 +38,6 @@
   "devDependencies": {
     "@mikro-orm/cli": "^5.9.7",
     "@types/node": "^18.19.6",
-    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1"
   },
   "peerDependencies": {

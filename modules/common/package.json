@@ -41,7 +41,6 @@
     "@types/node": "^18.19.6",
     "fastify": "^4.25.2",
     "lighthouse": "^11.4.0",
-    "rimraf": "^5.0.5",
     "type-fest": "^4.9.0"
   },
   "engines": {
