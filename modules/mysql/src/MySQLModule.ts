@@ -1,46 +1,51 @@
 import {
-  Module,
-  type GenericReport,
-  type ModuleListenerDatabaseInterface,
-  type Result,
-  type ModuleMetadata,
-  logger,
-} from "@fabernovel/heart-common"
-import { MySQLClient } from "./client/Client.js"
+	Module,
+	type GenericReport,
+	type ModuleListenerDatabaseInterface,
+	type Result,
+	type ModuleMetadata,
+	logger,
+} from "@fabernovel/heart-common";
+import { MySQLClient } from "./client/Client.js";
 
-export class MySQLModule extends Module implements ModuleListenerDatabaseInterface {
-  #client: MySQLClient
+export class MySQLModule
+	extends Module
+	implements ModuleListenerDatabaseInterface
+{
+	#client: MySQLClient;
 
-  constructor(moduleMetadata: ModuleMetadata, verbose: boolean) {
-    super(moduleMetadata, verbose)
+	constructor(moduleMetadata: ModuleMetadata, verbose: boolean) {
+		super(moduleMetadata, verbose);
 
-    this.#client = new MySQLClient(verbose)
+		this.#client = new MySQLClient(verbose);
 
-    if (verbose) {
-      logger.info(`${moduleMetadata.name} initialized.`)
-    }
-  }
+		if (verbose) {
+			logger.info(`${moduleMetadata.name} initialized.`);
+		}
+	}
 
-  public async hasPendingMigrations(): Promise<boolean> {
-    const migrator = await this.#client.getMigrator()
+	public async hasPendingMigrations(): Promise<boolean> {
+		const migrator = await this.#client.getMigrator();
 
-    const migrations = await migrator.getPendingMigrations()
+		const migrations = await migrator.getPendingMigrations();
 
-    return migrations.length > 0
-  }
+		return migrations.length > 0;
+	}
 
-  public async runPendingMigrations(): Promise<void> {
-    const migrator = await this.#client.getMigrator()
+	public async runPendingMigrations(): Promise<void> {
+		const migrator = await this.#client.getMigrator();
 
-    await migrator.up()
-  }
+		await migrator.up();
+	}
 
-  public async notifyAnalysisDone(report: GenericReport<Result>): Promise<void> {
-    try {
-      await this.#client.save(report)
-    } catch (error) {
-      logger.error(error)
-      return Promise.reject(error)
-    }
-  }
+	public async notifyAnalysisDone(
+		report: GenericReport<Result>,
+	): Promise<void> {
+		try {
+			await this.#client.save(report);
+		} catch (error) {
+			logger.error(error);
+			return Promise.reject(error);
+		}
+	}
 }
