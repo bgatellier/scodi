@@ -38,4 +38,6 @@ vcs:
       # 
       # --staged will run the operation only on the staged files that match the biome.jssonc::files.includes patterns
       # https://biomejs.dev/reference/cli/#biome-lint
-      - 'moon run :lint :format --affected --status=staged -- --staged --files-ignore-unknown=true --no-errors-on-unmatched'
+      - 'moon run :format --affected --status=staged -- --staged --files-ignore-unknown=true --no-errors-on-unmatched'
+    pre-push:
+      - 'moon run :lint --affected --status=staged -- --staged --files-ignore-unknown=true --no-errors-on-unmatched'
