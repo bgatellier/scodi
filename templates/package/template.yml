@@ -1,0 +1,31 @@
+# https://moonrepo.dev/docs/config/template
+$schema: 'https://moonrepo.dev/schemas/template.json'
+
+# REQUIRED: Name of the template in a human readable format.
+title: 'Title'
+
+# REQUIRED: Description of what the template is for and other relevant information.
+description: 'Description of the template.'
+
+destination: modules/[name | slugify]
+
+# Mapping of variables that will be interpolated and rendered within template files.
+# Users will be prompted to provide a value when running the generator.
+variables:
+  name:
+    prompt: 'Name of your package'
+    type: 'string'
+    required: true
+    order: 1
+  type:
+    prompt: 'What does your module do?'
+    type: 'enum'
+    values:
+      - label: Analyzes URLs using a third-party service
+        value: analysis
+      - label: Do thing with the results of the analysis
+        value: listener
+      - label: Trigger an analysis
+        value: runner
+    default: analysis
+    order: 2

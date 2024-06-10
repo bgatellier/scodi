@@ -1,0 +1,8 @@
+language: typescript
+project: 
+  name: Heart CLI
+  description: Starts an analysis by using a CLI
+stack: backend
+tags:
+  - runner
+type: tool

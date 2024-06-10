@@ -1,0 +1,8 @@
+language: typescript
+project: 
+  name: Heart Observatory
+  description: Analyses URLs with Mozilla Observatory
+stack: backend
+tags:
+  - analysis
+type: application

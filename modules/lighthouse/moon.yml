@@ -1,0 +1,8 @@
+language: typescript
+project: 
+  name: Heart Lighthouse
+  description: Analyses URLs with Google Lighthouse
+stack: backend
+tags:
+  - analysis
+type: application

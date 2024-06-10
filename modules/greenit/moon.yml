@@ -1,0 +1,8 @@
+language: typescript
+project: 
+  name: Heart GreenIT
+  description: Analyses URLs with GreenIT Analysis
+stack: backend
+tags:
+  - analysis
+type: application

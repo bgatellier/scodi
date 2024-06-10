@@ -1,0 +1,21 @@
+tasks:
+  build:
+    command: tsc --project tsconfig.build.json
+    deps:
+    - ~:cleanup
+  cleanup:
+    command: rimraf lib
+  format:
+    command: pnpm biome format
+    options:
+      affectedFiles: true
+      affectedPassInputs: true
+  lint:
+    command: pnpm biome lint 
+    options:
+      affectedFiles: true
+      affectedPassInputs: true
+  test:
+    command: jest
+    env:
+      NODE_OPTIONS: --experimental-vm-modules

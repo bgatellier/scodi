@@ -1,26 +1,29 @@
-import type { ParsedUrlQueryInput } from "querystring"
+import type { ParsedUrlQueryInput } from "node:querystring";
 
 const BASE_HEADER: Record<"Content-Type", string> = {
-  "Content-Type": "application/json",
-}
+	"Content-Type": "application/json",
+};
 
 export async function get<T>(url: string): Promise<T> {
-  const response = await fetch(url, {
-    method: "GET",
-    headers: BASE_HEADER,
-  })
+	const response = await fetch(url, {
+		method: "GET",
+		headers: BASE_HEADER,
+	});
 
-  return response.json() as Promise<T>
+	return response.json() as Promise<T>;
 }
 
-export async function post<T>(url: string, body: ParsedUrlQueryInput = {}): Promise<T> {
-  const stringifiedBody = JSON.stringify(body)
+export async function post<T>(
+	url: string,
+	body: ParsedUrlQueryInput = {},
+): Promise<T> {
+	const stringifiedBody = JSON.stringify(body);
 
-  const response = await fetch(url, {
-    method: "POST",
-    body: stringifiedBody,
-    headers: BASE_HEADER,
-  })
+	const response = await fetch(url, {
+		method: "POST",
+		body: stringifiedBody,
+		headers: BASE_HEADER,
+	});
 
-  return response.json() as Promise<T>
+	return response.json() as Promise<T>;
 }
