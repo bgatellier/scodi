@@ -246,19 +246,6 @@ importers:
         specifier: ^18.19.6
         version: 18.19.33
 
-  modules/tpl:
-    dependencies:
-      '@fabernovel/heart-cli':
-        specifier: ^4.0.0
-        version: link:../cli
-      '@fabernovel/heart-common':
-        specifier: workspace:^4.0.0
-        version: link:../common
-    devDependencies:
-      '@types/node':
-        specifier: ^18.19.6
-        version: 18.19.33
-
 packages:
 
   /@ampproject/remapping@2.3.0:
@@ -5048,7 +5035,7 @@ packages:
   /puppeteer@21.11.0(typescript@5.4.5):
     resolution: {integrity: sha512-9jTHuYe22TD3sNxy0nEIzC7ZrlRnDgeX3xPkbS7PnbdwYjl2o/z/YuCrRBwezdKpbTDTJ4VqIggzNyeRcKq3cg==}
     engines: {node: '>=16.13.2'}
-    deprecated: < 22.5.0 is no longer supported
+    deprecated: < 22.6.4 is no longer supported
     hasBin: true
     requiresBuild: true
     dependencies:
@@ -5066,7 +5053,7 @@ packages:
   /puppeteer@5.5.0:
     resolution: {integrity: sha512-OM8ZvTXAhfgFA7wBIIGlPQzvyEETzDjeRa4mZRCRHxYL+GNH5WAuYUQdja3rpWZvkX/JKqmuVgbsxDNsDFjMEg==}
     engines: {node: '>=10.18.1'}
-    deprecated: < 22.5.0 is no longer supported
+    deprecated: < 22.6.4 is no longer supported
     requiresBuild: true
     dependencies:
       debug: 4.3.5
