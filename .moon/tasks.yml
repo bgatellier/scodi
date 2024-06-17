@@ -6,12 +6,12 @@ tasks:
   cleanup:
     command: rimraf lib
   format:
-    command: pnpm biome format
+    command: pnpm biome format --write
     options:
       affectedFiles: true
       affectedPassInputs: true
   lint:
-    command: pnpm biome lint 
+    command: pnpm biome lint --write
     options:
       affectedFiles: true
       affectedPassInputs: true
