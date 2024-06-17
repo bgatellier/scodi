@@ -14,7 +14,7 @@ coverage
 .env
 
 # Common toolchain intermediate files
-lib
+lib/
 
 # OS X temporary files
 .DS_Store
@@ -27,5 +27,5 @@ test/temp
 .moon/cache
 .moon/docker
 
-# TypeScript
+# Build cache manifests
 *.tsbuildinfo
