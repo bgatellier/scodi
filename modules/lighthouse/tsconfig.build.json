@@ -1,13 +1,12 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
-
   "extends": "./tsconfig.json",
-
   "compilerOptions": {
     "esModuleInterop": false,
     "outDir": "lib",
     "rootDir": "src"
   },
-
-  "include": ["src/**/*", "*.ts"]
+  "include": [
+    "src/**/*.ts"
+  ]
 }

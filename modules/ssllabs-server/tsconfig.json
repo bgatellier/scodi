@@ -1,10 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.options.json",
-  "include": [
-    "src/**/*.ts",
-    "tests/**/*.ts"
-  ],
   "compilerOptions": {
     "outDir": "lib",
     "rootDir": "src"
@@ -19,5 +15,9 @@
     {
       "path": "../common"
     }
+  ],
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts"
   ]
 }
