@@ -1,12 +1,12 @@
+import { it, expect, vi } from "vitest";
 import {
 	type Config,
 	type ModuleAnalysisInterface,
 	GreenITReport,
 } from "@fabernovel/heart-common";
-import { jest } from "@jest/globals";
 import { startAnalysis } from "../../src/module/ModuleOrchestrator.js";
 
-test("Displays the results of an analysis", async () => {
+it("Displays the results of an analysis", async () => {
 	const report = new GreenITReport({
 		analyzedUrl: "https://heart.fabernovel.com",
 		date: new Date(),
@@ -32,7 +32,7 @@ test("Displays the results of an analysis", async () => {
 		verbose: false,
 	};
 
-	const startAnalysisMock = jest.spyOn(module, "startAnalysis");
+	const startAnalysisMock = vi.spyOn(module, "startAnalysis");
 
 	await startAnalysis(module, {});
 

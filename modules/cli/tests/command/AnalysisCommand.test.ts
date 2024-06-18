@@ -1,3 +1,4 @@
+import { it, expect, beforeEach } from "vitest";
 import type { ModuleMetadata } from "@fabernovel/heart-common";
 import { Command } from "commander";
 import { createAnalysisSubcommand } from "../../src/command/analysis/AnalysisCommand.js";
@@ -55,7 +56,7 @@ beforeEach(() => {
 	program.addCommand(analysisCommand);
 });
 
-test("Create an analysis command", () => {
+it("Create an analysis command", () => {
 	program.parse(["analysis", "--config", optionConfigInline], { from: "user" });
 
 	expect(program.commands).toHaveLength(1);
@@ -69,7 +70,7 @@ test("Create an analysis command", () => {
 	expect(options).toHaveProperty("verbose", false);
 });
 
-test("Create an analysis command with the listener option", () => {
+it("Create an analysis command with the listener option", () => {
 	program.parse(
 		["analysis", "--config", optionConfigInline, "--threshold", "83"],
 		{
@@ -89,7 +90,7 @@ test("Create an analysis command with the listener option", () => {
 	expect(options).toHaveProperty("threshold", 83);
 });
 
-test("Create an analysis command with only 1 listener modules using the --except-listeners option", () => {
+it("Create an analysis command with only 1 listener modules using the --except-listeners option", () => {
 	program.parse(
 		[
 			"analysis",
@@ -115,7 +116,7 @@ test("Create an analysis command with only 1 listener modules using the --except
 	expect(options).toHaveProperty("exceptListeners", ["listener1"]);
 });
 
-test("Create an analysis command with only 1 listener modules using the --only-listeners option", () => {
+it("Create an analysis command with only 1 listener modules using the --only-listeners option", () => {
 	program.parse(
 		[
 			"analysis",

@@ -2,26 +2,26 @@ import {
 	type ObservatoryConfig,
 	ObservatoryReport,
 } from "@fabernovel/heart-common";
-import { jest } from "@jest/globals";
+import { describe, expect, it, vi } from "vitest";
 import { RESULT } from "./data/Result.js";
+import { ObservatoryModule } from "../src/ObservatoryModule.js";
+import { Client } from "../src/api/Client.js";
 
 const ANALYZE_URL = "www.observatory.mozilla-test/results/";
 const CONF: ObservatoryConfig = { host: "heart.fabernovel.com" };
 
-jest.unstable_mockModule("../src/api/Client.js", () => {
-	return {
-		Client: jest.fn().mockImplementation(() => {
-			return {
-				getAnalyzeUrl: () => ANALYZE_URL + CONF.host,
-				requestScan: () => Promise.resolve(RESULT.scan),
-				requestTests: () => Promise.resolve(RESULT.tests),
-				triggerAnalysis: () => Promise.resolve(RESULT.scan),
-			};
-		}),
-	};
-});
-await import("../src/api/Client.js");
-const { ObservatoryModule } = await import("../src/ObservatoryModule.js");
+vi.spyOn(Client.prototype, "getAnalyzeUrl").mockImplementation(
+	() => ANALYZE_URL + CONF.host,
+);
+vi.spyOn(Client.prototype, "requestScan").mockImplementation(() =>
+	Promise.resolve(RESULT.scan),
+);
+vi.spyOn(Client.prototype, "requestTests").mockImplementation(() =>
+	Promise.resolve(RESULT.tests),
+);
+vi.spyOn(Client.prototype, "triggerAnalysis").mockImplementation(() =>
+	Promise.resolve(RESULT.scan),
+);
 
 describe("Starts an analysis", () => {
 	const module = new ObservatoryModule(

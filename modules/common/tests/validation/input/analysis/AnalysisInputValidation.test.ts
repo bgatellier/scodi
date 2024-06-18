@@ -1,15 +1,16 @@
+import { describe, it, expect } from "vitest";
 import { InputError } from "../../../../src/error/InputError.js";
 import type { ModuleMetadata } from "../../../../src/index.js";
 import { validateAnalysisInput } from "../../../../src/validation/input/analysis/AnalysisInputValidation.js";
 
 describe("Invalid option combinations", () => {
-	test("Missing configuration", () => {
+	it("Missing configuration", () => {
 		expect(() => {
 			validateAnalysisInput({});
 		}).toThrow(InputError);
 	});
 
-	test("Both listener options", () => {
+	it("Both listener options", () => {
 		expect(() => {
 			validateAnalysisInput({
 				config: { inline: "configuration" },
@@ -21,13 +22,13 @@ describe("Invalid option combinations", () => {
 });
 
 describe("Valid configuration value", () => {
-	test("JSON object with 1 property", () => {
+	it("JSON object with 1 property", () => {
 		const { config } = validateAnalysisInput({ config: { url: "" } });
 
 		expect(config).toStrictEqual({ url: "" });
 	});
 
-	test("JSON object with several properties", () => {
+	it("JSON object with several properties", () => {
 		const { config } = validateAnalysisInput({
 			config: {
 				url: "https://heart.fabernovel.com/",
@@ -57,25 +58,25 @@ describe("Valid configuration value", () => {
 });
 
 describe("Invalid configuration value", () => {
-	test("Array", () => {
+	it("Array", () => {
 		expect(() => {
 			validateAnalysisInput({ config: [] });
 		}).toThrow(InputError);
 	});
 
-	test("Empty JSON object", () => {
+	it("Empty JSON object", () => {
 		expect(() => {
 			validateAnalysisInput({ config: {} });
 		}).toThrow(InputError);
 	});
 
-	test("Number", () => {
+	it("Number", () => {
 		expect(() => {
 			validateAnalysisInput({ config: 2 });
 		}).toThrow(InputError);
 	});
 
-	test("String", () => {
+	it("String", () => {
 		expect(() => {
 			validateAnalysisInput({ config: "" });
 		}).toThrow(InputError);
@@ -83,7 +84,7 @@ describe("Invalid configuration value", () => {
 });
 
 describe("Invalid threshold value", () => {
-	test("Array", () => {
+	it("Array", () => {
 		expect(() => {
 			validateAnalysisInput({
 				config: { inline: "configuration" },
@@ -92,7 +93,7 @@ describe("Invalid threshold value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("JSON object", () => {
+	it("JSON object", () => {
 		expect(() => {
 			validateAnalysisInput({
 				config: { inline: "configuration" },
@@ -101,7 +102,7 @@ describe("Invalid threshold value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("Number < 0", () => {
+	it("Number < 0", () => {
 		expect(() => {
 			validateAnalysisInput({
 				config: { inline: "configuration" },
@@ -110,7 +111,7 @@ describe("Invalid threshold value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("Number > 100", () => {
+	it("Number > 100", () => {
 		expect(() => {
 			validateAnalysisInput({
 				config: { inline: "configuration" },
@@ -119,7 +120,7 @@ describe("Invalid threshold value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("String", () => {
+	it("String", () => {
 		expect(() => {
 			validateAnalysisInput({
 				config: { inline: "configuration" },
@@ -146,7 +147,7 @@ describe("Invalid listener options value", () => {
 	];
 	const modulesIds = modulesMetadata.map((moduleMetadata) => moduleMetadata.id);
 
-	test("Exclude 1 module with an invalid id", () => {
+	it("Exclude 1 module with an invalid id", () => {
 		expect(() => {
 			validateAnalysisInput(
 				{
@@ -158,7 +159,7 @@ describe("Invalid listener options value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("Exclude 2 modules but set an invalid id for one of them", () => {
+	it("Exclude 2 modules but set an invalid id for one of them", () => {
 		expect(() => {
 			validateAnalysisInput(
 				{
@@ -170,7 +171,7 @@ describe("Invalid listener options value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("Keep only 1 module with an invalid id", () => {
+	it("Keep only 1 module with an invalid id", () => {
 		expect(() => {
 			validateAnalysisInput(
 				{
@@ -182,7 +183,7 @@ describe("Invalid listener options value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("Keep 2 modules but set an invalid id for one of them", () => {
+	it("Keep 2 modules but set an invalid id for one of them", () => {
 		expect(() => {
 			validateAnalysisInput(
 				{

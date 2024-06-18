@@ -1,8 +1,8 @@
-import { jest } from "@jest/globals";
+import { it, vi, expect } from "vitest";
 import { timeout } from "../src/time/timeout.js";
 
-jest.useFakeTimers();
-jest.spyOn(global, "setTimeout");
+vi.useFakeTimers();
+vi.spyOn(global, "setTimeout");
 
 it("should run a real timeout", () => {
 	void timeout(30);

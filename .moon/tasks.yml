@@ -16,6 +16,4 @@ tasks:
       affectedFiles: true
       affectedPassInputs: true
   test:
-    command: jest
-    env:
-      NODE_OPTIONS: --experimental-vm-modules
+    command: vitest run --passWithNoTests

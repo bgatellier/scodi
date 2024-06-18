@@ -1,8 +1,9 @@
+import { it, expect } from "vitest";
 import type { ModuleMetadata } from "@fabernovel/heart-common";
 import { Command } from "commander";
 import { createServerSubcommand } from "../../src/command/server/ServerCommand.js";
 
-test("Create a server command", () => {
+it("Create a server command", () => {
 	const moduleMetadata: ModuleMetadata = {
 		id: "test-server",
 		type: "server",

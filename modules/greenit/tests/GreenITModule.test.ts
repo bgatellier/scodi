@@ -1,15 +1,12 @@
 import type { ModuleMetadata } from "@fabernovel/heart-common";
-import { jest } from "@jest/globals";
+import { createJsonReports } from "greenit-cli/cli-core/analysis.js";
+import { describe, expect, it, vi } from "vitest";
+import { GreenITModule } from "../src/GreenITModule.js";
 import { Conf } from "./data/Conf.js";
 import SuccessResult from "./data/SuccessResult.json" with { type: "json" };
 
-jest.unstable_mockModule("greenit-cli/cli-core/analysis.js", () => ({
-	createJsonReports: jest.fn(),
-}));
-const { createJsonReports } = await import("greenit-cli/cli-core/analysis.js");
-const mockedCreateJsonReports = jest.mocked(createJsonReports);
-
-const { GreenITModule } = await import("../src/GreenITModule.js");
+vi.mock("greenit-cli/cli-core/analysis.js");
+const mockedCreateJsonReports = vi.mocked(createJsonReports);
 
 describe("Run GreenIT analysis", () => {
 	it("should be able to launch a successful analysis without thresholds", async () => {

@@ -1,22 +1,23 @@
+import { describe, it, expect } from "vitest";
 import { InputError } from "../../../../src/error/InputError.js";
 import { validateServerInput } from "../../../../src/validation/input/server/ServerInputValidation.js";
 
 describe("Valid cors value", () => {
-	test("origin property with a string value", () => {
+	it("origin property with a string value", () => {
 		const options = { cors: { origin: "http://127.0..0.1:8080/" } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("origin property with a boolean value", () => {
+	it("origin property with a boolean value", () => {
 		const options = { cors: { origin: true } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("origin property with an string[] value", () => {
+	it("origin property with an string[] value", () => {
 		const options = {
 			cors: { origin: ["http://127.0..0.1:8080/", "http://127.0..0.1:8888/"] },
 		};
@@ -25,14 +26,14 @@ describe("Valid cors value", () => {
 		expect(validatedData).toBe(options);
 	});
 
-	test("credentials property with a boolean value", () => {
+	it("credentials property with a boolean value", () => {
 		const options = { cors: { credentials: true } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("exposedHeaders property with a string value", () => {
+	it("exposedHeaders property with a string value", () => {
 		const options = {
 			cors: { exposedHeaders: "Content-Range,X-Content-Range" },
 		};
@@ -41,7 +42,7 @@ describe("Valid cors value", () => {
 		expect(validatedData).toBe(options);
 	});
 
-	test("exposedHeaders property with an string[] value", () => {
+	it("exposedHeaders property with an string[] value", () => {
 		const options = {
 			cors: { exposedHeaders: ["Content-Range", "X-Content-Range"] },
 		};
@@ -50,14 +51,14 @@ describe("Valid cors value", () => {
 		expect(validatedData).toBe(options);
 	});
 
-	test("allowedHeaders property with a string value", () => {
+	it("allowedHeaders property with a string value", () => {
 		const options = { cors: { allowedHeaders: "Content-Type,Authorization" } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("allowedHeaders property with an string[] value", () => {
+	it("allowedHeaders property with an string[] value", () => {
 		const options = {
 			cors: { allowedHeaders: ["Content-Type", "Authorization"] },
 		};
@@ -66,42 +67,42 @@ describe("Valid cors value", () => {
 		expect(validatedData).toBe(options);
 	});
 
-	test("methods property with a string value", () => {
+	it("methods property with a string value", () => {
 		const options = { cors: { methods: "GET,PUT,POST" } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("methods property with an string[] value", () => {
+	it("methods property with an string[] value", () => {
 		const options = { cors: { methods: ["GET", "PUT", "POST"] } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("preflightContinue property with a boolean value", () => {
+	it("preflightContinue property with a boolean value", () => {
 		const options = { cors: { preflightContinue: true } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("preflight property with a boolean value", () => {
+	it("preflight property with a boolean value", () => {
 		const options = { cors: { preflight: true } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("strictPreflight property with a boolean value", () => {
+	it("strictPreflight property with a boolean value", () => {
 		const options = { cors: { strictPreflight: true } };
 		const validatedData = validateServerInput(options);
 
 		expect(validatedData).toBe(options);
 	});
 
-	test("hideOptionsRoute property with a boolean value", () => {
+	it("hideOptionsRoute property with a boolean value", () => {
 		const options = { cors: { hideOptionsRoute: true } };
 		const validatedData = validateServerInput(options);
 
@@ -110,7 +111,7 @@ describe("Valid cors value", () => {
 });
 
 describe("Invalid port value", () => {
-	test("Array", () => {
+	it("Array", () => {
 		expect(() => {
 			validateServerInput({
 				port: [],
@@ -118,7 +119,7 @@ describe("Invalid port value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("JSON object", () => {
+	it("JSON object", () => {
 		expect(() => {
 			validateServerInput({
 				port: {},
@@ -126,7 +127,7 @@ describe("Invalid port value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("Number < 0", () => {
+	it("Number < 0", () => {
 		expect(() => {
 			validateServerInput({
 				port: -1,
@@ -134,7 +135,7 @@ describe("Invalid port value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("Number > 65535", () => {
+	it("Number > 65535", () => {
 		expect(() => {
 			validateServerInput({
 				port: 65536,
@@ -142,7 +143,7 @@ describe("Invalid port value", () => {
 		}).toThrow(InputError);
 	});
 
-	test("String", () => {
+	it("String", () => {
 		expect(() => {
 			validateServerInput({
 				port: "",
