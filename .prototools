@@ -1,6 +1,6 @@
-moon = "~1"
-node = "~18"
-pnpm = "~8"
+moon = "^1"
+node = "^18"
+pnpm = "^9"
 
 [plugins]
 # do not use master at the moment, as there is an error that disallow the install moon
