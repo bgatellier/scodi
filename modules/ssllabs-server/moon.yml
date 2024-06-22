@@ -2,6 +2,11 @@ language: typescript
 project: 
   name: Heart SSLLabs Server
   description: Analyses URLs with Qualys SSL Labs server
+dependsOn:
+  - id: cli
+    scope: peer
+  - id: common
+    scope: production
 stack: backend
 tags:
   - analysis

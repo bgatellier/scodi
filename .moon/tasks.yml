@@ -2,7 +2,8 @@ tasks:
   build:
     command: tsc --project tsconfig.build.json
     deps:
-    - ~:cleanup
+      - ~:cleanup
+      - ^:build
   cleanup:
     command: rimraf lib
   check:
@@ -13,8 +14,8 @@ tasks:
   test:
     command: vitest run --passWithNoTests
     deps:
-    - ~:build
+      - ^:build
   coverage:
     command: vitest run --passWithNoTests --coverage
     deps:
-    - ~:build
+      - ^:build

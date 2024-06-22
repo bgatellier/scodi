@@ -2,6 +2,9 @@ language: typescript
 project: 
   name: Heart CLI
   description: Starts an analysis by using a CLI
+dependsOn:
+  - id: common
+    scope: production
 stack: backend
 tags:
   - runner
