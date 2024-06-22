@@ -6,7 +6,7 @@ tasks:
   cleanup:
     command: rimraf lib
   check:
-    command: pnpm biome check
+    command: pnpm exec biome check
     options:
       affectedFiles: true
       affectedPassInputs: true
