@@ -1,32 +1,32 @@
 import {
-	InputError,
-	validateAnalysisInput,
 	type Config,
+	type GenericReport,
+	InputError,
+	type ModuleAnalysisInterface,
+	type ModuleListenerDatabaseInterface,
+	type ModuleListenerInterface,
 	type ModuleMetadata,
 	type ParsedAnalysisInput,
-	type ModuleListenerDatabaseInterface,
-	isModuleListenerDatabase,
-	type GenericReport,
-	type ModuleAnalysisInterface,
-	type ModuleListenerInterface,
 	type Result,
+	isModuleListenerDatabase,
+	validateAnalysisInput,
 } from "@fabernovel/heart-common";
 import { Command, InvalidArgumentError } from "commander";
-import type { PackageJsonModule } from "../../module/PackageJson.js";
-import { createVerboseOption, type CommonOptions } from "../CommonOption.js";
+import { checkEnv, initializeModules } from "../../module/ModuleLoader.js";
+import { migrateListenerDatabase } from "../../module/ModuleMigration.js";
 import {
+	notifyListenerModules,
+	startAnalysis,
+} from "../../module/ModuleOrchestrator.js";
+import type { PackageJsonModule } from "../../module/PackageJson.js";
+import { type CommonOptions, createVerboseOption } from "../CommonOption.js";
+import {
+	type AnalysisOptions,
 	createConfigOption,
 	createExceptListenersOption,
 	createOnlyListenersOption,
 	createThresholdOption,
-	type AnalysisOptions,
 } from "./AnalysisOption.js";
-import { checkEnv, initializeModules } from "../../module/ModuleLoader.js";
-import { migrateListenerDatabase } from "../../module/ModuleMigration.js";
-import {
-	startAnalysis,
-	notifyListenerModules,
-} from "../../module/ModuleOrchestrator.js";
 
 type AnalysisSubcommandCallback = <C extends Config>(
 	verbose: boolean,

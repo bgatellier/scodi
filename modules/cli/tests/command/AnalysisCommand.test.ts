@@ -1,6 +1,6 @@
-import { it, expect, beforeEach } from "vitest";
 import type { ModuleMetadata } from "@fabernovel/heart-common";
 import { Command } from "commander";
+import { beforeEach, expect, it } from "vitest";
 import { createAnalysisSubcommand } from "../../src/command/analysis/AnalysisCommand.js";
 import type { PackageJsonModule } from "../../src/module/PackageJson.js";
 

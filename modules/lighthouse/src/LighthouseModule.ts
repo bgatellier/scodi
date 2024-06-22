@@ -1,11 +1,11 @@
 import {
-	LighthouseReport,
-	Module,
-	logger,
 	type Config,
 	type LighthouseConfig,
+	LighthouseReport,
+	Module,
 	type ModuleAnalysisInterface,
 	type ModuleMetadata,
+	logger,
 } from "@fabernovel/heart-common";
 import { requestResult } from "./api/Client.js";
 

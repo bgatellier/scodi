@@ -1,6 +1,6 @@
+import { env } from "node:process";
 import type { Block, KnownBlock, WebAPICallResult } from "@slack/web-api";
 import { LogLevel, WebClient } from "@slack/web-api";
-import { env } from "node:process";
 
 /**
  * Simple Slack client:

@@ -1,6 +1,6 @@
-import { Command } from "commander";
 import { readFileSync } from "node:fs";
 import { argv } from "node:process";
+import { Command } from "commander";
 import type { PackageJson } from "type-fest";
 import { loadModulesMetadata } from "../../module/ModuleLoader.js";
 import {

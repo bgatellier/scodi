@@ -1,9 +1,9 @@
 import type { SchemaObject } from "ajv";
 import type { ModuleMetadata, ValidatedAnalysisInput } from "../../../index.js";
 import { validateInput } from "../InputValidation.js";
+import verboseSchema from "../schema/verbose.json" with { type: "json" };
 import configSchema from "./schema/config.json" with { type: "json" };
 import thresholdSchema from "./schema/threshold.json" with { type: "json" };
-import verboseSchema from "../schema/verbose.json" with { type: "json" };
 
 export function getAnalysisValidationSchema(
 	listenerModulesIds: ModuleMetadata["id"][],

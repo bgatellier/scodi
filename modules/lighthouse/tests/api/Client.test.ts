@@ -1,6 +1,6 @@
-import { Conf } from "../data/Conf.js";
-import { vi, describe, it, expect } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { requestResult } from "../../src/api/Client.js";
+import { Conf } from "../data/Conf.js";
 
 vi.mock("lighthouse", async (importOriginal) => {
 	const mod = await importOriginal<typeof import("lighthouse")>();

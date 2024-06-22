@@ -1,10 +1,10 @@
+import { readFileSync } from "node:fs";
 import type { GreenITConfig, GreenITReport } from "@fabernovel/heart-common";
 import {
-	createJsonReports,
 	type Options,
 	type Report,
+	createJsonReports,
 } from "greenit-cli/cli-core/analysis.js";
-import { readFileSync } from "node:fs";
 import puppeteer from "puppeteer";
 
 const DEFAULT_OPTIONS: Options = {

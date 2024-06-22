@@ -1,9 +1,9 @@
 import type { SchemaObject } from "ajv";
 import type { ValidatedServerInput } from "../../../input/ServerInput.js";
 import { validateInput } from "../InputValidation.js";
+import verboseSchema from "../schema/verbose.json" with { type: "json" };
 import corsSchema from "./schema/cors.json" with { type: "json" };
 import portSchema from "./schema/port.json" with { type: "json" };
-import verboseSchema from "../schema/verbose.json" with { type: "json" };
 
 function getValidationSchema(): SchemaObject {
 	return {

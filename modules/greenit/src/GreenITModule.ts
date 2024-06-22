@@ -6,8 +6,8 @@ import type {
 import {
 	GreenITReport,
 	Module,
-	logger,
 	type ModuleAnalysisInterface,
+	logger,
 } from "@fabernovel/heart-common";
 import { requestResult } from "./api/Client.js";
 

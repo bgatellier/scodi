@@ -1,4 +1,4 @@
-import { it, vi, expect } from "vitest";
+import { expect, it, vi } from "vitest";
 import { timeout } from "../src/time/timeout.js";
 
 vi.useFakeTimers();

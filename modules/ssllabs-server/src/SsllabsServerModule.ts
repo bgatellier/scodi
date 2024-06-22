@@ -1,13 +1,13 @@
 import {
+	type Config,
 	Helper,
 	Module,
-	SsllabsServerReport,
-	SsllabsServerStatus,
-	logger,
-	type Config,
 	type ModuleAnalysisInterface,
 	type ModuleMetadata,
 	type SsllabsServerConfig,
+	SsllabsServerReport,
+	SsllabsServerStatus,
+	logger,
 } from "@fabernovel/heart-common";
 import { Client } from "./api/Client.js";
 import { SsllabsServerError } from "./error/SsllabsServerError.js";

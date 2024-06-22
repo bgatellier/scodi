@@ -1,10 +1,10 @@
 import type {
-	ModuleListenerInterface,
-	ValidatedAnalysisInput,
 	GenericReport,
+	ModuleListenerInterface,
 	Result,
+	ValidatedAnalysisInput,
 } from "@fabernovel/heart-common";
-import type { FastifyRequest, FastifyReply } from "fastify";
+import type { FastifyReply, FastifyRequest } from "fastify";
 
 function notifyListenerModules(
 	listenerModules: ModuleListenerInterface[],

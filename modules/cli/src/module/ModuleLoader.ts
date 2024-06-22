@@ -1,16 +1,16 @@
+import { existsSync } from "node:fs";
+import { readFile } from "node:fs/promises";
+import { env } from "node:process";
 import {
-	logger,
 	type Module,
 	type ModuleIndex,
 	type ModuleMetadata,
+	logger,
 } from "@fabernovel/heart-common";
 import Ajv, { type AnySchema, type ErrorObject } from "ajv";
 import AjvErrors from "ajv-errors";
 import addFormats from "ajv-formats";
 import dotenv from "dotenv";
-import { existsSync } from "node:fs";
-import { readFile } from "node:fs/promises";
-import { env } from "node:process";
 import type { PackageJson } from "type-fest";
 import { EnvironmentError } from "../error/EnvironmentError.js";
 import type { PackageJsonModule } from "./PackageJson.js";

@@ -1,9 +1,9 @@
+import { env } from "node:process";
 import {
 	type ObservatoryConfig,
 	type ObservatoryReport,
 	Request,
 } from "@fabernovel/heart-common";
-import { env } from "node:process";
 import { type ScanError, isScanError } from "./error/Error.js";
 
 export class Client {

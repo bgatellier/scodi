@@ -1,9 +1,9 @@
-import { it, expect, vi } from "vitest";
 import {
 	type Config,
-	type ModuleAnalysisInterface,
 	GreenITReport,
+	type ModuleAnalysisInterface,
 } from "@fabernovel/heart-common";
+import { expect, it, vi } from "vitest";
 import { startAnalysis } from "../../src/module/ModuleOrchestrator.js";
 
 it("Displays the results of an analysis", async () => {

@@ -1,26 +1,26 @@
 import {
-	InputError,
-	validateServerInput,
-	type ModuleMetadata,
-	type ParsedServerInput,
 	type Config,
 	type GenericReport,
+	InputError,
 	type ModuleAnalysisInterface,
 	type ModuleListenerInterface,
+	type ModuleMetadata,
 	type ModuleServerInterface,
+	type ParsedServerInput,
 	type Result,
+	validateServerInput,
 } from "@fabernovel/heart-common";
 import type { FastifyCorsOptions } from "@fastify/cors";
 import { Command, InvalidArgumentError } from "commander";
-import { createVerboseOption } from "../CommonOption.js";
-import {
-	createCorsOption,
-	createPortOption,
-	type ServerOptions,
-} from "./ServerOption.js";
-import type { PackageJsonModule } from "../../module/PackageJson.js";
 import { checkEnv, initializeModules } from "../../module/ModuleLoader.js";
 import { startServer } from "../../module/ModuleOrchestrator.js";
+import type { PackageJsonModule } from "../../module/PackageJson.js";
+import { createVerboseOption } from "../CommonOption.js";
+import {
+	type ServerOptions,
+	createCorsOption,
+	createPortOption,
+} from "./ServerOption.js";
 
 type ServerSubcommandCallback = (
 	verbose: boolean,

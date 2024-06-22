@@ -1,6 +1,6 @@
 import {
-	ObservatoryScanState,
 	type ObservatoryReport,
+	ObservatoryScanState,
 } from "@fabernovel/heart-common";
 
 export const RESULT: ObservatoryReport["result"] = {

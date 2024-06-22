@@ -1,6 +1,6 @@
-import { vi, expect, it, describe } from "vitest";
-import { LighthouseModule } from "../src/LighthouseModule.js";
 import type { LighthouseConfig } from "@fabernovel/heart-common";
+import { describe, expect, it, vi } from "vitest";
+import { LighthouseModule } from "../src/LighthouseModule.js";
 
 vi.mock("../src/api/Client.js");
 vi.mock("lighthouse");

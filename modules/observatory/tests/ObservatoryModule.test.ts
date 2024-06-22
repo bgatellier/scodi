@@ -3,9 +3,9 @@ import {
 	ObservatoryReport,
 } from "@fabernovel/heart-common";
 import { describe, expect, it, vi } from "vitest";
-import { RESULT } from "./data/Result.js";
 import { ObservatoryModule } from "../src/ObservatoryModule.js";
 import { Client } from "../src/api/Client.js";
+import { RESULT } from "./data/Result.js";
 
 const ANALYZE_URL = "www.observatory.mozilla-test/results/";
 const CONF: ObservatoryConfig = { host: "heart.fabernovel.com" };

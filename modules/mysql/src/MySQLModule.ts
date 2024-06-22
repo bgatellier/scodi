@@ -1,9 +1,9 @@
 import {
-	Module,
 	type GenericReport,
+	Module,
 	type ModuleListenerDatabaseInterface,
-	type Result,
 	type ModuleMetadata,
+	type Result,
 	logger,
 } from "@fabernovel/heart-common";
 import { MySQLClient } from "./client/Client.js";

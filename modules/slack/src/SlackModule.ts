@@ -1,10 +1,10 @@
 import {
-	Module,
-	logger,
 	type GenericReport,
+	Module,
 	type ModuleListenerInterface,
 	type ModuleMetadata,
 	type Result,
+	logger,
 } from "@fabernovel/heart-common";
 import { Client } from "./api/Client.js";
 import { formatBlocks } from "./formatter/BlocksFormatter.js";

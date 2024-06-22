@@ -1,11 +1,11 @@
+import { stringify } from "node:querystring";
 import {
 	Request,
 	type SsllabsServerConfig,
 	type SsllabsServerReport,
 	SsllabsServerStatus,
 } from "@fabernovel/heart-common";
-import { stringify } from "node:querystring";
-import { isSsllabsServerError, type SsllabsServerError } from "./Error.js";
+import { type SsllabsServerError, isSsllabsServerError } from "./Error.js";
 
 const API_URL = "https://api.ssllabs.com/api/v3";
 const SERVICE_URL = "https://www.ssllabs.com/ssltest/analyze.html?d=";

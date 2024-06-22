@@ -1,14 +1,14 @@
 import {
-	Module,
-	getAnalysisValidationSchema,
-	logger,
 	type Config,
 	type GenericReport,
+	Module,
 	type ModuleAnalysisInterface,
 	type ModuleListenerInterface,
 	type ModuleMetadata,
 	type ModuleServerInterface,
 	type Result,
+	getAnalysisValidationSchema,
+	logger,
 } from "@fabernovel/heart-common";
 import cors, { type FastifyCorsOptions } from "@fastify/cors";
 import AjvErrors from "ajv-errors";

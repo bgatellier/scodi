@@ -1,11 +1,11 @@
 import {
-	ReportEntity,
 	type GenericReport,
+	ReportEntity,
 	type Result,
 	ServiceEntity,
 } from "@fabernovel/heart-common";
-import { MikroORM, type IMigrator } from "@mikro-orm/core";
-import type { SqlEntityManager, MySqlDriver } from "@mikro-orm/mysql";
+import { type IMigrator, MikroORM } from "@mikro-orm/core";
+import type { MySqlDriver, SqlEntityManager } from "@mikro-orm/mysql";
 import databaseConfig from "../config/mikro-orm.config.js";
 
 export class MySQLClient {

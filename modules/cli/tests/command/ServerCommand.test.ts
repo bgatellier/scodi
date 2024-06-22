@@ -1,6 +1,6 @@
-import { it, expect } from "vitest";
 import type { ModuleMetadata } from "@fabernovel/heart-common";
 import { Command } from "commander";
+import { expect, it } from "vitest";
 import { createServerSubcommand } from "../../src/command/server/ServerCommand.js";
 
 it("Create a server command", () => {

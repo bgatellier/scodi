@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { InputError } from "../../../../src/error/InputError.js";
 import { validateServerInput } from "../../../../src/validation/input/server/ServerInputValidation.js";
 

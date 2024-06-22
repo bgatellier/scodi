@@ -1,6 +1,6 @@
+import { env } from "node:process";
 import { createDatabaseConfig } from "@fabernovel/heart-common";
 import { type MySqlDriver, defineConfig } from "@mikro-orm/mysql";
-import { env } from "node:process";
 import { Migration20230702150637 } from "../migrations/Migration20230702150637.js";
 
 export default defineConfig(

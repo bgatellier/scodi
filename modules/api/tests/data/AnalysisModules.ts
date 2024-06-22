@@ -1,10 +1,10 @@
 import {
-	type ModuleAnalysisInterface,
 	type Config,
 	type GenericReport,
-	type Result,
 	GreenITReport,
+	type ModuleAnalysisInterface,
 	ObservatoryReport,
+	type Result,
 } from "@fabernovel/heart-common";
 
 export const analysisModules: ModuleAnalysisInterface<

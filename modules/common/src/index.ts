@@ -12,8 +12,8 @@ import { Module } from "./module/Module.js";
 import type { ModuleIndex } from "./module/ModuleIndex.js";
 import type { ModuleMetadata } from "./module/ModuleMetadata.js";
 import {
-	isModuleAnalysis,
 	type ModuleAnalysisInterface,
+	isModuleAnalysis,
 } from "./module/analysis/ModuleAnalysisInterface.js";
 import type { Config } from "./module/config/Config.js";
 import type { GreenITConfig } from "./module/config/greenit/GreeenITConfig.js";
@@ -22,16 +22,16 @@ import type { ObservatoryConfig } from "./module/config/observatory/ObservatoryC
 import type { SsllabsServerConfig } from "./module/config/ssllabs-server/SsllabsServerConfig.js";
 import { createDatabaseConfig } from "./module/listener/ModuleListenerDatabaseConfig.js";
 import {
-	isModuleListenerDatabase,
 	type ModuleListenerDatabaseInterface,
+	isModuleListenerDatabase,
 } from "./module/listener/ModuleListenerDatabaseInterface.js";
 import {
-	isModuleListener,
 	type ModuleListenerInterface,
+	isModuleListener,
 } from "./module/listener/ModuleListenerInterface.js";
 import {
-	isModuleServer,
 	type ModuleServerInterface,
+	isModuleServer,
 } from "./module/server/ModuleServerInterface.js";
 import type { GenericReport } from "./report/Report.js";
 import type { Result } from "./report/Result.js";

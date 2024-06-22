@@ -1,12 +1,12 @@
 import {
 	Helper,
 	Module,
-	ObservatoryReport,
-	ObservatoryScanState,
-	logger,
 	type ModuleAnalysisInterface,
 	type ModuleMetadata,
 	type ObservatoryConfig,
+	ObservatoryReport,
+	ObservatoryScanState,
+	logger,
 } from "@fabernovel/heart-common";
 import { Client } from "./api/Client.js";
 import { ObservatoryError } from "./error/ObservatoryError.js";
