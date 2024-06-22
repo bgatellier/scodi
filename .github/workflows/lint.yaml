@@ -1,12 +1,12 @@
-name: Lint, format & changelog
+name: Check code
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
-  lint_format:
-    name: 🧹 Check code lint and format
+  check:
+    name: 🧹 Check code
     runs-on: ubuntu-latest
     timeout-minutes: 5
     defaults:
@@ -24,33 +24,5 @@ jobs:
         with:
           auto-install: true
 
-      - name: Check code lint
-        run: moon ci :lint
-
-      - name: Check code format
-        run: moon ci :format
-
-  changelog:
-    name: 📝 Checks for changelogs
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    defaults:
-      run:
-        shell: bash
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-
-      - name: Install dependencies
-        run: node common/scripts/install-run-rush.js install
-
-      - name: Checks for changelogs
-        run: node common/scripts/install-run-rush.js change --target-branch origin/$GITHUB_BASE_REF --verify -v
+      - name: Check code
+        run: moon ci :check
