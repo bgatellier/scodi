@@ -6,7 +6,7 @@ on:
 
 jobs:
   check:
-    name: 🧹 Check code
+    name: 🧹 Lint & format
     runs-on: ubuntu-latest
     timeout-minutes: 5
     defaults:
@@ -24,5 +24,5 @@ jobs:
         with:
           auto-install: true
 
-      - name: Check code
+      - name: Lint & format
         run: moon ci :check
