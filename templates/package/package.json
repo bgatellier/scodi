@@ -23,7 +23,7 @@
     "lib/**/*"
   ],
   "scripts": {
-    "prepublishOnly": "moon run common:build"
+    "prepublishOnly": "moon run {{ name | slugify }}:build"
   },
   "dependencies": {
     "@fabernovel/heart-common": "workspace:^4.0.0"

@@ -25,7 +25,5 @@ variables:
         value: analysis
       - label: Do thing with the results of the analysis
         value: listener
-      - label: Trigger an analysis
-        value: runner
     default: analysis
     order: 2

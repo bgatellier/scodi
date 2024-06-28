@@ -1,0 +1,13 @@
+language: typescript
+project: 
+  name: Heart {{ name }}
+  description: Analyses URLs with {{ name }}
+dependsOn:
+  - id: cli
+    scope: peer
+  - id: common
+    scope: production
+stack: backend
+tags:
+  - analysis
+type: application
