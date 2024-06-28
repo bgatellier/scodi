@@ -66,7 +66,7 @@ jobs:
 
       - name: Simulate the publication
         run: |
-          echo ${{ secrets.NPM_TOKEN }} >> .npmrc
+          echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} >> .npmrc
           pnpm publish --publish-branch ${{ env.SOURCE_BRANCH }} --access public --dry-run
 
   publish:
@@ -110,7 +110,7 @@ jobs:
 
       - name: Publish to npmjs.org with the version policy ${{ inputs.VERSION_POLICY }}
         run: |
-          echo ${{ secrets.NPM_TOKEN }} >> .npmrc
+          echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} >> .npmrc
           pnpm publish --publish-branch ${{ env.SOURCE_BRANCH }} --access public
 
       - name: Commit files
