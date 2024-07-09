@@ -14,7 +14,7 @@
   "license": "MIT",
   "contributors": [
     "Thomas Giovannini",
-    "Bastien Gatellier <bastien.gatellier@fabernovel.com>"
+    "Bastien Gatellier <contact@bgatellier.fr>"
   ],
   "type": "module",
   "main": "lib/index.js",

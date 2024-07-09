@@ -20,7 +20,7 @@
   "contributors": [
     "Mathias Gorenflot <mathias.gorenflot@fabernovel.com>",
     "Florian Nguyen <florian.nguyen@fabernovel.com>",
-    "Bastien Gatellier <bastien.gatellier@fabernovel.com>"
+    "Bastien Gatellier <contact@bgatellier.fr>"
   ],
   "type": "module",
   "main": "lib/index.js",
