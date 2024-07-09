@@ -8,11 +8,11 @@ To make the _Heart_ accessible to most users, everything is written in english, 
 
 ## Make sure that your contribution does not already exist
 
-Before making a new contribution, please check [the issues](https://github.com/faberNovel/heart/issues) and the [pull requests](https://github.com/faberNovel/heart/pulls) as you might find out that you don't need to create one.
+Before making a new contribution, please check [the issues](https://github.com/bgatellier/heart/issues) and the [pull requests](https://github.com/bgatellier/heart/pulls) as you might find out that you don't need to create one.
 
 ## Reporting Bugs
 
-[Create a new issue](https://github.com/faberNovel/heart/issues/new/choose) and include as many details as possible, such as:
+[Create a new issue](https://github.com/bgatellier/heart/issues/new/choose) and include as many details as possible, such as:
 * the version of Node.js
 * the list of _Heart_ modules installed
 * the differents steps that lead to the bug
@@ -28,7 +28,7 @@ Before making a new contribution, please check [the issues](https://github.com/f
 ### Create a _Pull Request_
 
 1. Create a branch for your enhancement from the `main` branch and push it to the remote
-2. [Create a Pull Request from the GitHub interface](https://github.com/faberNovel/heart/compare) and select your branch
+2. [Create a Pull Request from the GitHub interface](https://github.com/bgatellier/heart/compare) and select your branch
 
 ### [Setup your local environment](docs/SETUP_LOCAL_ENVIRONMENT.md)
 

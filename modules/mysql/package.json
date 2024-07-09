@@ -4,11 +4,11 @@
   "description": "Store the results of analysis into a MySQL database",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/faberNovel/heart/issues"
+    "url": "https://github.com/bgatellier/heart/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/faberNovel/heart.git",
+    "url": "https://github.com/bgatellier/heart.git",
     "directory": "modules/mysql"
   },
   "license": "MIT",
@@ -52,7 +52,7 @@
     "type": "listener:database",
     "service": {
       "name": "MySQL",
-      "logoUrl": "https://raw.githubusercontent.com/faberNovel/heart/main/assets/images/logos/MySQL.png?v=20230726"
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/heart/main/assets/images/logos/MySQL.png?v=20230726"
     }
   },
   "mikro-orm": {

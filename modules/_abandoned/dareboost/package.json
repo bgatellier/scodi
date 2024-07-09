@@ -4,11 +4,11 @@
   "description": "Analysis module of Heart, which analyses URLs with Dareboost",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/faberNovel/heart/issues"
+    "url": "https://github.com/bgatellier/heart/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/faberNovel/heart.git",
+    "url": "https://github.com/bgatellier/heart.git",
     "directory": "modules/heart-dareboost"
   },
   "license": "MIT",

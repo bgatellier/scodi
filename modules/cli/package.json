@@ -4,11 +4,11 @@
   "description": "Runner module of Heart, which starts an analysis by using a CLI",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/faberNovel/heart/issues"
+    "url": "https://github.com/bgatellier/heart/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/faberNovel/heart.git",
+    "url": "https://github.com/bgatellier/heart.git",
     "directory": "modules/cli"
   },
   "license": "MIT",

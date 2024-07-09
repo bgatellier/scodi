@@ -4,11 +4,11 @@
   "description": "Analysis module of Heart, which analyses URLs with Mozilla Observatory",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/faberNovel/heart/issues"
+    "url": "https://github.com/bgatellier/heart/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/faberNovel/heart.git",
+    "url": "https://github.com/bgatellier/heart.git",
     "directory": "modules/observatory"
   },
   "license": "MIT",
@@ -47,7 +47,7 @@
     "type": "analysis",
     "service": {
       "name": "Mozilla Observatory",
-      "logoUrl": "https://raw.githubusercontent.com/faberNovel/heart/main/assets/images/logos/Observatory.png?v=20221126"
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/heart/main/assets/images/logos/Observatory.png?v=20221126"
     }
   }
 }
