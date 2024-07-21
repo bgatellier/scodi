@@ -1,0 +1,62 @@
+{
+  "name": "@scodi/greenit",
+  "version": "4.0.0",
+  "description": "Analysis module of Scodi, which analyses URLs with GreenIT",
+  "keywords": [
+    "greenit",
+    "ecoindex",
+    "ecometer"
+  ],
+  "homepage": "https://github.com/bgatellier/scodi",
+  "bugs": {
+    "url": "https://github.com/bgatellier/scodi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgatellier/scodi.git",
+    "directory": "packages/greenit"
+  },
+  "license": "AGPL-3.0-or-later",
+  "contributors": [
+    "Mathias Gorenflot",
+    "Florian Nguyen",
+    "Bastien Gatellier <contact@bgatellier.fr>"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*",
+    ".env.default",
+    ".env.schema.json"
+  ],
+  "scripts": {
+    "prepublishOnly": "moon run common:build"
+  },
+  "dependencies": {
+    "@scodi/common": "workspace:^4.0.0",
+    "greenit-cli": "github:cnumr/GreenIT-Analysis-cli#a4363a9bcf7630e4a5a4cd264a7da9ec6f34b571",
+    "puppeteer": "^21.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.6"
+  },
+  "peerDependencies": {
+    "@scodi/cli": "workspace:^4.0.0"
+  },
+  "engines": {
+    "node": ">=18 <22"
+  },
+  "scodi": {
+    "id": "greenit",
+    "name": "Scodi GreenIT",
+    "type": "analysis",
+    "service": {
+      "name": "GreenIT Analysis",
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/GreenIT.png?v=20221214"
+    }
+  }
+}

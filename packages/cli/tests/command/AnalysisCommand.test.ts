@@ -1,0 +1,143 @@
+import type { ModuleMetadata } from "@scodi/common";
+import { Command } from "commander";
+import { beforeEach, expect, it } from "vitest";
+import { createAnalysisSubcommand } from "../../src/command/analysis/AnalysisCommand.js";
+import type { PackageJsonModule } from "../../src/module/PackageJson.js";
+
+const optionConfigInline = '{"url": "https://www.ipcc.ch"}';
+let program: Command;
+
+beforeEach(() => {
+	program = new Command();
+	const analysisModuleMetadata: ModuleMetadata = {
+		id: "analysis",
+		type: "analysis",
+		name: "Scodi Test Analysis Tool",
+		service: {
+			name: "Test Analysis Tool",
+		},
+	};
+
+	const listenerModulesMetadataMap = new Map<string, PackageJsonModule>([
+		[
+			"path/to/listener1",
+			{
+				name: "",
+				main: "",
+				scodi: {
+					id: "listener1",
+					name: "Listener 1",
+					type: "listener",
+					service: { name: "Listener 1 service" },
+				},
+			},
+		],
+		[
+			"path/to/listener2",
+			{
+				name: "",
+				main: "",
+				scodi: {
+					id: "listener2",
+					name: "Listener 2",
+					type: "listener",
+					service: { name: "Listener 2 service" },
+				},
+			},
+		],
+	]);
+
+	const analysisCommand = createAnalysisSubcommand(
+		analysisModuleMetadata,
+		listenerModulesMetadataMap,
+		() => Promise.resolve(),
+	);
+
+	program.addCommand(analysisCommand);
+});
+
+it("Create an analysis command", () => {
+	program.parse(["analysis", "--config", optionConfigInline], { from: "user" });
+
+	expect(program.commands).toHaveLength(1);
+
+	const command = program.commands[0];
+	const options = command.opts();
+
+	expect(command.name()).toBe("analysis");
+	expect(Object.keys(options)).toHaveLength(2);
+	expect(options).toHaveProperty("config", JSON.parse(optionConfigInline));
+	expect(options).toHaveProperty("verbose", false);
+});
+
+it("Create an analysis command with the listener option", () => {
+	program.parse(
+		["analysis", "--config", optionConfigInline, "--threshold", "83"],
+		{
+			from: "user",
+		},
+	);
+
+	expect(program.commands).toHaveLength(1);
+
+	const command = program.commands[0];
+	const options = command.opts();
+
+	expect(command.name()).toBe("analysis");
+	expect(Object.keys(options)).toHaveLength(3);
+	expect(options).toHaveProperty("config", JSON.parse(optionConfigInline));
+	expect(options).toHaveProperty("verbose", false);
+	expect(options).toHaveProperty("threshold", 83);
+});
+
+it("Create an analysis command with only 1 listener modules using the --except-listeners option", () => {
+	program.parse(
+		[
+			"analysis",
+			"--config",
+			optionConfigInline,
+			"--except-listeners",
+			"listener1",
+		],
+		{
+			from: "user",
+		},
+	);
+
+	expect(program.commands).toHaveLength(1);
+
+	const command = program.commands[0];
+	const options = command.opts();
+
+	expect(command.name()).toBe("analysis");
+	expect(Object.keys(options)).toHaveLength(3);
+	expect(options).toHaveProperty("config", JSON.parse(optionConfigInline));
+	expect(options).toHaveProperty("verbose", false);
+	expect(options).toHaveProperty("exceptListeners", ["listener1"]);
+});
+
+it("Create an analysis command with only 1 listener modules using the --only-listeners option", () => {
+	program.parse(
+		[
+			"analysis",
+			"--config",
+			optionConfigInline,
+			"--only-listeners",
+			"listener1",
+		],
+		{
+			from: "user",
+		},
+	);
+
+	expect(program.commands).toHaveLength(1);
+
+	const command = program.commands[0];
+	const options = command.opts();
+
+	expect(command.name()).toBe("analysis");
+	expect(Object.keys(options)).toHaveLength(3);
+	expect(options).toHaveProperty("config", JSON.parse(optionConfigInline));
+	expect(options).toHaveProperty("verbose", false);
+	expect(options).toHaveProperty("onlyListeners", ["listener1"]);
+});

@@ -20,7 +20,7 @@ lib/
 .DS_Store
 
 # MikroORM temporary directory
-modules/*/temp
+packages/*/temp
 test/temp
 
 # moon

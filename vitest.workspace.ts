@@ -1,3 +1,3 @@
 export default [
-    "modules/*"
+    "packages/*"
 ]

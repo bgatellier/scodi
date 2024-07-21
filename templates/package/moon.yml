@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart {{ name }}
+  name: Scodi {{ name }}
   description: Analyses URLs with {{ name }}
 dependsOn:
   - id: cli

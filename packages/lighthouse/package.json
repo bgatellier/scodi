@@ -1,0 +1,56 @@
+{
+  "name": "@scodi/lighthouse",
+  "version": "4.0.0",
+  "description": "Analysis module of Scodi, which analyses URLs with Google Lighthouse",
+  "homepage": "https://github.com/bgatellier/scodi",
+  "bugs": {
+    "url": "https://github.com/bgatellier/scodi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgatellier/scodi.git",
+    "directory": "packages/lighthouse"
+  },
+  "license": "MIT",
+  "contributors": [
+    "Thomas Giovannini",
+    "Bastien Gatellier <contact@bgatellier.fr>"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*",
+    ".env.default",
+    ".env.schema.json"
+  ],
+  "scripts": {
+    "prepublishOnly": "moon run common:build"
+  },
+  "dependencies": {
+    "@scodi/common": "workspace:^4.0.0",
+    "lighthouse": "^11.4.0",
+    "puppeteer": "^21.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.6"
+  },
+  "peerDependencies": {
+    "@scodi/cli": "workspace:^4.0.0"
+  },
+  "engines": {
+    "node": ">=18 <22"
+  },
+  "scodi": {
+    "id": "lighthouse",
+    "name": "Scodi Lighthouse",
+    "type": "analysis",
+    "service": {
+      "name": "Google Lighthouse",
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/Lighthouse.png?v=20221126"
+    }
+  }
+}

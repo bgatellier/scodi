@@ -1,0 +1,52 @@
+{
+  "name": "@scodi/cli",
+  "version": "4.0.0",
+  "description": "Runner module of Scodi, which starts an analysis by using a CLI",
+  "homepage": "https://github.com/bgatellier/scodi",
+  "bugs": {
+    "url": "https://github.com/bgatellier/scodi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgatellier/scodi.git",
+    "directory": "packages/cli"
+  },
+  "license": "MIT",
+  "contributors": [
+    "Bastien Gatellier <contact@bgatellier.fr>"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "scodi": "bin/scodi.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "bin/*",
+    "lib/**/*"
+  ],
+  "scripts": {
+    "prepublishOnly": "moon run common:build"
+  },
+  "dependencies": {
+    "@scodi/common": "workspace:^4.0.0",
+    "ajv": "^8.12.0",
+    "ajv-errors": "^3.0.0",
+    "ajv-formats": "^2.1.1",
+    "commander": "^11.1.0",
+    "dotenv": "^16.3.1",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "@fastify/cors": "^8.5.0",
+    "@types/node": "^18.19.6",
+    "fastify": "^4.25.2",
+    "type-fest": "^4.9.0"
+  },
+  "engines": {
+    "node": ">=18 <22"
+  }
+}

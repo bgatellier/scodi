@@ -1,0 +1,57 @@
+{
+  "name": "@scodi/api",
+  "version": "4.0.0",
+  "description": "Runner module of Scodi, which exposes an API that starts an analysis when it is requested",
+  "homepage": "https://github.com/bgatellier/scodi",
+  "bugs": {
+    "url": "https://github.com/bgatellier/scodi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgatellier/scodi.git",
+    "directory": "packages/api"
+  },
+  "license": "MIT",
+  "contributors": [
+    "Bastien Gatellier <contact@bgatellier.fr>"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*",
+    ".env.default",
+    ".env.schema.json"
+  ],
+  "scripts": {
+    "prepublishOnly": "moon run common:build"
+  },
+  "dependencies": {
+    "@scodi/common": "workspace:^4.0.0",
+    "@fastify/cors": "^8.5.0",
+    "ajv": "^8.12.0",
+    "ajv-errors": "^3.0.0",
+    "fastify": "^4.25.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^18.19.6"
+  },
+  "peerDependencies": {
+    "@scodi/cli": "workspace:^4.0.0"
+  },
+  "engines": {
+    "node": ">=18 <22"
+  },
+  "scodi": {
+    "id": "api",
+    "name": "Scodi API",
+    "type": "server",
+    "service": {
+      "name": "Scodi API"
+    }
+  }
+}

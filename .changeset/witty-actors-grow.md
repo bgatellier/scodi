@@ -1,5 +1,5 @@
 ---
-"@fabernovel/heart-api": minor
+"@scodi/api": minor
 ---
 
 Add compatibility with Node.js 21

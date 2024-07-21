@@ -4,31 +4,31 @@
   "files": [],
   "references": [
     {
-      "path": "modules/api"
+      "path": "packages/api"
     },
     {
-      "path": "modules/cli"
+      "path": "packages/cli"
     },
     {
-      "path": "modules/common"
+      "path": "packages/common"
     },
     {
-      "path": "modules/greenit"
+      "path": "packages/greenit"
     },
     {
-      "path": "modules/lighthouse"
+      "path": "packages/lighthouse"
     },
     {
-      "path": "modules/mysql"
+      "path": "packages/mysql"
     },
     {
-      "path": "modules/observatory"
+      "path": "packages/observatory"
     },
     {
-      "path": "modules/slack"
+      "path": "packages/slack"
     },
     {
-      "path": "modules/ssllabs-server"
+      "path": "packages/ssllabs-server"
     }
   ]
 }

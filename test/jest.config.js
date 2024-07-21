@@ -9,7 +9,7 @@ module.exports = {
   // A list of reporter names that Jest uses when writing coverage reports
   coverageReporters: ["text-summary"],
 
-  // The root directory that Jest should scan for tests and modules within
+  // The root directory that Jest should scan for tests and packages within
   rootDir: "./tests",
 
   // The test environment that will be used for testing

@@ -1,5 +1,5 @@
 ---
-"@fabernovel/heart-observatory": minor
+"@scodi/observatory": minor
 ---
 
 Add compatibility with Node.js 21

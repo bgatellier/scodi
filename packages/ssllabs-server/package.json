@@ -1,0 +1,53 @@
+{
+  "name": "@scodi/ssllabs-server",
+  "version": "4.0.0",
+  "description": "Analysis module of Scodi, which analyses URLs with Qualys SSL Labs server",
+  "homepage": "https://github.com/bgatellier/scodi",
+  "bugs": {
+    "url": "https://github.com/bgatellier/scodi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgatellier/scodi.git",
+    "directory": "packages/ssllabs-server"
+  },
+  "license": "MIT",
+  "contributors": [
+    "Bastien Gatellier <contact@bgatellier.fr>"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*",
+    ".env.default",
+    ".env.schema.json"
+  ],
+  "scripts": {
+    "prepublishOnly": "moon run common:build"
+  },
+  "dependencies": {
+    "@scodi/common": "workspace:^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.6"
+  },
+  "peerDependencies": {
+    "@scodi/cli": "workspace:^4.0.0"
+  },
+  "engines": {
+    "node": ">=18 <22"
+  },
+  "scodi": {
+    "id": "ssllabs-server",
+    "name": "Scodi SSL Labs Server",
+    "type": "analysis",
+    "service": {
+      "name": "Qualys SSL Labs Server",
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/SSLLabs.png?v=20221126"
+    }
+  }
+}
