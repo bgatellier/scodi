@@ -4,7 +4,7 @@ import type {
 	ModuleAnalysisInterface,
 	ModuleListenerInterface,
 	Result,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import type { FastifyInstance } from "fastify";
 import { ApiModule } from "../../src/ApiModule.js";
 

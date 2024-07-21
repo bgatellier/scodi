@@ -1,5 +1,5 @@
 import { cwd, exit } from "node:process";
-import { logger } from "@fabernovel/heart-common";
+import { logger } from "@scodi/common";
 import dotenv from "dotenv";
 import { start } from "./command/cli/CliCommand.js";
 

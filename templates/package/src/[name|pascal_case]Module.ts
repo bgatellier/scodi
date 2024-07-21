@@ -4,7 +4,7 @@
 to: src/{{ class_name }}.ts
 ---
 
-import { Module, type ModuleMetadata, logger } from "@fabernovel/heart-common";
+import { Module, type ModuleMetadata, logger } from "@scodi/common";
 
 export class {{ class_name }} extends Module {
 	constructor(moduleMetadata: ModuleMetadata, verbose: boolean) {

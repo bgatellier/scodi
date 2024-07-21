@@ -1,5 +1,5 @@
 {
-  "name": "@fabernovel/heart-slack",
+  "name": "@scodi/slack",
   "version": "4.0.1",
   "description": "Send the analysis results of Scodi into a Slack channel",
   "homepage": "https://heart.fabernovel.com",
@@ -30,14 +30,14 @@
     "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
-    "@fabernovel/heart-common": "workspace:^4.0.0",
+    "@scodi/common": "workspace:^4.0.0",
     "@slack/web-api": "^6.11.2"
   },
   "devDependencies": {
     "@types/node": "^18.19.6"
   },
   "peerDependencies": {
-    "@fabernovel/heart-cli": "^4.0.0"
+    "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
     "node": ">=18 <22"

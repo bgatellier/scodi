@@ -1,7 +1,4 @@
-import {
-	type ObservatoryReport,
-	ObservatoryScanState,
-} from "@fabernovel/heart-common";
+import { type ObservatoryReport, ObservatoryScanState } from "@scodi/common";
 
 export const RESULT: ObservatoryReport["result"] = {
 	scan: {

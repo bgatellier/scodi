@@ -8,7 +8,7 @@ import {
 	SsllabsServerReport,
 	SsllabsServerStatus,
 	logger,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { Client } from "./api/Client.js";
 import { SsllabsServerError } from "./error/SsllabsServerError.js";
 

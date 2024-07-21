@@ -1,4 +1,4 @@
-import type { GreenITConfig } from "@fabernovel/heart-common";
+import type { GreenITConfig } from "@scodi/common";
 
 export const Conf: GreenITConfig = {
 	url: "https://fabernovel.com",

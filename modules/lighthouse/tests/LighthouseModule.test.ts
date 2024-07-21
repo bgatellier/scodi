@@ -1,4 +1,4 @@
-import type { LighthouseConfig } from "@fabernovel/heart-common";
+import type { LighthouseConfig } from "@scodi/common";
 import { describe, expect, it, vi } from "vitest";
 import { LighthouseModule } from "../src/LighthouseModule.js";
 

@@ -1,4 +1,4 @@
-import type { ModuleIndex, ModuleMetadata } from "@fabernovel/heart-common";
+import type { ModuleIndex, ModuleMetadata } from "@scodi/common";
 import { MySQLModule } from "./MySQLModule.js";
 
 export const initialize: ModuleIndex["initialize"] = (

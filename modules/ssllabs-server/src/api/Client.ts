@@ -4,7 +4,7 @@ import {
 	type SsllabsServerConfig,
 	type SsllabsServerReport,
 	SsllabsServerStatus,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { type SsllabsServerError, isSsllabsServerError } from "./Error.js";
 
 const API_URL = "https://api.ssllabs.com/api/v3";

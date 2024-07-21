@@ -4,7 +4,7 @@ import {
 	LighthouseReport,
 	ObservatoryReport,
 	type Result,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import type {
 	Block,
 	DividerBlock,

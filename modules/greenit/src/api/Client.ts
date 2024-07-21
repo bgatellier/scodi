@@ -1,5 +1,5 @@
 import { readFileSync } from "node:fs";
-import type { GreenITConfig, GreenITReport } from "@fabernovel/heart-common";
+import type { GreenITConfig, GreenITReport } from "@scodi/common";
 import {
 	type Options,
 	type Report,

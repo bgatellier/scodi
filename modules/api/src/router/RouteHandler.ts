@@ -4,7 +4,7 @@ import type {
 	ModuleAnalysisInterface,
 	Result,
 	ValidatedAnalysisInput,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import type { FastifyReply, FastifyRequest } from "fastify";
 
 export function createRouteHandler(

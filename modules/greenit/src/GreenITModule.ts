@@ -1,14 +1,10 @@
-import type {
-	Config,
-	GreenITConfig,
-	ModuleMetadata,
-} from "@fabernovel/heart-common";
+import type { Config, GreenITConfig, ModuleMetadata } from "@scodi/common";
 import {
 	GreenITReport,
 	Module,
 	type ModuleAnalysisInterface,
 	logger,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { requestResult } from "./api/Client.js";
 
 export class GreenITModule

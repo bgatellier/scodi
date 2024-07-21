@@ -1,4 +1,4 @@
-import type { ModuleMetadata } from "@fabernovel/heart-common";
+import type { ModuleMetadata } from "@scodi/common";
 import { Command } from "commander";
 import { beforeEach, expect, it } from "vitest";
 import { createAnalysisSubcommand } from "../../src/command/analysis/AnalysisCommand.js";

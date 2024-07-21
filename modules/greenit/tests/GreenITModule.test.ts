@@ -1,4 +1,4 @@
-import type { ModuleMetadata } from "@fabernovel/heart-common";
+import type { ModuleMetadata } from "@scodi/common";
 import { createJsonReports } from "greenit-cli/cli-core/analysis.js";
 import { describe, expect, it, vi } from "vitest";
 import { GreenITModule } from "../src/GreenITModule.js";

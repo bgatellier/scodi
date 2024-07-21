@@ -5,7 +5,7 @@ import {
 	type ModuleMetadata,
 	type Result,
 	logger,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { Client } from "./api/Client.js";
 import { formatBlocks } from "./formatter/BlocksFormatter.js";
 import { formatText } from "./formatter/TextFormatter.js";

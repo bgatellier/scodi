@@ -1,7 +1,4 @@
-import type {
-	LighthouseConfig,
-	LighthouseReport,
-} from "@fabernovel/heart-common";
+import type { LighthouseConfig, LighthouseReport } from "@scodi/common";
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer";
 

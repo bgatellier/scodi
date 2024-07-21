@@ -10,7 +10,7 @@ import {
 	type Result,
 	isModuleListenerDatabase,
 	validateAnalysisInput,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { Command, InvalidArgumentError } from "commander";
 import { checkEnv, initializeModules } from "../../module/ModuleLoader.js";
 import { migrateListenerDatabase } from "../../module/ModuleMigration.js";

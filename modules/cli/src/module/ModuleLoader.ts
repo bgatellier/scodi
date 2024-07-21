@@ -6,7 +6,7 @@ import {
 	type ModuleIndex,
 	type ModuleMetadata,
 	logger,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import Ajv, { type AnySchema, type ErrorObject } from "ajv";
 import AjvErrors from "ajv-errors";
 import addFormats from "ajv-formats";
@@ -26,7 +26,7 @@ const ajv = new Ajv.default({ allErrors: true });
 addFormats.default(ajv);
 AjvErrors.default(ajv /*, {singleError: true} */);
 
-const PACKAGE_PREFIX = "@fabernovel/heart-";
+const PACKAGE_PREFIX = "@scodi/";
 const DOTENV_DEFAULT_VALUES_NAME = ".env.default";
 const ENV_VALIDATION_SCHEMA_NAME = ".env.schema.json";
 
@@ -161,7 +161,7 @@ export async function initializeModules<M extends Module>(
 }
 
 /**
- * Retrieve the paths of @fabernovel/heart-* modules, except heart-cli and heart-common.
+ * Retrieve the paths of @scodi/* modules, except heart-cli and heart-common.
  * (Scodi Common must not be installed as an npm package, but who knows ¯\_(ツ)_/¯)
  * paths are guessed according to the content of the package.json
  */

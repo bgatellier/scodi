@@ -1,7 +1,4 @@
-import type {
-	LighthouseConfig,
-	LighthouseReport,
-} from "@fabernovel/heart-common";
+import type { LighthouseConfig, LighthouseReport } from "@scodi/common";
 
 export async function requestResult(
 	conf: LighthouseConfig,

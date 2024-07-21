@@ -1,4 +1,4 @@
-import type { GreenITReport } from "@fabernovel/heart-common";
+import type { GreenITReport } from "@scodi/common";
 import type { MrkdwnElement, SectionBlock } from "@slack/web-api";
 import { MAX_TEXT_BLOCK_LENGTH } from "./BlocksFormatter.js";
 

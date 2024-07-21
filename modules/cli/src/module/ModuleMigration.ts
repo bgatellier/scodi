@@ -1,4 +1,4 @@
-import type { ModuleListenerDatabaseInterface } from "@fabernovel/heart-common";
+import type { ModuleListenerDatabaseInterface } from "@scodi/common";
 import ora from "ora";
 
 /**

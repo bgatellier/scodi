@@ -3,7 +3,7 @@ import {
 	type ObservatoryConfig,
 	type ObservatoryReport,
 	Request,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { type ScanError, isScanError } from "./error/Error.js";
 
 export class Client {

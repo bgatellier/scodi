@@ -1,3 +1,4 @@
+import type { FastifyCorsOptions } from "@fastify/cors";
 import type {
 	Config,
 	GenericReport,
@@ -5,8 +6,7 @@ import type {
 	ModuleListenerInterface,
 	ModuleServerInterface,
 	Result,
-} from "@fabernovel/heart-common";
-import type { FastifyCorsOptions } from "@fastify/cors";
+} from "@scodi/common";
 import ora from "ora";
 
 export async function notifyListenerModules<R extends GenericReport<Result>>(

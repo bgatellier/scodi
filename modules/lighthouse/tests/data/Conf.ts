@@ -1,4 +1,4 @@
-import type { LighthouseConfig } from "@fabernovel/heart-common";
+import type { LighthouseConfig } from "@scodi/common";
 
 export const Conf: LighthouseConfig = {
 	url: "https://heart.fabernovel.com",

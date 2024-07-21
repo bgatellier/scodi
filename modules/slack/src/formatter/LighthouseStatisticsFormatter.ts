@@ -1,4 +1,4 @@
-import type { LighthouseReport } from "@fabernovel/heart-common";
+import type { LighthouseReport } from "@scodi/common";
 import type { MrkdwnElement, SectionBlock } from "@slack/web-api";
 
 export const formatLighthouseBlocks = (

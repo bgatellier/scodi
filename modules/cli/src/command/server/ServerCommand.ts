@@ -1,3 +1,4 @@
+import type { FastifyCorsOptions } from "@fastify/cors";
 import {
 	type Config,
 	type GenericReport,
@@ -9,8 +10,7 @@ import {
 	type ParsedServerInput,
 	type Result,
 	validateServerInput,
-} from "@fabernovel/heart-common";
-import type { FastifyCorsOptions } from "@fastify/cors";
+} from "@scodi/common";
 import { Command, InvalidArgumentError } from "commander";
 import { checkEnv, initializeModules } from "../../module/ModuleLoader.js";
 import { startServer } from "../../module/ModuleOrchestrator.js";

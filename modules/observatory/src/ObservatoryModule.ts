@@ -7,7 +7,7 @@ import {
 	ObservatoryReport,
 	ObservatoryScanState,
 	logger,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { Client } from "./api/Client.js";
 import { ObservatoryError } from "./error/ObservatoryError.js";
 

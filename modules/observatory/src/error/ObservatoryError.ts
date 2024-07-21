@@ -1,4 +1,4 @@
-import type { ObservatoryScanState } from "@fabernovel/heart-common";
+import type { ObservatoryScanState } from "@scodi/common";
 
 export class ObservatoryError extends Error {
 	constructor(state: ObservatoryScanState) {

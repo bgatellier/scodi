@@ -1,6 +1,6 @@
 import { env } from "node:process";
-import type { ObservatoryConfig } from "@fabernovel/heart-common";
-import { Request } from "@fabernovel/heart-common";
+import type { ObservatoryConfig } from "@scodi/common";
+import { Request } from "@scodi/common";
 import { describe, expect, it, vi } from "vitest";
 import { Client } from "../../src/api/Client.js";
 import { RESULT } from "../data/Result.js";

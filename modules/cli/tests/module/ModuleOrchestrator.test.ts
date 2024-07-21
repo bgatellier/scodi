@@ -2,7 +2,7 @@ import {
 	type Config,
 	GreenITReport,
 	type ModuleAnalysisInterface,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { expect, it, vi } from "vitest";
 import { startAnalysis } from "../../src/module/ModuleOrchestrator.js";
 

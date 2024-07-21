@@ -6,7 +6,7 @@ import {
 	type ModuleAnalysisInterface,
 	type ModuleMetadata,
 	logger,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { requestResult } from "./api/Client.js";
 
 export class LighthouseModule

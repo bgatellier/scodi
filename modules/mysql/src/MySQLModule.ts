@@ -5,7 +5,7 @@ import {
 	type ModuleMetadata,
 	type Result,
 	logger,
-} from "@fabernovel/heart-common";
+} from "@scodi/common";
 import { MySQLClient } from "./client/Client.js";
 
 export class MySQLModule

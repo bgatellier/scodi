@@ -1,4 +1,4 @@
-import type { ModuleListenerInterface } from "@fabernovel/heart-common";
+import type { ModuleListenerInterface } from "@scodi/common";
 
 export const listenerModules: ModuleListenerInterface[] = [
 	{

@@ -1,3 +1,4 @@
+import cors, { type FastifyCorsOptions } from "@fastify/cors";
 import {
 	type Config,
 	type GenericReport,
@@ -9,8 +10,7 @@ import {
 	type Result,
 	getAnalysisValidationSchema,
 	logger,
-} from "@fabernovel/heart-common";
-import cors, { type FastifyCorsOptions } from "@fastify/cors";
+} from "@scodi/common";
 import AjvErrors from "ajv-errors";
 import Fastify, { type FastifyInstance } from "fastify";
 import { createNotifyListenerModulesHandler } from "./notification/NotifyListenerModules.js";

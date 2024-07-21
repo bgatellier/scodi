@@ -4,7 +4,7 @@
 to: src/index.ts
 ---
 
-import type { ModuleIndex, ModuleMetadata } from "@fabernovel/heart-common";
+import type { ModuleIndex, ModuleMetadata } from "@scodi/common";
 import { {{ class_name }} } from "./{{ class_name }}.js";
 
 export const initialize: ModuleIndex["initialize"] = (

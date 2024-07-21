@@ -1,7 +1,4 @@
-import {
-	type ObservatoryConfig,
-	ObservatoryReport,
-} from "@fabernovel/heart-common";
+import { type ObservatoryConfig, ObservatoryReport } from "@scodi/common";
 import { describe, expect, it, vi } from "vitest";
 import { ObservatoryModule } from "../src/ObservatoryModule.js";
 import { Client } from "../src/api/Client.js";
