@@ -1,4 +1,4 @@
-# Change Log - @fabernovel/heart-mysql
+# Change Log - @scodi/mysql
 
 This log was last generated on Sun, 08 Oct 2023 17:37:29 GMT and should not be manually modified.
 

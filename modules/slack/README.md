@@ -10,16 +10,16 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 
 ## Standalone
 
-1. Install the package and an _analysis_ module, for example _[Scodi GreenIT](https://www.npmjs.com/package/@fabernovel/heart-greenit)_
+1. Install the package and an _analysis_ module, for example _[Scodi GreenIT](https://www.npmjs.com/package/@scodi/greenit)_
 
     ```bash
-    npm install @fabernovel/heart-greenit @fabernovel/heart-slack
+    npm install @scodi/greenit @scodi/slack
     ```
 
-    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Scodi CLI](https://www.npmjs.com/package/@fabernovel/heart-cli)_ (which is automatically installed in more recent versions of these packages managers):
+    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Scodi CLI](https://www.npmjs.com/package/@scodi/cli)_ (which is automatically installed in more recent versions of these packages managers):
 
     ```bash
-    npm install @fabernovel/heart-cli
+    npm install @scodi/cli
     ```
 
 2. In the project root folder, create a `.env` file with the Slack Access token

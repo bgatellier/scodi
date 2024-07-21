@@ -13,7 +13,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 1. Install the package
 
     ```bash
-    npm install @fabernovel/heart-cli
+    npm install @scodi/cli
     ```
 
 2. Displays the list of commands you can use, regarding your installed modules

@@ -1,4 +1,4 @@
-# Change Log - @fabernovel/heart-cli
+# Change Log - @scodi/cli
 
 This log was last generated on Sun, 08 Oct 2023 13:58:00 GMT and should not be manually modified.
 
@@ -38,7 +38,7 @@ Wed, 23 Nov 2022 19:51:43 GMT
 - Add the --cors options for the server modules, to allow the definition of HTTP CORS headers
 - Add a spinner during the analysis to show that Scodi is working
 - Add a threshold mecanism available with the --threshold option. You can now validate that the `normalizedNote` of an analysis meet yourt requirements.
-- Move the input validation to @fabernovel/heart-core
+- Move the input validation to @scodi/core
 
 ### Updates
 

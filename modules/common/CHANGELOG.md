@@ -1,4 +1,4 @@
-# Change Log - @fabernovel/heart-common
+# Change Log - @scodi/common
 
 This log was last generated on Sun, 08 Oct 2023 13:58:00 GMT and should not be manually modified.
 
@@ -27,7 +27,7 @@ Wed, 23 Nov 2022 19:51:43 GMT
 
 - Add the optional cors parameter to the startServer method of the ModuleServerInterface, and make the port parameter mandatory
 - Add the threshold feature
-- Add the input validation (previously located in @fabernovel/heart-cli)
+- Add the input validation (previously located in @scodi/cli)
 
 ### Updates
 

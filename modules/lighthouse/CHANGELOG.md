@@ -1,4 +1,4 @@
-# Change Log - @fabernovel/heart-lighthouse
+# Change Log - @scodi/lighthouse
 
 This log was last generated on Sun, 08 Oct 2023 13:58:00 GMT and should not be manually modified.
 
@@ -32,13 +32,13 @@ Wed, 23 Nov 2022 19:51:43 GMT
 
 ### Minor changes
 
-- Make the module compatible with the threshold feature introduced with @fabernovel/heart-cli 3.3.0
+- Make the module compatible with the threshold feature introduced with @scodi/cli 3.3.0
 - Update Google Lighthouse to get Web Core Vitals calculation
 
 ### Updates
 
 - Updated the homepage field to redirect to the heart website and not to the gitlab repository. Changed the link "Read more about" of the README to redirect to the README of the repository. The old link redirected to an article that do not exist anymore.
-- Updating dependency \"@fabernovel/heart-core\" from `^3.1.1` to `^3.2.0`
+- Updating dependency \"@scodi/core\" from `^3.1.1` to `^3.2.0`
 
 ## 3.0.2
 Wed, 27 Jul 2022 13:43:15 GMT

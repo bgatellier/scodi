@@ -1,4 +1,4 @@
-# Change Log - @fabernovel/heart-observatory
+# Change Log - @scodi/observatory
 
 This log was last generated on Sun, 08 Oct 2023 17:37:29 GMT and should not be manually modified.
 
@@ -25,7 +25,7 @@ Wed, 23 Nov 2022 19:51:43 GMT
 
 ### Minor changes
 
-- Make the module compatible with the threshold feature introduced with @fabernovel/heart-cli 3.3.0
+- Make the module compatible with the threshold feature introduced with @scodi/cli 3.3.0
 
 ## 3.3.0
 Wed, 27 Jul 2022 13:43:15 GMT

@@ -11,13 +11,13 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 1. Install the package
 
     ```bash
-    npm install @fabernovel/heart-greenit
+    npm install @scodi/greenit
     ```
 
-    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Scodi CLI](https://www.npmjs.com/package/@fabernovel/heart-cli)_ (which is automatically installed in more recent versions of these packages managers):
+    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Scodi CLI](https://www.npmjs.com/package/@scodi/cli)_ (which is automatically installed in more recent versions of these packages managers):
 
     ```bash
-    npm install @fabernovel/heart-cli
+    npm install @scodi/cli
     ```
 
 2. Start an analysis
