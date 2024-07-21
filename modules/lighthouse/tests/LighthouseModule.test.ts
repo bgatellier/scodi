@@ -25,7 +25,7 @@ describe("Starts an analysis", () => {
 		{
 			id: "lighthouse-test",
 			type: "analysis",
-			name: "Heart Lighthouse Test",
+			name: "Scodi Lighthouse Test",
 			service: {
 				name: "Lighthouse Test",
 			},

@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart CLI
+  name: Scodi CLI
   description: Starts an analysis by using a CLI
 dependsOn:
   - id: common

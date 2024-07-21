@@ -1,20 +1,20 @@
-# Contributing to _Heart_
+# Contributing to _Scodi_
 
-Hi 👋 and welcome to the contributing guide of _Heart_.
+Hi 👋 and welcome to the contributing guide of _Scodi_.
 
 We are going to walk through the different steps that will lead you to contribute to the project, from reporting an issue to suggesting new features.
 
-To make the _Heart_ accessible to most users, everything is written in english, and you are invited to use this language if possible.
+To make the _Scodi_ accessible to most users, everything is written in english, and you are invited to use this language if possible.
 
 ## Make sure that your contribution does not already exist
 
-Before making a new contribution, please check [the issues](https://github.com/bgatellier/heart/issues) and the [pull requests](https://github.com/bgatellier/heart/pulls) as you might find out that you don't need to create one.
+Before making a new contribution, please check [the issues](https://github.com/bgatellier/scodi/issues) and the [pull requests](https://github.com/bgatellier/scodi/pulls) as you might find out that you don't need to create one.
 
 ## Reporting Bugs
 
-[Create a new issue](https://github.com/bgatellier/heart/issues/new/choose) and include as many details as possible, such as:
+[Create a new issue](https://github.com/bgatellier/scodi/issues/new/choose) and include as many details as possible, such as:
 * the version of Node.js
-* the list of _Heart_ modules installed
+* the list of _Scodi_ modules installed
 * the differents steps that lead to the bug
 * ...
 
@@ -28,7 +28,7 @@ Before making a new contribution, please check [the issues](https://github.com/b
 ### Create a _Pull Request_
 
 1. Create a branch for your enhancement from the `main` branch and push it to the remote
-2. [Create a Pull Request from the GitHub interface](https://github.com/bgatellier/heart/compare) and select your branch
+2. [Create a Pull Request from the GitHub interface](https://github.com/bgatellier/scodi/compare) and select your branch
 
 ### [Setup your local environment](docs/SETUP_LOCAL_ENVIRONMENT.md)
 
@@ -65,7 +65,7 @@ To do so, you have to:
     rush-pnpm exec heart -h
     ```
 
-    Example of a CLI command using the _Heart Lighthouse_ module:
+    Example of a CLI command using the _Scodi Lighthouse_ module:
 
     ```shell
     rush-pnpm exec heart lighthouse --config '{"url": "https://heart.fabernovel.com/"}'

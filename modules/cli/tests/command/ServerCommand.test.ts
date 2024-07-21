@@ -7,7 +7,7 @@ it("Create a server command", () => {
 	const moduleMetadata: ModuleMetadata = {
 		id: "test-server",
 		type: "server",
-		name: "Heart Test Server",
+		name: "Scodi Test Server",
 		service: {
 			name: "Test Server",
 		},

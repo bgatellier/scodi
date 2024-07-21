@@ -16,9 +16,9 @@ export async function createServer(
 		{
 			id: "api",
 			type: "server",
-			name: "Heart API",
+			name: "Scodi API",
 			service: {
-				name: "Heart API",
+				name: "Scodi API",
 			},
 		},
 		false,

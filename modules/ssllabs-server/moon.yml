@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart SSLLabs Server
+  name: Scodi SSLLabs Server
   description: Analyses URLs with Qualys SSL Labs server
 dependsOn:
   - id: cli

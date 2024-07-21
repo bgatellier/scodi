@@ -1,8 +1,8 @@
 # Description
 
-_Heart Lighthouse_ is an _analysis_ module of _Heart_, which analyses URLs with _[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)_.
+_Scodi Lighthouse_ is an _analysis_ module of _Scodi_, which analyses URLs with _[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)_.
 
-Read more about [the description and design of _Heart_](https://github.com/bgatellier/heart#readme).
+Read more about [the description and design of _Scodi_](https://github.com/bgatellier/scodi#readme).
 
 # Usage
 
@@ -14,7 +14,7 @@ Read more about [the description and design of _Heart_](https://github.com/bgate
     npm install @fabernovel/heart-lighthouse
     ```
 
-    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Heart CLI](https://www.npmjs.com/package/@fabernovel/heart-cli)_ (which is automatically installed in more recent versions of these packages managers):
+    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Scodi CLI](https://www.npmjs.com/package/@fabernovel/heart-cli)_ (which is automatically installed in more recent versions of these packages managers):
 
     ```bash
     npm install @fabernovel/heart-cli
@@ -55,4 +55,4 @@ Read more about [the description and design of _Heart_](https://github.com/bgate
 
 ## Github Action
 
-If you're using Github, you can simplify the integration of Heart in your CI scripts by using the [Github Action](https://github.com/marketplace/actions/heart-webpages-evaluation).
+If you're using Github, you can simplify the integration of Scodi in your CI scripts by using the [Github Action](https://github.com/marketplace/actions/heart-webpages-evaluation).

@@ -6,4 +6,4 @@ They are still versioned in this directory as visible archive.
 
 As a result they will not receive any update, even bug or security fixes.
 
-Some could still work; look at the package.json to identify the compatible version of Heart and other modules.
+Some could still work; look at the package.json to identify the compatible version of Scodi and other modules.

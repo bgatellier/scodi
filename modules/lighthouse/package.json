@@ -1,14 +1,14 @@
 {
   "name": "@fabernovel/heart-lighthouse",
   "version": "4.0.0",
-  "description": "Analysis module of Heart, which analyses URLs with Google Lighthouse",
+  "description": "Analysis module of Scodi, which analyses URLs with Google Lighthouse",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/bgatellier/heart/issues"
+    "url": "https://github.com/bgatellier/scodi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bgatellier/heart.git",
+    "url": "https://github.com/bgatellier/scodi.git",
     "directory": "modules/lighthouse"
   },
   "license": "MIT",
@@ -46,7 +46,7 @@
   },
   "heart": {
     "id": "lighthouse",
-    "name": "Heart Lighthouse",
+    "name": "Scodi Lighthouse",
     "type": "analysis",
     "service": {
       "name": "Google Lighthouse",

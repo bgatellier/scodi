@@ -1,14 +1,14 @@
 {
   "name": "@fabernovel/heart-api",
   "version": "4.0.0",
-  "description": "Runner module of Heart, which exposes an API that starts an analysis when it is requested",
+  "description": "Runner module of Scodi, which exposes an API that starts an analysis when it is requested",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/bgatellier/heart/issues"
+    "url": "https://github.com/bgatellier/scodi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bgatellier/heart.git",
+    "url": "https://github.com/bgatellier/scodi.git",
     "directory": "modules/api"
   },
   "license": "MIT",
@@ -48,10 +48,10 @@
   },
   "heart": {
     "id": "api",
-    "name": "Heart API",
+    "name": "Scodi API",
     "type": "server",
     "service": {
-      "name": "Heart API"
+      "name": "Scodi API"
     }
   }
 }

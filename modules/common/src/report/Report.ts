@@ -2,7 +2,7 @@ import type { ValidatedAnalysisInput } from "../index.js";
 import type { Service } from "../service/Service.js";
 
 /**
- * Define an analysis report that is shared between every Heart module.
+ * Define an analysis report that is shared between every Scodi module.
  */
 interface ReportBase {
 	/**
@@ -23,7 +23,7 @@ interface ReportBase {
 
 	/**
 	 * Details about the service that process the analysis
-	 * Optional because some Heart modules do not sollicitate a third-party service (Heart API for example)
+	 * Optional because some Scodi modules do not sollicitate a third-party service (Scodi API for example)
 	 */
 	service: Service;
 
@@ -56,9 +56,9 @@ export default interface Report extends ReportBase {
 export interface ReportArguments<A> extends ReportBase, ValueHolder<A> {}
 
 /**
- * Define an analysis report that is shared between every Heart module.
+ * Define an analysis report that is shared between every Scodi module.
  *
  * /!\ WARNING /!\
- * Be very careful if you change the Report class structure, as it could have an impact on every Heart module.
+ * Be very careful if you change the Report class structure, as it could have an impact on every Scodi module.
  */
 export interface GenericReport<A> extends Report, ValueHolder<A> {}

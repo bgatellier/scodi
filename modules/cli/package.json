@@ -1,14 +1,14 @@
 {
   "name": "@fabernovel/heart-cli",
   "version": "4.0.0",
-  "description": "Runner module of Heart, which starts an analysis by using a CLI",
+  "description": "Runner module of Scodi, which starts an analysis by using a CLI",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/bgatellier/heart/issues"
+    "url": "https://github.com/bgatellier/scodi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bgatellier/heart.git",
+    "url": "https://github.com/bgatellier/scodi.git",
     "directory": "modules/cli"
   },
   "license": "MIT",

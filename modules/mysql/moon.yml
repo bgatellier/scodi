@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart MySQL
+  name: Scodi MySQL
   description: Store the results of analysis into a MySQL database
 dependsOn:
   - id: cli

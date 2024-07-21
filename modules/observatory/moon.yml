@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart Observatory
+  name: Scodi Observatory
   description: Analyses URLs with Mozilla Observatory
 dependsOn:
   - id: cli

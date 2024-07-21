@@ -12,7 +12,7 @@ beforeEach(() => {
 	const analysisModuleMetadata: ModuleMetadata = {
 		id: "analysis",
 		type: "analysis",
-		name: "Heart Test Analysis Tool",
+		name: "Scodi Test Analysis Tool",
 		service: {
 			name: "Test Analysis Tool",
 		},

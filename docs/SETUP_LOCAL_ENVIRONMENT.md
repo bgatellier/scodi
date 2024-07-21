@@ -10,7 +10,7 @@ If you have [nvm](https://github.com/nvm-sh/nvm) installed:
 nvm use
 ```
 
-_Heart_ handle every modules in a single repository that is managed with [Rush](https://rushjs.io/).
+_Scodi_ handle every modules in a single repository that is managed with [Rush](https://rushjs.io/).
 
 So make sure you have it installed on your computer before you begin:
 

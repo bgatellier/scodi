@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart Lighthouse
+  name: Scodi Lighthouse
   description: Analyses URLs with Google Lighthouse
 dependsOn:
   - id: cli

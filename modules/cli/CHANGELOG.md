@@ -36,7 +36,7 @@ Wed, 23 Nov 2022 19:51:43 GMT
 ### Minor changes
 
 - Add the --cors options for the server modules, to allow the definition of HTTP CORS headers
-- Add a spinner during the analysis to show that Heart is working
+- Add a spinner during the analysis to show that Scodi is working
 - Add a threshold mecanism available with the --threshold option. You can now validate that the `normalizedNote` of an analysis meet yourt requirements.
 - Move the input validation to @fabernovel/heart-core
 
@@ -72,7 +72,7 @@ Thu, 16 Jan 2020 14:51:38 GMT
 ### Patches
 
 - Fix the console message if there is no link to an online report
-- Update the link to the purpose of Heart in the README, to redirect to the fabernovel.com website instead of the wiki
+- Update the link to the purpose of Scodi in the README, to redirect to the fabernovel.com website instead of the wiki
 
 ## 3.0.2
 Fri, 19 Jul 2019 09:41:14 GMT
@@ -95,9 +95,9 @@ Fri, 19 Jul 2019 08:17:11 GMT
 
 - Add a command option to load analysis modules configuration from a JSON file
 - Improve CLI syntax for analysis modules: each of them now has a dedicated command with options
-- Add a command that starts the Heart API server, with an option to configure the port
+- Add a command that starts the Scodi API server, with an option to configure the port
 - Upgrade the minimum required version of Node.js to the active LTS: from >=8.0.0 to >=10.13.0
-- Improve compatibility: starting from this version, every Heart module shares the same major version number
+- Improve compatibility: starting from this version, every Scodi module shares the same major version number
 
 ### Minor changes
 
@@ -105,7 +105,7 @@ Fri, 19 Jul 2019 08:17:11 GMT
 
 ### Patches
 
-- Remove the contributing guide and the license: they are now available in the Heart repository
+- Remove the contributing guide and the license: they are now available in the Scodi repository
 - Remove unnecessary dependencies and scripts from package.json
 - Update the readme to reflect the changes introduced by this major release
 

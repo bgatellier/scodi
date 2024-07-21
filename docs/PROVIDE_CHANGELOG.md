@@ -11,7 +11,7 @@ rush change --verify
 If you get a message that says
 > The following projects have been changed and require change descriptions [...]
 
-You have to provide the list of changes and the type of version number implied by these changes. _Heart_ version number follows the [semver rules](https://semver.org/): `major.minor.patch`.
+You have to provide the list of changes and the type of version number implied by these changes. _Scodi_ version number follows the [semver rules](https://semver.org/): `major.minor.patch`.
 
 Providing the changes is done by using
 

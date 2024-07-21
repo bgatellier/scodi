@@ -13,7 +13,7 @@ export const analysisModules: ModuleAnalysisInterface<
 >[] = [
 	{
 		id: "greenit",
-		name: "Heart GreenIT",
+		name: "Scodi GreenIT",
 		service: {
 			name: "GreenIT Analysis",
 		},
@@ -35,7 +35,7 @@ export const analysisModules: ModuleAnalysisInterface<
 	},
 	{
 		id: "observatory",
-		name: "Heart Observatory",
+		name: "Scodi Observatory",
 		service: {
 			name: "Mozilla Observatory",
 		},

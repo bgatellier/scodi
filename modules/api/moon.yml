@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart REST API
+  name: Scodi REST API
   description: Exposes an HTTP REST API that starts an analysis when it is requested
 dependsOn:
   - id: cli

@@ -1,14 +1,14 @@
 {
   "name": "@fabernovel/heart-slack",
   "version": "4.0.1",
-  "description": "Send the analysis results of Heart into a Slack channel",
+  "description": "Send the analysis results of Scodi into a Slack channel",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/bgatellier/heart/issues"
+    "url": "https://github.com/bgatellier/scodi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bgatellier/heart.git",
+    "url": "https://github.com/bgatellier/scodi.git",
     "directory": "modules/slack"
   },
   "license": "MIT",
@@ -44,7 +44,7 @@
   },
   "heart": {
     "id": "slack",
-    "name": "Heart Slack",
+    "name": "Scodi Slack",
     "type": "listener",
     "service": {
       "name": "Slack",

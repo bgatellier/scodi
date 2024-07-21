@@ -2,11 +2,11 @@
 
 # Description
 
-_Heart BigQuery_ is a _listener_ module of _Heart_, which reacts at the end of an analysis by storing the results into a table of a _[Google BigQuery](https://cloud.google.com/bigquery/)_ instance.
+_Heart BigQuery_ is a _listener_ module of _Scodi_, which reacts at the end of an analysis by storing the results into a table of a _[Google BigQuery](https://cloud.google.com/bigquery/)_ instance.
 
-Note that you must install an _analysis_ module too, to have a minimum viable installation of _Heart_.
+Note that you must install an _analysis_ module too, to have a minimum viable installation of _Scodi_.
 
-Read more about [the description and design of _Heart_](https://github.com/bgatellier/heart#readme).
+Read more about [the description and design of _Scodi_](https://github.com/bgatellier/scodi#readme).
 
 # Usage
 
@@ -42,7 +42,7 @@ Read more about [the description and design of _Heart_](https://github.com/bgate
     npx heart greenit --config config.json
     ```
 
-    Once the analysis is done, the _heart_ table of the _analysis_ dataset is populated with the results.
+    Once the analysis is done, the _Scodi_ table of the _analysis_ dataset is populated with the results.
 
 ## Github Action
 

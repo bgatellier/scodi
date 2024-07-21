@@ -18,13 +18,13 @@ it("Displays the results of an analysis", async () => {
 			ecoIndex: 50,
 		} as unknown as GreenITReport["result"],
 		service: {
-			name: "Heart CLI",
+			name: "Scodi CLI",
 		},
 	});
 
 	const module: ModuleAnalysisInterface<Config, GreenITReport> = {
 		id: "test-analysis-tool",
-		name: "Heart Test Analysis Tool",
+		name: "Scodi Test Analysis Tool",
 		service: {
 			name: "Test Analysis Tool",
 		},

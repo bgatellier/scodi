@@ -1,7 +1,7 @@
 # Description
 
-_Heart Common_ centralize helpful code needed by every _Heart_ modules.
+_Scodi Common_ centralize helpful code needed by every _Scodi_ modules.
 
 THIS PACKAGE MUST NOT FIGURE IN YOUR DIRECT DEPENDENCIES.
 
-Read more about [the description and design of _Heart_](https://github.com/bgatellier/heart#readme).
+Read more about [the description and design of _Scodi_](https://github.com/bgatellier/scodi#readme).

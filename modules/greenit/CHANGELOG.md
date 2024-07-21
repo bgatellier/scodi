@@ -37,7 +37,7 @@ Wed, 23 Nov 2022 19:51:43 GMT
 
 ### Patches
 
-- Consecutive analysis triggered by Heart API now send back the correct report instead of always the first
+- Consecutive analysis triggered by Scodi API now send back the correct report instead of always the first
 - Hide the messages triggered by GreenIT Analysis during or after an analysis
 - The date of the report is now correct
 

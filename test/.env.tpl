@@ -1,5 +1,5 @@
-# Heart Slack
+# Scodi Slack
 HEART_SLACK_ACCESS_TOKEN=
 
-# Heart MySQL
+# Scodi MySQL
 HEART_MYSQL_DATABASE_URL=

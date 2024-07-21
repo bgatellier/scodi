@@ -32,7 +32,7 @@ const ENV_VALIDATION_SCHEMA_NAME = ".env.schema.json";
 
 /**
  * Load the installed modules metadata:
- * 1. get the absolute paths of the installed Heart modules
+ * 1. get the absolute paths of the installed Scodi modules
  * 2. loads the package.json file
  */
 export async function loadModulesMetadata(
@@ -162,7 +162,7 @@ export async function initializeModules<M extends Module>(
 
 /**
  * Retrieve the paths of @fabernovel/heart-* modules, except heart-cli and heart-common.
- * (Heart Common must not be installed as an npm package, but who knows ¯\_(ツ)_/¯)
+ * (Scodi Common must not be installed as an npm package, but who knows ¯\_(ツ)_/¯)
  * paths are guessed according to the content of the package.json
  */
 async function getPaths(cwd: string): Promise<string[]> {

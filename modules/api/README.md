@@ -1,20 +1,20 @@
 # Description
 
-_Heart API_ is a _runner_ module of _Heart_, which exposes an HTTP API that starts an analysis when it is requested.
+_Scodi API_ is a _runner_ module of _Scodi_, which exposes an HTTP API that starts an analysis when it is requested.
 
-Note that you must install an _analysis_ module too, to have a minimum viable installation of _Heart_.
+Note that you must install an _analysis_ module too, to have a minimum viable installation of _Scodi_.
 
-Read more about [the description and design of _Heart_](https://github.com/bgatellier/heart#readme).
+Read more about [the description and design of _Scodi_](https://github.com/bgatellier/scodi#readme).
 
 # Usage
 
-1. Install the package and an _analysis_ module, for example _[Heart GreenIT](https://www.npmjs.com/package/@fabernovel/heart-greenit)_
+1. Install the package and an _analysis_ module, for example _[Scodi GreenIT](https://www.npmjs.com/package/@fabernovel/heart-greenit)_
 
     ```bash
     npm install @fabernovel/heart-api @fabernovel/heart-greenit
     ```
 
-    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Heart CLI](https://www.npmjs.com/package/@fabernovel/heart-cli)_ (which is automatically installed in more recent versions of these packages managers):
+    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Scodi CLI](https://www.npmjs.com/package/@fabernovel/heart-cli)_ (which is automatically installed in more recent versions of these packages managers):
 
     ```bash
     npm install @fabernovel/heart-cli

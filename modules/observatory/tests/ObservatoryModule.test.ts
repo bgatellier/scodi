@@ -28,7 +28,7 @@ describe("Starts an analysis", () => {
 		{
 			id: "observatory-test",
 			type: "analysis",
-			name: "Heart Observatory Test",
+			name: "Scodi Observatory Test",
 			service: {
 				name: "Observatory Test",
 			},

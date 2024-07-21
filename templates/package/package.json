@@ -4,11 +4,11 @@
   "description": "{{ name }}",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/bgatellier/heart/issues"
+    "url": "https://github.com/bgatellier/scodi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bgatellier/heart.git",
+    "url": "https://github.com/bgatellier/scodi.git",
     "directory": "modules/{{ name | slugify }}"
   },
   "license": "MIT",
@@ -39,7 +39,7 @@
   },
   "heart": {
     "id": "{{ name | slugify }}",
-    "name": "Heart {{ name }}",
+    "name": "Scodi {{ name }}",
     "service": {
       "name": "{{ name }}",
       "logoUrl": "https://raw.githubusercontent.com/bgatellier/heart/main/assets/images/logos/{{ name | pascal_case }}.png?v=20221126"

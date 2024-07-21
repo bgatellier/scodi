@@ -55,7 +55,7 @@ Thu, 16 Jan 2020 14:51:38 GMT
 
 ### Patches
 
-- Update the link to the purpose of Heart in the README, to redirect to the fabernovel.com website instead of the wiki
+- Update the link to the purpose of Scodi in the README, to redirect to the fabernovel.com website instead of the wiki
 
 ## 3.1.0
 Fri, 02 Aug 2019 12:02:44 GMT
@@ -80,9 +80,9 @@ Fri, 19 Jul 2019 08:17:11 GMT
 
 ### Breaking changes
 
-- Add Heart CLI as a peer dependency: it must be installed to make this module usable
+- Add Scodi CLI as a peer dependency: it must be installed to make this module usable
 - Upgrade the minimum required version of Node.js to the active LTS: from >=8.0.0 to >=10.13.0
-- Improve compatibility: starting from this version, every Heart module shares the same major version number
+- Improve compatibility: starting from this version, every Scodi module shares the same major version number
 
 ### Minor changes
 
@@ -91,7 +91,7 @@ Fri, 19 Jul 2019 08:17:11 GMT
 
 ### Patches
 
-- Remove the contributing guide and the license: they are now available in the Heart repository
+- Remove the contributing guide and the license: they are now available in the Scodi repository
 - Remove unnecessary dependencies and scripts from package.json
 - Update the readme to reflect the changes introduced by this major release
 

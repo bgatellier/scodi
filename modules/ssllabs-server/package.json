@@ -1,14 +1,14 @@
 {
   "name": "@fabernovel/heart-ssllabs-server",
   "version": "4.0.0",
-  "description": "Analysis module of Heart, which analyses URLs with Qualys SSL Labs server",
+  "description": "Analysis module of Scodi, which analyses URLs with Qualys SSL Labs server",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/bgatellier/heart/issues"
+    "url": "https://github.com/bgatellier/scodi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bgatellier/heart.git",
+    "url": "https://github.com/bgatellier/scodi.git",
     "directory": "modules/ssllabs-server"
   },
   "license": "MIT",
@@ -43,7 +43,7 @@
   },
   "heart": {
     "id": "ssllabs-server",
-    "name": "Heart SSL Labs Server",
+    "name": "Scodi SSL Labs Server",
     "type": "analysis",
     "service": {
       "name": "Qualys SSL Labs Server",

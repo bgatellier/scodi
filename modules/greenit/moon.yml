@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart GreenIT
+  name: Scodi GreenIT
   description: Analyses URLs with GreenIT Analysis
 dependsOn:
   - id: cli

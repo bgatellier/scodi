@@ -7,7 +7,7 @@ export interface ModuleMetadata {
 	id: string;
 
 	/**
-	 * Example: Heart Observatory
+	 * Example: Scodi Observatory
 	 */
 	name: string;
 

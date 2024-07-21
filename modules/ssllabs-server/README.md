@@ -1,8 +1,8 @@
 # Description
 
-_Heart SSL Labs Server_ is an _analysis_ module of _Heart_, which analyses URLs with _[Qualys SSL Labs server](https://www.ssllabs.com/ssltest/index.html)_.
+_Scodi SSL Labs Server_ is an _analysis_ module of _Scodi_, which analyses URLs with _[Qualys SSL Labs server](https://www.ssllabs.com/ssltest/index.html)_.
 
-Read more about [the purpose, design and general installation of _Heart_](https://github.com/bgatellier/heart#readme).
+Read more about [the purpose, design and general installation of _Scodi_](https://github.com/bgatellier/scodi#readme).
 
 # Usage
 
@@ -14,7 +14,7 @@ Read more about [the purpose, design and general installation of _Heart_](https:
     npm install @fabernovel/heart-ssllabs-server
     ```
 
-    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Heart CLI](https://www.npmjs.com/package/@fabernovel/heart-cli)_ (which is automatically installed in more recent versions of these packages managers):
+    If you are using Yarn, npm < 7 or PNPM < 8, you also have to install _[Scodi CLI](https://www.npmjs.com/package/@fabernovel/heart-cli)_ (which is automatically installed in more recent versions of these packages managers):
 
     ```bash
     npm install @fabernovel/heart-cli
@@ -36,4 +36,4 @@ Read more about [the purpose, design and general installation of _Heart_](https:
 
 ## Github Action
 
-If you're using Github, you can simplify the integration of Heart in your CI scripts by using the [Github Action](https://github.com/marketplace/actions/heart-webpages-evaluation).
+If you're using Github, you can simplify the integration of Scodi in your CI scripts by using the [Github Action](https://github.com/marketplace/actions/heart-webpages-evaluation).

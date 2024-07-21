@@ -1,6 +1,6 @@
 language: typescript
 project: 
-  name: Heart Common
+  name: Scodi Common
   description: Centralize components needed by every other packages
 stack: backend
 type: library
