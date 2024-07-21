@@ -133,13 +133,13 @@ describe("Invalid threshold value", () => {
 describe("Invalid listener options value", () => {
 	const modulesMetadata: ModuleMetadata[] = [
 		{
-			id: "heart-test1",
+			id: "scodi-test1",
 			type: "analysis",
 			name: "Scodi Test1",
 			service: { name: "Test1" },
 		},
 		{
-			id: "heart-test2",
+			id: "scodi-test2",
 			type: "analysis",
 			name: "Scodi Test2",
 			service: { name: "Test2" },
@@ -164,7 +164,7 @@ describe("Invalid listener options value", () => {
 			validateAnalysisInput(
 				{
 					config: { inline: "configuration" },
-					except_listeners: ["heart-test1", "invalid-module-id"],
+					except_listeners: ["-test1", "invalid-module-id"],
 				},
 				modulesIds,
 			);
@@ -188,7 +188,7 @@ describe("Invalid listener options value", () => {
 			validateAnalysisInput(
 				{
 					config: { inline: "configuration" },
-					only_listeners: ["heart-test1", "invalid-module-id"],
+					only_listeners: ["-test1", "invalid-module-id"],
 				},
 				modulesIds,
 			);

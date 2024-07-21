@@ -62,13 +62,13 @@ To do so, you have to:
 4. Starts an analysis using the CLI. You can list the available analysis by using:
 
     ```shell
-    rush-pnpm exec heart -h
+    rush-pnpm exec scodi -h
     ```
 
     Example of a CLI command using the _Scodi Lighthouse_ module:
 
     ```shell
-    rush-pnpm exec heart lighthouse --config '{"url": "https://www.ipcc.ch/"}'
+    rush-pnpm exec scodi lighthouse --config '{"url": "https://www.ipcc.ch/"}'
     ```
 
 ### [Provide a changelog](docs/PROVIDE_CHANGELOG.md)

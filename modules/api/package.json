@@ -46,7 +46,7 @@
   "engines": {
     "node": ">=18 <22"
   },
-  "heart": {
+  "scodi": {
     "id": "api",
     "name": "Scodi API",
     "type": "server",

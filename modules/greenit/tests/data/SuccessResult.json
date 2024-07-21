@@ -1,12 +1,12 @@
 {
-  "url": "https://fabernovel.com/",
+  "url": "https://www.ipcc.ch/",
   "success": true,
   "nbBestPracticesToCorrect": 13,
   "grade": "E",
   "ecoIndex": 28,
   "pageInformations": {
     "name": "Google",
-    "url": "https://fabernovel.com"
+    "url": "https://www.ipcc.ch"
   },
   "date": "09/02/2023 23:32:57",
   "tryNb": 1,

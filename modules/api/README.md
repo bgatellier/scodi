@@ -23,7 +23,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 2. Start the server
 
     ```bash
-    npx heart api
+    npx scodi api
     ```
 
     You now have an HTTP server listening to `127.0.0.1:3000`, with a `/greenit` endpoint where you could `POST` your analysis configuration (JSON-formatted) to start an analysis.
@@ -37,7 +37,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
     Content-type: application/json
     {
       "config": {
-        "url": "https://www.fabernovel.com"
+        "url": "https://www.ipcc.ch"
       }
     }
     ```

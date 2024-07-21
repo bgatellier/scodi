@@ -67,7 +67,7 @@ export const createAnalysisSubcommand = <C extends Config>(
 		.action(async (options: CommonOptions & AnalysisOptions) => {
 			const listenerModulesIds = new Array<string>();
 			listenerModulesMetadataMap.forEach((metadata, _key) => {
-				listenerModulesIds.push(metadata.heart.id);
+				listenerModulesIds.push(metadata.scodi.id);
 			});
 
 			try {
@@ -80,13 +80,13 @@ export const createAnalysisSubcommand = <C extends Config>(
 				// the options are mutually exclusive (see the validation above), that why there is an if/else.
 				if (except_listeners !== undefined) {
 					listenerModulesMetadataMap.forEach((metadata, modulePath, m) => {
-						if (except_listeners.includes(metadata.heart.id)) {
+						if (except_listeners.includes(metadata.scodi.id)) {
 							m.delete(modulePath);
 						}
 					});
 				} else if (only_listeners !== undefined) {
 					listenerModulesMetadataMap.forEach((metadata, modulePath, m) => {
-						if (!only_listeners.includes(metadata.heart.id)) {
+						if (!only_listeners.includes(metadata.scodi.id)) {
 							m.delete(modulePath);
 						}
 					});

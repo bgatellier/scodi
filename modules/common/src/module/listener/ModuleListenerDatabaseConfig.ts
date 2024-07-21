@@ -3,7 +3,7 @@ import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
 import { ReportEntity } from "../../entities/ReportEntity.js";
 import { ServiceEntity } from "../../entities/ServiceEntity.js";
 
-const DB_NAME = "heart";
+const DB_NAME = "scodi";
 
 export function createDatabaseConfig<D extends IDatabaseDriver>(
 	options: Options<D>,

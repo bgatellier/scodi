@@ -23,20 +23,20 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 2. Start an analysis
 
     ```bash
-    npx heart greenit --config '{"url":"https://www.fabernovel.com/"}'
+    npx scodi greenit --config '{"url":"https://www.ipcc.ch/"}'
     ```
 
     OR 
 
     ```bash
-    npx heart greenit --config config.json
+    npx scodi greenit --config config.json
     ```
 
     The analysis configuration follows the JSON format and has the following keys:
 
     ```jsonc
     {
-        "url": "https://www.fabernovel.com/",
+        "url": "https://www.ipcc.ch/",
         // optional - default: 3000
         "timeout": 1000,
         // optional - default: 2

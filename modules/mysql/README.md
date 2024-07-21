@@ -31,13 +31,13 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 3. Start an analysis
 
     ```bash
-    npx heart greenit --config '{"url":"https://www.fabernovel.com"}'
+    npx scodi greenit --config '{"url":"https://www.ipcc.ch"}'
     ```
 
     OR 
 
     ```bash
-    npx heart greenit --config config.json
+    npx scodi greenit --config config.json
     ```
 
     Once the analysis is done, the results are stored in your _MySQL_ database.

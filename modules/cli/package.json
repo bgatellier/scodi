@@ -19,7 +19,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "bin": {
-    "heart": "bin/heart.js"
+    "scodi": "bin/scodi.js"
   },
   "directories": {
     "lib": "lib"

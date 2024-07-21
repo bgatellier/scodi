@@ -23,13 +23,13 @@ Read more about [the purpose, design and general installation of _Scodi_](https:
 2. Start an analysis
 
     ```bash
-    npx heart ssllabs-server --config '{"host":"ipcc.ch"}'
+    npx scodi ssllabs-server --config '{"host":"ipcc.ch"}'
     ```
 
     OR 
 
     ```bash
-    npx heart ssllabs-server --config config.json
+    npx scodi ssllabs-server --config config.json
     ```
 
     The analysis configuration follows the JSON format and  the [Invoke assessment and check progress API documentation](https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs-v3.md#invoke-assessment-and-check-progress).

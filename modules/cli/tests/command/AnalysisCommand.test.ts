@@ -24,7 +24,7 @@ beforeEach(() => {
 			{
 				name: "",
 				main: "",
-				heart: {
+				scodi: {
 					id: "listener1",
 					name: "Listener 1",
 					type: "listener",
@@ -37,7 +37,7 @@ beforeEach(() => {
 			{
 				name: "",
 				main: "",
-				heart: {
+				scodi: {
 					id: "listener2",
 					name: "Listener 2",
 					type: "listener",

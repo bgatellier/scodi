@@ -35,12 +35,12 @@ Exemple scenario:
     echo SCODI_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306 >> .env
     ```
 
-3. Create a Slack channel named `heart` and a database with the same name.
+3. Create a Slack channel named `scodi` and a database with the same name.
 
 4. Start the analysis
 
     ```bash
-    npx heart lighthouse --config '{"url":"https://www.ipcc.ch/"}'
+    npx scodi lighthouse --config '{"url":"https://www.ipcc.ch/"}'
     ```
 
 Once the analysis is over, you will receive a Slack notification to quickly identify what can be improved:
@@ -51,7 +51,7 @@ And the results will be stored in a `report` table, which you can exploit with t
 
 ![Analyzed URL, overall grade over 100, several metrics like Speed Index, First Contentful Paint and advices for improvements](./docs/images/mysql.png)
 
-For more options, have a look at the help by using `npx heart -h`
+For more options, have a look at the help by using `npx scodi -h`
 
 ## Packaged, with the Docker image
 

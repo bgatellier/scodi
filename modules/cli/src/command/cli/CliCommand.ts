@@ -50,7 +50,7 @@ export async function start(cwd: string): Promise<Command> {
 		);
 
 		const analysisCommand = createAnalysisSubcommand(
-			packageJsonModule.heart,
+			packageJsonModule.scodi,
 			listenerModulesMetadataMap,
 			callback,
 		);
@@ -68,7 +68,7 @@ export async function start(cwd: string): Promise<Command> {
 		);
 
 		const serverCommand = createServerSubcommand(
-			packageJsonModule.heart,
+			packageJsonModule.scodi,
 			callback,
 		);
 

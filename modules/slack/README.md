@@ -30,7 +30,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 
 3. [Optional] Customize the Slack channel
 
-    By default the `heart` channel is used, but you can customize it by adding the `SCODI_SLACK_CHANNEL_ID` variable to your .env file:
+    By default the `scodi` channel is used, but you can customize it by adding the `SCODI_SLACK_CHANNEL_ID` variable to your .env file:
     ```dotenv
     SCODI_SLACK_CHANNEL_ID=my-custom-channel
     ```
@@ -40,13 +40,13 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 4. Start an analysis
 
     ```bash
-    npx heart greenit --config '{"url":"https://www.fabernovel.com"}'
+    npx scodi greenit --config '{"url":"https://www.ipcc.ch"}'
     ```
 
     OR 
 
     ```bash
-    npx heart greenit --config config.json
+    npx scodi greenit --config config.json
     ```
 
     Once the analysis is done, a notification is sent to your _Slack_ channel.

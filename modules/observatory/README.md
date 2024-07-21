@@ -33,13 +33,13 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 3. Start an analysis
 
     ```bash
-    npx heart observatory --config '{"host": "ipcc.ch"}'
+    npx scodi observatory --config '{"host": "ipcc.ch"}'
     ```
 
     OR 
 
     ```bash
-    npx heart observatory --config config.json
+    npx scodi observatory --config config.json
     ```
 
     The analysis configuration follows the JSON format and  the [Invoke assessment API Documentation](https://github.com/mozilla/http-observatory/blob/master/httpobs/docs/api.md#invoke-assessment).

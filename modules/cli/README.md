@@ -19,7 +19,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 2. Displays the list of commands you can use, regarding your installed modules
 
     ```bash
-    npx heart --help
+    npx scodi --help
     ```
 
   The list of available commands change each time you install an _analysis_ module or _Scodi API_.

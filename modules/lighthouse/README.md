@@ -23,20 +23,20 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 2. Start an analysis
 
     ```bash
-    npx heart lighthouse --config '{"url":"https://www.ipcc.ch"}'
+    npx scodi lighthouse --config '{"url":"https://www.ipcc.ch"}'
     ```
 
     OR 
 
     ```bash
-    npx heart lighthouse --config config.json
+    npx scodi lighthouse --config config.json
     ```
 
     The analysis configuration follows the JSON format and has the following keys:
 
     ```jsonc
     {
-        "url": "https://www.fabernovel.com/",
+        "url": "https://www.ipcc.ch/",
         // optional - customize Google Lighthouse
         // see https://github.com/GoogleChrome/lighthouse/blob/master/docs/configuration.md#lighthouse-configuration
         "config": {

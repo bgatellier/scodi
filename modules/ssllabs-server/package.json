@@ -41,13 +41,13 @@
   "engines": {
     "node": ">=18 <22"
   },
-  "heart": {
+  "scodi": {
     "id": "ssllabs-server",
     "name": "Scodi SSL Labs Server",
     "type": "analysis",
     "service": {
       "name": "Qualys SSL Labs Server",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/heart/main/assets/images/logos/SSLLabs.png?v=20221126"
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/SSLLabs.png?v=20221126"
     }
   }
 }

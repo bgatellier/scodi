@@ -37,12 +37,12 @@
   "engines": {
     "node": ">=18 <22"
   },
-  "heart": {
+  "scodi": {
     "id": "{{ name | slugify }}",
     "name": "Scodi {{ name }}",
     "service": {
       "name": "{{ name }}",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/heart/main/assets/images/logos/{{ name | pascal_case }}.png?v=20221126"
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/{{ name | pascal_case }}.png?v=20221126"
     }
   }
 }

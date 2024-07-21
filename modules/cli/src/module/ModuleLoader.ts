@@ -54,15 +54,15 @@ export async function loadModulesMetadata(
 		modulesPaths.forEach((modulePath, index) => {
 			const moduleMetadata = modulesMetadata[index];
 
-			if (moduleMetadata.heart.type === "analysis") {
+			if (moduleMetadata.scodi.type === "analysis") {
 				analysisModulesMap.set(modulePath, moduleMetadata);
 			} else if (
-				moduleMetadata.heart.type === "listener" ||
-				moduleMetadata.heart.type === "listener:database"
+				moduleMetadata.scodi.type === "listener" ||
+				moduleMetadata.scodi.type === "listener:database"
 			) {
 				listenerModulesMap.set(modulePath, moduleMetadata);
 			} else {
-				// moduleMetadata.heart.type === "server
+				// moduleMetadata.scodi.type === "server
 				serverModulesMap.set(modulePath, moduleMetadata);
 			}
 		});
@@ -131,7 +131,7 @@ export async function initializeModules<M extends Module>(
 
 	listenerModulesMap.forEach((packageJsonModule, modulePath) => {
 		paths.push(modulePath + packageJsonModule.main);
-		metadatas.push(packageJsonModule.heart);
+		metadatas.push(packageJsonModule.scodi);
 	});
 
 	const promises = paths.map((path) => import(path) as Promise<ModuleIndex>);
@@ -161,7 +161,7 @@ export async function initializeModules<M extends Module>(
 }
 
 /**
- * Retrieve the paths of @scodi/* modules, except heart-cli and heart-common.
+ * Retrieve the paths of @scodi/* modules, except -cli and -common.
  * (Scodi Common must not be installed as an npm package, but who knows ¯\_(ツ)_/¯)
  * paths are guessed according to the content of the package.json
  */
