@@ -1,5 +1,5 @@
 ---
-"@fabernovel/heart-mysql": minor
+"@scodi/-mysql": minor
 ---
 
 Add compatibility with Node.js 21

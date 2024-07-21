@@ -26,8 +26,8 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 
     In this case, you must provide the following env values:
     ```dotenv
-    HEART_OBSERVATORY_API_URL=
-    HEART_OBSERVATORY_ANALYZE_URL=
+    SCODI_OBSERVATORY_API_URL=
+    SCODI_OBSERVATORY_ANALYZE_URL=
     ```
 
 3. Start an analysis

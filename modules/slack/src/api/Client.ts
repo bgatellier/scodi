@@ -5,16 +5,16 @@ import { LogLevel, WebClient } from "@slack/web-api";
 /**
  * Simple Slack client:
  * Initialize a Slack client using:
- * - the HEART_SLACK_ACCESS_TOKEN process.env property
- * - the HEART_SLACK_CHANNEL_ID process.env property
+ * - the SCODI_SLACK_ACCESS_TOKEN process.env property
+ * - the SCODI_SLACK_CHANNEL_ID process.env property
  */
 export class Client {
 	#channel: string;
 	#client: WebClient;
 
 	constructor(verbose: boolean) {
-		this.#channel = env.HEART_SLACK_CHANNEL_ID ?? "";
-		this.#client = new WebClient(env.HEART_SLACK_ACCESS_TOKEN, {
+		this.#channel = env.SCODI_SLACK_CHANNEL_ID ?? "";
+		this.#client = new WebClient(env.SCODI_SLACK_ACCESS_TOKEN, {
 			logLevel: verbose ? LogLevel.INFO : undefined,
 		});
 	}

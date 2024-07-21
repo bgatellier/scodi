@@ -1,11 +1,8 @@
-<p align="center">
-    <img alt="Violet square with rounded corners, featuring a heart in the form of a cloud of dots. Some of the dots are interconnected" src="./docs/images/heart.png" width="128">
-</p>
 
 <p align="center">A command-line tool to industrialize web quality measurement.</p>
 
 [![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-cli?logo=npm "List Scodi packages on npmjs.com")](https://www.npmjs.com/search?q=%40fabernovel%2Fheart)
-[![codecov](https://codecov.io/gh/bgatellier/heart/branch/main/graph/badge.svg?token=VJFYEBVNEI)](https://codecov.io/gh/bgatellier/heart "View coverage details")
+[![codecov](https://codecov.io/gh/bgatellier/scodi/graph/badge.svg?token=VJFYEBVNEI)](https://codecov.io/gh/bgatellier/scodi "View coverage details")
 [![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/heart/badge.svg?targetFile=modules/cli/package.json)](https://snyk.io/test/github/bgatellier/heart?targetFile=modules/cli/package.json "View known vulnerabilities")
 
 # Description
@@ -34,8 +31,8 @@ Exemple scenario:
 2. Set the credentials for Slack (API key) and MySQL (database URL)
     
     ```bash
-    echo HEART_SLACK_API_TOKEN=xoxb-rest-of-token >> .env
-    echo HEART_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306 >> .env
+    echo SCODI_SLACK_ACCESS_TOKEN=xoxb-rest-of-token >> .env
+    echo SCODI_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306 >> .env
     ```
 
 3. Create a Slack channel named `heart` and a database with the same name.
@@ -48,11 +45,11 @@ Exemple scenario:
 
 Once the analysis is over, you will receive a Slack notification to quickly identify what can be improved:
 
-![Analyzed URL, overall grade over 100, several metrics like Speed Index, First Contentful Paint and advices for improvements](./docs/images/heart-slack.png)
+![Analyzed URL, overall grade over 100, several metrics like Speed Index, First Contentful Paint and advices for improvements](./docs/images/slack.png)
 
 And the results will be stored in a `report` table, which you can exploit with tools like _Grafana_:
 
-![Analyzed URL, overall grade over 100, several metrics like Speed Index, First Contentful Paint and advices for improvements](./docs/images/heart-mysql.png)
+![Analyzed URL, overall grade over 100, several metrics like Speed Index, First Contentful Paint and advices for improvements](./docs/images/mysql.png)
 
 For more options, have a look at the help by using `npx heart -h`
 
@@ -64,8 +61,8 @@ With the example scenario given previously, the Docker image is used as follow:
 
 ```shell
 docker run --rm\
-    --env HEART_SLACK_API_TOKEN=xoxb-rest-of-token\
-    --env HEART_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306\
+    --env SCODI_SLACK_ACCESS_TOKEN=xoxb-rest-of-token\
+    --env SCODI_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306\
     fabernovel/heart:latest\
     lighthouse --config '{"url":"https://heart.fabernovel.com"}' --only-listeners=mysql,slack
 ```
@@ -82,7 +79,7 @@ With the example scenario given previously, the GitHub Action is used as follow:
     analysis_service: lighthouse
     listener_services_only: mysql,slack
     mysql_database_url: ${{ secrets.MYSQL_DATABASE_URL }}
-    slack_api_token: ${{ secrets.SLACK_API_TOKEN }}
+    SCODI_SLACK_ACCESS_TOKEN: ${{ secrets.SCODI_SLACK_ACCESS_TOKEN }}
 ```
 
 # Design

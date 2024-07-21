@@ -12,8 +12,8 @@ vi.spyOn(Request, "get").mockImplementation(() => Promise.resolve(RESULT));
 vi.spyOn(Request, "post").mockImplementation(() => Promise.resolve(RESULT));
 
 describe("Client", () => {
-	env.HEART_OBSERVATORY_ANALYZE_URL = ANALYZE_URL;
-	env.HEART_OBSERVATORY_API_URL = API_URL;
+	env.SCODI_OBSERVATORY_ANALYZE_URL = ANALYZE_URL;
+	env.SCODI_OBSERVATORY_API_URL = API_URL;
 
 	it("Analyze with valid configuration", async () => {
 		const CONF = { host: "www.website.test" };

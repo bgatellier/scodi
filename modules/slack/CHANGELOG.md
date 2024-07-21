@@ -16,8 +16,8 @@ Sun, 08 Oct 2023 13:58:00 GMT
 
 - Add compatibility with Node.js versions 18, 19 and 20
 - Node.js 18 LTS is now required: the previous Node.js version used (14) reached end-of-life
-- Update the name of the environment variable used to define the access token in favor of HEART_SLACK_ACCESS_TOKEN (instead of HEART_SLACK_API_TOKEN)
-- Add a HEART_ prefix to the environment variables names to avoid collisions
+- Update the name of the environment variable used to define the access token in favor of SCODI_SLACK_ACCESS_TOKEN (instead of SCODI_SLACK_API_TOKEN)
+- Add a SCODI_ prefix to the environment variables names to avoid collisions
 - Add the main numbers and some advices send back by the analysis modules
 - Move to ES modules mechanism
 

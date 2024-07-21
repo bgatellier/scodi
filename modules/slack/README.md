@@ -25,14 +25,14 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 2. In the project root folder, create a `.env` file with the Slack Access token
 
     ```dotenv
-    HEART_SLACK_ACCESS_TOKEN=My_Slack_Access_Token
+    SCODI_SLACK_ACCESS_TOKEN=My_Slack_Access_Token
     ```
 
 3. [Optional] Customize the Slack channel
 
-    By default the `heart` channel is used, but you can customize it by adding the `HEART_SLACK_CHANNEL_ID` variable to your .env file:
+    By default the `heart` channel is used, but you can customize it by adding the `SCODI_SLACK_CHANNEL_ID` variable to your .env file:
     ```dotenv
-    HEART_SLACK_CHANNEL_ID=my-custom-channel
+    SCODI_SLACK_CHANNEL_ID=my-custom-channel
     ```
 
     Note that the channel identifier must follows the format and rules indicated in [the Slack API documentation](https://api.slack.com/methods/chat.postMessage#channels).

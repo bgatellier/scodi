@@ -12,8 +12,8 @@ export class Client {
 	#host = "";
 
 	constructor() {
-		this.#analyzeUrl = env.HEART_OBSERVATORY_ANALYZE_URL ?? "";
-		this.#apiUrl = env.HEART_OBSERVATORY_API_URL ?? "";
+		this.#analyzeUrl = env.SCODI_OBSERVATORY_ANALYZE_URL ?? "";
+		this.#apiUrl = env.SCODI_OBSERVATORY_API_URL ?? "";
 	}
 
 	public getAnalyzeUrl(): string {

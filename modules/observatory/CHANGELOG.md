@@ -16,7 +16,7 @@ Sun, 08 Oct 2023 13:58:00 GMT
 
 - Add compatibility with Node.js versions 18, 19 and 20
 - Node.js 18 LTS is now required: the previous Node.js version used (14) reached end-of-life
-- Add a HEART_ prefix to the environment variables names to avoid collisions
+- Add a SCODI_ prefix to the environment variables names to avoid collisions
 - The module now send back detailed results instead of the summary only
 - Move to ES modules mechanism
 
