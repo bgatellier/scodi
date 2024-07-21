@@ -31,7 +31,7 @@ describe("Valid configuration value", () => {
 	it("JSON object with several properties", () => {
 		const { config } = validateAnalysisInput({
 			config: {
-				url: "https://heart.fabernovel.com/",
+				url: "https://www.ipcc.ch/",
 				config: {
 					extends: "lighthouse:default",
 					settings: {
@@ -44,7 +44,7 @@ describe("Valid configuration value", () => {
 		});
 
 		expect(config).toStrictEqual({
-			url: "https://heart.fabernovel.com/",
+			url: "https://www.ipcc.ch/",
 			config: {
 				extends: "lighthouse:default",
 				settings: {

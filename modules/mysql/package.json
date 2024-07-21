@@ -2,7 +2,7 @@
   "name": "@scodi/mysql",
   "version": "4.0.1",
   "description": "Store the results of analysis into a MySQL database",
-  "homepage": "https://heart.fabernovel.com",
+  "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
   },

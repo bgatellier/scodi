@@ -16,8 +16,8 @@ Moreover the command-line interface allows a smooth integration into a CI/CD cha
 # Example of use
 
 Exemple scenario:
-- analyze <https://heart.fabernovel.com/> using the _Google Lighthouse_ service.
-- receive the main metrics and advices on a `heart` Slack channel when the analysis is over.
+- analyze <https://www.ipcc.ch/> using the _Google Lighthouse_ service.
+- receive the main metrics and advices on a `scodi` Slack channel when the analysis is over.
 - store the results in a _MySQL_ database.
 
 ## Manual, with NPM packages
@@ -25,7 +25,7 @@ Exemple scenario:
 1. Install the packages
     
     ```bash
-    npm install @fabernovel/heart-lighthouse @fabernovel/heart-slack @fabernovel/heart-mysql
+    npm install @scodi/lighthouse @scodi/slack @scodi/mysql
     ```
 
 2. Set the credentials for Slack (API key) and MySQL (database URL)
@@ -40,7 +40,7 @@ Exemple scenario:
 4. Start the analysis
 
     ```bash
-    npx heart lighthouse --config '{"url":"https://heart.fabernovel.com/"}'
+    npx heart lighthouse --config '{"url":"https://www.ipcc.ch/"}'
     ```
 
 Once the analysis is over, you will receive a Slack notification to quickly identify what can be improved:
@@ -64,7 +64,7 @@ docker run --rm\
     --env SCODI_SLACK_ACCESS_TOKEN=xoxb-rest-of-token\
     --env SCODI_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306\
     fabernovel/heart:latest\
-    lighthouse --config '{"url":"https://heart.fabernovel.com"}' --only-listeners=mysql,slack
+    lighthouse --config '{"url":"https://www.ipcc.ch"}' --only-listeners=mysql,slack
 ```
 
 ## Automated, with the GitHub Action

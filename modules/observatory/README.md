@@ -33,7 +33,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 3. Start an analysis
 
     ```bash
-    npx heart observatory --config '{"host": "heart.fabernovel.com"}'
+    npx heart observatory --config '{"host": "ipcc.ch"}'
     ```
 
     OR 

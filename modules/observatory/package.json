@@ -2,7 +2,7 @@
   "name": "@scodi/observatory",
   "version": "4.0.1",
   "description": "Analysis module of Scodi, which analyses URLs with Mozilla Observatory",
-  "homepage": "https://heart.fabernovel.com",
+  "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
   },

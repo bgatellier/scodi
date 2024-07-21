@@ -4,7 +4,7 @@ import { beforeEach, expect, it } from "vitest";
 import { createAnalysisSubcommand } from "../../src/command/analysis/AnalysisCommand.js";
 import type { PackageJsonModule } from "../../src/module/PackageJson.js";
 
-const optionConfigInline = '{"url": "https://www.heart.fabernovel.com"}';
+const optionConfigInline = '{"url": "https://www.ipcc.ch"}';
 let program: Command;
 
 beforeEach(() => {

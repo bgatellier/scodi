@@ -2,7 +2,7 @@
   "name": "@scodi/slack",
   "version": "4.0.1",
   "description": "Send the analysis results of Scodi into a Slack channel",
-  "homepage": "https://heart.fabernovel.com",
+  "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
   },

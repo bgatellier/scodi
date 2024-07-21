@@ -5,7 +5,7 @@ import { Client } from "../src/api/Client.js";
 import { RESULT } from "./data/Result.js";
 
 const ANALYZE_URL = "www.observatory.mozilla-test/results/";
-const CONF: ObservatoryConfig = { host: "heart.fabernovel.com" };
+const CONF: ObservatoryConfig = { host: "ipcc.ch" };
 
 vi.spyOn(Client.prototype, "getAnalyzeUrl").mockImplementation(
 	() => ANALYZE_URL + CONF.host,
@@ -37,13 +37,13 @@ describe("Starts an analysis", () => {
 		const report = await module.startAnalysis(CONF);
 
 		const expectedReport = new ObservatoryReport({
-			analyzedUrl: "heart.fabernovel.com",
+			analyzedUrl: "ipcc.ch",
 			date: report.date,
 			inputs: {
 				config: CONF,
 			},
 			result: RESULT,
-			resultUrl: `${ANALYZE_URL}heart.fabernovel.com`,
+			resultUrl: `${ANALYZE_URL}ipcc.ch`,
 			service: {
 				name: "Observatory Test",
 			},
@@ -64,13 +64,13 @@ describe("Starts an analysis", () => {
 		const report = await module.startAnalysis(CONF);
 
 		const expectedReport = new ObservatoryReport({
-			analyzedUrl: "heart.fabernovel.com",
+			analyzedUrl: "ipcc.ch",
 			date: report.date,
 			inputs: {
 				config: CONF,
 			},
 			result: RESULT,
-			resultUrl: `${ANALYZE_URL}heart.fabernovel.com`,
+			resultUrl: `${ANALYZE_URL}ipcc.ch`,
 			service: {
 				name: "Observatory Test",
 			},
@@ -85,14 +85,14 @@ describe("Starts an analysis", () => {
 		const report = await module.startAnalysis(CONF, THRESHOLD);
 
 		const expectedReport = new ObservatoryReport({
-			analyzedUrl: "heart.fabernovel.com",
+			analyzedUrl: "ipcc.ch",
 			date: report.date,
 			inputs: {
 				config: CONF,
 				threshold: THRESHOLD,
 			},
 			result: RESULT,
-			resultUrl: `${ANALYZE_URL}heart.fabernovel.com`,
+			resultUrl: `${ANALYZE_URL}ipcc.ch`,
 			service: {
 				name: "Observatory Test",
 			},

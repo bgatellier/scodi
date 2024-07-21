@@ -68,7 +68,7 @@ To do so, you have to:
     Example of a CLI command using the _Scodi Lighthouse_ module:
 
     ```shell
-    rush-pnpm exec heart lighthouse --config '{"url": "https://heart.fabernovel.com/"}'
+    rush-pnpm exec heart lighthouse --config '{"url": "https://www.ipcc.ch/"}'
     ```
 
 ### [Provide a changelog](docs/PROVIDE_CHANGELOG.md)

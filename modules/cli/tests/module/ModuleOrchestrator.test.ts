@@ -8,7 +8,7 @@ import { startAnalysis } from "../../src/module/ModuleOrchestrator.js";
 
 it("Displays the results of an analysis", async () => {
 	const report = new GreenITReport({
-		analyzedUrl: "https://heart.fabernovel.com",
+		analyzedUrl: "https://www.ipcc.ch",
 		date: new Date(),
 		inputs: {
 			config: {},

@@ -1,7 +1,7 @@
 import type { LighthouseConfig } from "@scodi/common";
 
 export const Conf: LighthouseConfig = {
-	url: "https://heart.fabernovel.com",
+	url: "https://www.ipcc.ch",
 	config: {
 		extends: "lighthouse:default",
 		settings: {

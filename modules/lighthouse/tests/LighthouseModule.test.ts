@@ -6,7 +6,7 @@ vi.mock("../src/api/Client.js");
 vi.mock("lighthouse");
 
 const CONF: LighthouseConfig = {
-	url: "https://heart.fabernovel.com",
+	url: "https://www.ipcc.ch",
 	config: {
 		extends: "lighthouse:default",
 		settings: {

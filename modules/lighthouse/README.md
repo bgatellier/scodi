@@ -23,7 +23,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
 2. Start an analysis
 
     ```bash
-    npx heart lighthouse --config '{"url":"https://heart.fabernovel.com"}'
+    npx heart lighthouse --config '{"url":"https://www.ipcc.ch"}'
     ```
 
     OR 

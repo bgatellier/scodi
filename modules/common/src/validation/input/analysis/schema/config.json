@@ -1,5 +1,5 @@
 {
-  "$id": "https://heart.fabernovel.com/schemas/config",
+  "$id": "https://github.com/bgatellier/scodi/schemas/config",
   "type": "object",
   "minProperties": 1
 }

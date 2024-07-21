@@ -2,7 +2,7 @@
   "name": "@scodi/api",
   "version": "4.0.0",
   "description": "Runner module of Scodi, which exposes an API that starts an analysis when it is requested",
-  "homepage": "https://heart.fabernovel.com",
+  "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
   },

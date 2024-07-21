@@ -2,7 +2,7 @@
   "name": "@scodi/common",
   "version": "4.0.0",
   "description": "Centralize helpful code needed by every Scodi modules",
-  "homepage": "https://heart.fabernovel.com",
+  "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
   },

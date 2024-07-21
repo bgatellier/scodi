@@ -2,7 +2,7 @@
   "name": "@scodi/ssllabs-server",
   "version": "4.0.0",
   "description": "Analysis module of Scodi, which analyses URLs with Qualys SSL Labs server",
-  "homepage": "https://heart.fabernovel.com",
+  "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
   },

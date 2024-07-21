@@ -23,7 +23,7 @@ Read more about [the purpose, design and general installation of _Scodi_](https:
 2. Start an analysis
 
     ```bash
-    npx heart ssllabs-server --config '{"host":"heart.fabernovel.com"}'
+    npx heart ssllabs-server --config '{"host":"ipcc.ch"}'
     ```
 
     OR 
