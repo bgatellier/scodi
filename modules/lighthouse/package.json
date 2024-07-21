@@ -4,17 +4,17 @@
   "description": "Analysis module of Heart, which analyses URLs with Google Lighthouse",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/faberNovel/heart/issues"
+    "url": "https://github.com/bgatellier/heart/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/faberNovel/heart.git",
+    "url": "https://github.com/bgatellier/heart.git",
     "directory": "modules/lighthouse"
   },
   "license": "MIT",
   "contributors": [
     "Thomas Giovannini",
-    "Bastien Gatellier <bastien.gatellier@fabernovel.com>"
+    "Bastien Gatellier <contact@bgatellier.fr>"
   ],
   "type": "module",
   "main": "lib/index.js",
@@ -28,11 +28,7 @@
     ".env.schema.json"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc --project tsconfig.build.json",
-    "build:watch": "npm run build --watch",
-    "lint": "eslint .",
-    "prepublishOnly": "npm run build",
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest"
+    "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
     "@fabernovel/heart-common": "workspace:^4.0.0",
@@ -40,17 +36,7 @@
     "puppeteer": "^21.7.0"
   },
   "devDependencies": {
-    "@ecocode/eslint-plugin": "^1.4.0",
-    "@jest/globals": "^29.7.0",
-    "@types/jest": "^29.5.11",
-    "@types/node": "^18.19.6",
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
-    "@typescript-eslint/parser": "^6.18.1",
-    "eslint": "^8.56.0",
-    "jest": "^29.7.0",
-    "rimraf": "^5.0.5",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.3.3"
+    "@types/node": "^18.19.6"
   },
   "peerDependencies": {
     "@fabernovel/heart-cli": "^4.0.0"
@@ -64,7 +50,7 @@
     "type": "analysis",
     "service": {
       "name": "Google Lighthouse",
-      "logoUrl": "https://raw.githubusercontent.com/faberNovel/heart/main/assets/images/logos/Lighthouse.png?v=20221126"
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/heart/main/assets/images/logos/Lighthouse.png?v=20221126"
     }
   }
 }

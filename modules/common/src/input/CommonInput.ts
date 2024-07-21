@@ -1,7 +1,7 @@
 export interface ParsedCommonInput {
-  verbose: boolean
+	verbose: boolean;
 }
 
 export interface ValidatedCommonInput {
-  verbose: boolean
+	verbose: boolean;
 }

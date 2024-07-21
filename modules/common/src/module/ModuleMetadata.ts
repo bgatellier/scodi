@@ -1,17 +1,17 @@
-import type { Service } from "../service/Service.js"
+import type { Service } from "../service/Service.js";
 
 export interface ModuleMetadata {
-  /**
-   * Example: observatory
-   */
-  id: string
+	/**
+	 * Example: observatory
+	 */
+	id: string;
 
-  /**
-   * Example: Heart Observatory
-   */
-  name: string
+	/**
+	 * Example: Heart Observatory
+	 */
+	name: string;
 
-  service: Service
+	service: Service;
 
-  type: "analysis" | "listener" | "listener:database" | "server"
+	type: "analysis" | "listener" | "listener:database" | "server";
 }

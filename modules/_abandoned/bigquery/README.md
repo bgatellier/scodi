@@ -6,7 +6,7 @@ _Heart BigQuery_ is a _listener_ module of _Heart_, which reacts at the end of a
 
 Note that you must install an _analysis_ module too, to have a minimum viable installation of _Heart_.
 
-Read more about [the description and design of _Heart_](https://github.com/faberNovel/heart#readme).
+Read more about [the description and design of _Heart_](https://github.com/bgatellier/heart#readme).
 
 # Usage
 

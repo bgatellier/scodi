@@ -1,13 +1,13 @@
-import { Option } from "commander"
+import { Option } from "commander";
 
 export interface CommonOptions {
-  verbose: boolean
+	verbose: boolean;
 }
 
 export function createVerboseOption(): Option {
-  const option = new Option("-v,--verbose", "Displays debug informations")
+	const option = new Option("-v,--verbose", "Displays debug informations");
 
-  option.defaultValue = false
+	option.defaultValue = false;
 
-  return option
+	return option;
 }

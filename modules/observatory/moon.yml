@@ -1,0 +1,13 @@
+language: typescript
+project: 
+  name: Heart Observatory
+  description: Analyses URLs with Mozilla Observatory
+dependsOn:
+  - id: cli
+    scope: peer
+  - id: common
+    scope: production
+stack: backend
+tags:
+  - analysis
+type: application

@@ -2,7 +2,7 @@
 
 _Heart Lighthouse_ is an _analysis_ module of _Heart_, which analyses URLs with _[Google Lighthouse](https://developers.google.com/web/tools/lighthouse/)_.
 
-Read more about [the description and design of _Heart_](https://github.com/faberNovel/heart#readme).
+Read more about [the description and design of _Heart_](https://github.com/bgatellier/heart#readme).
 
 # Usage
 

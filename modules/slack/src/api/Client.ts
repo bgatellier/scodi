@@ -1,6 +1,6 @@
-import type { Block, KnownBlock, WebAPICallResult } from "@slack/web-api"
-import { LogLevel, WebClient } from "@slack/web-api"
-import { env } from "node:process"
+import { env } from "node:process";
+import type { Block, KnownBlock, WebAPICallResult } from "@slack/web-api";
+import { LogLevel, WebClient } from "@slack/web-api";
 
 /**
  * Simple Slack client:
@@ -9,25 +9,25 @@ import { env } from "node:process"
  * - the HEART_SLACK_CHANNEL_ID process.env property
  */
 export class Client {
-  #channel: string
-  #client: WebClient
+	#channel: string;
+	#client: WebClient;
 
-  constructor(verbose: boolean) {
-    this.#channel = env.HEART_SLACK_CHANNEL_ID ?? ""
-    this.#client = new WebClient(env.HEART_SLACK_ACCESS_TOKEN, {
-      logLevel: verbose ? LogLevel.INFO : undefined,
-    })
-  }
+	constructor(verbose: boolean) {
+		this.#channel = env.HEART_SLACK_CHANNEL_ID ?? "";
+		this.#client = new WebClient(env.HEART_SLACK_ACCESS_TOKEN, {
+			logLevel: verbose ? LogLevel.INFO : undefined,
+		});
+	}
 
-  public async postMessage(options: {
-    blocks: (KnownBlock | Block)[]
-    text: string
-    icon_url?: string
-    username?: string
-  }): Promise<WebAPICallResult> {
-    return this.#client.chat.postMessage({
-      channel: this.#channel,
-      ...options,
-    })
-  }
+	public async postMessage(options: {
+		blocks: (KnownBlock | Block)[];
+		text: string;
+		icon_url?: string;
+		username?: string;
+	}): Promise<WebAPICallResult> {
+		return this.#client.chat.postMessage({
+			channel: this.#channel,
+			...options,
+		});
+	}
 }

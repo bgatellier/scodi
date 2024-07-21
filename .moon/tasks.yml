@@ -1,0 +1,21 @@
+tasks:
+  build:
+    command: tsc --project tsconfig.build.json
+    deps:
+      - ~:cleanup
+      - ^:build
+  cleanup:
+    command: rimraf lib
+  check:
+    command: pnpm exec biome check
+    options:
+      affectedFiles: true
+      affectedPassInputs: true
+  test:
+    command: vitest run --passWithNoTests
+    deps:
+      - ^:build
+  coverage:
+    command: vitest run --passWithNoTests --coverage
+    deps:
+      - ^:build

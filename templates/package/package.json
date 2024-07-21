@@ -1,0 +1,48 @@
+{
+  "name": "@fabernovel/heart-{{ name | slugify }}",
+  "version": "4.0.0",
+  "description": "{{ name }}",
+  "homepage": "https://heart.fabernovel.com",
+  "bugs": {
+    "url": "https://github.com/bgatellier/heart/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bgatellier/heart.git",
+    "directory": "modules/{{ name | slugify }}"
+  },
+  "license": "MIT",
+  "contributors": [],
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "prepublishOnly": "moon run {{ name | slugify }}:build"
+  },
+  "dependencies": {
+    "@fabernovel/heart-common": "workspace:^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.6"
+  },
+  "peerDependencies": {
+    "@fabernovel/heart-cli": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=18 <22"
+  },
+  "heart": {
+    "id": "{{ name | slugify }}",
+    "name": "Heart {{ name }}",
+    "service": {
+      "name": "{{ name }}",
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/heart/main/assets/images/logos/{{ name | pascal_case }}.png?v=20221126"
+    }
+  }
+}

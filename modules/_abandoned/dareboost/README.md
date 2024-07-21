@@ -4,7 +4,7 @@
 
 _Heart Dareboost_ is an _analysis_ module of _Heart_, which analyses URLs with _[Dareboost](https://www.dareboost.com/)_.
 
-Read more about [the purpose, design and general installation of _Heart_](https://github.com/faberNovel/heart#readme).
+Read more about [the purpose, design and general installation of _Heart_](https://github.com/bgatellier/heart#readme).
 
 # Package manager
 

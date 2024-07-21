@@ -21,7 +21,7 @@ npm install -g @microsoft/rush
 ## Clone the repository
 
 ```shell
-git clone git@github.com:faberNovel/heart.git
+git clone git@github.com:bgatellier/heart.git
 ```
 
 ## Install the dependencies

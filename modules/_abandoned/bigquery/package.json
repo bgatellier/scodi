@@ -4,16 +4,16 @@
   "description": "Listener module of Heart, which reacts to the end of an analysis by storing the results into a Google BigQuery table",
   "homepage": "https://heart.fabernovel.com",
   "bugs": {
-    "url": "https://github.com/faberNovel/heart/issues"
+    "url": "https://github.com/bgatellier/heart/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/faberNovel/heart.git",
+    "url": "https://github.com/bgatellier/heart.git",
     "directory": "modules/bigquery"
   },
   "license": "MIT",
   "contributors": [
-    "Bastien Gatellier <bastien.gatellier@fabernovel.com>"
+    "Bastien Gatellier <contact@bgatellier.fr>"
   ],
   "type": "module",
   "main": "lib/index.js",
@@ -61,7 +61,7 @@
     "type": "listener",
     "service": {
       "name": "Google BigQuery",
-      "logoUrl": "https://raw.githubusercontent.com/faberNovel/heart/main/assets/images/logos/BigQuery.png?v=20221126"
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/heart/main/assets/images/logos/BigQuery.png?v=20221126"
     }
   }
 }

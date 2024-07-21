@@ -1,29 +1,37 @@
-import { jest } from "@jest/globals"
-import type { RunnerResult } from "lighthouse"
-import { Conf } from "../data/Conf.js"
+import { describe, expect, it, vi } from "vitest";
+import { requestResult } from "../../src/api/Client.js";
+import { Conf } from "../data/Conf.js";
 
-const RUNNER_RESULT = {
-  lhr: {
-    categories: {
-      category1: { score: 67 },
-      category2: { score: 74 },
-      category3: { score: 95 },
-      category4: { score: 88 },
-      category5: { score: 53 },
-    },
-  },
-} as unknown as RunnerResult // avoid the declaration of a huuuuuge object
+vi.mock("lighthouse", async (importOriginal) => {
+	const mod = await importOriginal<typeof import("lighthouse")>();
 
-jest.unstable_mockModule("lighthouse", () => ({
-  default: jest.fn().mockImplementationOnce(() => Promise.resolve(RUNNER_RESULT)),
-}))
-await import("lighthouse")
-
-const { requestResult } = await import("../../src/api/Client.js")
+	return {
+		...mod,
+		default: vi.fn().mockResolvedValue({
+			lhr: {
+				categories: {
+					category1: { score: 67 },
+					category2: { score: 74 },
+					category3: { score: 95 },
+					category4: { score: 88 },
+					category5: { score: 53 },
+				},
+			},
+		}),
+	};
+});
 
 describe("Run an analysis", () => {
-  it("should runs an analysis with a valid configuration", async () => {
-    const results = await requestResult(Conf, false)
-    expect(results).toStrictEqual(RUNNER_RESULT.lhr)
-  })
-})
+	it("should runs an analysis with a valid configuration", async () => {
+		const results = await requestResult(Conf, false);
+		expect(results).toStrictEqual({
+			categories: {
+				category1: { score: 67 },
+				category2: { score: 74 },
+				category3: { score: 95 },
+				category4: { score: 88 },
+				category5: { score: 53 },
+			},
+		});
+	});
+});

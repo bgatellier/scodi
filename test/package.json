@@ -2,12 +2,6 @@
   "name": "@fabernovel/heart-test",
   "version": "4.0.0",
   "private": true,
-  "scripts": {
-    "build": "",
-    "build:watch": "",
-    "lint": "",
-    "test": ""
-  },
   "dependencies": {
     "@fabernovel/heart-api": "workspace:^4.0.0",
     "@fabernovel/heart-cli": "workspace:^4.0.0",

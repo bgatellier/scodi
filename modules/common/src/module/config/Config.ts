@@ -1,6 +1,6 @@
-import type { JsonObject } from "type-fest"
+import type { JsonObject } from "type-fest";
 
 /**
  * JSON object provided as configuration input for analysis modules
  */
-export type Config = JsonObject
+export type Config = JsonObject;
