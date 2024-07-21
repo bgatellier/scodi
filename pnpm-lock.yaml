@@ -30,7 +30,7 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@18.19.33)(jsdom@16.7.0)
 
-  modules/api:
+  packages/api:
     dependencies:
       '@fastify/cors':
         specifier: ^8.5.0
@@ -58,7 +58,7 @@ importers:
         specifier: ^18.19.6
         version: 18.19.33
 
-  modules/cli:
+  packages/cli:
     dependencies:
       '@scodi/common':
         specifier: workspace:^4.0.0
@@ -95,7 +95,7 @@ importers:
         specifier: ^4.9.0
         version: 4.18.3
 
-  modules/common:
+  packages/common:
     dependencies:
       '@mikro-orm/core':
         specifier: ^5.9.7
@@ -135,7 +135,7 @@ importers:
         specifier: ^4.9.0
         version: 4.18.3
 
-  modules/greenit:
+  packages/greenit:
     dependencies:
       '@scodi/cli':
         specifier: workspace:^4.0.0
@@ -154,7 +154,7 @@ importers:
         specifier: ^18.19.6
         version: 18.19.33
 
-  modules/lighthouse:
+  packages/lighthouse:
     dependencies:
       '@scodi/cli':
         specifier: workspace:^4.0.0
@@ -173,7 +173,7 @@ importers:
         specifier: ^18.19.6
         version: 18.19.33
 
-  modules/mysql:
+  packages/mysql:
     dependencies:
       '@mikro-orm/core':
         specifier: ^5.9.7
@@ -201,7 +201,7 @@ importers:
         specifier: ^10.9.1
         version: 10.9.2(@types/node@18.19.33)(typescript@5.5.3)
 
-  modules/observatory:
+  packages/observatory:
     dependencies:
       '@scodi/cli':
         specifier: workspace:^4.0.0
@@ -214,7 +214,7 @@ importers:
         specifier: ^18.19.6
         version: 18.19.33
 
-  modules/slack:
+  packages/slack:
     dependencies:
       '@scodi/cli':
         specifier: workspace:^4.0.0
@@ -230,7 +230,7 @@ importers:
         specifier: ^18.19.6
         version: 18.19.33
 
-  modules/ssllabs-server:
+  packages/ssllabs-server:
     dependencies:
       '@scodi/cli':
         specifier: workspace:^4.0.0

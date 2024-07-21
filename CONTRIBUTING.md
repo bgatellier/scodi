@@ -14,7 +14,7 @@ Before making a new contribution, please check [the issues](https://github.com/b
 
 [Create a new issue](https://github.com/bgatellier/scodi/issues/new/choose) and include as many details as possible, such as:
 * the version of Node.js
-* the list of _Scodi_ modules installed
+* the list of _Scodi_ packages installed
 * the differents steps that lead to the bug
 * ...
 
@@ -51,7 +51,7 @@ To do so, you have to:
     cd test && cp .env.tpl .env
     ````
 
-2. Populate the `.env` file with the environment variables needed by all the modules.
+2. Populate the `.env` file with the environment variables needed by all the packages.
 
 3. Install the packages:
 

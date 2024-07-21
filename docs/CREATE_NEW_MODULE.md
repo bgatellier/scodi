@@ -26,4 +26,4 @@
 
 You now have a new empty working module and can start the implementation of your business code.
 
-💡 If you have some difficulties to implement your new module, take a look at the existing modules to help you.
+💡 If you have some difficulties to implement your new module, take a look at the existing packages to help you.

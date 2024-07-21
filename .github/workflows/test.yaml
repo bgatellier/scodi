@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: code-coverage-reports
-          path: modules/**/clover.xml
+          path: packages/**/clover.xml
           retention-days: 1
 
   coverage:

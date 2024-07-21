@@ -1,7 +1,7 @@
 {
-  "name": "@scodi/mysql",
-  "version": "4.0.1",
-  "description": "Store the results of analysis into a MySQL database",
+  "name": "@scodi/ssllabs-server",
+  "version": "4.0.0",
+  "description": "Analysis module of Scodi, which analyses URLs with Qualys SSL Labs server",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/bgatellier/scodi.git",
-    "directory": "modules/mysql"
+    "directory": "packages/ssllabs-server"
   },
   "license": "MIT",
   "contributors": [
@@ -30,15 +30,10 @@
     "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
-    "@scodi/common": "workspace:^4.0.0",
-    "@mikro-orm/core": "^5.9.7",
-    "@mikro-orm/migrations": "^5.9.7",
-    "@mikro-orm/mysql": "^5.9.7"
+    "@scodi/common": "workspace:^4.0.0"
   },
   "devDependencies": {
-    "@mikro-orm/cli": "^5.9.7",
-    "@types/node": "^18.19.6",
-    "ts-node": "^10.9.1"
+    "@types/node": "^18.19.6"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"
@@ -47,18 +42,12 @@
     "node": ">=18 <22"
   },
   "scodi": {
-    "id": "mysql",
-    "name": "Scodi MySQL",
-    "type": "listener:database",
+    "id": "ssllabs-server",
+    "name": "Scodi SSL Labs Server",
+    "type": "analysis",
     "service": {
-      "name": "MySQL",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/MySQL.png?v=20230726"
+      "name": "Qualys SSL Labs Server",
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/SSLLabs.png?v=20221126"
     }
-  },
-  "mikro-orm": {
-    "useTsNode": true,
-    "configPaths": [
-      "./src/config/mikro-orm.config.ts"
-    ]
   }
 }

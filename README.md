@@ -86,9 +86,9 @@ With the example scenario given previously, the GitHub Action is used as follow:
 
 _Scodi_ has been designed to be as light as possible, which explains its modular approach: you only install what you need.
 
-To do so, _Scodi_ is divided in 3 types of modules.
+To do so, _Scodi_ is divided in 3 types of packages.
 
-## Modules types
+## packages types
 
 | Type | Mission | Example |
 | ------ | ------ | ------ |
@@ -98,7 +98,7 @@ To do so, _Scodi_ is divided in 3 types of modules.
 
 **The minimum setup you need to run _Scodi_, is to have the _Scodi CLI_ _runner_ module and a single _analysis_ module.**
 
-## Modules list
+## packages list
 
 | Name | Type | Purpose | |
 | ------ | ------ | ------ | ------ |

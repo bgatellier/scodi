@@ -1,6 +1,6 @@
 # Description
 
-_Scodi CLI_ is the control module of _Scodi_. It allows every other module to work together, and is able to control the _Scodi API_ and the _analysis_ modules.
+_Scodi CLI_ is the control module of _Scodi_. It allows every other module to work together, and is able to control the _Scodi API_ and the _analysis_ packages.
 
 Note that you must install an _analysis_ module too, to have a minimum viable installation of _Scodi_.
 
@@ -16,7 +16,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
     npm install @scodi/cli
     ```
 
-2. Displays the list of commands you can use, regarding your installed modules
+2. Displays the list of commands you can use, regarding your installed packages
 
     ```bash
     npx scodi --help

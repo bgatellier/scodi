@@ -1,7 +1,7 @@
 {
-  "name": "@scodi/ssllabs-server",
+  "name": "@scodi/lighthouse",
   "version": "4.0.0",
-  "description": "Analysis module of Scodi, which analyses URLs with Qualys SSL Labs server",
+  "description": "Analysis module of Scodi, which analyses URLs with Google Lighthouse",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
@@ -9,10 +9,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/bgatellier/scodi.git",
-    "directory": "modules/ssllabs-server"
+    "directory": "packages/lighthouse"
   },
   "license": "MIT",
   "contributors": [
+    "Thomas Giovannini",
     "Bastien Gatellier <contact@bgatellier.fr>"
   ],
   "type": "module",
@@ -30,7 +31,9 @@
     "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
-    "@scodi/common": "workspace:^4.0.0"
+    "@scodi/common": "workspace:^4.0.0",
+    "lighthouse": "^11.4.0",
+    "puppeteer": "^21.7.0"
   },
   "devDependencies": {
     "@types/node": "^18.19.6"
@@ -42,12 +45,12 @@
     "node": ">=18 <22"
   },
   "scodi": {
-    "id": "ssllabs-server",
-    "name": "Scodi SSL Labs Server",
+    "id": "lighthouse",
+    "name": "Scodi Lighthouse",
     "type": "analysis",
     "service": {
-      "name": "Qualys SSL Labs Server",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/SSLLabs.png?v=20221126"
+      "name": "Google Lighthouse",
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/Lighthouse.png?v=20221126"
     }
   }
 }

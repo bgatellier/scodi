@@ -1,7 +1,12 @@
 {
-  "name": "@scodi/slack",
-  "version": "4.0.1",
-  "description": "Send the analysis results of Scodi into a Slack channel",
+  "name": "@scodi/greenit",
+  "version": "4.0.0",
+  "description": "Analysis module of Scodi, which analyses URLs with GreenIT",
+  "keywords": [
+    "greenit",
+    "ecoindex",
+    "ecometer"
+  ],
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
@@ -9,10 +14,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/bgatellier/scodi.git",
-    "directory": "modules/slack"
+    "directory": "packages/greenit"
   },
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "contributors": [
+    "Mathias Gorenflot",
+    "Florian Nguyen",
     "Bastien Gatellier <contact@bgatellier.fr>"
   ],
   "type": "module",
@@ -31,7 +38,8 @@
   },
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
-    "@slack/web-api": "^6.11.2"
+    "greenit-cli": "github:cnumr/GreenIT-Analysis-cli#a4363a9bcf7630e4a5a4cd264a7da9ec6f34b571",
+    "puppeteer": "^21.7.0"
   },
   "devDependencies": {
     "@types/node": "^18.19.6"
@@ -43,12 +51,12 @@
     "node": ">=18 <22"
   },
   "scodi": {
-    "id": "slack",
-    "name": "Scodi Slack",
-    "type": "listener",
+    "id": "greenit",
+    "name": "Scodi GreenIT",
+    "type": "analysis",
     "service": {
-      "name": "Slack",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/Slack.png?v=20221126"
+      "name": "GreenIT Analysis",
+      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/GreenIT.png?v=20221214"
     }
   }
 }

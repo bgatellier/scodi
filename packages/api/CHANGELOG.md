@@ -12,12 +12,12 @@ Sun, 08 Oct 2023 13:58:00 GMT
 - Improve the API specifications: they are more scalable and consistent with the CLI options
 - Add the service logo URL to the JSON response
 - Fix the JSON response to always show every properties (make the undefined properties null)
-- Move to ES modules mechanism
+- Move to ES packages mechanism
 
 ### Minor changes
 
 - Improve performances and extensibility by replacing the Express framework by fastify
-- Add the except_listeners and only_listeners keys to the body, to reduce the list of listeners modules triggered after an analysis. Both keys accept an array of module IDs (e.g. greenit)
+- Add the except_listeners and only_listeners keys to the body, to reduce the list of listeners packages triggered after an analysis. Both keys accept an array of module IDs (e.g. greenit)
 
 ### Updates
 

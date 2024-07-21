@@ -1,6 +1,6 @@
 # Description
 
-_Scodi Common_ centralize helpful code needed by every _Scodi_ modules.
+_Scodi Common_ centralize helpful code needed by every _Scodi_ packages.
 
 THIS PACKAGE MUST NOT FIGURE IN YOUR DIRECT DEPENDENCIES.
 
