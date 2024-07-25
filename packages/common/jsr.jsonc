@@ -1,0 +1,15 @@
+{
+  "$schema": "https://jsr.io/schema/config-file.v1.json",
+  "name": "@scodi/common",
+  "version": "4.0.0",
+  "exports": "./src/index.ts",
+  "publish": {
+    "include": [
+      "CHANGELOG.md",
+      "LICENSE",
+      "README.md",
+      "src/**/*.ts",
+      "src/**/*.json"
+    ]
+  }
+}

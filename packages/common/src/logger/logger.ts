@@ -1,6 +1,6 @@
-import { pino } from "pino";
+import { type Logger, pino } from "pino";
 
-export const logger = pino({
+export const logger: Logger = pino({
 	level: "info",
 	transport: {
 		target: "pino-pretty",
