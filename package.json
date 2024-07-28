@@ -9,7 +9,6 @@
     "typescript": "^5.5.3",
     "vitest": "^1.6.0"
   },
-  "type": "module",
   "engines": {
     "node": "^18"
   }
