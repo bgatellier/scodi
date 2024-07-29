@@ -42,5 +42,7 @@ vcs:
       # --staged will run the operation only on the staged files that match the biome.jssonc::files.includes patterns
       # https://biomejs.dev/reference/cli/#biome-lint
       - 'moon run :check --affected --status=staged -- --write --staged --files-ignore-unknown=true --no-errors-on-unmatched'
+    commit-msg:
+      - ./devops/scripts/need-jsr-updated.sh
     post-commit:
       - ./devops/scripts/add-jsr.sh
