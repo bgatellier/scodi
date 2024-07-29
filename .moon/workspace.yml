@@ -31,6 +31,9 @@ vcs:
   
   syncHooks: true
 
+  remoteCandidates:
+    - 'origin'
+
   hooks:
     pre-commit:
       # --affected with the tasks options affectedFiles: true and affectedPassInputs: true allows to reduce the set of files needed to allow a project to match.
@@ -39,3 +42,5 @@ vcs:
       # --staged will run the operation only on the staged files that match the biome.jssonc::files.includes patterns
       # https://biomejs.dev/reference/cli/#biome-lint
       - 'moon run :check --affected --status=staged -- --write --staged --files-ignore-unknown=true --no-errors-on-unmatched'
+    post-commit:
+      - ./devops/scripts/add-jsr.sh
