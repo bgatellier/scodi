@@ -26,3 +26,6 @@ jobs:
 
       - name: Lint & format
         run: moon ci :check
+        env:
+          # disable Chrome download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
+          PUPPETEER_SKIP_CHROME_DOWNLOAD: true

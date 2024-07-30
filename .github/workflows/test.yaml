@@ -8,6 +8,9 @@ jobs:
   test:
     name: 🐛 Run tests
     runs-on: ubuntu-latest
+    outputs:
+      # Output the artifact upload id
+      artifact-upload-id: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     timeout-minutes: 5
     defaults:
       run:
@@ -37,16 +40,24 @@ jobs:
       - name: Run tests and generate coverage reports
         if: ${{ matrix.node_version == '18' }}
         run: moon ci :coverage
+        env:
+          # disable Chrome download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
+          PUPPETEER_SKIP_CHROME_DOWNLOAD: true
 
       - name: Archive code coverage reports
         if: ${{ matrix.node_version == '18' }}
         uses: actions/upload-artifact@v4
+        id: artifact-upload-step
         with:
           name: code-coverage-reports
           path: packages/**/clover.xml
           retention-days: 1
 
   coverage:
+    # run the coverage only if there are uploaded files.
+    # as Moon only runs the :coverage target on touched files,
+    # if no test files are updated it means that no coverage files will be genrated and thus uploaded.
+    if: ${{ needs.test.outputs.artifact-upload-id != '' }}
     needs: test
     name: ⬆️ Upload code coverage reports to Codecov
     runs-on: ubuntu-latest

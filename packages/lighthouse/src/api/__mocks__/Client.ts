@@ -2,7 +2,7 @@ import type { LighthouseConfig, LighthouseReport } from "@scodi/common";
 
 export async function requestResult(
 	conf: LighthouseConfig,
-	__: boolean,
+	_verbose: boolean,
 ): Promise<LighthouseReport["result"]> {
 	return {
 		categories: {
