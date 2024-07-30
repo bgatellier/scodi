@@ -5,6 +5,7 @@ import { GreenITModule } from "../src/GreenITModule.js";
 import { Conf } from "./data/Conf.js";
 import SuccessResult from "./data/SuccessResult.json" with { type: "json" };
 
+vi.mock("../src/api/Client.js");
 vi.mock("greenit-cli/cli-core/analysis.js");
 const mockedCreateJsonReports = vi.mocked(createJsonReports);
 
