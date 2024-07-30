@@ -1,13 +1,19 @@
-name: Tests
+name: Coverage
 
-# run tests and gfenerate coverage on push to allow Codecov to have coverage stats
-# on the default branch too (and not only on the pull requests branches).
-# allows to have an up-to-date coverage badge on the README.md.
-on: push
+# run tests on the lower Node.js supported version and generate coverage.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
 
 jobs:
   test:
-    name: 🐛 Run tests
+    name: 🐛 Run tests (18)
     runs-on: ubuntu-latest
     outputs:
       # Output the artifact upload id
@@ -26,7 +32,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set Node.js version
-        run: sed -Ei 's/(node = ).*/\1"^${{ NODE_VERSION }}"/' .prototools
+        run: sed -Ei 's/(node = ).*/\1"^${{ env.NODE_VERSION }}"/' .prototools
 
       - name: Setup Moon
         uses: moonrepo/setup-toolchain@v0
