@@ -3,7 +3,7 @@
 
 [![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-cli?logo=npm "List Scodi packages on npmjs.com")](https://www.npmjs.com/search?q=%40fabernovel%2Fheart)
 [![codecov](https://codecov.io/gh/bgatellier/scodi/graph/badge.svg?token=VJFYEBVNEI)](https://codecov.io/gh/bgatellier/scodi "View coverage details")
-[![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/heart/badge.svg?targetFile=modules/cli/package.json)](https://snyk.io/test/github/bgatellier/heart?targetFile=modules/cli/package.json "View known vulnerabilities")
+[![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/cli/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/cli/package.json "View known vulnerabilities")
 
 # Description
 
