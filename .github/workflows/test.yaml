@@ -1,6 +1,6 @@
 name: Tests
 
-on: push
+on: pull_request
 
 jobs:
   test:
@@ -15,7 +15,9 @@ jobs:
         shell: bash
     strategy:
       matrix:
-        node_version: [18, 19, 20, 21]
+        # do not use the lower supported Node.js version,
+        # as it it already done in the coverage.yaml workflow
+        node_version: [19, 20, 21]
 
     steps:
       - name: Checkout code
@@ -44,49 +46,10 @@ jobs:
             ${{ runner.os }}-pnpm-
 
       - name: Run tests
-        if: ${{ matrix.node_version != '18' }}
         run: moon ci :test --color
-
-      - name: Run tests & generate coverage reports
-        if: ${{ matrix.node_version == '18' }}
-        run: moon ci :coverage --color
         env:
           # disable Chrome download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
           PUPPETEER_SKIP_CHROME_DOWNLOAD: true
       
       - uses: appthrust/moon-ci-retrospect@v1
         if: success() || failure()
-
-      - name: Archive code coverage reports
-        if: ${{ matrix.node_version == '18' }}
-        uses: actions/upload-artifact@v4
-        id: artifact-upload-step
-        with:
-          name: code-coverage-reports
-          path: packages/**/clover.xml
-          retention-days: 1
-
-  coverage:
-    # run the coverage only if there are uploaded files.
-    # as Moon only runs the :coverage target on touched files,
-    # if no test files are updated it means that no coverage files will be genrated and thus uploaded.
-    if: ${{ needs.test.outputs.artifact-upload-id != '' }}
-    needs: test
-    name: ⬆️ Upload code coverage reports to Codecov
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    defaults:
-      run:
-        shell: bash
-
-    steps:
-      - name: Download reports from previous job
-        uses: actions/download-artifact@v4
-        with:
-          name: code-coverage-reports
-
-      - name: Upload reports to Codecov
-        uses: codecov/codecov-action@v4
-        with:
-          fail_ci_if_error: true
-          token: ${{ secrets.CODECOV_TOKEN }}

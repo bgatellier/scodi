@@ -1,0 +1,98 @@
+name: Tests
+
+# run tests and gfenerate coverage on push to allow Codecov to have coverage stats
+# on the default branch too (and not only on the pull requests branches).
+# allows to have an up-to-date coverage badge on the README.md.
+on: push
+
+jobs:
+  test:
+    name: 🐛 Run tests
+    runs-on: ubuntu-latest
+    outputs:
+      # Output the artifact upload id
+      artifact-upload-id: ${{ steps.artifact-upload-step.outputs.artifact-id }}
+    timeout-minutes: 8
+    defaults:
+      run:
+        shell: bash
+    env:
+      NODE_VERSION: 18
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set Node.js version
+        run: sed -Ei 's/(node = ).*/\1"^${{ NODE_VERSION }}"/' .prototools
+
+      - name: Setup Moon
+        uses: moonrepo/setup-toolchain@v0
+        with:
+          auto-install: true
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: echo "pnpm_cache_dir=$(pnpm store path)" >> ${GITHUB_OUTPUT}
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: Run tests & generate coverage reports
+        if: ${{ github.ref_name == github.event.repository.default_branch }}
+        run: moon run :coverage --color
+        env:
+          # disable Chrome download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
+          PUPPETEER_SKIP_CHROME_DOWNLOAD: true
+
+      - name: Run tests & generate coverage reports
+        if: ${{ github.ref_name != github.event.repository.default_branch }}
+        # moon ci takes into account touched files. see https://moonrepo.dev/docs/guides/ci
+        run: moon ci :coverage --color
+        env:
+          # disable Chrome download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
+          PUPPETEER_SKIP_CHROME_DOWNLOAD: true
+      
+      - uses: appthrust/moon-ci-retrospect@v1
+        if: success() || failure()
+
+      - name: Archive code coverage reports
+        if: ${{ matrix.node_version == '18' }}
+        uses: actions/upload-artifact@v4
+        id: artifact-upload-step
+        with:
+          name: code-coverage-reports
+          path: packages/**/clover.xml
+          retention-days: 1
+
+  coverage:
+    # run the coverage only if there are uploaded files.
+    # as Moon only runs the :coverage target on touched files,
+    # if no test files are updated it means that no coverage files will be genrated and thus uploaded.
+    if: ${{ needs.test.outputs.artifact-upload-id != '' }}
+    needs: test
+    name: ⬆️ Upload code coverage reports to Codecov
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Download reports from previous job
+        uses: actions/download-artifact@v4
+        with:
+          name: code-coverage-reports
+
+      - name: Upload reports to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
