@@ -1,139 +1,38 @@
-# Simulate or publish the packages to npmjs.com
-#
-# Trigger a publication is a manual operation as there is no strong, automated mecanisms to ensure bug minimization.
-#
-# Publication strategies:
-# - dry-run: list the operations that would have been done during a publication.
-#             These operations are listed in the output of the action.
-# - publication: do the operations (versions bumps, updated changelogs and Git tags) in a release branch,
-#                then merged it in the main branch once the publication has been done.
-#
-
-name: Publish packages
+name: Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      PUBLICATION_MODE:
-        description: Publication mode
-        type: choice
-        options:
-          # Simulate the publication
-          - dry-run
-          # Do the publication
-          - publish
-        default: dry-run
-        required: true
+  push:
+    branches:
+      - main
 
-env:
-  # Force the main branch to be deployed, whatever the input is: avoid the publication of WIP code from other branches
-  SOURCE_BRANCH: main
-  TARGET_BRANCH: release/${{ github.run_id }}
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  simulate:
-    if: inputs.PUBLICATION_MODE == 'dry-run'
-    name: 🚀 Simulate a publication to npmjs.org with the version policy ${{ inputs.VERSION_POLICY }}
+  release:
+    name: Release
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     defaults:
       run:
         shell: bash
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ env.SOURCE_BRANCH }}
 
       - name: Setup Moon
         uses: moonrepo/setup-toolchain@v0
         with:
           auto-install: true
 
-      - name: Git config user
-        uses: snow-actions/git-config-user@v1.0.0
-        with:
-          name: Scodi
-          email: contact@bgatellier.fr
-
-      - name: Bump packages versions numbers
-        run: |
-          pnpm changeset version
-          pnpm install
+      - name: Create Release Pull Request
+        id: changesets
+        uses: changesets/action@v1
         env:
-          # disable Chrome download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
-          PUPPETEER_SKIP_CHROME_DOWNLOAD: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Simulate the publication
-        run: |
-          echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} >> .npmrc
-          pnpm publish --publish-branch ${{ env.SOURCE_BRANCH }} --access public --dry-run
-
-  publish:
-    if: inputs.PUBLICATION_MODE == 'publish'
-    name: 🚀 Publish to npmjs.org
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-    permissions:
-      contents: write
-      pull-requests: write
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{ env.SOURCE_BRANCH }}
-
-      - name: Setup Moon
-        uses: moonrepo/setup-toolchain@v0
-        with:
-          auto-install: true
-
-      - name: Git config user
-        uses: snow-actions/git-config-user@v1.0.0
-        with:
-          name: Scodi
-          email: contact@bgatellier.fr
-
-      - name: Create origin/${{ env.TARGET_BRANCH }} branch
-        run: |
-          git checkout -b $TARGET_BRANCH
-          git push origin $TARGET_BRANCH
-
-      - name: Bump packages versions numbers
-        run: |
-          pnpm changeset version
-          pnpm install
-
-      - name: Publish to npmjs.org with the version policy ${{ inputs.VERSION_POLICY }}
-        run: |
-          echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} >> .npmrc
-          pnpm publish --publish-branch ${{ env.SOURCE_BRANCH }} --access public
-
-      - name: Commit files
-        run: |
-          git add -- . :!.npmrc
-          git commit -m "chore: release"
-          git push origin $TARGET_BRANCH
-
-      - name: Create a Pull Request
-        run: gh pr create --base $SOURCE_BRANCH --head $TARGET_BRANCH --fill --no-maintainer-edit
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # We use a PAT (Personal Access Token) to do the following operations on the PR, as $GITHUB_TOKEN cannot review his own PR and cannot enforce repository settings.
-      # We use a merge commit to preserve Git tags added by the previous step and move them to the $TARGET_BRANCH.
-      # To make the merge commit work (--merge option), the "Allow merge commits" option must be checked in the repository settings.
-      # As the "Require linear history" option of the $SOURCE_BRANCH protected branch is on, we enforce this setting with the --admin flag.
-      - name: Review and merge the Pull Request, then delete the branch
-        run: |
-          gh pr review $TARGET_BRANCH --approve
-          gh pr merge $TARGET_BRANCH --merge --admin --delete-branch
-        env:
-          GH_TOKEN: ${{ secrets.BGATELLIER_PAT }}
+      - name: Publish
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        run: moon run :publish
