@@ -67,10 +67,9 @@ jobs:
           PUPPETEER_SKIP_CHROME_DOWNLOAD: true
       
       - uses: appthrust/moon-ci-retrospect@v1
-        if: success() || failure()
+        if: ${{ github.ref_name != github.event.repository.default_branch }} && (success() || failure())
 
       - name: Archive code coverage reports
-        if: ${{ matrix.node_version == '18' }}
         uses: actions/upload-artifact@v4
         id: artifact-upload-step
         with:
