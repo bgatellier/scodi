@@ -19,3 +19,5 @@ tasks:
     command: vitest run --passWithNoTests --coverage
     deps:
       - ^:build
+  publish:
+    command: pnpm jsr publish
