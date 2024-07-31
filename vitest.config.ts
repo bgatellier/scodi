@@ -4,7 +4,20 @@ export default defineConfig({
     test: {
         coverage: {
             provider: 'v8',
-            reporter: ['clover'],
+            reporter: ['clover', 'html'],
+            exclude: [
+                'vitest.config.ts',
+                'vitest.workspace.ts',
+                'coverage/**',
+                'packages/*/tests/**',
+                'templates/**',
+                '**/__mocks__/**',
+                '**/lib/**',
+                '**/node_modules/**',
+                '**/[.]**',
+                '**/*.d.ts',
+                '**/*.test.ts',
+            ]
         },
         environment: 'node',
     },
