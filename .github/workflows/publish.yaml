@@ -7,7 +7,7 @@ permissions:
 on:
   push:
     branches:
-      - main
+      - ci/fix-missing-jsr-release-branch
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -30,6 +30,14 @@ jobs:
         uses: moonrepo/setup-toolchain@v0
         with:
           auto-install: true
+
+      - name: Update Git hooks
+        run: moon sync hooks
+
+      - run: |
+          ls -l .git/hooks
+          cat .git/hooks/commit-msg
+          cat .git/hooks/post-commit
 
       - name: Install workspace dependencies
         run: pnpm install --workspace-root
