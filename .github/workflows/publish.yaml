@@ -41,6 +41,9 @@ jobs:
       - name: Create Release Pull Request
         id: changesets
         uses: changesets/action@v1
+        with:
+          commit: Prepare the next releases 
+          title: Next releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
