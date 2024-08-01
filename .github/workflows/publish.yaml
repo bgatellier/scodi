@@ -31,12 +31,19 @@ jobs:
         with:
           auto-install: true
 
+      # git hooks are used to update jsr.jsonc files during the 'changeset version' operation done by the changesets/action below
+      - name: Sync Git hooks
+        run: moon sync hooks
+
       - name: Install workspace dependencies
         run: pnpm install --workspace-root
 
       - name: Create Release Pull Request
         id: changesets
         uses: changesets/action@v1
+        with:
+          commit: Prepare the next releases 
+          title: Next releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
