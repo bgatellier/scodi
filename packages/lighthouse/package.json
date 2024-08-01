@@ -1,6 +1,6 @@
 {
   "name": "@scodi/lighthouse",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Analysis module of Scodi, which analyses URLs with Google Lighthouse",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
@@ -31,7 +31,7 @@
     "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
-    "@scodi/common": "workspace:^4.0.0",
+    "@scodi/common": "workspace:^5.0.0",
     "lighthouse": "^11.4.0",
     "puppeteer": "^21.7.0"
   },
@@ -39,7 +39,7 @@
     "@types/node": "^18.19.6"
   },
   "peerDependencies": {
-    "@scodi/cli": "workspace:^4.0.0"
+    "@scodi/cli": "workspace:^5.0.0"
   },
   "engines": {
     "node": ">=18 <22"
