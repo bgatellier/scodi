@@ -31,6 +31,10 @@ jobs:
         with:
           auto-install: true
 
+      # git hooks are used to update jsr.jsonc files during the 'changeset version' operation done by the changesets/action below
+      - name: Sync Git hooks
+        run: moon sync hooks
+
       - name: Install workspace dependencies
         run: pnpm install --workspace-root
 
