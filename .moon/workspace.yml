@@ -43,6 +43,6 @@ vcs:
       # https://biomejs.dev/reference/cli/#biome-lint
       - 'moon run :check --affected --status=staged -- --write --staged --files-ignore-unknown=true --no-errors-on-unmatched'
     commit-msg:
-      - ./devops/scripts/need-jsr-updated.sh
+      - ./devops/scripts/need-jsr-updated.sh $1
     post-commit:
       - ./devops/scripts/add-jsr.sh
