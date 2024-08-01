@@ -39,7 +39,7 @@
     "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
-    "node": ">=18 <22"
+    "node": ">=18 <23"
   },
   "scodi": {
     "id": "observatory",
