@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "schedule": ["every 3 months on the first day of the month"],
+  "packageRules": [
+    {
+      // major versions bumps are interesting to see if they are backward-compatible (with automated test in CI)
+      // minor versions doesn't bring anything interesting for automated bumps
+      // patch are interesting for security fixes
+      "matchUpdateTypes": ["major", "patch"]
+    },
+    {
+      // avoid automatic update of Node.js for backward-compatibility and sustainability reason
+      "matchPackageNames": ["@​types/node"],
+      "matchUpdateTypes": ["minor", "patch"],
+    }
+  ],
+  // avoid automatic update of Node.js for backward-compatibility and sustainability reasons 
+  "ignoreDeps": ["node"]
+}
