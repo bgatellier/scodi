@@ -38,7 +38,7 @@ Wed, 23 Nov 2022 19:51:43 GMT
 ### Updates
 
 - Updated the homepage field to redirect to the heart website and not to the gitlab repository. Changed the link "Read more about" of the README to redirect to the README of the repository. The old link redirected to an article that do not exist anymore.
-- Updating dependency \"@scodi/core\" from `^3.1.1` to `^3.2.0`
+- Updating dependency @scodi/core from `^3.1.1` to `^3.2.0`
 
 ## 3.0.2
 Wed, 27 Jul 2022 13:43:15 GMT
