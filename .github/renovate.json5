@@ -1,7 +1,20 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
   "packageRules": [
     {
+      // major versions bumps are interesting to see if they are backward-compatible (with automated test in CI)
+      // minor versions doesn't bring anything interesting for automated bumps
+      // patch are interesting for security fixes
       "matchUpdateTypes": ["major", "patch"]
+    },
+    {
+      "matchPackageNames": ["@​types/node"],
+      "matchUpdateTypes": ["patch"],
     }
-  ]
+  ],
+  // avoid automatic update of Node.js for backward-compatibility and sustainability reasons 
+  "ignoreDeps": ["node"]
 }
