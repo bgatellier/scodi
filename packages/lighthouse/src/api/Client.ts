@@ -19,7 +19,7 @@ export async function requestResult(
 		],
 		defaultViewport: null,
 		// https://developer.chrome.com/articles/new-headless/
-		headless: "new",
+		headless: true,
 	});
 	const page = await browser.newPage();
 
