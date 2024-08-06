@@ -41,7 +41,7 @@
     "ora": "^8.0.1"
   },
   "devDependencies": {
-    "@fastify/cors": "^8.5.0",
+    "@fastify/cors": "^9.0.0",
     "@types/node": "^18.19.6",
     "fastify": "^4.25.2",
     "type-fest": "^4.9.0"
