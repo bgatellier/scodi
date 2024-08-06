@@ -28,8 +28,8 @@
     "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
-    "@mikro-orm/core": "^5.9.7",
-    "@mikro-orm/reflection": "^5.9.7",
+    "@mikro-orm/core": "^6.0.0",
+    "@mikro-orm/reflection": "^6.0.0",
     "ajv": "^8.12.0",
     "ajv-errors": "^3.0.0",
     "pino": "^9.0.0",
