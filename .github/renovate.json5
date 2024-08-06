@@ -4,6 +4,8 @@
     "config:recommended"
   ],
   "schedule": ["every 3 months on the first day of the month"],
+  // ensure dependencies are checked against a compatible Node.js version
+  "constraintsFiltering": "strict",
   "packageRules": [
     {
       // major versions bumps are interesting to see if they are backward-compatible (with automated test in CI)
