@@ -36,7 +36,7 @@
     "pino-pretty": "^11.0.0"
   },
   "devDependencies": {
-    "@fastify/cors": "^8.5.0",
+    "@fastify/cors": "^9.0.0",
     "@types/har-format": "^1.2.15",
     "@types/node": "^18.19.6",
     "fastify": "^4.25.2",
