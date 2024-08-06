@@ -13,7 +13,7 @@ on:
 
 jobs:
   test:
-    name: 🐛 Run tests (18)
+    name: 🐛 Run tests (18.20)
     runs-on: ubuntu-latest
     outputs:
       # Output the artifact upload id
