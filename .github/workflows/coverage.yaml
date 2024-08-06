@@ -23,7 +23,7 @@ jobs:
       run:
         shell: bash
     env:
-      NODE_VERSION: 18
+      NODE_VERSION: 18.20
 
     steps:
       - name: Checkout code
