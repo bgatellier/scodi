@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
-    "@slack/web-api": "^6.11.2"
+    "@slack/web-api": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.19.6"
