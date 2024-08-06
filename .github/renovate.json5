@@ -15,7 +15,7 @@
     },
     {
       // avoid automatic update of Node.js for backward-compatibility and sustainability reason
-      "matchPackageNames": ["@​types/node"],
+      "matchPackageNames": ["@types/node"],
       "matchUpdateTypes": ["minor", "patch"],
     }
   ],
