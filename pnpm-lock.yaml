@@ -83,8 +83,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0(ajv@8.17.1)
       ajv-formats:
-        specifier: ^2.1.1
-        version: 2.1.1(ajv@8.17.1)
+        specifier: ^3.0.0
+        version: 3.0.1(ajv@8.17.1)
       commander:
         specifier: ^12.0.0
         version: 12.1.0
