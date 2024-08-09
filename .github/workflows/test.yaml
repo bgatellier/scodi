@@ -48,8 +48,8 @@ jobs:
       - name: Build packages
         run: moon run :build
         env:
-          # disable Chrome download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
-          PUPPETEER_SKIP_CHROME_DOWNLOAD: true
+          # skip browser download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
+          PUPPETEER_SKIP_DOWNLOAD: true
 
       - name: Run tests
         run: pnpm vitest
