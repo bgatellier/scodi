@@ -11,7 +11,7 @@ overrides:
   ajv: ^8.12.0
   fastify: ^4.25.2
   lighthouse: ^11.4.0
-  puppeteer: ^22.0.0
+  puppeteer: ^23.0.0
   type-fest: ^4.9.0
 
 importers:
@@ -160,8 +160,8 @@ importers:
         specifier: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#9c1f010ad939782fab6fa1033d0ac267da547760
         version: https://codeload.github.com/cnumr/GreenIT-Analysis-cli/tar.gz/9c1f010ad939782fab6fa1033d0ac267da547760(typescript@5.5.4)
       puppeteer:
-        specifier: ^22.0.0
-        version: 22.15.0(typescript@5.5.4)
+        specifier: ^23.0.0
+        version: 23.0.2(typescript@5.5.4)
     devDependencies:
       '@types/node':
         specifier: ^18.19.6
@@ -179,8 +179,8 @@ importers:
         specifier: ^11.4.0
         version: 11.7.1
       puppeteer:
-        specifier: ^22.0.0
-        version: 22.15.0(typescript@5.5.4)
+        specifier: ^23.0.0
+        version: 23.0.2(typescript@5.5.4)
     devDependencies:
       '@types/node':
         specifier: ^18.19.6
@@ -1227,6 +1227,11 @@ packages:
 
   chromium-bidi@0.6.3:
     resolution: {integrity: sha512-qXlsCmpCZJAnoTYI83Iu6EdYQpMYdVkCfq08KDh2pmlVqK5t5IA9mGs4/LwCwp4fqisSOMXZxP3HIh8w8aRn0A==}
+    peerDependencies:
+      devtools-protocol: '*'
+
+  chromium-bidi@0.6.4:
+    resolution: {integrity: sha512-8zoq6ogmhQQkAKZVKO2ObFTl4uOkqoX1PlKQX3hZQ5E9cbUotcAb7h4pTNVAGGv8Z36PF3CtdOriEp/Rz82JqQ==}
     peerDependencies:
       devtools-protocol: '*'
 
@@ -2615,14 +2620,18 @@ packages:
     resolution: {integrity: sha512-cHArnywCiAAVXa3t4GGL2vttNxh7GqXtIYGym99egkNJ3oG//wL9LkvO4WE8W1TJe95t1F1ocu9X4xWaGsOKOA==}
     engines: {node: '>=18'}
 
+  puppeteer-core@23.0.2:
+    resolution: {integrity: sha512-MvOHn+g1TYkAR2oVd/bf/YWXKqFTJmkhyyurYgxkrjh8rBOL1ZH5VyOsLJi0bLO7/yoipAmk1gFZEx9HUJnaoA==}
+    engines: {node: '>=18'}
+
   puppeteer-har@1.1.2:
     resolution: {integrity: sha512-Z5zfoj8RkhUT9UbrrR8JjOHNnCr7sNINoeR346F40sLo/4zn+KX/sw/eoKNrtsISc1s/2YCZaqaSEVx6cZ8NQg==}
     engines: {node: '>=7.6.0'}
     peerDependencies:
-      puppeteer: ^22.0.0
+      puppeteer: ^23.0.0
 
-  puppeteer@22.15.0:
-    resolution: {integrity: sha512-XjCY1SiSEi1T7iSYuxS82ft85kwDJUS7wj1Z0eGVXKdtr5g4xnVcbjwxhq5xBnpK/E7x1VZZoJDxpjAOasHT4Q==}
+  puppeteer@23.0.2:
+    resolution: {integrity: sha512-I/l1P8s8brcLG+oW9AwF8hUaOSGGJcGKMflXRgULUH0S3ABptlLI9ZKjqWDo8ipY6v789ZKd+bNKtcCwpTh5Ww==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4489,6 +4498,13 @@ snapshots:
       urlpattern-polyfill: 10.0.0
       zod: 3.23.8
 
+  chromium-bidi@0.6.4(devtools-protocol@0.0.1312386):
+    dependencies:
+      devtools-protocol: 0.0.1312386
+      mitt: 3.0.1
+      urlpattern-polyfill: 10.0.0
+      zod: 3.23.8
+
   ci-info@3.9.0: {}
 
   cli-cursor@4.0.0:
@@ -5059,8 +5075,8 @@ snapshots:
       glob: 10.4.5
       mustache: 4.2.0
       progress: 2.0.3
-      puppeteer: 22.15.0(typescript@5.5.4)
-      puppeteer-har: 1.1.2(puppeteer@22.15.0(typescript@5.5.4))
+      puppeteer: 23.0.2(typescript@5.5.4)
+      puppeteer-har: 1.1.2(puppeteer@23.0.2(typescript@5.5.4))
       sitemapper: 3.2.8
       tough-cookie: 4.1.4
       xml2js: 0.5.0
@@ -5921,19 +5937,32 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer-har@1.1.2(puppeteer@22.15.0(typescript@5.5.4)):
+  puppeteer-core@23.0.2:
+    dependencies:
+      '@puppeteer/browsers': 2.3.0
+      chromium-bidi: 0.6.4(devtools-protocol@0.0.1312386)
+      debug: 4.3.6
+      devtools-protocol: 0.0.1312386
+      ws: 8.18.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+
+  puppeteer-har@1.1.2(puppeteer@23.0.2(typescript@5.5.4)):
     dependencies:
       chrome-har: 0.11.12
-      puppeteer: 22.15.0(typescript@5.5.4)
+      puppeteer: 23.0.2(typescript@5.5.4)
     transitivePeerDependencies:
       - supports-color
 
-  puppeteer@22.15.0(typescript@5.5.4):
+  puppeteer@23.0.2(typescript@5.5.4):
     dependencies:
       '@puppeteer/browsers': 2.3.0
+      chromium-bidi: 0.6.4(devtools-protocol@0.0.1312386)
       cosmiconfig: 9.0.0(typescript@5.5.4)
       devtools-protocol: 0.0.1312386
-      puppeteer-core: 22.15.0
+      puppeteer-core: 23.0.2
     transitivePeerDependencies:
       - bufferutil
       - supports-color
