@@ -7,9 +7,9 @@
     "@scodi/cli": "workspace:^4.0.0",
     "@scodi/greenit": "workspace:^4.0.0",
     "@scodi/lighthouse": "workspace:^4.0.0",
-    "@scodi/mysql": "workspace:^4.0.1",
-    "@scodi/observatory": "workspace:^4.0.1",
-    "@scodi/slack": "workspace:^4.0.1",
+    "@scodi/mysql": "workspace:^4.0.0",
+    "@scodi/observatory": "workspace:^4.0.0",
+    "@scodi/slack": "workspace:^4.0.0",
     "@scodi/ssllabs-server": "workspace:^4.0.0"
   }
 }

@@ -1,0 +1,32 @@
+name: scodi-test
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: scodi
+      MYSQL_USER: login
+      MYSQL_PASSWORD: password
+  ui:
+    container_name: ui
+    image: dbgate/dbgate:alpine
+    ports:
+      - 8080:3000
+    volumes:
+      - dbgate-data:/root/.dbgate
+    environment:
+      CONNECTIONS: mysql
+      
+      LABEL_mysql: Scodi MySql
+      SERVER_mysql: mysql
+      USER_mysql: login
+      PASSWORD_mysql: password
+      PORT_con1: 3306
+      ENGINE_mysql: mysql@dbgate-plugin-mysql
+
+volumes:
+  dbgate-data:
+    driver: local
