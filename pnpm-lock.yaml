@@ -256,6 +256,33 @@ importers:
         specifier: ^18.19.6
         version: 18.19.44
 
+  test:
+    dependencies:
+      '@scodi/api':
+        specifier: workspace:^4.0.0
+        version: link:../packages/api
+      '@scodi/cli':
+        specifier: workspace:^4.0.0
+        version: link:../packages/cli
+      '@scodi/greenit':
+        specifier: workspace:^4.0.0
+        version: link:../packages/greenit
+      '@scodi/lighthouse':
+        specifier: workspace:^4.0.0
+        version: link:../packages/lighthouse
+      '@scodi/mysql':
+        specifier: workspace:^4.0.0
+        version: link:../packages/mysql
+      '@scodi/observatory':
+        specifier: workspace:^4.0.0
+        version: link:../packages/observatory
+      '@scodi/slack':
+        specifier: workspace:^4.0.0
+        version: link:../packages/slack
+      '@scodi/ssllabs-server':
+        specifier: workspace:^4.0.0
+        version: link:../packages/ssllabs-server
+
 packages:
 
   '@ampproject/remapping@2.3.0':

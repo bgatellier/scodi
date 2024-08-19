@@ -1,11 +1,12 @@
+name: scodi-test
 services:
-  mysql:
-    container_name: scodi_mysql
+  scodi-mysql:
+    container_name: scodi-mysql
     image: mysql:5.7
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: scodi
-      MYSQL_USER: scodi
-      MYSQL_PASSWORD: scodi
+      MYSQL_USER: scodi-mysql
+      MYSQL_PASSWORD: scodi-mysql
