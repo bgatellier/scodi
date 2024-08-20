@@ -10,11 +10,16 @@ type SizeNames =
 	| "iPad";
 
 interface Options {
-	timeout?: number;
+	// Hardware to simulate
+	device: SizeNames;
+	// Report language
+	language?: "en" | "fr";
+	// Number of concurrent analysis
 	max_tab?: number;
+	// Number of retry when an analysis of a URL fail
 	retry?: number;
-	device?: SizeNames;
-	ci?: boolean;
+	// Timeout for an analysis of a URL in ms
+	timeout?: number;
 }
 
 export type GreenITConfig = Config &

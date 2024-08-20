@@ -5,13 +5,16 @@ import {
 	type Report,
 	createJsonReports,
 } from "greenit-cli/cli-core/analysis.js";
+import { translator } from "greenit-cli/cli-core/translator.js";
 import puppeteer from "puppeteer";
 
 const DEFAULT_OPTIONS: Options = {
+	ci: true,
 	device: "desktop",
-	max_tab: 3,
+	language: "en",
+	max_tab: 40,
 	retry: 2,
-	timeout: 3000,
+	timeout: 180000,
 };
 
 /**
@@ -36,6 +39,7 @@ export async function requestResult(
 	const options: Options = {
 		ci: true,
 		device: config.device ?? DEFAULT_OPTIONS.device,
+		language: config.language ?? DEFAULT_OPTIONS.language,
 		max_tab: DEFAULT_OPTIONS.max_tab,
 		retry: config.retry ?? DEFAULT_OPTIONS.retry,
 		timeout: config.timeout ?? DEFAULT_OPTIONS.timeout,
@@ -54,7 +58,14 @@ export async function requestResult(
 		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		console.error = () => {};
 
-		const r = await createJsonReports(browser, [{ url: config.url }], options);
+		const r = await createJsonReports(
+			browser,
+			[{ url: config.url }],
+			options,
+			{},
+			undefined,
+			translator,
+		);
 
 		reports.push(...r);
 	} catch (error) {
@@ -62,8 +73,6 @@ export async function requestResult(
 	} finally {
 		console.log = consoleLog;
 		console.error = consoleError;
-		const pages = await browser.pages();
-		await Promise.all(pages.map((_) => _.close()));
 		await browser.close();
 	}
 
