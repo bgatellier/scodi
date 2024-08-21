@@ -37,7 +37,7 @@ export async function requestResult(
 	});
 
 	const options: Options = {
-		ci: true,
+		ci: DEFAULT_OPTIONS.ci,
 		device: config.device ?? DEFAULT_OPTIONS.device,
 		language: config.language ?? DEFAULT_OPTIONS.language,
 		max_tab: DEFAULT_OPTIONS.max_tab,

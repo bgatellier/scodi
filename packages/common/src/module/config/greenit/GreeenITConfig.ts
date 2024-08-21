@@ -14,8 +14,6 @@ interface Options {
 	device: SizeNames;
 	// Report language
 	language?: "en" | "fr";
-	// Number of concurrent analysis
-	max_tab?: number;
 	// Number of retry when an analysis of a URL fail
 	retry?: number;
 	// Timeout for an analysis of a URL in ms
