@@ -2,7 +2,6 @@ import { readFileSync } from "node:fs";
 import type { GreenITConfig, GreenITReport } from "@scodi/common";
 import {
 	type Options,
-	type Report,
 	createJsonReports,
 } from "greenit-cli/cli-core/analysis.js";
 import { translator } from "greenit-cli/cli-core/translator.js";
@@ -15,6 +14,32 @@ const DEFAULT_OPTIONS: Options = {
 	max_tab: 40,
 	retry: 2,
 	timeout: 180000,
+};
+
+// split GreenITReport["result"] in 2 groups
+type GeneralProperties = Pick<
+	GreenITReport["result"],
+	| "success"
+	| "nbBestPracticesToCorrect"
+	| "date"
+	| "pageInformations"
+	| "tryNb"
+	| "tabId"
+	| "index"
+	| "url"
+>;
+type KPIProperties = Exclude<GreenITReport["result"], keyof GeneralProperties>;
+
+type JSONReport = GeneralProperties & {
+	pages: Array<{
+		name: string;
+		bestPractices: GreenITReport["result"]["bestPractices"];
+		nbRequest: number;
+		responsesSize: number;
+		responsesSizeUncompress: number;
+		url: string;
+		actions: [KPIProperties];
+	}>;
 };
 
 /**
@@ -45,8 +70,6 @@ export async function requestResult(
 		timeout: config.timeout ?? DEFAULT_OPTIONS.timeout,
 	};
 
-	const reports = new Array<Report>();
-
 	// As the createJsonReports use console.* functions to display progress info and errors and do not send back these information,
 	// so we need to disable the console.* functions during this operation to handle the output ourselves.
 	const consoleLog = console.log;
@@ -58,7 +81,7 @@ export async function requestResult(
 		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		console.error = () => {};
 
-		const r = await createJsonReports(
+		const reports = await createJsonReports(
 			browser,
 			[{ url: config.url }],
 			options,
@@ -67,7 +90,29 @@ export async function requestResult(
 			translator,
 		);
 
-		reports.push(...r);
+		const jsonReport = JSON.parse(
+			readFileSync(reports[0].path, { encoding: "utf-8" }),
+		) as JSONReport;
+
+		if (jsonReport.success === false) {
+			return Promise.reject(
+				"Error during GreenIT analysis. Increasing the timeout can be a solution",
+			);
+		}
+
+		return {
+			...jsonReport.pages[0].actions[0],
+			...{
+				success: jsonReport.success,
+				nbBestPracticesToCorrect: jsonReport.nbBestPracticesToCorrect,
+				date: jsonReport.date,
+				pageInformations: jsonReport.pageInformations,
+				tryNb: jsonReport.tryNb,
+				tabId: jsonReport.tabId,
+				index: jsonReport.index,
+				url: jsonReport.url,
+			},
+		};
 	} catch (error) {
 		return Promise.reject(error);
 	} finally {
@@ -75,18 +120,4 @@ export async function requestResult(
 		console.error = consoleError;
 		await browser.close();
 	}
-
-	if (0 === reports.length) {
-		return Promise.reject("No report has been generated");
-	}
-
-	const result = JSON.parse(
-		readFileSync(reports[0].path, { encoding: "utf-8" }),
-	) as GreenITReport["result"];
-
-	return result.success
-		? result
-		: Promise.reject(
-				"Error during GreenIT analysis. Increasing the timeout can be a solution",
-			);
 }

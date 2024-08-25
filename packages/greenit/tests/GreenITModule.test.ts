@@ -31,14 +31,8 @@ describe("Run GreenIT analysis", () => {
 		const module = new GreenITModule(moduleConfig, false);
 		const analysisReport = await module.startAnalysis(Conf);
 
-		const [date, time] = SuccessResult.date.split(" ");
-		const [day, month, year] = date.split("/");
-
 		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessResult.url);
-		expect(analysisReport).toHaveProperty(
-			"date",
-			new Date(`${year}-${month}-${day}T${time}`),
-		);
+		expect(analysisReport).toHaveProperty("date", new Date(SuccessResult.date));
 		expect(analysisReport).toHaveProperty("grade", SuccessResult.grade);
 		expect(analysisReport).toHaveProperty(
 			"normalizedGrade",
