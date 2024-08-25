@@ -31,10 +31,10 @@
   },
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
-    "@slack/web-api": "^7.0.0"
+    "@slack/web-api": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^18.19.6"
+    "@types/node": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"

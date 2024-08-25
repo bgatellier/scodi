@@ -32,11 +32,11 @@
   },
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
-    "lighthouse": "^11.4.0",
-    "puppeteer": "^23.0.0"
+    "lighthouse": "catalog:",
+    "puppeteer": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^18.19.6"
+    "@types/node": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"

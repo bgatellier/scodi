@@ -1,3 +1,27 @@
 packages:
-  - 'packages/*'
-  - 'test/'
+  - packages/*
+  - test/
+catalog:
+  "@fastify/cors": ^9.0.0
+  "@mikro-orm/cli": ^6.0.0
+  "@mikro-orm/core": ^6.0.0
+  "@mikro-orm/migrations": ^6.0.0
+  "@mikro-orm/mysql": ^6.0.0
+  "@mikro-orm/reflection": ^6.0.0
+  "@slack/web-api": ^7.0.0
+  "@types/express": ^4.17.21
+  "@types/har-format": ^1.2.15
+  "@types/node": ^18.19.6
+  ajv: ^8.12.0
+  ajv-errors: ^3.0.0
+  ajv-formats: ^3.0.0
+  commander: ^12.0.0
+  dotenv: ^16.3.1
+  fastify: ^4.25.2
+  lighthouse: ^11.4.0
+  ora: ^8.0.1
+  pino: ^9.0.0
+  pino-pretty: ^11.0.0
+  puppeteer: ^23.0.0
+  ts-node: ^10.9.1
+  type-fest: ^4.9.0
