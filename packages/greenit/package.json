@@ -39,10 +39,10 @@
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
     "greenit-cli": "git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#9c1f010ad939782fab6fa1033d0ac267da547760",
-    "puppeteer": "^23.0.0"
+    "puppeteer": "catalog:"
   },
   "devDependencies": {
-    "@types/node": "^18.19.6"
+    "@types/node": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"

@@ -4,6 +4,54 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@mikro-orm/cli':
+      specifier: ^6.0.0
+      version: 6.3.5
+    '@mikro-orm/migrations':
+      specifier: ^6.0.0
+      version: 6.3.5
+    '@mikro-orm/mysql':
+      specifier: ^6.0.0
+      version: 6.3.5
+    '@mikro-orm/reflection':
+      specifier: ^6.0.0
+      version: 6.3.5
+    '@slack/web-api':
+      specifier: ^7.0.0
+      version: 7.3.2
+    '@types/express':
+      specifier: ^4.17.21
+      version: 4.17.21
+    '@types/har-format':
+      specifier: ^1.2.15
+      version: 1.2.15
+    ajv-errors:
+      specifier: ^3.0.0
+      version: 3.0.0
+    ajv-formats:
+      specifier: ^3.0.0
+      version: 3.0.1
+    commander:
+      specifier: ^12.0.0
+      version: 12.1.0
+    dotenv:
+      specifier: ^16.3.1
+      version: 16.4.5
+    ora:
+      specifier: ^8.0.1
+      version: 8.0.1
+    pino:
+      specifier: ^9.0.0
+      version: 9.3.2
+    pino-pretty:
+      specifier: ^11.0.0
+      version: 11.2.2
+    ts-node:
+      specifier: ^10.9.1
+      version: 10.9.2
+
 overrides:
   '@fastify/cors': ^9.0.0
   '@mikro-orm/core': ^6.0.0
@@ -58,14 +106,14 @@ importers:
         specifier: ^8.12.0
         version: 8.17.1
       ajv-errors:
-        specifier: ^3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(ajv@8.17.1)
       fastify:
         specifier: ^4.25.2
         version: 4.28.1
     devDependencies:
       '@types/express':
-        specifier: ^4.17.21
+        specifier: 'catalog:'
         version: 4.17.21
       '@types/node':
         specifier: ^18.19.6
@@ -80,19 +128,19 @@ importers:
         specifier: ^8.12.0
         version: 8.17.1
       ajv-errors:
-        specifier: ^3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(ajv@8.17.1)
       ajv-formats:
-        specifier: ^3.0.0
+        specifier: 'catalog:'
         version: 3.0.1(ajv@8.17.1)
       commander:
-        specifier: ^12.0.0
+        specifier: 'catalog:'
         version: 12.1.0
       dotenv:
-        specifier: ^16.3.1
+        specifier: 'catalog:'
         version: 16.4.5
       ora:
-        specifier: ^8.0.1
+        specifier: 'catalog:'
         version: 8.0.1
     devDependencies:
       '@fastify/cors':
@@ -114,26 +162,26 @@ importers:
         specifier: ^6.0.0
         version: 6.3.5
       '@mikro-orm/reflection':
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.3.5(@mikro-orm/core@6.3.5)
       ajv:
         specifier: ^8.12.0
         version: 8.17.1
       ajv-errors:
-        specifier: ^3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(ajv@8.17.1)
       pino:
-        specifier: ^9.0.0
+        specifier: 'catalog:'
         version: 9.3.2
       pino-pretty:
-        specifier: ^11.0.0
+        specifier: 'catalog:'
         version: 11.2.2
     devDependencies:
       '@fastify/cors':
         specifier: ^9.0.0
         version: 9.0.1
       '@types/har-format':
-        specifier: ^1.2.15
+        specifier: 'catalog:'
         version: 1.2.15
       '@types/node':
         specifier: ^18.19.6
@@ -192,10 +240,10 @@ importers:
         specifier: ^6.0.0
         version: 6.3.5
       '@mikro-orm/migrations':
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.3.5(@mikro-orm/core@6.3.5)(@types/node@18.19.44)
       '@mikro-orm/mysql':
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.3.5(@mikro-orm/core@6.3.5)
       '@scodi/cli':
         specifier: workspace:^4.0.0
@@ -205,13 +253,13 @@ importers:
         version: link:../common
     devDependencies:
       '@mikro-orm/cli':
-        specifier: ^6.0.0
+        specifier: 'catalog:'
         version: 6.3.5
       '@types/node':
         specifier: ^18.19.6
         version: 18.19.44
       ts-node:
-        specifier: ^10.9.1
+        specifier: 'catalog:'
         version: 10.9.2(@types/node@18.19.44)(typescript@5.5.4)
 
   packages/observatory:
@@ -236,7 +284,7 @@ importers:
         specifier: workspace:^4.0.0
         version: link:../common
       '@slack/web-api':
-        specifier: ^7.0.0
+        specifier: 'catalog:'
         version: 7.3.2
     devDependencies:
       '@types/node':

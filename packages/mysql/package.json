@@ -31,14 +31,14 @@
   },
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
-    "@mikro-orm/core": "^6.0.0",
-    "@mikro-orm/migrations": "^6.0.0",
-    "@mikro-orm/mysql": "^6.0.0"
+    "@mikro-orm/core": "catalog:",
+    "@mikro-orm/migrations": "catalog:",
+    "@mikro-orm/mysql": "catalog:"
   },
   "devDependencies": {
-    "@mikro-orm/cli": "^6.0.0",
-    "@types/node": "^18.19.6",
-    "ts-node": "^10.9.1"
+    "@mikro-orm/cli": "catalog:",
+    "@types/node": "catalog:",
+    "ts-node": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"

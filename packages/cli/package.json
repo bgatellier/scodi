@@ -33,18 +33,18 @@
   },
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
-    "ajv": "^8.12.0",
-    "ajv-errors": "^3.0.0",
-    "ajv-formats": "^3.0.0",
-    "commander": "^12.0.0",
-    "dotenv": "^16.3.1",
-    "ora": "^8.0.1"
+    "ajv": "catalog:",
+    "ajv-errors": "catalog:",
+    "ajv-formats": "catalog:",
+    "commander": "catalog:",
+    "dotenv": "catalog:",
+    "ora": "catalog:"
   },
   "devDependencies": {
-    "@fastify/cors": "^9.0.0",
-    "@types/node": "^18.19.6",
-    "fastify": "^4.25.2",
-    "type-fest": "^4.9.0"
+    "@fastify/cors": "catalog:",
+    "@types/node": "catalog:",
+    "fastify": "catalog:",
+    "type-fest": "catalog:"
   },
   "engines": {
     "node": "^18.20.0 || ^19.0.0 || ^20.16.0 || ^21.0.0 || ^22.0.0"
