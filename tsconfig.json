@@ -4,6 +4,9 @@
   "files": [],
   "references": [
     {
+      "path": "packages/@types/greenit-cli"
+    },
+    {
       "path": "packages/api"
     },
     {
