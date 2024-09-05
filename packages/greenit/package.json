@@ -45,6 +45,7 @@
     "@types/greenit-cli": "workspace:^0.1.0",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
+    "memfs": "catalog:",
     "vitest": "catalog:"
   },
   "peerDependencies": {
