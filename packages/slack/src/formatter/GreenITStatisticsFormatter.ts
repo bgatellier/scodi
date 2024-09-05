@@ -2,11 +2,6 @@ import type { GreenITReport } from "@scodi/common";
 import type { MrkdwnElement, SectionBlock } from "@slack/web-api";
 import { MAX_TEXT_BLOCK_LENGTH } from "./BlocksFormatter.js";
 
-interface Practice {
-	comment: string;
-	detailComment: string;
-}
-
 /**
  * Formatting layout is inspired by https://www.ecoindex.fr/
  * @returns An array with the metrics and advices blocks (in that order)
@@ -36,14 +31,14 @@ export const formatGreenITBlocks = (
 		report.result.bestPractices,
 	)
 		.filter(
-			(practice): practice is Practice =>
-				Object.hasOwn(practice, "comment") &&
-				Object.hasOwn(practice, "detailComment"),
+			(bestPractice) =>
+				bestPractice.comment !== undefined &&
+				bestPractice.detailComment !== undefined,
 		)
-		.map((practice) => {
-			// as the practice.detailComment could be more than MAX_TEXT_BLOCK_LENGTH characters long,
+		.map((bestPractice) => {
+			// as the bestPractice.detailComment could be more than MAX_TEXT_BLOCK_LENGTH characters long,
 			// we need to create several sections.
-			const lines = practice.detailComment
+			const lines = (bestPractice.detailComment as string)
 				.split("<br>")
 				.filter((line) => line.length > 0);
 
@@ -80,7 +75,7 @@ export const formatGreenITBlocks = (
 					type: "section",
 					text: {
 						type: "mrkdwn",
-						text: `*${practice.comment}*`,
+						text: `*${bestPractice.comment}*`,
 					},
 				},
 				...sections,

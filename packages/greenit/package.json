@@ -42,6 +42,7 @@
     "puppeteer": "catalog:"
   },
   "devDependencies": {
+    "@types/greenit-cli": "workspace:^0.1.0",
     "@types/node": "catalog:"
   },
   "peerDependencies": {

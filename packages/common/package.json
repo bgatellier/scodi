@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@fastify/cors": "catalog:",
-    "@types/har-format": "catalog:",
+    "@types/greenit-cli": "workspace:^0.1.0",
     "@types/node": "catalog:",
     "fastify": "catalog:",
     "lighthouse": "catalog:",
