@@ -1,3 +1,4 @@
+$schema: 'https://moonrepo.dev/schemas/tasks.json'
 tasks:
   build:
     command: tsc --project tsconfig.build.json
