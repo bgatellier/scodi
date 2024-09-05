@@ -1,24 +1,41 @@
 import type { ModuleMetadata } from "@scodi/common";
 import { createJsonReports } from "greenit-cli/cli-core/analysis.js";
-import { describe, expect, it, vi } from "vitest";
+import { vol } from "memfs";
+import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { GreenITModule } from "../src/GreenITModule.js";
-import { Conf } from "./data/Conf.js";
-import SuccessResult from "./data/SuccessResult.json" with { type: "json" };
+import { Conf, ErrorReport, SuccessReport } from "./data.js";
 
-vi.mock("../src/api/Client.js");
-vi.mock("greenit-cli/cli-core/analysis.js");
-const mockedCreateJsonReports = vi.mocked(createJsonReports);
+vi.mock("node:fs");
+vi.mock(import("greenit-cli/cli-core/analysis.js"), async (importOriginal) => {
+	const mod = await importOriginal();
+	return {
+		...mod,
+		createJsonReports: vi.fn(),
+	};
+});
 
 describe("Run GreenIT analysis", () => {
+	beforeAll(() => {
+		// mock the file system and put on it these 2 mocked reports
+		vol.fromJSON({
+			"./ErrorReport.json": JSON.stringify(ErrorReport),
+			"./SuccessReport.json": JSON.stringify(SuccessReport),
+		});
+	});
+
+	afterEach(() => {
+		vi.restoreAllMocks();
+	});
+
 	it("should be able to launch a successful analysis without thresholds", async () => {
-		mockedCreateJsonReports.mockResolvedValue([
+		vi.mocked(createJsonReports).mockResolvedValue([
 			{
-				path: new URL("./data/SuccessResult.json", import.meta.url).pathname,
-				name: "1.json",
+				path: "./SuccessReport.json",
+				name: "SuccessReport.json",
 			},
 		]);
 
-		const moduleConfig: ModuleMetadata = {
+		const moduleMetadata: ModuleMetadata = {
 			id: "1234",
 			type: "analysis",
 			name: "Green IT",
@@ -28,29 +45,32 @@ describe("Run GreenIT analysis", () => {
 			},
 		};
 
-		const module = new GreenITModule(moduleConfig, false);
+		const module = new GreenITModule(moduleMetadata, false);
 		const analysisReport = await module.startAnalysis(Conf);
 
-		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessResult.url);
-		expect(analysisReport).toHaveProperty("date", new Date(SuccessResult.date));
-		expect(analysisReport).toHaveProperty("grade", SuccessResult.grade);
+		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessReport.url);
+		expect(analysisReport).toHaveProperty("date", new Date(SuccessReport.date));
+		expect(analysisReport).toHaveProperty(
+			"grade",
+			SuccessReport.pages[0].actions[0].grade,
+		);
 		expect(analysisReport).toHaveProperty(
 			"normalizedGrade",
-			SuccessResult.ecoIndex,
+			SuccessReport.pages[0].actions[0].ecoIndex,
 		);
-		expect(analysisReport).toHaveProperty("service", moduleConfig.service);
+		expect(analysisReport).toHaveProperty("service", moduleMetadata.service);
 		expect(analysisReport).toHaveProperty("inputs", { config: Conf });
 	});
 
 	it("should be able to handle a failed analysis", async () => {
-		mockedCreateJsonReports.mockResolvedValue([
+		vi.mocked(createJsonReports).mockResolvedValue([
 			{
-				path: new URL("./data/ErrorResult.json", import.meta.url).pathname,
-				name: "1.json",
+				path: "./ErrorReport.json",
+				name: "ErrorReport.json",
 			},
 		]);
 
-		const moduleConfig: ModuleMetadata = {
+		const moduleMetadata: ModuleMetadata = {
 			id: "1234",
 			type: "analysis",
 			name: "Green IT",
@@ -60,26 +80,20 @@ describe("Run GreenIT analysis", () => {
 			},
 		};
 
-		const errorMessage =
-			"Error during GreenIT analysis. Increasing the timeout can be a solution";
-		const module = new GreenITModule(moduleConfig, false);
+		const module = new GreenITModule(moduleMetadata, false);
 
-		try {
-			await module.startAnalysis(Conf);
-		} catch (error) {
-			expect(error).toBe(errorMessage);
-		}
+		await expect(() => module.startAnalysis(Conf)).rejects.toThrowError();
 	});
 
 	it("should be able to launch a successful analysis with thresholds", async () => {
-		mockedCreateJsonReports.mockResolvedValue([
+		vi.mocked(createJsonReports).mockResolvedValue([
 			{
-				path: new URL("./data/SuccessResult.json", import.meta.url).pathname,
-				name: "1.json",
+				path: "./SuccessReport.json",
+				name: "SuccessReport.json",
 			},
 		]);
 
-		const moduleConfig: ModuleMetadata = {
+		const moduleMetadata: ModuleMetadata = {
 			id: "1234",
 			type: "analysis",
 			name: "Green IT",
@@ -91,17 +105,20 @@ describe("Run GreenIT analysis", () => {
 
 		const THRESHOLD = 30;
 
-		const module = new GreenITModule(moduleConfig, false);
+		const module = new GreenITModule(moduleMetadata, false);
 		const analysisReport = await module.startAnalysis(Conf, THRESHOLD);
 
-		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessResult.url);
+		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessReport.url);
 		expect(analysisReport).toHaveProperty("date");
-		expect(analysisReport).toHaveProperty("grade", SuccessResult.grade);
+		expect(analysisReport).toHaveProperty(
+			"grade",
+			SuccessReport.pages[0].actions[0].grade,
+		);
 		expect(analysisReport).toHaveProperty(
 			"normalizedGrade",
-			SuccessResult.ecoIndex,
+			SuccessReport.pages[0].actions[0].ecoIndex,
 		);
-		expect(analysisReport).toHaveProperty("service", moduleConfig.service);
+		expect(analysisReport).toHaveProperty("service", moduleMetadata.service);
 		expect(analysisReport).toHaveProperty("inputs", {
 			config: Conf,
 			threshold: THRESHOLD,
@@ -109,14 +126,14 @@ describe("Run GreenIT analysis", () => {
 	});
 
 	it("Should return false when results do not match thresholds objectives", async () => {
-		mockedCreateJsonReports.mockResolvedValue([
+		vi.mocked(createJsonReports).mockResolvedValue([
 			{
-				path: new URL("./data/SuccessResult.json", import.meta.url).pathname,
-				name: "1.json",
+				path: "./SuccessReport.json",
+				name: "SuccessReport.json",
 			},
 		]);
 
-		const moduleConfig: ModuleMetadata = {
+		const moduleMetadata: ModuleMetadata = {
 			id: "1234",
 			type: "analysis",
 			name: "Green IT",
@@ -128,17 +145,20 @@ describe("Run GreenIT analysis", () => {
 
 		const THRESHOLD = 30;
 
-		const module = new GreenITModule(moduleConfig, false);
+		const module = new GreenITModule(moduleMetadata, false);
 		const analysisReport = await module.startAnalysis(Conf, THRESHOLD);
 
-		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessResult.url);
+		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessReport.url);
 		expect(analysisReport).toHaveProperty("date");
-		expect(analysisReport).toHaveProperty("grade", SuccessResult.grade);
+		expect(analysisReport).toHaveProperty(
+			"grade",
+			SuccessReport.pages[0].actions[0].grade,
+		);
 		expect(analysisReport).toHaveProperty(
 			"normalizedGrade",
-			SuccessResult.ecoIndex,
+			SuccessReport.pages[0].actions[0].ecoIndex,
 		);
-		expect(analysisReport).toHaveProperty("service", moduleConfig.service);
+		expect(analysisReport).toHaveProperty("service", moduleMetadata.service);
 		expect(analysisReport).toHaveProperty("inputs", {
 			config: Conf,
 			threshold: THRESHOLD,

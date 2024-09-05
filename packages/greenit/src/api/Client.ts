@@ -1,10 +1,11 @@
 import { readFileSync } from "node:fs";
 import type { GreenITConfig, GreenITReport } from "@scodi/common";
 import {
+	type JSONReport,
 	type Options,
 	createJsonReports,
-} from "greenit-cli/cli-core/analysis.js";
-import { translator } from "greenit-cli/cli-core/translator.js";
+	translator,
+} from "greenit-cli";
 import puppeteer from "puppeteer";
 
 const DEFAULT_OPTIONS: Options = {
@@ -14,32 +15,6 @@ const DEFAULT_OPTIONS: Options = {
 	max_tab: 40,
 	retry: 2,
 	timeout: 180000,
-};
-
-// split GreenITReport["result"] in 2 groups
-type GeneralProperties = Pick<
-	GreenITReport["result"],
-	| "success"
-	| "nbBestPracticesToCorrect"
-	| "date"
-	| "pageInformations"
-	| "tryNb"
-	| "tabId"
-	| "index"
-	| "url"
->;
-type KPIProperties = Exclude<GreenITReport["result"], keyof GeneralProperties>;
-
-type JSONReport = GeneralProperties & {
-	pages: Array<{
-		name: string;
-		bestPractices: GreenITReport["result"]["bestPractices"];
-		nbRequest: number;
-		responsesSize: number;
-		responsesSizeUncompress: number;
-		url: string;
-		actions: [KPIProperties];
-	}>;
 };
 
 /**
