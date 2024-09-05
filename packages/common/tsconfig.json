@@ -5,11 +5,14 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
   "references": [
     {
       "path": "./tsconfig.build.json"
+    },
+    {
+      "path": "../@types/greenit-cli"
     }
   ],
   "include": [
