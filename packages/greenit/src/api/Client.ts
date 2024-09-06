@@ -33,8 +33,6 @@ export async function requestResult(
 			"--no-sandbox",
 		],
 		defaultViewport: null,
-		// https://developer.chrome.com/articles/new-headless/
-		headless: true,
 	});
 
 	const options: Options = {
