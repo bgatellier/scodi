@@ -4,9 +4,10 @@ import {
 	type JSONReport,
 	type Options,
 	createJsonReports,
-	translator,
-} from "greenit-cli";
+} from "greenit-cli/cli-core/analysis.js";
+import { translator } from "greenit-cli/cli-core/translator.js";
 import puppeteer from "puppeteer";
+import { GreenITError } from "../error/GreenITError.js";
 
 const DEFAULT_OPTIONS: Options = {
 	ci: true,
@@ -71,7 +72,9 @@ export async function requestResult(
 
 		if (jsonReport.success === false) {
 			return Promise.reject(
-				"Error during GreenIT analysis. Increasing the timeout can be a solution",
+				new GreenITError(
+					"Error during GreenIT analysis. Increasing the timeout can be a solution",
+				),
 			);
 		}
 
@@ -89,6 +92,14 @@ export async function requestResult(
 			},
 		};
 	} catch (error) {
+		if (typeof error === "string") {
+			return Promise.reject(new GreenITError(error));
+		}
+
+		if (error instanceof Error) {
+			return Promise.reject(new GreenITError(error.message));
+		}
+
 		return Promise.reject(error);
 	} finally {
 		console.log = consoleLog;
