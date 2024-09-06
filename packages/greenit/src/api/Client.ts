@@ -1,4 +1,7 @@
+import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import type { GreenITConfig, GreenITReport } from "@scodi/common";
 import {
 	type JSONReport,
@@ -6,8 +9,10 @@ import {
 	createJsonReports,
 } from "greenit-cli/cli-core/analysis.js";
 import { translator } from "greenit-cli/cli-core/translator.js";
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 import { GreenITError } from "../error/GreenITError.js";
+
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 const DEFAULT_OPTIONS: Options = {
 	ci: true,
@@ -18,13 +23,29 @@ const DEFAULT_OPTIONS: Options = {
 	timeout: 180000,
 };
 
-/**
- * @see {@link https://github.com/GoogleChrome/lighthouse/blob/main/docs/puppeteer.md#option-2-launch-chrome-with-lighthousechrome-launcher-and-handoff-to-puppeteer}
- */
 export async function requestResult(
 	config: GreenITConfig,
 ): Promise<GreenITReport["result"]> {
+	// get the browser executable path from the puppeteer dependency of the greenit-cli dependency
+	// https://github.com/puppeteer/puppeteer/issues/679#issuecomment-1274988821
+	const { stdout, error } = spawnSync(
+		"node",
+		["-e", "console.log(require('puppeteer').executablePath())"],
+		{
+			// go to the greenit-cli dependency directory, and run in it the command above
+			cwd: join(__dirname, "../../node_modules/greenit-cli"),
+			encoding: "utf-8",
+		},
+	);
+
+	if (error !== undefined) {
+		return Promise.reject(
+			new GreenITError(`Cannot retrieve Chrome location: ${error.message}`),
+		);
+	}
+
 	const browser = await puppeteer.launch({
+		executablePath: stdout.trim(),
 		// https://www.howtogeek.com/devops/how-to-run-puppeteer-and-headless-chrome-in-a-docker-container/#using-puppeteer-in-docker
 		args: [
 			"--disable-gpu",

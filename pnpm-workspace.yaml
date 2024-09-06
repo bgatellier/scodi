@@ -2,6 +2,7 @@ packages:
   - packages/@types/*
   - packages/*
   - test/
+
 catalog:
   "@fastify/cors": ^9.0.0
   "@mikro-orm/cli": ^6.0.0
@@ -28,3 +29,9 @@ catalog:
   ts-node: ^10.9.1
   type-fest: ^4.9.0
   vitest: ^2.0.5
+
+catalogs:
+  # puppeteer version from this package is aligned on the one from greenit-cli dependency:
+  # it matches the version range declared in packages/greenit/node_modules/greenit-cli/package.json
+  puppeteerGreenIT:
+    puppeteer-core: ^21.5.2
