@@ -15,9 +15,7 @@ jobs:
         shell: bash
     strategy:
       matrix:
-        # do not use the lower supported Node.js version,
-        # as it is already done in the coverage.yaml workflow
-        node_version: [19, 20, 21, 22]
+        node_version: [18, 19, 20, 21, 22]
 
     steps:
       - name: Checkout code
