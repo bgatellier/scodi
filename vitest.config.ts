@@ -19,6 +19,7 @@ export default defineConfig({
                 '**/*.test.ts',
             ]
         },
+        passWithNoTests: true,
         environment: 'node',
     },
 })
