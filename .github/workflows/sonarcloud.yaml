@@ -76,3 +76,4 @@ jobs:
     uses: ./.github/workflows/sonarcloud-reusable.yaml
     with:
       package-id: ${{ matrix.package-id }}
+    secrets: inherit
