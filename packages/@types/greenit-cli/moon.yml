@@ -3,5 +3,7 @@ stack: backend
 type: library
 workspace:
   inheritedTasks:
-    # Exclude the inherited `build` task for this project
-    exclude: ['build']
+    # Exclude these inherited task for this project
+    exclude:
+      - build
+      - test

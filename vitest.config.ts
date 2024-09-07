@@ -4,7 +4,7 @@ export default defineConfig({
     test: {
         coverage: {
             provider: 'v8',
-            reporter: ['clover'],
+            reporter: ['lcov'],
             exclude: [
                 'vitest.config.ts',
                 'vitest.workspace.ts',
@@ -19,6 +19,7 @@ export default defineConfig({
                 '**/*.test.ts',
             ]
         },
+        passWithNoTests: true,
         environment: 'node',
     },
 })

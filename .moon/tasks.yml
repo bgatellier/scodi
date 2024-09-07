@@ -3,14 +3,39 @@ tasks:
   build:
     command: tsc --project tsconfig.build.json
     deps:
-      - ~:cleanup
+      # remove the lib/ directory
+      - target: cleanup
+        args: lib
+      # build dependent projects
       - ^:build
   cleanup:
-    command: rimraf lib
+    command: rimraf
+    options:
+      cache: false
+      internal: true
   check:
     command: pnpm exec biome check
     options:
       affectedFiles: true
       affectedPassInputs: true
+  tests:
+    command: pnpm vitest run --project=@scodi/$project
+    deps:
+      # build dependent projects
+      - ^:build
+    options:
+      runFromWorkspaceRoot: true
+  coverage:
+    extends: tests
+    args:
+      - '--coverage'
+      - '--coverage.reportsDirectory=$projectSource/coverage'
+    deps:
+      # remove the coverage/ directory
+      - target: cleanup
+        args: coverage
+    options:
+      # make the cleanup occurs before the deps of the extended task
+      mergeDeps: prepend
   publish:
     command: pnpm jsr publish

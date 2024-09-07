@@ -1,7 +1,6 @@
-moon = "^1"
-node = ">=18 <23"
+moon = "^1.28"
+node = "^18"
 pnpm = "^9"
 
 [plugins]
-# do not use master at the moment, as there is an error that disallow the install moon
-moon = "source:https://raw.githubusercontent.com/moonrepo/moon/ef641b0e91e3096846c80a1ba058d44f534afe9d/proto-plugin.toml"
+moon = "source:https://raw.githubusercontent.com/moonrepo/moon/master/proto-plugin.toml"
