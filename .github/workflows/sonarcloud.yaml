@@ -1,180 +1,34 @@
-name: SonarCloud
-
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    types: [opened, synchronize, reopened]
+  # Reusable workflow: https://docs.github.com/en/actions/sharing-automations/reusing-workflows
+  workflow_call:
+    inputs:
+      package-id:
+        required: true
+        type: string
 
 jobs:
-  sonarcloudApi:
-    name: Package API
+  sonarcloud:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: packages/api/
-          args: >
-            -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-api
-            -Dsonar.sources=src/
+          fetch-depth: 0
 
-  sonarcloudCli:
-    name: Package CLI
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+      - name: Download code coverage reports
+        uses: actions/download-artifact@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: packages/cli/
-          args: >
-            -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-cli
-            -Dsonar.sources=src/
+          name: code-coverage-report
 
-  sonarcloudCommon:
-    name: Package Common
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+      - uses: SonarSource/sonarcloud-github-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: packages/common/
+          projectBaseDir: packages/${{ inputs.package-id }}/
           args: >
             -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-common
+            -Dsonar.projectKey=scodi-${{ inputs.package-id }}
             -Dsonar.sources=src/
-
-  sonarcloudGreenIT:
-    name: Package GreenIT
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: packages/greenit/
-          args: >
-            -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-greenit
-            -Dsonar.sources=src/
-
-  sonarcloudLighthouse:
-    name: Package Lighthouse
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: packages/lighthouse/
-          args: >
-            -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-lighthouse
-            -Dsonar.sources=src/
-
-  sonarcloudMysql:
-    name: Package MySQL
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: packages/mysql/
-          args: >
-            -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-mysql
-            -Dsonar.sources=src/
-
-  sonarcloudObservatory:
-    name: Package Observatory
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: packages/observatory/
-          args: >
-            -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-observatory
-            -Dsonar.sources=src/
-
-  sonarcloudSlack:
-    name: Package Slack
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: packages/slack/
-          args: >
-            -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-slack
-            -Dsonar.sources=src/
-
-  sonarcloudSllabsServer:
-    name: Package Ssllabs Server
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          projectBaseDir: packages/ssllabs-server/
-          args: >
-            -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-ssllabs-server
-            -Dsonar.sources=src/
+            -Dsonar.tests=tests/
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
