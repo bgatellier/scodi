@@ -75,5 +75,6 @@ jobs:
           - ssllabs-server
     uses: ./.github/workflows/sonarcloud-reusable.yaml
     with:
+      git-ref: ${{ github.head_ref || github.ref }}
       package-id: ${{ matrix.package-id }}
     secrets: inherit

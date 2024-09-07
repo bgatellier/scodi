@@ -2,6 +2,9 @@ on:
   # Reusable workflow: https://docs.github.com/en/actions/sharing-automations/reusing-workflows
   workflow_call:
     inputs:
+      git-ref:
+        required: true
+        type: string
       package-id:
         required: true
         type: string
@@ -14,6 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ inputs.git-ref }}
 
       - name: Download code coverage reports
         uses: actions/download-artifact@v4
