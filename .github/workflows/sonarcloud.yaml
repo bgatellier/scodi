@@ -20,18 +20,6 @@ jobs:
         shell: bash
     env:
       NODE_VERSION: 18
-    strategy:
-      matrix:
-        package-id:
-          - api
-          - cli
-          - common
-          - greenit
-          - lighthouse
-          - mysql
-          - observatory
-          - slack
-          - ssllabs-server
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -58,11 +46,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      # we need separate lcov reports for sonarcloud job below,
-      # so we cannot run "vitest run --coverage" as it will result in a single lcov file.
-      # --coverage.reportsDirectory must match the path set using the the javascript.lcov.reportPaths Sonar property
-      - name: Run tests & generate coverage report
-        run: pnpm vitest --coverage --project=@scodi/${{ matrix.package-id }} --coverage.reportsDirectory=packages/${{ matrix.package-id }}/coverage
+      - name: Run tests & generate coverage reports
+        run: moon run :coverage
 
       - name: Archive code coverage reports
         uses: actions/upload-artifact@v4
