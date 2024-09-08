@@ -31,7 +31,7 @@ tasks:
     extends: test
     args:
       - '--coverage'
-      - '--coverage.reportsDirectory=$projectSource/coverage'
+      - '--coverage.reportsDirectory=$projectSource/coverage/'
     deps:
       # remove the coverage/ directory
       - target: cleanup
