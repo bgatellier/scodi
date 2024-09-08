@@ -17,7 +17,10 @@ export default defineConfig({
                 '**/[.]**',
                 '**/*.d.ts',
                 '**/*.test.ts',
-            ]
+            ],
+            // moon handle this coverage results cleaning,
+            // as we have to deal with its caching system (which vitest is not aware of).
+            clean: false
         },
         passWithNoTests: true,
         environment: 'node',

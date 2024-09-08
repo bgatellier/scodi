@@ -18,15 +18,17 @@ tasks:
     options:
       affectedFiles: true
       affectedPassInputs: true
-  tests:
+  test:
     command: pnpm vitest run --project=@scodi/$project
     deps:
       # build dependent projects
-      - ^:build
+      - target: ^:build
+        # optional, as packages in @types/ directory don't have such task
+        optional: true
     options:
       runFromWorkspaceRoot: true
   coverage:
-    extends: tests
+    extends: test
     args:
       - '--coverage'
       - '--coverage.reportsDirectory=$projectSource/coverage'

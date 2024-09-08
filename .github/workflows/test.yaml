@@ -43,11 +43,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      - name: Build packages
-        run: moon run :build
+      - name: Run tests
+        run: moon run :test
         env:
           # skip browser download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
           PUPPETEER_SKIP_DOWNLOAD: true
-
-      - name: Run tests
-        run: pnpm vitest
