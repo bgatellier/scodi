@@ -2,9 +2,11 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
     test: {
+        include: ['**/*.test.ts'],
         coverage: {
             provider: 'v8',
             reporter: ['lcov'],
+            // this list is adapted from https://vitest.dev/config/#coverage-exclude
             exclude: [
                 'coverage/**',
                 'lib/**',
