@@ -8,8 +8,8 @@ export default defineConfig({
             reporter: ['lcov'],
             // this list is adapted from https://vitest.dev/config/#coverage-exclude
             exclude: [
-                'coverage/**',
-                'lib/**',
+                '**/coverage/**',
+                '**/lib/**',
                 '**/node_modules/**',
                 '**/[.]**',
                 'packages/*/tests/**',
