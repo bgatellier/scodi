@@ -30,15 +30,17 @@
     "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
-    "@scodi/common": "workspace:^4.0.0",
     "@fastify/cors": "catalog:",
+    "@scodi/common": "workspace:^4.0.0",
     "ajv": "catalog:",
     "ajv-errors": "catalog:",
     "fastify": "catalog:"
   },
   "devDependencies": {
     "@types/express": "catalog:",
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:",
+    "vitest": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"

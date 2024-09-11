@@ -43,8 +43,10 @@
   "devDependencies": {
     "@fastify/cors": "catalog:",
     "@types/node": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:",
     "fastify": "catalog:",
-    "type-fest": "catalog:"
+    "type-fest": "catalog:",
+    "vitest": "catalog:"
   },
   "engines": {
     "node": ">=18 <23"

@@ -38,7 +38,9 @@
   "devDependencies": {
     "@mikro-orm/cli": "catalog:",
     "@types/node": "catalog:",
-    "ts-node": "catalog:"
+    "@vitest/coverage-istanbul": "catalog:",
+    "ts-node": "catalog:",
+    "vitest": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"
