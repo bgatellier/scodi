@@ -33,7 +33,9 @@
     "@scodi/common": "workspace:^4.0.0"
   },
   "devDependencies": {
-    "@types/node": "catalog:"
+    "@types/node": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:",
+    "vitest": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"

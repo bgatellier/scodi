@@ -39,9 +39,11 @@
     "@fastify/cors": "catalog:",
     "@types/greenit-cli": "workspace:^0.1.0",
     "@types/node": "catalog:",
+    "@vitest/coverage-istanbul": "catalog:",
     "fastify": "catalog:",
     "lighthouse": "catalog:",
-    "type-fest": "catalog:"
+    "type-fest": "catalog:",
+    "vitest": "catalog:"
   },
   "engines": {
     "node": ">=18 <23"

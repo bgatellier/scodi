@@ -8,13 +8,21 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  coverage:
+  sonarcloud:
     name: Code coverage
     runs-on: ubuntu-latest
-    outputs:
-      # Output the artifact upload id
-      artifact-upload-id: ${{ steps.artifact-upload-step.outputs.artifact-id }}
-    timeout-minutes: 8
+    strategy:
+      matrix:
+        package-id:
+          - api
+          - cli
+          - common
+          - greenit
+          - lighthouse
+          - mysql
+          - observatory
+          - slack
+          - ssllabs-server
     defaults:
       run:
         shell: bash
@@ -46,45 +54,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      - name: Run tests & generate coverage reports
-        run: moon run :coverage
-
-      - name: Archive code coverage reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: code-coverage-report
-          # If a wildcard pattern is used, the path hierarchy will be preserved after the first wildcard pattern:
-          # https://github.com/actions/upload-artifact#upload-using-a-wildcard-pattern
-          path: packages/*/coverage/lcov.info
-          retention-days: 1
-  
-  sonarcloud:
-    needs: coverage
-    name: SonarCloud Scan
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        package-id:
-          - api
-          - cli
-          - common
-          - greenit
-          - lighthouse
-          - mysql
-          - observatory
-          - slack
-          - ssllabs-server
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Download code coverage reports
-        uses: actions/download-artifact@v4
-        with:
-          name: code-coverage-report
-          path: packages/
+      - name: Generate coverage report
+        run: moon run ${{ matrix.package-id }}:coverage
 
       - uses: SonarSource/sonarcloud-github-action@v3
         env:

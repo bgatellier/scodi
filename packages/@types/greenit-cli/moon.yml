@@ -3,7 +3,6 @@ stack: backend
 type: library
 workspace:
   inheritedTasks:
-    # Exclude these inherited task for this project
     exclude:
       - build
-      - test
+      - publish
