@@ -4,7 +4,7 @@ export default defineConfig({
     test: {
         include: ['**/*.test.ts'],
         coverage: {
-            provider: 'v8',
+            provider: 'istanbul',
             reporter: ['lcov'],
             // this list is adapted from https://vitest.dev/config/#coverage-exclude
             exclude: [
