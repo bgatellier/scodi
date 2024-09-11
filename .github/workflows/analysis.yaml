@@ -57,21 +57,15 @@ jobs:
       - name: Generate coverage report
         run: moon run ${{ matrix.package-id }}:coverage
 
-      # transform relative path to absolute ones
-      # https://community.sonarsource.com/t/code-coverage-doesnt-work-with-github-action/16747/7
-      - name: Fix coverage report path
-        working-directory: packages/${{ matrix.package-id }}/coverage
-        run: sed -i 's@SF:@SF:/github/workspace/@g' lcov.info
-
       - uses: SonarSource/sonarcloud-github-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: ./
+          projectBaseDir: packages/${{ matrix.package-id }}/
           args: >
             -Dsonar.organization=bgatellier
             -Dsonar.projectKey=scodi-${{ matrix.package-id }}
-            -Dsonar.sources=packages/${{ matrix.package-id }}/src/
-            -Dsonar.tests=packages/${{ matrix.package-id }}/tests/
-            -Dsonar.javascript.lcov.reportPaths=packages/${{ matrix.package-id }}/coverage/lcov.info
+            -Dsonar.sources=src/
+            -Dsonar.tests=tests/
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
