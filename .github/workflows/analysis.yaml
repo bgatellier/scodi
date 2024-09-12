@@ -57,6 +57,9 @@ jobs:
       - name: Generate coverage report
         run: moon run ${{ matrix.package-id }}:coverage
 
+      - run: cat lcov.info
+        working-directory: packages/${{ matrix.package-id }}/coverage/
+
       - uses: SonarSource/sonarcloud-github-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
