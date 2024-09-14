@@ -27,7 +27,7 @@ export class GreenITModule
 	): Promise<GreenITReport> {
 		this.#threshold = threshold;
 
-		const result = await requestResult(config);
+		const result = await requestResult(config, this.verbose);
 
 		return this.#handleResult(config, result);
 	}

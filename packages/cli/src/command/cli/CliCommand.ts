@@ -15,7 +15,6 @@ import {
 /**
  * Create the Commander Command object.
  * Set the command version to match the one defined in the package.json file.
- * Add a --debug option.
  */
 function createCommand(): Command {
 	const cmd = new Command();

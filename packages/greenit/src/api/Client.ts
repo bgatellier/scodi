@@ -2,7 +2,7 @@ import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import type { GreenITConfig, GreenITReport } from "@scodi/common";
+import { type GreenITConfig, type GreenITReport, logger } from "@scodi/common";
 import {
 	type JSONReport,
 	type Options,
@@ -25,6 +25,7 @@ const DEFAULT_OPTIONS: Options = {
 
 export async function requestResult(
 	config: GreenITConfig,
+	verbose: boolean,
 ): Promise<GreenITReport["result"]> {
 	// get the browser executable path from the puppeteer dependency of the greenit-cli dependency
 	// https://github.com/puppeteer/puppeteer/issues/679#issuecomment-1274988821
@@ -42,6 +43,10 @@ export async function requestResult(
 		return Promise.reject(
 			new GreenITError(`Cannot retrieve Chrome location: ${error.message}`),
 		);
+	}
+
+	if (verbose) {
+		logger.info(`Browser path: ${stdout}`);
 	}
 
 	const browser = await puppeteer.launch({
