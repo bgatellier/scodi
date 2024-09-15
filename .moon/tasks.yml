@@ -21,8 +21,7 @@ tasks:
   test:
     command: pnpm vitest run
     deps:
-      # build dependent projects
-      - target: ^:build
+      - target: build
         # optional, as packages in @types/ directory don't have such task
         optional: true
   coverage:
