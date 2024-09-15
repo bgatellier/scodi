@@ -49,6 +49,8 @@ export async function requestResult(
 		logger.info(`Browser path: ${stdout}`);
 	}
 
+	console.info(stdout.trim());
+
 	const browser = await puppeteer.launch({
 		executablePath: stdout.trim(),
 		// https://www.howtogeek.com/devops/how-to-run-puppeteer-and-headless-chrome-in-a-docker-container/#using-puppeteer-in-docker
