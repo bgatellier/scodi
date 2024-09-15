@@ -19,7 +19,9 @@ catalog:
   ajv-formats: ^3.0.0
   commander: ^12.0.0
   dotenv: ^16.3.1
+  execa: ^9.3.1
   fastify: ^4.25.2
+  greenit-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#9c1f010ad939782fab6fa1033d0ac267da547760
   lighthouse: ^11.4.0
   memfs: ^4.11.1
   ora: ^8.0.1
@@ -31,7 +33,6 @@ catalog:
   vitest: ^2.0.5
 
 catalogs:
-  # puppeteer version from this package is aligned on the one from greenit-cli dependency:
-  # it matches the version range declared in packages/greenit/node_modules/greenit-cli/package.json
+  # align puppeteer version with the one from greenit-cli dependency
   puppeteerGreenIT:
     puppeteer-core: ^21.5.2
