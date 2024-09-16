@@ -27,12 +27,16 @@ catalog:
   ora: ^8.0.1
   pino: ^9.0.0
   pino-pretty: ^11.0.0
-  puppeteer: ^23.0.0
   ts-node: ^10.9.1
   type-fest: ^4.9.0
   vitest: ^2.0.5
 
 catalogs:
-  # align puppeteer version with the one from greenit-cli dependency
+  # align puppeteer-core version with the puppeteer version used by the lighthouse or greenit-cli dependency
+  # this allows to:
+  # - limit the number of puppeteer* dependencies installed
+  # - avoid to install additional Chrome browsers in different versions (as puppeteer embed Chrome, but puppeteer-core doesn't)
+  puppeteerLighthouse:
+    puppeteer-core: ^22.5.0
   puppeteerGreenIT:
     puppeteer-core: ^21.5.2
