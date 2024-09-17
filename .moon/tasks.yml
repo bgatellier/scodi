@@ -3,9 +3,6 @@ tasks:
   build:
     command: tsc --project tsconfig.build.json
     deps:
-      # remove the lib/ directory
-      - target: cleanup
-        args: lib
       # build dependent projects
       - ^:build
   cleanup:
