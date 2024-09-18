@@ -82,7 +82,9 @@ describe("Run GreenIT analysis", () => {
 
 		const module = new GreenITModule(moduleMetadata, false);
 
-		await expect(() => module.startAnalysis(Conf)).rejects.toThrowError();
+		await expect(() => module.startAnalysis(Conf)).rejects.toThrowError(
+			"Error during GreenIT analysis. Increasing the timeout can be a solution",
+		);
 	});
 
 	it("should be able to launch a successful analysis with thresholds", async () => {

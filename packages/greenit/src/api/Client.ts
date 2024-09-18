@@ -67,10 +67,8 @@ export async function requestResult(
 		) as JSONReport;
 
 		if (jsonReport.success === false) {
-			return Promise.reject(
-				new GreenITError(
-					"Error during GreenIT analysis. Increasing the timeout can be a solution",
-				),
+			throw new GreenITError(
+				"Error during GreenIT analysis. Increasing the timeout can be a solution",
 			);
 		}
 
@@ -89,14 +87,14 @@ export async function requestResult(
 		};
 	} catch (error) {
 		if (typeof error === "string") {
-			return Promise.reject(new GreenITError(error));
+			throw new GreenITError(error);
 		}
 
 		if (error instanceof Error) {
-			return Promise.reject(new GreenITError(error.message));
+			throw new GreenITError(error.message);
 		}
 
-		return Promise.reject(error);
+		throw error;
 	} finally {
 		console.log = consoleLog;
 		console.error = consoleError;
