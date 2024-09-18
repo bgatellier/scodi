@@ -38,20 +38,12 @@ jobs:
       - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          path: |
+            ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+            /home/runner/.cache/puppeteer
           key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-
-
-      - name: Build
-        run: moon run :build
-
-      - run: ls -la ~/.cache/puppeteer/
-
-      - run: ls -la /root/.cache/puppeteer
-
-      - run: node -e "console.log(require('puppeteer').executablePath())"
-        working-directory: /home/runner/work/scodi/scodi/packages/greenit/node_modules/greenit-cli
 
       - name: Run tests
         run: moon run :test
