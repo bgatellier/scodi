@@ -38,9 +38,9 @@
   },
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
-    "execa": "catalog:",
     "greenit-cli": "catalog:",
-    "puppeteer-core": "catalog:puppeteerGreenIT"
+    "puppeteer-core": "catalog:puppeteerGreenIT",
+    "tinyexec": "catalog:"
   },
   "devDependencies": {
     "@types/greenit-cli": "workspace:^0.1.0",

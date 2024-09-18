@@ -32,9 +32,9 @@
   },
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
-    "execa": "catalog:",
     "lighthouse": "catalog:",
-    "puppeteer-core": "catalog:puppeteerLighthouse"
+    "puppeteer-core": "catalog:puppeteerLighthouse",
+    "tinyexec": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",

@@ -5,9 +5,9 @@ import {
 	type LighthouseReport,
 	logger,
 } from "@scodi/common";
-import { execa } from "execa";
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer-core";
+import { x } from "tinyexec";
 import { Lighthouse } from "../error/LighthouseError.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -58,16 +58,23 @@ export async function requestResult(
  */
 async function getBrowserExecutablePath(verbose: boolean): Promise<string> {
 	try {
-		const { stdout } = await execa({
-			cwd: join(__dirname, "../../node_modules/lighthouse"),
-			encoding: "utf8",
-		})`node ${["-e", "console.log(require('puppeteer').executablePath())"]}`;
+		const { stdout } = await x(
+			"node",
+			["-e", "console.log(require('puppeteer').executablePath())"],
+			{
+				nodeOptions: {
+					cwd: join(__dirname, "../../node_modules/lighthouse"),
+				},
+			},
+		);
+
+		const executablePath = stdout.trim();
 
 		if (verbose) {
-			logger.info(`Browser path: ${stdout}`);
+			logger.info(`Browser path: ${executablePath}`);
 		}
 
-		return stdout;
+		return executablePath;
 	} catch (error) {
 		if (typeof error === "string") {
 			return Promise.reject(new Lighthouse(error));

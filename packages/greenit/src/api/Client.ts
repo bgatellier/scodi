@@ -2,7 +2,6 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { type GreenITConfig, type GreenITReport, logger } from "@scodi/common";
-import { execa } from "execa";
 import {
 	type JSONReport,
 	type Options,
@@ -10,6 +9,7 @@ import {
 } from "greenit-cli/cli-core/analysis.js";
 import { translator } from "greenit-cli/cli-core/translator.js";
 import puppeteer from "puppeteer-core";
+import { x } from "tinyexec";
 import { GreenITError } from "../error/GreenITError.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -120,16 +120,23 @@ function createOptions(config: GreenITConfig): Options {
  */
 async function getBrowserExecutablePath(verbose: boolean): Promise<string> {
 	try {
-		const { stdout } = await execa({
-			cwd: join(__dirname, "../../node_modules/greenit-cli"),
-			encoding: "utf8",
-		})`node ${["-e", "console.log(require('puppeteer').executablePath())"]}`;
+		const { stdout } = await x(
+			"node",
+			["-e", "console.log(require('puppeteer').executablePath())"],
+			{
+				nodeOptions: {
+					cwd: join(__dirname, "../../node_modules/greenit-cli"),
+				},
+			},
+		);
+
+		const executablePath = stdout.trim();
 
 		if (verbose) {
-			logger.info(`Browser path: ${stdout}`);
+			logger.info(`Browser path: ${executablePath}`);
 		}
 
-		return stdout;
+		return executablePath;
 	} catch (error) {
 		if (typeof error === "string") {
 			return Promise.reject(new GreenITError(error));
