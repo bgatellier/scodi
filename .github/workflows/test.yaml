@@ -43,8 +43,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      - name: Run tests
-        run: moon run :test
+      - name: Build
+        run: moon run :build
 
       - run: ls -la ~/.cache/puppeteer/
 
@@ -52,3 +52,6 @@ jobs:
 
       - run: node -e "console.log(require('puppeteer').executablePath())"
         working-directory: /home/runner/work/scodi/scodi/packages/greenit/node_modules/greenit-cli
+
+      - name: Run tests
+        run: moon run :test

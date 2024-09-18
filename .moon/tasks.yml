@@ -9,7 +9,6 @@ tasks:
     command: rimraf
     options:
       cache: false
-      internal: true
   check:
     command: pnpm exec biome check
     options:
@@ -30,6 +29,8 @@ tasks:
       - target: cleanup
         args: coverage
     options:
+    # don't cache, as the dependent cleanup cache is not cached too
+      cache: false
       # make the cleanup occurs before the deps of the extended task
       mergeDeps: prepend
   publish:
