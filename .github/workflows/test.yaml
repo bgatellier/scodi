@@ -45,3 +45,10 @@ jobs:
 
       - name: Run tests
         run: moon run :test
+
+      - run: ls -la ~/.cache/puppeteer/
+
+      - run: ls -la /root/.cache/puppeteer
+
+      - run: node -e "console.log(require('puppeteer').executablePath())"
+        working-directory: /home/runner/work/scodi/scodi/packages/greenit/node_modules/greenit-cli
