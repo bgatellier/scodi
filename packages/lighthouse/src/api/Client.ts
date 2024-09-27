@@ -8,7 +8,7 @@ import {
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer-core";
 import { x } from "tinyexec";
-import { Lighthouse } from "../error/LighthouseError.js";
+import { LighthouseError } from "../error/LighthouseError.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -77,11 +77,11 @@ async function getBrowserExecutablePath(verbose: boolean): Promise<string> {
 		return executablePath;
 	} catch (error) {
 		if (typeof error === "string") {
-			return Promise.reject(new Lighthouse(error));
+			throw new LighthouseError(error);
 		}
 
 		if (error instanceof Error) {
-			return Promise.reject(new Lighthouse(error.message));
+			throw new LighthouseError(error.message);
 		}
 
 		return Promise.reject(error);

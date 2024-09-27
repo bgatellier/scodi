@@ -139,11 +139,11 @@ async function getBrowserExecutablePath(verbose: boolean): Promise<string> {
 		return executablePath;
 	} catch (error) {
 		if (typeof error === "string") {
-			return Promise.reject(new GreenITError(error));
+			throw new GreenITError(error);
 		}
 
 		if (error instanceof Error) {
-			return Promise.reject(new GreenITError(error.message));
+			throw new GreenITError(error.message);
 		}
 
 		return Promise.reject(error);
