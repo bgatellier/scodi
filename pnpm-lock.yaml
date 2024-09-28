@@ -72,9 +72,6 @@ catalogs:
     pino-pretty:
       specifier: ^11.0.0
       version: 11.2.2
-    tinyexec:
-      specifier: ^0.3.0
-      version: 0.3.0
     ts-node:
       specifier: ^10.9.1
       version: 10.9.2
@@ -265,9 +262,6 @@ importers:
       puppeteer-core:
         specifier: catalog:puppeteerGreenIT
         version: 21.11.0
-      tinyexec:
-        specifier: 'catalog:'
-        version: 0.3.0
     devDependencies:
       '@types/greenit-cli':
         specifier: workspace:^0.1.0
@@ -299,9 +293,6 @@ importers:
       puppeteer-core:
         specifier: catalog:puppeteerLighthouse
         version: 22.15.0
-      tinyexec:
-        specifier: 'catalog:'
-        version: 0.3.0
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -3322,9 +3313,6 @@ packages:
 
   tinybench@2.8.0:
     resolution: {integrity: sha512-1/eK7zUnIklz4JUUlL+658n58XO2hHLQfSk1Zf2LKieUjxidN16eKFEoDEfjHc3ohofSSqK3X5yO6VGb6iW8Lw==}
-
-  tinyexec@0.3.0:
-    resolution: {integrity: sha512-tVGE0mVJPGb0chKhqmsoosjsS+qUnJVGJpZgsHYQcGoPlG3B51R3PouqTgEGH2Dc9jjFyOqOpix6ZHNMXp1FZg==}
 
   tinypool@1.0.0:
     resolution: {integrity: sha512-KIKExllK7jp3uvrNtvRBYBWBOAXSX8ZvoaD8T+7KB/QHIuoJW3Pmr60zucywjAlMb5TeXUkcs/MWeWLu0qvuAQ==}
@@ -6872,8 +6860,6 @@ snapshots:
   tildify@2.0.0: {}
 
   tinybench@2.8.0: {}
-
-  tinyexec@0.3.0: {}
 
   tinypool@1.0.0: {}
 

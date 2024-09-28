@@ -1,3 +1,4 @@
+import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -7,7 +8,6 @@ import {
 } from "@scodi/common";
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer-core";
-import { x } from "tinyexec";
 import { LighthouseError } from "../error/LighthouseError.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -19,7 +19,7 @@ export async function requestResult(
 	conf: LighthouseConfig,
 	verbose: boolean,
 ): Promise<LighthouseReport["result"]> {
-	const executablePath = await getBrowserExecutablePath(verbose);
+	const executablePath = getBrowserExecutablePath(verbose);
 
 	const browser = await puppeteer.launch({
 		executablePath: executablePath,
@@ -56,34 +56,25 @@ export async function requestResult(
  *
  * @see {@link https://github.com/puppeteer/puppeteer/issues/679#issuecomment-1274988821}
  */
-async function getBrowserExecutablePath(verbose: boolean): Promise<string> {
-	try {
-		const { stdout } = await x(
-			"node",
-			["-e", "console.log(require('puppeteer').executablePath())"],
-			{
-				nodeOptions: {
-					cwd: join(__dirname, "../../node_modules/lighthouse"),
-				},
-			},
-		);
+function getBrowserExecutablePath(verbose: boolean): string {
+	const { stdout, error } = spawnSync(
+		"node",
+		["-e", "console.log(require('puppeteer').executablePath())"],
+		{
+			cwd: join(__dirname, "../../node_modules/lighthouse"),
+			encoding: "utf-8",
+		},
+	);
 
-		const executablePath = stdout.trim();
-
-		if (verbose) {
-			logger.info(`Browser path: ${executablePath}`);
-		}
-
-		return executablePath;
-	} catch (error) {
-		if (typeof error === "string") {
-			throw new LighthouseError(error);
-		}
-
-		if (error instanceof Error) {
-			throw new LighthouseError(error.message);
-		}
-
-		return Promise.reject(error);
+	if (error) {
+		throw new LighthouseError(error.message, { cause: error.cause });
 	}
+
+	const executablePath = stdout.trim();
+
+	if (verbose) {
+		logger.info(`Browser path: ${executablePath}`);
+	}
+
+	return executablePath;
 }

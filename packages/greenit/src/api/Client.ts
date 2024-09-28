@@ -1,3 +1,4 @@
+import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -9,7 +10,6 @@ import {
 } from "greenit-cli/cli-core/analysis.js";
 import { translator } from "greenit-cli/cli-core/translator.js";
 import puppeteer from "puppeteer-core";
-import { x } from "tinyexec";
 import { GreenITError } from "../error/GreenITError.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
@@ -27,7 +27,7 @@ export async function requestResult(
 	config: GreenITConfig,
 	verbose: boolean,
 ): Promise<GreenITReport["result"]> {
-	const executablePath = await getBrowserExecutablePath(verbose);
+	const executablePath = getBrowserExecutablePath(verbose);
 	const options = createOptions(config);
 
 	const browser = await puppeteer.launch({
@@ -118,34 +118,25 @@ function createOptions(config: GreenITConfig): Options {
  *
  * @see {@link https://github.com/puppeteer/puppeteer/issues/679#issuecomment-1274988821}
  */
-async function getBrowserExecutablePath(verbose: boolean): Promise<string> {
-	try {
-		const { stdout } = await x(
-			"node",
-			["-e", "console.log(require('puppeteer').executablePath())"],
-			{
-				nodeOptions: {
-					cwd: join(__dirname, "../../node_modules/greenit-cli"),
-				},
-			},
-		);
+function getBrowserExecutablePath(verbose: boolean): string {
+	const { stdout, error } = spawnSync(
+		"node",
+		["-e", "console.log(require('puppeteer').executablePath())"],
+		{
+			cwd: join(__dirname, "../../node_modules/greenit-cli"),
+			encoding: "utf-8",
+		},
+	);
 
-		const executablePath = stdout.trim();
-
-		if (verbose) {
-			logger.info(`Browser path: ${executablePath}`);
-		}
-
-		return executablePath;
-	} catch (error) {
-		if (typeof error === "string") {
-			throw new GreenITError(error);
-		}
-
-		if (error instanceof Error) {
-			throw new GreenITError(error.message);
-		}
-
-		return Promise.reject(error);
+	if (error) {
+		throw new GreenITError(error.message, { cause: error.cause });
 	}
+
+	const executablePath = stdout.trim();
+
+	if (verbose) {
+		logger.info(`Browser path: ${executablePath}`);
+	}
+
+	return executablePath;
 }
