@@ -45,7 +45,7 @@ describe("Run GreenIT analysis", () => {
 			},
 		};
 
-		const module = new GreenITModule(moduleMetadata, false);
+		const module = new GreenITModule(moduleMetadata, true);
 		const analysisReport = await module.startAnalysis(Conf);
 
 		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessReport.url);
@@ -80,7 +80,7 @@ describe("Run GreenIT analysis", () => {
 			},
 		};
 
-		const module = new GreenITModule(moduleMetadata, false);
+		const module = new GreenITModule(moduleMetadata, true);
 
 		await expect(() => module.startAnalysis(Conf)).rejects.toThrowError(
 			"Error during GreenIT analysis. Increasing the timeout can be a solution",
@@ -107,7 +107,7 @@ describe("Run GreenIT analysis", () => {
 
 		const THRESHOLD = 30;
 
-		const module = new GreenITModule(moduleMetadata, false);
+		const module = new GreenITModule(moduleMetadata, true);
 		const analysisReport = await module.startAnalysis(Conf, THRESHOLD);
 
 		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessReport.url);
@@ -147,7 +147,7 @@ describe("Run GreenIT analysis", () => {
 
 		const THRESHOLD = 30;
 
-		const module = new GreenITModule(moduleMetadata, false);
+		const module = new GreenITModule(moduleMetadata, true);
 		const analysisReport = await module.startAnalysis(Conf, THRESHOLD);
 
 		expect(analysisReport).toHaveProperty("analyzedUrl", SuccessReport.url);
