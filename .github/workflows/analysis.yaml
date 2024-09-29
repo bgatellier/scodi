@@ -43,7 +43,7 @@ jobs:
     needs: affected-projects
     strategy:
       matrix:
-        project-id: ${{ fromJSON(needs.affected-projects.outputs.list).projects.*.id }}
+        projects: ${{ fromJSON(needs.affected-projects.outputs.list).projects }}
     defaults:
       run:
         shell: bash
@@ -78,17 +78,17 @@ jobs:
             ${{ runner.os }}-pnpm-
 
       - name: Generate coverage report
-        run: moon run ${{ matrix.project-id }}:coverage
+        run: moon run ${{ matrix.projects.id }}:coverage
 
       - uses: SonarSource/sonarcloud-github-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: packages/${{ matrix.project-id }}/
+          projectBaseDir: ${{ matrix.projects.source }}
           args: >
             -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-${{ matrix.project-id }}
+            -Dsonar.projectKey=scodi-${{ matrix.projects.id }}
             -Dsonar.sources=src/
             -Dsonar.tests=tests/
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
