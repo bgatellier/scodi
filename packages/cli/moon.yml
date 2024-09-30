@@ -7,5 +7,6 @@ dependsOn:
     scope: production
 stack: backend
 tags:
+  - scodi
   - runner
 type: tool

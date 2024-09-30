@@ -3,4 +3,6 @@ project:
   name: Scodi Common
   description: Centralize components needed by every other packages
 stack: backend
+tags:
+  - scodi
 type: library
