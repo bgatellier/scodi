@@ -34,7 +34,7 @@ jobs:
         run: |
           delimiter="$(openssl rand -hex 8)"
           echo "json<<${delimiter}" >> "$GITHUB_OUTPUT"
-          echo "$(moon query touched-files | moon query projects --affected --json)" >> "$GITHUB_OUTPUT"
+          echo "$(moon query touched-files | moon query projects --affected --tags scodi --json)" >> "$GITHUB_OUTPUT"
           echo "${delimiter}" >> "$GITHUB_OUTPUT"
 
   sonarcloud:

@@ -9,5 +9,6 @@ dependsOn:
     scope: production
 stack: backend
 tags:
+  - scodi
   - listener
 type: application
