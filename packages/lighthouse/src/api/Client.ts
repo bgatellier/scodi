@@ -58,7 +58,7 @@ export async function requestResult(
  */
 function getBrowserExecutablePath(verbose: boolean): string {
 	const { stdout, error } = spawnSync(
-		"node",
+		process.execPath,
 		["-e", "console.log(require('puppeteer').executablePath())"],
 		{
 			cwd: join(__dirname, "../../node_modules/lighthouse"),
