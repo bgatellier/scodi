@@ -1,4 +1,4 @@
-import type { SizeNames } from "../sizes";
+import type { Devices } from "../sizes";
 import type { Translator } from "./translator";
 
 interface Action {
@@ -20,7 +20,7 @@ interface PageInformation {
 interface Options {
 	ci: boolean;
 	// Hardware to simulate
-	device: SizeNames;
+	device: Devices;
 	// Report language
 	language: "fr" | "en";
 	// Number of concurrent analysis
@@ -150,6 +150,8 @@ type JSONReport = GeneralProperties & {
 };
 
 export {
+	type BestPractices,
+	type Page,
 	type GeneralProperties,
 	type KPIProperties,
 	createJsonReports,

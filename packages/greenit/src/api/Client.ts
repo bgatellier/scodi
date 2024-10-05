@@ -1,26 +1,44 @@
 import { readFileSync } from "node:fs";
-import type { GreenITConfig, GreenITReport } from "@scodi/common";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import {
+	type GreenITConfig,
+	type GreenITReport,
+	getPuppeteerBrowserExecutablePath,
+} from "@scodi/common";
+import {
+	type JSONReport,
 	type Options,
-	type Report,
 	createJsonReports,
 } from "greenit-cli/cli-core/analysis.js";
-import puppeteer from "puppeteer";
+import { translator } from "greenit-cli/cli-core/translator.js";
+import puppeteer from "puppeteer-core";
+import { GreenITError } from "../error/GreenITError.js";
+
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 const DEFAULT_OPTIONS: Options = {
+	ci: true,
 	device: "desktop",
-	max_tab: 3,
+	language: "en",
+	max_tab: 40,
 	retry: 2,
-	timeout: 3000,
+	timeout: 180000,
 };
 
-/**
- * @see {@link https://github.com/GoogleChrome/lighthouse/blob/main/docs/puppeteer.md#option-2-launch-chrome-with-lighthousechrome-launcher-and-handoff-to-puppeteer}
- */
 export async function requestResult(
 	config: GreenITConfig,
+	verbose: boolean,
 ): Promise<GreenITReport["result"]> {
+	const executablePath = getPuppeteerBrowserExecutablePath(
+		join(__dirname, "../../node_modules/greenit-cli"),
+		GreenITError,
+		verbose,
+	);
+	const options = createOptions(config);
+
 	const browser = await puppeteer.launch({
+		executablePath: executablePath,
 		// https://www.howtogeek.com/devops/how-to-run-puppeteer-and-headless-chrome-in-a-docker-container/#using-puppeteer-in-docker
 		args: [
 			"--disable-gpu",
@@ -29,19 +47,7 @@ export async function requestResult(
 			"--no-sandbox",
 		],
 		defaultViewport: null,
-		// https://developer.chrome.com/articles/new-headless/
-		headless: true,
 	});
-
-	const options: Options = {
-		ci: true,
-		device: config.device ?? DEFAULT_OPTIONS.device,
-		max_tab: DEFAULT_OPTIONS.max_tab,
-		retry: config.retry ?? DEFAULT_OPTIONS.retry,
-		timeout: config.timeout ?? DEFAULT_OPTIONS.timeout,
-	};
-
-	const reports = new Array<Report>();
 
 	// As the createJsonReports use console.* functions to display progress info and errors and do not send back these information,
 	// so we need to disable the console.* functions during this operation to handle the output ourselves.
@@ -54,30 +60,62 @@ export async function requestResult(
 		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		console.error = () => {};
 
-		const r = await createJsonReports(browser, [{ url: config.url }], options);
+		const reports = await createJsonReports(
+			browser,
+			[{ url: config.url }],
+			options,
+			{},
+			undefined,
+			translator,
+		);
 
-		reports.push(...r);
+		const jsonReport = JSON.parse(
+			readFileSync(reports[0].path, { encoding: "utf-8" }),
+		) as JSONReport;
+
+		if (jsonReport.success === false) {
+			throw new GreenITError(
+				"Error during GreenIT analysis. Increasing the timeout can be a solution",
+			);
+		}
+
+		return {
+			...jsonReport.pages[0].actions[0],
+			...{
+				success: jsonReport.success,
+				nbBestPracticesToCorrect: jsonReport.nbBestPracticesToCorrect,
+				date: jsonReport.date,
+				pageInformations: jsonReport.pageInformations,
+				tryNb: jsonReport.tryNb,
+				tabId: jsonReport.tabId,
+				index: jsonReport.index,
+				url: jsonReport.url,
+			},
+		};
 	} catch (error) {
-		return Promise.reject(error);
+		if (typeof error === "string") {
+			throw new GreenITError(error);
+		}
+
+		if (error instanceof Error) {
+			throw new GreenITError(error.message);
+		}
+
+		throw error;
 	} finally {
 		console.log = consoleLog;
 		console.error = consoleError;
-		const pages = await browser.pages();
-		await Promise.all(pages.map((_) => _.close()));
 		await browser.close();
 	}
+}
 
-	if (0 === reports.length) {
-		return Promise.reject("No report has been generated");
-	}
-
-	const result = JSON.parse(
-		readFileSync(reports[0].path, { encoding: "utf-8" }),
-	) as GreenITReport["result"];
-
-	return result.success
-		? result
-		: Promise.reject(
-				"Error during GreenIT analysis. Increasing the timeout can be a solution",
-			);
+function createOptions(config: GreenITConfig): Options {
+	return {
+		ci: DEFAULT_OPTIONS.ci,
+		device: config.device ?? DEFAULT_OPTIONS.device,
+		language: config.language ?? DEFAULT_OPTIONS.language,
+		max_tab: DEFAULT_OPTIONS.max_tab,
+		retry: config.retry ?? DEFAULT_OPTIONS.retry,
+		timeout: config.timeout ?? DEFAULT_OPTIONS.timeout,
+	};
 }

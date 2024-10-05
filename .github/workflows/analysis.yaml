@@ -33,8 +33,9 @@ jobs:
         id: moon-query
         run: |
           delimiter="$(openssl rand -hex 8)"
+          affected_projects="$(moon query touched-files | moon query projects --affected --tags scodi --json)"
           echo "json<<${delimiter}" >> "$GITHUB_OUTPUT"
-          echo "$(moon query touched-files | moon query projects --affected --tags scodi --json)" >> "$GITHUB_OUTPUT"
+          echo "${affected_projects}" >> "$GITHUB_OUTPUT"
           echo "${delimiter}" >> "$GITHUB_OUTPUT"
 
   sonarcloud:
@@ -43,7 +44,7 @@ jobs:
     needs: affected-projects
     strategy:
       matrix:
-        project-id: ${{ fromJSON(needs.affected-projects.outputs.list).projects.*.id }}
+        projects: ${{ fromJSON(needs.affected-projects.outputs.list).projects }}
     defaults:
       run:
         shell: bash
@@ -58,7 +59,7 @@ jobs:
         env:
           NODE_VERSION: 18
 
-      - name: Setup Moon
+      - name: Setup Moon toolchain
         uses: moonrepo/setup-toolchain@v0
         with:
           auto-install: true
@@ -70,23 +71,25 @@ jobs:
       - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          path: |
+            ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+            /home/runner/.cache/puppeteer
           key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
       - name: Generate coverage report
-        run: moon run ${{ matrix.project-id }}:coverage
+        run: moon run ${{ matrix.projects.id }}:coverage
 
       - uses: SonarSource/sonarcloud-github-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: packages/${{ matrix.project-id }}/
+          projectBaseDir: ${{ matrix.projects.source }}
           args: >
             -Dsonar.organization=bgatellier
-            -Dsonar.projectKey=scodi-${{ matrix.project-id }}
+            -Dsonar.projectKey=scodi-${{ matrix.projects.id }}
             -Dsonar.sources=src/
             -Dsonar.tests=tests/
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info

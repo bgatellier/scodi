@@ -1,61 +1,63 @@
-import type { LighthouseConfig } from "@scodi/common";
-import { describe, expect, it, vi } from "vitest";
+import type { LighthouseConfig, ModuleMetadata } from "@scodi/common";
+import lighthouse from "lighthouse";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { LighthouseModule } from "../src/LighthouseModule.js";
+import { Conf, SuccessRunnerResult } from "./data.js";
 
-vi.mock("../src/api/Client.js");
-vi.mock("lighthouse");
+vi.mock(import("lighthouse"), async () => {
+	return {
+		default: vi.fn(),
+	};
+});
 
-const CONF: LighthouseConfig = {
-	url: "https://www.ipcc.ch",
-	config: {
-		extends: "lighthouse:default",
-		settings: {
-			onlyAudits: [
-				"first-meaningful-paint",
-				"speed-index",
-				"first-cpu-idle",
-				"interactive",
-			],
-		},
+const moduleMetadata: ModuleMetadata = {
+	id: "lighthouse-test",
+	type: "analysis",
+	name: "Scodi Lighthouse Test",
+	service: {
+		name: "Lighthouse Test",
 	},
 };
 
 describe("Starts an analysis", () => {
-	const module = new LighthouseModule(
-		{
-			id: "lighthouse-test",
-			type: "analysis",
-			name: "Scodi Lighthouse Test",
-			service: {
-				name: "Lighthouse Test",
-			},
-		},
-		false,
-	);
+	afterEach(() => {
+		vi.restoreAllMocks();
+	});
 
 	it("should starts an analysis with a valid configuration", async () => {
-		const report = await module.startAnalysis(CONF);
+		vi.mocked(lighthouse).mockResolvedValue(SuccessRunnerResult);
 
-		expect(report.analyzedUrl).toStrictEqual(CONF.url);
+		const module = new LighthouseModule(moduleMetadata, true);
+
+		const report = await module.startAnalysis(Conf);
+
+		expect(report.analyzedUrl).toStrictEqual(Conf.url);
 		expect(report).toHaveProperty("date");
 		expect(report).toHaveProperty("grade");
 		expect(report).toHaveProperty("normalizedGrade");
 	});
 
-	it("should starts an analysis with an invalid configuration", async () => {
-		const INVALID_CONF = { ...CONF, url: "" } as LighthouseConfig;
+	it("should not starts an analysis with an invalid configuration", async () => {
+		vi.mocked(lighthouse).mockResolvedValue(undefined);
 
-		try {
-			await module.startAnalysis(INVALID_CONF);
-		} catch (e) {
-			expect(e).toHaveProperty("error");
-		}
+		const INVALID_CONF = {
+			...Conf,
+			...{ yolo: true },
+		} as unknown as LighthouseConfig;
+		const module = new LighthouseModule(moduleMetadata, true);
+
+		await expect(() =>
+			module.startAnalysis(INVALID_CONF),
+		).rejects.toThrowError();
 	});
 
 	it("Should return true status when results match thresholds objectives", async () => {
-		const THRESHOLD = 80;
+		vi.mocked(lighthouse).mockResolvedValue(SuccessRunnerResult);
 
-		const report = await module.startAnalysis(CONF, THRESHOLD);
+		const THRESHOLD = 80;
+		const module = new LighthouseModule(moduleMetadata, true);
+
+		const report = await module.startAnalysis(Conf, THRESHOLD);
 
 		expect(report.isThresholdReached()).toStrictEqual(true);
 	});

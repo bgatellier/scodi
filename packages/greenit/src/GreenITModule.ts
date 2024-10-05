@@ -27,7 +27,7 @@ export class GreenITModule
 	): Promise<GreenITReport> {
 		this.#threshold = threshold;
 
-		const result = await requestResult(config);
+		const result = await requestResult(config, this.verbose);
 
 		return this.#handleResult(config, result);
 	}
@@ -36,12 +36,9 @@ export class GreenITModule
 		config: Config,
 		result: GreenITReport["result"],
 	): GreenITReport {
-		const [date, time] = result.date.split(" ");
-		const [day, month, year] = date.split("/");
-
 		return new GreenITReport({
 			analyzedUrl: result.url,
-			date: new Date(`${year}-${month}-${day}T${time}`),
+			date: new Date(result.date),
 			result: result,
 			service: this.service,
 			inputs: {

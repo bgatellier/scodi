@@ -3,6 +3,7 @@
   "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "outDir": "lib",
+    "removeComments": true,
     "rootDir": "src"
   },
   "references": [

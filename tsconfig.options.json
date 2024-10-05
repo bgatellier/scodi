@@ -12,7 +12,6 @@
     "noUnusedParameters": true,
 
     "declaration": true,
-    "removeComments": true,
 
     "module": "NodeNext",
     "moduleResolution": "nodenext",

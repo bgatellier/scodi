@@ -37,11 +37,14 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
     ```jsonc
     {
         "url": "https://www.ipcc.ch/",
-        // optional - default: 3000
-        "timeout": 1000,
-        // optional - default: 2
+        // optional - Report language. Default: "en"
+        // possible values: "en", "fr"
+        "language": "fr",
+        // optional - Timeout for an analysis of a URL in ms. Default: 180000
+        "timeout": 180000,
+        // optional - Number of retry when an analysis of a URL fail. Default: 2
         "retry": 2,
-        // optional - default: "desktop"
+        // optional - Hardware to simulate. Default: "desktop"
         // possible values: "desktop", "galaxyS9", "galaxyS20", "iPhone8", "iPhone8Plus", "iPhoneX", "iPad"
         "device": "galaxyS20"
     }

@@ -3,9 +3,10 @@
   "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "esModuleInterop": true,
-    "resolveJsonModule": true,
     "outDir": "lib",
-    "rootDir": "src"
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": "src",
   },
   "references": [
     {

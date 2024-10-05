@@ -26,7 +26,7 @@ jobs:
       - name: Set Node.js version
         run: sed -Ei 's/(node = ).*/\1"^${{ matrix.node_version}}"/' .prototools
 
-      - name: Setup Moon
+      - name: Setup Moon toolchain
         uses: moonrepo/setup-toolchain@v0
         with:
           auto-install: true
@@ -38,13 +38,12 @@ jobs:
       - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          path: |
+            ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+            /home/runner/.cache/puppeteer
           key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
       - name: Run tests
         run: moon run :test
-        env:
-          # skip browser download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
-          PUPPETEER_SKIP_DOWNLOAD: true

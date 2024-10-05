@@ -1,23 +1,9 @@
+import type { Options } from "greenit-cli";
 import type { Config } from "../Config.js";
 
-type SizeNames =
-	| "desktop"
-	| "galaxyS9"
-	| "galaxyS20"
-	| "iPhone8"
-	| "iPhone8Plus"
-	| "iPhoneX"
-	| "iPad";
-
-interface Options {
-	timeout?: number;
-	max_tab?: number;
-	retry?: number;
-	device?: SizeNames;
-	ci?: boolean;
-}
-
+// use Exclude instead of Pick to allow future new options.
+// the goal is to be as close as possible of the dependency API.
 export type GreenITConfig = Config &
-	Options & {
+	Partial<Exclude<Options, "ci" | "max_tab">> & {
 		url: string;
 	};

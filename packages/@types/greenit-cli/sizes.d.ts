@@ -1,4 +1,4 @@
-type SizeNames =
+type Devices =
 	| "desktop"
 	| "galaxyS9"
 	| "galaxyS20"
@@ -13,7 +13,7 @@ type Properties = {
 	isMobile: boolean;
 };
 
-declare const sizes: Record<SizeNames, Properties>;
+declare const devices: Record<Devices, Properties>;
 
-export type { SizeNames };
-export default sizes;
+export type { Devices };
+export default devices;

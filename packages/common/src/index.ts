@@ -42,6 +42,7 @@ import { ObservatoryScanState } from "./report/observatory/enum/ObservatoryScanS
 import { SsllabsServerReport } from "./report/ssllabs-server/SsllabsServerReport.js";
 import { SsllabsServerStatus } from "./report/ssllabs-server/enum/SsllabsServerStatus.js";
 import { timeout } from "./time/timeout.js";
+import { getPuppeteerBrowserExecutablePath } from "./utils/puppeteer.js";
 import {
 	getAnalysisValidationSchema,
 	validateAnalysisInput,
@@ -103,6 +104,8 @@ export {
 	SsllabsServerReport,
 	Request,
 	SsllabsServerStatus,
+	// Utils
+	getPuppeteerBrowserExecutablePath,
 	// Validation
 	getAnalysisValidationSchema,
 	validateAnalysisInput,

@@ -33,7 +33,7 @@
   "dependencies": {
     "@scodi/common": "workspace:^4.0.0",
     "lighthouse": "catalog:",
-    "puppeteer": "catalog:"
+    "puppeteer-core": "catalog:puppeteerLighthouse"
   },
   "devDependencies": {
     "@types/node": "catalog:",

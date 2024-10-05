@@ -2,6 +2,7 @@ packages:
   - packages/@types/*
   - packages/*
   - test/
+
 catalog:
   "@fastify/cors": ^9.0.0
   "@mikro-orm/cli": ^6.0.0
@@ -11,7 +12,6 @@ catalog:
   "@mikro-orm/reflection": ^6.0.0
   "@slack/web-api": ^7.0.0
   "@types/express": ^4.17.21
-  "@types/har-format": ^1.2.15
   "@types/node": ^18.19.6
   "@vitest/coverage-istanbul": ^2.0.5
   ajv: ^8.12.0
@@ -20,11 +20,22 @@ catalog:
   commander: ^12.0.0
   dotenv: ^16.3.1
   fastify: ^4.25.2
+  greenit-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#9c1f010ad939782fab6fa1033d0ac267da547760
   lighthouse: ^11.4.0
+  memfs: ^4.11.1
   ora: ^8.0.1
   pino: ^9.0.0
   pino-pretty: ^11.0.0
-  puppeteer: ^23.0.0
   ts-node: ^10.9.1
   type-fest: ^4.9.0
   vitest: ^2.0.5
+
+catalogs:
+  # align puppeteer-core version with the puppeteer version used by the lighthouse or greenit-cli dependency
+  # this allows to:
+  # - limit the number of puppeteer* dependencies installed
+  # - avoid to install additional Chrome browsers in different versions (as puppeteer embed Chrome, but puppeteer-core doesn't)
+  puppeteerLighthouse:
+    puppeteer-core: ^22.5.0
+  puppeteerGreenIT:
+    puppeteer-core: ^21.5.2
