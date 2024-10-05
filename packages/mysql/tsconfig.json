@@ -6,6 +6,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "outDir": "lib",
+    "removeComments": true,
     "rootDir": "src"
   },
   "references": [

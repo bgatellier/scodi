@@ -4,6 +4,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "outDir": "lib",
+    "removeComments": true,
     "rootDir": "src"
   },
   "references": [
