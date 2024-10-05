@@ -91,7 +91,7 @@ importers:
         version: 2.27.8
       jsr:
         specifier: ^0.13.1
-        version: 0.13.1
+        version: 0.13.2
       rimraf:
         specifier: ^5.0.9
         version: 5.0.10
@@ -2305,8 +2305,8 @@ packages:
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
 
-  jsr@0.13.1:
-    resolution: {integrity: sha512-vKS4Z23V9Ue4hbup85d4dPGi8rNjojoLpZXQDgOudZjJZBvGy03bIzrJEzfMZDiwNx5ARSdp6Y5ua1winxEvsw==}
+  jsr@0.13.2:
+    resolution: {integrity: sha512-c4ir0ql2Xgpg9mSOSPKBANS9oTvlV8fSzpesCsHP04VAOJ3pBm7YygY2LVkHC0jz9G36JBGh1oiEZTWO4UyctA==}
     hasBin: true
 
   jszip@3.10.1:
@@ -5783,7 +5783,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  jsr@0.13.1:
+  jsr@0.13.2:
     dependencies:
       kolorist: 1.8.0
       node-stream-zip: 1.15.0
