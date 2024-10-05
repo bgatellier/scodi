@@ -1,8 +1,11 @@
-import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { type GreenITConfig, type GreenITReport, logger } from "@scodi/common";
+import {
+	type GreenITConfig,
+	type GreenITReport,
+	getPuppeteerBrowserExecutablePath,
+} from "@scodi/common";
 import {
 	type JSONReport,
 	type Options,
@@ -27,7 +30,11 @@ export async function requestResult(
 	config: GreenITConfig,
 	verbose: boolean,
 ): Promise<GreenITReport["result"]> {
-	const executablePath = getBrowserExecutablePath(verbose);
+	const executablePath = getPuppeteerBrowserExecutablePath(
+		join(__dirname, "../../node_modules/greenit-cli"),
+		GreenITError,
+		verbose,
+	);
 	const options = createOptions(config);
 
 	const browser = await puppeteer.launch({
@@ -111,32 +118,4 @@ function createOptions(config: GreenITConfig): Options {
 		retry: config.retry ?? DEFAULT_OPTIONS.retry,
 		timeout: config.timeout ?? DEFAULT_OPTIONS.timeout,
 	};
-}
-
-/**
- * Get the browser executable path from the puppeteer dependency of the greenit-cli dependency
- *
- * @see {@link https://github.com/puppeteer/puppeteer/issues/679#issuecomment-1274988821}
- */
-function getBrowserExecutablePath(verbose: boolean): string {
-	const { stdout, error } = spawnSync(
-		process.execPath,
-		["-e", "console.log(require('puppeteer').executablePath())"],
-		{
-			cwd: join(__dirname, "../../node_modules/greenit-cli"),
-			encoding: "utf-8",
-		},
-	);
-
-	if (error) {
-		throw new GreenITError(error.message, { cause: error.cause });
-	}
-
-	const executablePath = stdout.trim();
-
-	if (verbose) {
-		logger.info(`Browser path: ${executablePath}`);
-	}
-
-	return executablePath;
 }

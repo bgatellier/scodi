@@ -1,10 +1,9 @@
-import { spawnSync } from "node:child_process";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
 	type LighthouseConfig,
 	type LighthouseReport,
-	logger,
+	getPuppeteerBrowserExecutablePath,
 } from "@scodi/common";
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer-core";
@@ -19,7 +18,11 @@ export async function requestResult(
 	conf: LighthouseConfig,
 	verbose: boolean,
 ): Promise<LighthouseReport["result"]> {
-	const executablePath = getBrowserExecutablePath(verbose);
+	const executablePath = getPuppeteerBrowserExecutablePath(
+		join(__dirname, "../../node_modules/lighthouse"),
+		LighthouseError,
+		verbose,
+	);
 
 	const browser = await puppeteer.launch({
 		executablePath: executablePath,
@@ -62,32 +65,4 @@ export async function requestResult(
 	} finally {
 		await browser.close();
 	}
-}
-
-/**
- * Get the browser executable path from the puppeteer dependency of the greenit-cli dependency
- *
- * @see {@link https://github.com/puppeteer/puppeteer/issues/679#issuecomment-1274988821}
- */
-function getBrowserExecutablePath(verbose: boolean): string {
-	const { stdout, error } = spawnSync(
-		process.execPath,
-		["-e", "console.log(require('puppeteer').executablePath())"],
-		{
-			cwd: join(__dirname, "../../node_modules/lighthouse"),
-			encoding: "utf-8",
-		},
-	);
-
-	if (error) {
-		throw new LighthouseError(error.message, { cause: error.cause });
-	}
-
-	const executablePath = stdout.trim();
-
-	if (verbose) {
-		logger.info(`Browser path: ${executablePath}`);
-	}
-
-	return executablePath;
 }
