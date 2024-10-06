@@ -69,7 +69,7 @@ export async function startAnalysis<
 
 		spinner.fail(`Analysis failed.${reason}`);
 
-		return Promise.reject();
+		throw new Error(reason);
 	}
 }
 
