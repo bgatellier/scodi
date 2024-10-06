@@ -17,7 +17,7 @@ export class ObservatoryModule
 	extends Module
 	implements ModuleAnalysisInterface<ObservatoryConfig, ObservatoryReport>
 {
-	#client: Client;
+	readonly #client: Client;
 
 	constructor(moduleMetadata: ModuleMetadata, verbose: boolean) {
 		super(moduleMetadata, verbose);

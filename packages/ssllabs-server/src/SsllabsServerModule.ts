@@ -19,13 +19,13 @@ export class SsllabsServerModule
 	extends Module
 	implements ModuleAnalysisInterface<SsllabsServerConfig, SsllabsServerReport>
 {
-	#apiClient: Client;
+	readonly #client: Client;
 	#threshold?: number;
 
 	constructor(moduleMetadata: ModuleMetadata, verbose: boolean) {
 		super(moduleMetadata, verbose);
 
-		this.#apiClient = new Client();
+		this.#client = new Client();
 
 		if (verbose) {
 			logger.info(`${moduleMetadata.name} initialized.`);
@@ -38,7 +38,7 @@ export class SsllabsServerModule
 	): Promise<SsllabsServerReport> {
 		this.#threshold = threshold;
 
-		await this.#apiClient.launchAnalysis(config);
+		await this.#client.launchAnalysis(config);
 
 		return this.#requestResult(config);
 	}
@@ -63,10 +63,10 @@ export class SsllabsServerModule
 
 			case SsllabsServerStatus.READY:
 				return new SsllabsServerReport({
-					analyzedUrl: this.#apiClient.getProjectUrl(),
+					analyzedUrl: this.#client.getProjectUrl(),
 					date: new Date(result.startTime),
 					result: result,
-					resultUrl: this.#apiClient.getAnalyzeUrl(),
+					resultUrl: this.#client.getAnalyzeUrl(),
 					service: this.service,
 					inputs: {
 						config: config,
@@ -92,7 +92,7 @@ export class SsllabsServerModule
 			return Promise.reject(e);
 		}
 
-		const result = await this.#apiClient.getResult();
+		const result = await this.#client.getResult();
 
 		return this.#handleResult(config, result, triesQty);
 	}
