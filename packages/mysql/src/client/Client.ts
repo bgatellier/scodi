@@ -11,7 +11,7 @@ import databaseConfig from "../config/mikro-orm.config.js";
 export class MySQLClient {
 	#em: SqlEntityManager | undefined;
 	#orm: MikroORM<MySqlDriver> | undefined;
-	#verbose: boolean;
+	readonly #verbose: boolean;
 
 	constructor(verbose: boolean) {
 		this.#verbose = verbose;

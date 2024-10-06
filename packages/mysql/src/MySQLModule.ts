@@ -12,7 +12,7 @@ export class MySQLModule
 	extends Module
 	implements ModuleListenerDatabaseInterface
 {
-	#client: MySQLClient;
+	readonly #client: MySQLClient;
 
 	constructor(moduleMetadata: ModuleMetadata, verbose: boolean) {
 		super(moduleMetadata, verbose);
@@ -45,7 +45,7 @@ export class MySQLModule
 			await this.#client.save(report);
 		} catch (error) {
 			logger.error(error);
-			return Promise.reject(error);
+			throw error;
 		}
 	}
 }
