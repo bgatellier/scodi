@@ -4,12 +4,12 @@ import type { GenericReport, ReportArguments } from "../Report.js";
 import type { GreenITResult } from "./GreenITResult.js";
 
 export class GreenITReport implements GenericReport<GreenITResult> {
-	#analyzedUrl: string;
-	#date: Date;
-	#result: GreenITResult;
-	#resultUrl: string | undefined;
-	#service: Service;
-	#inputs: Pick<ValidatedAnalysisInput, "config" | "threshold">;
+	readonly #analyzedUrl: string;
+	readonly #date: Date;
+	readonly #result: GreenITResult;
+	readonly #resultUrl: string | undefined;
+	readonly #service: Service;
+	readonly #inputs: Pick<ValidatedAnalysisInput, "config" | "threshold">;
 
 	constructor({
 		analyzedUrl,
