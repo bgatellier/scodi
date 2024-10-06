@@ -9,8 +9,8 @@ import { LogLevel, WebClient } from "@slack/web-api";
  * - the SCODI_SLACK_CHANNEL_ID process.env property
  */
 export class Client {
-	#channel: string;
-	#client: WebClient;
+	readonly #channel: string;
+	readonly #client: WebClient;
 
 	constructor(verbose: boolean) {
 		this.#channel = env.SCODI_SLACK_CHANNEL_ID ?? "";
