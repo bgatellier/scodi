@@ -66,7 +66,7 @@ export class ObservatoryModule
 			case ObservatoryScanState.STARTING:
 			case ObservatoryScanState.RUNNING: {
 				// wait a bit before a new request (the scanning operation takes several seconds)
-				await Helper.timeout(TIME_BETWEEN_TRIES);
+				await Helper.wait(TIME_BETWEEN_TRIES);
 				const newScan = await this.#client.requestScan();
 
 				return this.#requestFinishedScan(newScan);

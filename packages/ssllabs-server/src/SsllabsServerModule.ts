@@ -58,7 +58,7 @@ export class SsllabsServerModule
 
 			case SsllabsServerStatus.DNS:
 			case SsllabsServerStatus.IN_PROGRESS:
-				await Helper.timeout(TIME_BETWEEN_TRIES);
+				await Helper.wait(TIME_BETWEEN_TRIES);
 				return this.#requestResult(config, triesQty + 1);
 
 			case SsllabsServerStatus.READY:

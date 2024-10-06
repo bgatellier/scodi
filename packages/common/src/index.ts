@@ -41,8 +41,8 @@ import { ObservatoryReport } from "./report/observatory/ObservatoryReport.js";
 import { ObservatoryScanState } from "./report/observatory/enum/ObservatoryScanState.js";
 import { SsllabsServerReport } from "./report/ssllabs-server/SsllabsServerReport.js";
 import { SsllabsServerStatus } from "./report/ssllabs-server/enum/SsllabsServerStatus.js";
-import { timeout } from "./time/timeout.js";
 import { getPuppeteerBrowserExecutablePath } from "./utils/puppeteer.js";
+import { wait } from "./utils/wait.js";
 import {
 	getAnalysisValidationSchema,
 	validateAnalysisInput,
@@ -50,7 +50,7 @@ import {
 import { validateServerInput } from "./validation/input/server/ServerInputValidation.js";
 
 const Helper = {
-	timeout,
+	wait,
 };
 
 const Request = {
