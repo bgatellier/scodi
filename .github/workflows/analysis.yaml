@@ -8,8 +8,8 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  affected-projects:
-    name: Guess affected projects
+  retrieve-projects:
+    name: Guess projects
     runs-on: ubuntu-latest
     outputs:
       list: ${{ steps.moon-query.outputs.json }}
@@ -24,12 +24,25 @@ jobs:
         with:
           auto-install: true
 
-      # the moon command outputs a multi-lines content:
-      # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#multiline-strings
-      # https://github.com/orgs/community/discussions/26288#discussioncomment-3876281
-      #
-      # the partial schema of the output is: { "projects": [{ "id": ""}, { "id": ""}] }
+      # Get the full list of projects if the trigger is a branch
+      - name: Retrieve projects
+        if: ${{ startsWith(github.ref, 'refs/heads/') }}
+        id: moon-query
+        # the moon command outputs a multi-lines content:
+        # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#multiline-strings
+        # https://github.com/orgs/community/discussions/26288#discussioncomment-3876281
+        #
+        # the partial schema of the output is: { "projects": [{ "id": ""}, { "id": ""}] }
+        run: |
+          delimiter="$(openssl rand -hex 8)"
+          affected_projects="$(moon query projects --tags scodi --json)"
+          echo "json<<${delimiter}" >> "$GITHUB_OUTPUT"
+          echo "${affected_projects}" >> "$GITHUB_OUTPUT"
+          echo "${delimiter}" >> "$GITHUB_OUTPUT"
+      
+      # Get the affected list of projects if the trigger is a pull request
       - name: Retrieve affected projects
+        if: ${{ startsWith(github.ref, 'refs/pull/') }}
         id: moon-query
         run: |
           delimiter="$(openssl rand -hex 8)"
@@ -41,10 +54,10 @@ jobs:
   sonarcloud:
     name: Code coverage
     runs-on: ubuntu-latest
-    needs: affected-projects
+    needs: retrieve-projects
     strategy:
       matrix:
-        projects: ${{ fromJSON(needs.affected-projects.outputs.list).projects }}
+        projects: ${{ fromJSON(needs.retrieve-projects.outputs.list).projects }}
     defaults:
       run:
         shell: bash
