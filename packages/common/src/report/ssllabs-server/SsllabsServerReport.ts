@@ -43,20 +43,21 @@ const computeEndpoints = (endpoints: SsllabsServerEndpoint[]): number => {
 	const sumGrades = grades.reduce(
 		(previousValue: number, currentValue: number) =>
 			previousValue + currentValue,
+		0,
 	);
 
 	return sumGrades / grades.length;
 };
 
 export class SsllabsServerReport implements GenericReport<SsllabsServerResult> {
-	#analyzedUrl: string;
-	#date: Date;
-	#grade: string;
-	#normalizedGrade: number;
-	#result: SsllabsServerResult;
-	#resultUrl: string | undefined;
-	#service: Service;
-	#inputs: Pick<ValidatedAnalysisInput, "config" | "threshold">;
+	readonly #analyzedUrl: string;
+	readonly #date: Date;
+	readonly #grade: string;
+	readonly #normalizedGrade: number;
+	readonly #result: SsllabsServerResult;
+	readonly #resultUrl: string | undefined;
+	readonly #service: Service;
+	readonly #inputs: Pick<ValidatedAnalysisInput, "config" | "threshold">;
 
 	constructor({
 		analyzedUrl,

@@ -104,7 +104,7 @@ export const createAnalysisSubcommand = <C extends Config>(
 						? new InvalidArgumentError(error.cause[0].message ?? error.message)
 						: error;
 
-				return Promise.reject(e);
+				throw e;
 			}
 		});
 

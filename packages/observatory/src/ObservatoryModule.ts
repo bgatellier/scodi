@@ -75,14 +75,9 @@ export class ObservatoryModule
 			case ObservatoryScanState.FINISHED:
 				return scan;
 
-			case ObservatoryScanState.FAILED: {
-				const e = new ObservatoryError(scan.state);
-				return Promise.reject(e);
-			}
-
 			default: {
 				const e = new ObservatoryError(scan.state);
-				return Promise.reject(e);
+				throw e;
 			}
 		}
 	}

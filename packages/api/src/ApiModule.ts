@@ -25,20 +25,12 @@ declare module "fastify" {
 }
 
 export class ApiModule extends Module implements ModuleServerInterface {
-	#fastify: FastifyInstance;
+	readonly #fastify: FastifyInstance;
 
 	constructor(moduleMetadata: ModuleMetadata, verbose: boolean) {
 		super(moduleMetadata, verbose);
 
-		this.#fastify = Fastify({
-			logger: verbose,
-			ajv: {
-				customOptions: {
-					allErrors: true,
-				},
-				plugins: [AjvErrors.default],
-			},
-		});
+		this.#fastify = this.#createFastifyInstance(verbose);
 
 		if (verbose) {
 			logger.info(`${moduleMetadata.name} initialized.`);
@@ -67,6 +59,18 @@ export class ApiModule extends Module implements ModuleServerInterface {
 		this.#registerRoutes(analysisModules, listenerModules);
 
 		return this.#fastify;
+	}
+
+	#createFastifyInstance(verbose: boolean): FastifyInstance {
+		return Fastify({
+			logger: verbose,
+			ajv: {
+				customOptions: {
+					allErrors: true,
+				},
+				plugins: [AjvErrors.default],
+			},
+		});
 	}
 
 	#registerRoutes(

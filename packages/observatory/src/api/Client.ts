@@ -4,11 +4,12 @@ import {
 	type ObservatoryReport,
 	Request,
 } from "@scodi/common";
+import { ObservatoryError } from "../error/ObservatoryError.js";
 import { type ScanError, isScanError } from "./error/Error.js";
 
 export class Client {
-	#analyzeUrl: string;
-	#apiUrl: string;
+	readonly #analyzeUrl: string;
+	readonly #apiUrl: string;
 	#host = "";
 
 	constructor() {
@@ -51,10 +52,7 @@ export class Client {
 
 		// Observatory API is unconventional, and does not take advantage of http verbs :/
 		if (isScanError(scan)) {
-			return Promise.reject({
-				error: scan.error,
-				message: scan.text,
-			});
+			throw new ObservatoryError(String(scan.error), { cause: scan.text });
 		}
 
 		return scan;

@@ -4,12 +4,12 @@ import type { GenericReport, ReportArguments } from "../Report.js";
 import type { ObservatoryResult } from "./ObservatoryResult.js";
 
 export class ObservatoryReport implements GenericReport<ObservatoryResult> {
-	#analyzedUrl: string;
-	#date: Date;
-	#result: ObservatoryResult;
-	#resultUrl: string | undefined;
-	#service: Service;
-	#inputs: Pick<ValidatedAnalysisInput, "config" | "threshold">;
+	readonly #analyzedUrl: string;
+	readonly #date: Date;
+	readonly #result: ObservatoryResult;
+	readonly #resultUrl: string | undefined;
+	readonly #service: Service;
+	readonly #inputs: Pick<ValidatedAnalysisInput, "config" | "threshold">;
 
 	constructor({
 		analyzedUrl,

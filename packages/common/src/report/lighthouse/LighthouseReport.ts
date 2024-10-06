@@ -50,14 +50,14 @@ function normalize(avgScore: number, fractionDigits?: number): number {
 }
 
 export class LighthouseReport implements GenericReport<LighthouseResult> {
-	#analyzedUrl: string;
-	#date: Date;
-	#grade: string;
-	#normalizedGrade: number;
-	#result: LighthouseResult;
-	#resultUrl: string | undefined;
-	#service: Service;
-	#inputs: Pick<ValidatedAnalysisInput, "config" | "threshold">;
+	readonly #analyzedUrl: string;
+	readonly #date: Date;
+	readonly #grade: string;
+	readonly #normalizedGrade: number;
+	readonly #result: LighthouseResult;
+	readonly #resultUrl: string | undefined;
+	readonly #service: Service;
+	readonly #inputs: Pick<ValidatedAnalysisInput, "config" | "threshold">;
 
 	constructor({
 		analyzedUrl,

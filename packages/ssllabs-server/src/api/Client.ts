@@ -5,7 +5,11 @@ import {
 	type SsllabsServerReport,
 	SsllabsServerStatus,
 } from "@scodi/common";
-import { type SsllabsServerError, isSsllabsServerError } from "./Error.js";
+import { SsllabsServerError } from "../error/SsllabsServerError.js";
+import {
+	type SsllabsServerApiError,
+	isSsllabsServerApiError,
+} from "./Error.js";
 
 const API_URL = "https://api.ssllabs.com/api/v3";
 const SERVICE_URL = "https://www.ssllabs.com/ssltest/analyze.html?d=";
@@ -54,20 +58,21 @@ export class Client {
 
 	async #requestApi(): Promise<SsllabsServerReport["result"]> {
 		const host = await Request.get<
-			SsllabsServerReport["result"] | SsllabsServerError
+			SsllabsServerReport["result"] | SsllabsServerApiError
 		>(this.#generateApiUrl("/analyze"));
 
-		if (isSsllabsServerError(host)) {
-			return Promise.reject({
-				error: host.errors,
-			});
+		if (isSsllabsServerApiError(host)) {
+			const errorMessage = host.errors
+				.map((error) => {
+					return `error in field ${error.field}: ${error.message}`;
+				})
+				.join("\n");
+
+			throw new SsllabsServerError(errorMessage);
 		}
 
 		if (host.status === SsllabsServerStatus.ERROR) {
-			return Promise.reject({
-				error: "error",
-				message: host.statusMessage,
-			});
+			throw new SsllabsServerError(host.statusMessage);
 		}
 
 		return host;

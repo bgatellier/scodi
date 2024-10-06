@@ -40,7 +40,7 @@ export async function migrateListenerDatabase(
 
 			spinner.fail(`Databases update failed.${reason}`);
 
-			return Promise.reject(error);
+			throw error;
 		}
 	}
 }

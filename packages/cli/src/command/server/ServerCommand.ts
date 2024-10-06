@@ -64,7 +64,7 @@ export const createServerSubcommand = (
 						? new InvalidArgumentError(error.message)
 						: error;
 
-				return Promise.reject(e);
+				throw e;
 			}
 		});
 

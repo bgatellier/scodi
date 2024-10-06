@@ -38,39 +38,35 @@ const ENV_VALIDATION_SCHEMA_NAME = ".env.schema.json";
 export async function loadModulesMetadata(
 	cwd: string,
 ): Promise<ModulesMetadata> {
-	try {
-		const modulesPaths = await getPaths(cwd);
+	const modulesPaths = await getPaths(cwd);
 
-		const modulesMetadata = (await loadFiles(modulesPaths, "package.json")).map(
-			(content) => JSON.parse(content) as PackageJsonModule,
-		);
+	const modulesMetadata = (await loadFiles(modulesPaths, "package.json")).map(
+		(content) => JSON.parse(content) as PackageJsonModule,
+	);
 
-		const analysisModulesMap = new Map<string, PackageJsonModule>();
-		const listenerModulesMap = new Map<string, PackageJsonModule>();
-		const serverModulesMap = new Map<string, PackageJsonModule>();
+	const analysisModulesMap = new Map<string, PackageJsonModule>();
+	const listenerModulesMap = new Map<string, PackageJsonModule>();
+	const serverModulesMap = new Map<string, PackageJsonModule>();
 
-		// as modulesPaths and modules are ordered identically,
-		// we could use the index to construct the Map objects
-		modulesPaths.forEach((modulePath, index) => {
-			const moduleMetadata = modulesMetadata[index];
+	// as modulesPaths and modules are ordered identically,
+	// we could use the index to construct the Map objects
+	modulesPaths.forEach((modulePath, index) => {
+		const moduleMetadata = modulesMetadata[index];
 
-			if (moduleMetadata.scodi.type === "analysis") {
-				analysisModulesMap.set(modulePath, moduleMetadata);
-			} else if (
-				moduleMetadata.scodi.type === "listener" ||
-				moduleMetadata.scodi.type === "listener:database"
-			) {
-				listenerModulesMap.set(modulePath, moduleMetadata);
-			} else {
-				// moduleMetadata.scodi.type === "server
-				serverModulesMap.set(modulePath, moduleMetadata);
-			}
-		});
+		if (moduleMetadata.scodi.type === "analysis") {
+			analysisModulesMap.set(modulePath, moduleMetadata);
+		} else if (
+			moduleMetadata.scodi.type === "listener" ||
+			moduleMetadata.scodi.type === "listener:database"
+		) {
+			listenerModulesMap.set(modulePath, moduleMetadata);
+		} else {
+			// moduleMetadata.scodi.type === "server
+			serverModulesMap.set(modulePath, moduleMetadata);
+		}
+	});
 
-		return [analysisModulesMap, listenerModulesMap, serverModulesMap];
-	} catch (error) {
-		return Promise.reject(error);
-	}
+	return [analysisModulesMap, listenerModulesMap, serverModulesMap];
 }
 
 /**
@@ -170,8 +166,6 @@ async function getPaths(cwd: string): Promise<string[]> {
 	const packageJsonPath = `${cwd}/package.json`;
 	const moduleIndex = (await import(packageJsonPath, {
 		assert: { type: "json" },
-	}).catch((error) => {
-		return Promise.reject(error);
 	})) as { default: PackageJson };
 	const packageJson = moduleIndex.default;
 
