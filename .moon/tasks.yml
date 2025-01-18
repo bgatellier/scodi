@@ -13,7 +13,6 @@ tasks:
     command: pnpm exec biome check
     options:
       affectedFiles: true
-      affectedPassInputs: true
   test:
     command: pnpm vitest run
     deps:
