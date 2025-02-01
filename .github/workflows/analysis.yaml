@@ -24,6 +24,9 @@ jobs:
         with:
           auto-install: true
 
+      # Guess projects that have been changed:
+      # - for Pull Requests, guess from changed files only
+      # - for other cases, guess from all files
       - name: Guess projects
         id: moon-query
         run: |
@@ -38,6 +41,11 @@ jobs:
     name: Code coverage
     runs-on: ubuntu-latest
     needs: list-projects
+    # Do not run this job if no project have been changed
+    # Note: GitHub performs loose equality comparisons; env.PROJECTS is an array, so GitHub GitHub coerces the type to NaN.
+    # And when NaN is one of the operands of any relational comparison (>, <, >=, <=), the result is always false.
+    # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions#operators
+    if: ${{ toJSON(fromJSON(needs.list-projects.outputs.list).projects) != '[]' }}
     strategy:
       matrix:
         projects: ${{ fromJSON(needs.list-projects.outputs.list).projects }}
