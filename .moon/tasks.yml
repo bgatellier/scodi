@@ -11,8 +11,6 @@ tasks:
       cache: false
   check:
     command: biome check
-    options:
-      affectedFiles: true
   test:
     command: vitest run
     deps:
