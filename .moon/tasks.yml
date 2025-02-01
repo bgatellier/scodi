@@ -10,12 +10,9 @@ tasks:
     options:
       cache: false
   check:
-    command: pnpm exec biome check
-    options:
-      affectedFiles: true
-      affectedPassInputs: true
+    command: biome check
   test:
-    command: pnpm vitest run
+    command: vitest run
     deps:
       - target: build
         # optional, as packages in @types/ directory don't have such task

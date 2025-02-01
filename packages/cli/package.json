@@ -41,11 +41,14 @@
     "ora": "catalog:"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@fastify/cors": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "fastify": "catalog:",
+    "rimraf": "catalog:",
     "type-fest": "catalog:",
+    "typescript": "catalog:",
     "vitest": "catalog:"
   },
   "engines": {

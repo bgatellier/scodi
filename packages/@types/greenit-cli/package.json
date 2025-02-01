@@ -18,6 +18,7 @@
   ],
   "types": "index.d.ts",
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "vitest": "catalog:"
   }
