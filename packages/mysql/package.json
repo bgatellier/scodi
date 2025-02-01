@@ -36,6 +36,7 @@
     "@mikro-orm/mysql": "catalog:"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@mikro-orm/cli": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",

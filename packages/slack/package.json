@@ -34,6 +34,7 @@
     "@slack/web-api": "catalog:"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "rimraf": "catalog:",

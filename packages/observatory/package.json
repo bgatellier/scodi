@@ -33,6 +33,7 @@
     "@scodi/common": "workspace:^4.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "rimraf": "catalog:",

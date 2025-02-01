@@ -41,6 +41,7 @@
     "ora": "catalog:"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@fastify/cors": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",

@@ -42,6 +42,7 @@
     "puppeteer-core": "catalog:puppeteerGreenIT"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@types/greenit-cli": "workspace:^0.1.0",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",

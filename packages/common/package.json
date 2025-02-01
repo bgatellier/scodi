@@ -36,6 +36,7 @@
     "pino-pretty": "catalog:"
   },
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@fastify/cors": "catalog:",
     "@types/greenit-cli": "workspace:^0.1.0",
     "@types/node": "catalog:",
