@@ -20,5 +20,5 @@
     }
   ],
   // avoid automatic update of Node.js for backward-compatibility and sustainability reasons 
-  "ignoreDeps": ["node"]
+  "ignoreDeps": ["node", "@types/node"]
 }
