@@ -51,6 +51,9 @@ catalogs:
     commander:
       specifier: ^12.0.0
       version: 12.1.0
+    dotenv:
+      specifier: ^16.3.1
+      version: 16.4.7
     fastify:
       specifier: ^4.25.2
       version: 4.29.0
@@ -78,9 +81,6 @@ catalogs:
     ts-node:
       specifier: ^10.9.1
       version: 10.9.2
-    type-fest:
-      specifier: ^4.9.0
-      version: 4.24.0
     typescript:
       specifier: ^5.6.2
       version: 5.7.3
@@ -209,7 +209,7 @@ importers:
         version: 5.0.10
       type-fest:
         specifier: 'catalog:'
-        version: 4.24.0
+        version: 4.33.0
       typescript:
         specifier: 'catalog:'
         version: 5.7.3
@@ -264,7 +264,7 @@ importers:
         version: 5.0.10
       type-fest:
         specifier: 'catalog:'
-        version: 4.24.0
+        version: 4.33.0
       typescript:
         specifier: 'catalog:'
         version: 5.7.3
@@ -3474,8 +3474,8 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  type-fest@4.24.0:
-    resolution: {integrity: sha512-spAaHzc6qre0TlZQQ2aA/nGMe+2Z/wyGk5Z+Ru2VUfdNwT6kWO6TjevOlpebsATEG1EIQ2sOiDszud3lO5mt/Q==}
+  type-fest@4.33.0:
+    resolution: {integrity: sha512-s6zVrxuyKbbAsSAD5ZPTB77q4YIdRctkTbJ2/Dqlinwz+8ooH2gd+YA7VA6Pa93KML9GockVvoxjZ2vHP+mu8g==}
     engines: {node: '>=16'}
 
   typedarray-to-buffer@3.1.5:
@@ -6974,7 +6974,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  type-fest@4.24.0: {}
+  type-fest@4.33.0: {}
 
   typedarray-to-buffer@3.1.5:
     dependencies:
@@ -6988,7 +6988,7 @@ snapshots:
       emittery: 0.13.1
       fast-glob: 3.3.2
       pony-cause: 2.1.11
-      type-fest: 4.24.0
+      type-fest: 4.33.0
     transitivePeerDependencies:
       - '@types/node'
 
