@@ -6,6 +6,14 @@
   },
   "type": "module",
   "engines": {
-    "node": "^18"
+    "node": "18.20.6",
+    "pnpm": "^10"
+  },
+  "packageManager": "pnpm@10.1.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "greenit-cli",
+      "puppeteer"
+    ]
   }
 }
