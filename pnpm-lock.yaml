@@ -108,7 +108,7 @@ importers:
         version: 2.27.12
       jsr:
         specifier: ^0.13.2
-        version: 0.13.2
+        version: 0.13.3
       tsconfig-moon:
         specifier: ^1.3.0
         version: 1.3.0
@@ -2406,8 +2406,8 @@ packages:
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
 
-  jsr@0.13.2:
-    resolution: {integrity: sha512-c4ir0ql2Xgpg9mSOSPKBANS9oTvlV8fSzpesCsHP04VAOJ3pBm7YygY2LVkHC0jz9G36JBGh1oiEZTWO4UyctA==}
+  jsr@0.13.3:
+    resolution: {integrity: sha512-iPt9r1lMK8BIdGwLP9/PslqkP8HoU3tn3c26qrQlavC6sgqy7lbJk0wLHbrbKZCD5a7RIomvTivvJTFQrvkIPQ==}
     hasBin: true
 
   jszip@3.10.1:
@@ -5874,7 +5874,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  jsr@0.13.2:
+  jsr@0.13.3:
     dependencies:
       kolorist: 1.8.0
       node-stream-zip: 1.15.0
