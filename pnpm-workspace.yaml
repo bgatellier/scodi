@@ -41,4 +41,4 @@ catalogs:
   puppeteerLighthouse:
     puppeteer-core: ^22.5.0
   puppeteerGreenIT:
-    puppeteer-core: ^21.5.2
+    puppeteer-core: ^23.9.0
