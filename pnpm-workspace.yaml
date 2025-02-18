@@ -39,6 +39,6 @@ catalogs:
   # - limit the number of puppeteer* dependencies installed
   # - avoid to install additional Chrome browsers in different versions (as puppeteer embed Chrome, but puppeteer-core doesn't)
   puppeteerLighthouse:
-    puppeteer-core: ^22.5.0
+    puppeteer-core: ^23.10.4
   puppeteerGreenIT:
     puppeteer-core: ^23.9.0
