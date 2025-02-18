@@ -22,7 +22,7 @@ catalog:
   dotenv: ^16.3.1
   fastify: ^4.25.2
   greenit-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#9a14a0899c7013d64eeda58eb80afb4b9d3aaef7
-  lighthouse: ^11.4.0
+  lighthouse: ^12.0.0
   memfs: ^4.11.1
   ora: ^8.0.1
   pino: ^9.0.0
@@ -39,6 +39,6 @@ catalogs:
   # - limit the number of puppeteer* dependencies installed
   # - avoid to install additional Chrome browsers in different versions (as puppeteer embed Chrome, but puppeteer-core doesn't)
   puppeteerLighthouse:
-    puppeteer-core: ^22.5.0
+    puppeteer-core: ^23.10.4
   puppeteerGreenIT:
     puppeteer-core: ^23.9.0
