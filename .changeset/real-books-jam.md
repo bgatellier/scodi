@@ -2,4 +2,4 @@
 "@scodi/observatory": minor
 ---
 
-Add compatibility with Node.js versions 21 and 22
+Add compatibility with Node.js versions 21 to 23
