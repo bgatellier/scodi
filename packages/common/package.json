@@ -49,6 +49,6 @@
     "vitest": "catalog:"
   },
   "engines": {
-    "node": ">=18 <23"
+    "node": ">=18 <24"
   }
 }
