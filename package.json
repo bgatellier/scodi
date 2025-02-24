@@ -14,6 +14,8 @@
   "packageManager": "pnpm@10.4.0",
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "esbuild",
       "greenit-cli",
       "puppeteer"
     ]
