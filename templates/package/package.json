@@ -29,13 +29,13 @@
     "@scodi/common": "workspace:^4.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.19.6"
+    "@types/node": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
-    "node": ">=18 <24"
+    "node": ">=20 <24"
   },
   "scodi": {
     "id": "{{ name | slugify }}",
