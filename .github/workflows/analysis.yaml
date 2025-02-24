@@ -59,11 +59,6 @@ jobs:
           # Disabling shallow clones is recommended for improving the relevancy of SonarQube reporting
           fetch-depth: 0
 
-      - name: Set Node.js version
-        run: sed -Ei 's/(node = ).*/\1"^${{ env.NODE_VERSION }}"/' .prototools
-        env:
-          NODE_VERSION: 20
-
       - name: Setup Moon toolchain
         uses: moonrepo/setup-toolchain@v0
         with:
