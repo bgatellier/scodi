@@ -43,11 +43,10 @@ export class ApiModule extends Module implements ModuleServerInterface {
 		corsOptions?: FastifyCorsOptions,
 	): Promise<FastifyInstance> {
 		// plugins registration
-		await this.#fastify.register(cors, corsOptions);
+		await this.#fastify.register(cors, corsOptions ?? {});
 
 		// decorator registration
-		// objects must be initialized with "null"
-		this.#fastify.decorateRequest("report", null);
+		this.#fastify.decorateRequest("report");
 
 		// hooks registration
 		this.#fastify.addHook(
