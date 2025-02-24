@@ -12,6 +12,21 @@ catalogs:
     '@fastify/cors':
       specifier: ^10.0.0
       version: 10.1.0
+    '@mikro-orm/cli':
+      specifier: ^6.0.0
+      version: 6.4.7
+    '@mikro-orm/core':
+      specifier: ^6.0.0
+      version: 6.4.7
+    '@mikro-orm/migrations':
+      specifier: ^6.0.0
+      version: 6.4.7
+    '@mikro-orm/mysql':
+      specifier: ^6.0.0
+      version: 6.4.7
+    '@mikro-orm/reflection':
+      specifier: ^6.0.0
+      version: 6.4.7
     '@slack/web-api':
       specifier: ^7.0.0
       version: 7.8.0
