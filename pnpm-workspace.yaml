@@ -3,6 +3,12 @@ packages:
   - packages/*
   - test/
 
+onlyBuiltDependencies:
+- "@biomejs/biome"
+- esbuild
+- greenit-cli
+- puppeteer
+
 catalog:
   "@biomejs/biome": "^1.9.4"
   "@fastify/cors": ^10.0.0

@@ -11,13 +11,5 @@
     "node": "20.18.3",
     "pnpm": "^10"
   },
-  "packageManager": "pnpm@10.4.0",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "esbuild",
-      "greenit-cli",
-      "puppeteer"
-    ]
-  }
+  "packageManager": "pnpm@10.5.2"
 }
