@@ -15,12 +15,12 @@ jobs:
       list: ${{ steps.moon-query.outputs.json }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           fetch-depth: 0
 
       - name: Setup Moon
-        uses: moonrepo/setup-toolchain@v0
+        uses: moonrepo/setup-toolchain@da8e65cc604549f6e9b0428942cfe0e7aab4e6e1 # v0
         with:
           auto-install: true
 
@@ -54,13 +54,13 @@ jobs:
         shell: bash
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           # Disabling shallow clones is recommended for improving the relevancy of SonarQube reporting
           fetch-depth: 0
 
       - name: Setup Moon toolchain
-        uses: moonrepo/setup-toolchain@v0
+        uses: moonrepo/setup-toolchain@da8e65cc604549f6e9b0428942cfe0e7aab4e6e1 # v0
         with:
           auto-install: true
 
@@ -68,7 +68,7 @@ jobs:
         id: pnpm-cache
         run: echo "pnpm_cache_dir=$(pnpm store path)" >> ${GITHUB_OUTPUT}
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@d4323d4df104b026a6aa633fdb11d772146be0bf # v4
         name: Setup pnpm cache
         with:
           path: |
@@ -81,7 +81,7 @@ jobs:
       - name: Generate coverage report
         run: moon run ${{ matrix.projects.id }}:coverage
 
-      - uses: sonarsource/sonarqube-scan-action@v5
+      - uses: sonarsource/sonarqube-scan-action@0303d6b62e310685c0e34d0b9cde218036885c4d # v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

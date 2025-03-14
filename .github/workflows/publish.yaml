@@ -22,12 +22,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           fetch-depth: 0
 
       - name: Setup Moon toolchain
-        uses: moonrepo/setup-toolchain@v0
+        uses: moonrepo/setup-toolchain@da8e65cc604549f6e9b0428942cfe0e7aab4e6e1 # v0
         with:
           auto-install: true
 
