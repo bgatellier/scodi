@@ -1,8 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:best-practices"
-  ],
-  // avoid automatic update of Node.js for backward-compatibility and sustainability reasons 
-  "ignoreDeps": ["node", "@types/node"]
+    "config:best-practices",
+    "schedule:monthly",
+    "schedule:automergeMonthly",
+    // Automerge patch upgrades if they pass tests.
+    "automergePatch"
+  ]
 }
