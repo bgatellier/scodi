@@ -5,6 +5,6 @@
     "schedule:monthly",
     "schedule:automergeMonthly",
     // Automerge patch upgrades if they pass tests.
-    "automergePatch"
+    ":automergePatch"
   ]
 }
