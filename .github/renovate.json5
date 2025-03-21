@@ -4,7 +4,20 @@
     "config:best-practices",
     "schedule:monthly",
     "schedule:automergeMonthly",
-    // Automerge patch upgrades if they pass tests.
+    /**
+     * Automerge patch upgrades if they pass tests.
+     * https://docs.renovatebot.com/presets-default/#automergepatch
+     */
     ":automergePatch"
+  ],
+  "packageRules": [
+    {
+      /**
+       * Prevent holding broken npm packages.
+       * https://docs.renovatebot.com/configuration-options/#prevent-holding-broken-npm-packages
+       */
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "3 days"
+    }
   ]
 }
