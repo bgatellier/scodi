@@ -27,7 +27,7 @@ jobs:
         run: sed -Ei 's/(node = ).*/\1"^${{ matrix.node_version}}"/' .prototools
 
       - name: Setup Moon toolchain
-        uses: moonrepo/setup-toolchain@da8e65cc604549f6e9b0428942cfe0e7aab4e6e1 # v0
+        uses: moonrepo/setup-toolchain@937d7dbbc1ec218aa8641c792d5821addebd9f03 # v0
         with:
           auto-install: true
 
