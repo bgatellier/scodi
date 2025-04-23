@@ -1,0 +1,20 @@
+name: scodi-test
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    env_file: ./env/mysql.env
+  dbgate:
+    container_name: dbgate
+    image: dbgate/dbgate:alpine
+    ports:
+      - 8080:3000
+    volumes:
+      - dbgate-data:/root/.dbgate
+    env_file: ./env/dbgate.env
+
+volumes:
+  dbgate-data:
+    driver: local
