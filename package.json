@@ -8,8 +8,8 @@
   },
   "type": "module",
   "engines": {
-    "node": "20.19.0",
+    "node": "20.19.2",
     "pnpm": "^10"
   },
-  "packageManager": "pnpm@10.6.3"
+  "packageManager": "pnpm@10.11.0"
 }
