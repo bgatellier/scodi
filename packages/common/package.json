@@ -38,7 +38,7 @@
   "devDependencies": {
     "@biomejs/biome": "catalog:",
     "@fastify/cors": "catalog:",
-    "@types/greenit-cli": "workspace:^0.1.0",
+    "@types/greenit-analysis-cli": "workspace:^0.1.0",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "fastify": "catalog:",
