@@ -4,7 +4,7 @@
   "files": [],
   "references": [
     {
-      "path": "packages/@types/greenit-cli"
+      "path": "packages/@types/greenit-analysis-cli"
     },
     {
       "path": "packages/api"

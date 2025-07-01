@@ -2,7 +2,6 @@ packages:
   - packages/@types/*
   - packages/*
   - test/
-
 catalog:
   '@biomejs/biome': ^1.9.4
   '@fastify/cors': ^11.0.0
@@ -20,8 +19,8 @@ catalog:
   commander: ^12.0.0
   dotenv: ^16.3.1
   fastify: ^5.0.0
-  greenit-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#9a14a0899c7013d64eeda58eb80afb4b9d3aaef7
-  lighthouse: ^12.0.0
+  greenit-analysis-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#semver:^0.2.0
+  lighthouse: ^12.6.0
   memfs: ^4.11.1
   ora: ^8.0.1
   pino: ^9.0.0
@@ -33,15 +32,10 @@ catalog:
   vitest: ^3.2.4
 
 catalogs:
-  # align puppeteer-core version with the puppeteer version used by the lighthouse or greenit-cli dependency
-  # this allows to:
-  # - limit the number of puppeteer* dependencies installed
-  # - avoid to install additional Chrome browsers in different versions (as puppeteer embed Chrome, but puppeteer-core doesn't)
   puppeteerLighthouse:
-    puppeteer-core: ^23.10.4
+    puppeteer-core: ^24.10.2
   puppeteerGreenIT:
     puppeteer-core: ^24.10.2
-
 onlyBuiltDependencies:
   - '@biomejs/biome'
   - esbuild
