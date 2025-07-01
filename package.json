@@ -7,9 +7,8 @@
     "vitest": "catalog:"
   },
   "type": "module",
+  "packageManager": "pnpm@10.18.1",
   "engines": {
-    "node": "20.19.2",
-    "pnpm": "^10"
-  },
-  "packageManager": "pnpm@10.11.0"
+    "node": "20.19.5"
+  }
 }
