@@ -26,7 +26,7 @@ catalog:
   commander: ^12.0.0
   dotenv: ^16.3.1
   fastify: ^5.0.0
-  greenit-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#9a14a0899c7013d64eeda58eb80afb4b9d3aaef7
+  greenit-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#c4fec990458591d48871d9bd0668d79962d1a9a3
   lighthouse: ^12.0.0
   memfs: ^4.11.1
   ora: ^8.0.1
