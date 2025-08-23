@@ -10,8 +10,8 @@ import {
 	type JSONReport,
 	type Options,
 	createJsonReports,
-} from "greenit-cli/cli-core/analysis.js";
-import { translator } from "greenit-cli/cli-core/translator.js";
+	translator,
+} from "greenit-analysis-cli";
 import puppeteer from "puppeteer-core";
 import { GreenITError } from "../error/GreenITError.js";
 
@@ -31,7 +31,7 @@ export async function requestResult(
 	verbose: boolean,
 ): Promise<GreenITReport["result"]> {
 	const executablePath = getPuppeteerBrowserExecutablePath(
-		join(__dirname, "../../node_modules/greenit-cli"),
+		join(__dirname, "../../node_modules/greenit-analysis-cli"),
 		GreenITError,
 		verbose,
 	);
