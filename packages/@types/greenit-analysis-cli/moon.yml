@@ -3,8 +3,5 @@ stack: backend
 type: library
 workspace:
   inheritedTasks:
-    exclude:
-      - build
-      - coverage
-      - publish
-      - test
+    include:
+      - check
