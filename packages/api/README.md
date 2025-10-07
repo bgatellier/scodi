@@ -1,3 +1,8 @@
+[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-api
+ "Scodi API on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-api)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-api)
+[![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/api/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/api/package.json "View known vulnerabilities")
+
 # Description
 
 _Scodi API_ is a _runner_ module of _Scodi_, which exposes an HTTP API that starts an analysis when it is requested.
