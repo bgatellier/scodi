@@ -1,7 +1,7 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
 
-  "extends": "tsconfig-moon/tsconfig.json",
+  "extends": "tsconfig-moon/tsconfig.projects.json",
 
   "compilerOptions": {
     // Disable error reporting for unreachable code.
@@ -10,11 +10,11 @@
     "allowUnusedLabels": false,
     // Raise an error when a function parameter isn't read.
     "noUnusedParameters": true,
-
-    "declaration": true,
-
-    "module": "NodeNext",
+    // Disable emitting comments.
+    "removeComments": true,
+    "emitDeclarationOnly": false,
+    "module": "nodenext",
     "moduleResolution": "nodenext",
-    "target": "ESNext"
+    "target": "esnext"
   }
 }

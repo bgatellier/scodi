@@ -1,11 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.options.json",
-  "compilerOptions": {
-    "outDir": "lib",
-    "removeComments": true,
-    "rootDir": "src",
-  },
   "references": [
     {
       "path": "./tsconfig.build.json"

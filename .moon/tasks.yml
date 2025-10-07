@@ -25,6 +25,8 @@ tasks:
       # remove the coverage/ directory
       - target: cleanup
         args: coverage
+        # optional, as packages in @types/ directory don't have such task
+        optional: true
     options:
     # don't cache, as the dependent cleanup cache is not cached too
       cache: false

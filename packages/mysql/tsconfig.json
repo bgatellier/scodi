@@ -3,11 +3,7 @@
   "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "outDir": "lib",
-    "removeComments": true,
-    "rootDir": "src"
+    "experimentalDecorators": true
   },
   "references": [
     {
