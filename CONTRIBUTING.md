@@ -39,6 +39,20 @@ Before making a new contribution, please check [the issues](https://github.com/b
 
 ### Test your enhancements
 
+#### Automated testing
+
+    Run automated tests:
+
+    ```shell
+    moon run :test
+    ```
+
+    Generate code coverage:
+
+    ```shell
+    moon run :coverage
+    ```
+
 #### End-user testing
 
 You can test a close-to-end-user installation in the `test` directory.
