@@ -5,6 +5,12 @@ tasks:
     deps:
       # build dependent projects
       - ^:build
+    inputs:
+      - 'src/**/*'
+      - 'package.json'
+      - 'tsconfig*.json'
+    outputs:
+      - 'lib'
   check:
     command: biome check
     options:
@@ -13,8 +19,6 @@ tasks:
     command: vitest run
     deps:
       - target: build
-        # optional, as packages in @types/ directory don't have such task
-        optional: true
   coverage:
     extends: test
     args: '--coverage'
