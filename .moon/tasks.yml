@@ -17,10 +17,6 @@ tasks:
         optional: true
   coverage:
     extends: test
-    args:
-      - '--coverage'
-    options:
-      # don't cache, as the dependent cleanup cache is not cached too
-      cache: false
+    args: '--coverage'
   publish:
     command: pnpm jsr publish
