@@ -46,7 +46,6 @@
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "fastify": "catalog:",
-    "rimraf": "catalog:",
     "type-fest": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

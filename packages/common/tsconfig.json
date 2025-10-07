@@ -3,7 +3,6 @@
   "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true
   },

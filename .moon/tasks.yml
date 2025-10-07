@@ -5,10 +5,6 @@ tasks:
     deps:
       # build dependent projects
       - ^:build
-  cleanup:
-    command: rimraf
-    options:
-      cache: false
   check:
     command: biome check
   test:
@@ -21,14 +17,8 @@ tasks:
     extends: test
     args:
       - '--coverage'
-    deps:
-      # remove the coverage/ directory
-      - target: cleanup
-        args: coverage
     options:
-    # don't cache, as the dependent cleanup cache is not cached too
+      # don't cache, as the dependent cleanup cache is not cached too
       cache: false
-      # make the cleanup occurs before the deps of the extended task
-      mergeDeps: prepend
   publish:
     command: pnpm jsr publish
