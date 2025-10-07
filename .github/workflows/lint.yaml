@@ -42,5 +42,5 @@ jobs:
           # disable browser download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
           PUPPETEER_SKIP_DOWNLOAD: true
       
-      - uses: appthrust/moon-ci-retrospect@10c4aff093e3405433957d8e1d2776c81207d5bb # v1
+      - uses: appthrust/moon-ci-retrospect@2b2216c99fa8d657ee43bf788b09943fb34c169c # v2
         if: success() || failure()
