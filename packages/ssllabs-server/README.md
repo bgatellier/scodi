@@ -1,3 +1,8 @@
+[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-ssllabs-server
+ "Scodi SSL Labs Server on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-ssllabs-server)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-ssllabs-server&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-ssllabs-server)
+[![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/ssllabs-server/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/ssllabs-server/package.json "View known vulnerabilities")
+
 # Description
 
 _Scodi SSL Labs Server_ is an _analysis_ module of _Scodi_, which analyses URLs with _[Qualys SSL Labs server](https://www.ssllabs.com/ssltest/index.html)_.

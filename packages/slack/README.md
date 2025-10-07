@@ -1,3 +1,8 @@
+[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-slack
+ "Scodi Slack on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-slack)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-slack&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-slack)
+[![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/slack/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/slack/package.json "View known vulnerabilities")
+
 # Description
 
 _Scodi Slack_ is a _listener_ module of _Scodi_, which reacts to the end of an analysis by sending the results to a _[Slack](https://slack.com)_ channel.

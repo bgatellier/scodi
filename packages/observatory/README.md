@@ -1,3 +1,8 @@
+[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-observatory
+ "Scodi Observatory on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-observatory)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-observatory&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-observatory)
+[![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/observatory/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/observatory/package.json "View known vulnerabilities")
+
 # Description
 
 _Scodi Observatory_ is an _analysis_ module of _Scodi_, which analyses URLs with _[Mozilla Observatory](https://observatory.mozilla.org/)_.

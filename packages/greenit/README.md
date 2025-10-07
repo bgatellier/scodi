@@ -1,3 +1,8 @@
+[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-greenit
+ "Scodi GreenIT on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-greenit)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-greenit&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-greenit)
+[![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/greenit/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/greenit/package.json "View known vulnerabilities")
+
 # Description
 
 _Scodi GreenIT_ is an _analysis_ module of _Scodi_, which analyses URLs with _[GreenIT](https://chrome.google.com/webstore/detail/greenit-analysis/mofbfhffeklkbebfclfaiifefjflcpad)_.

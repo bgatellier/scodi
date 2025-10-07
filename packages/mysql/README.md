@@ -1,3 +1,8 @@
+[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-mysql
+ "Scodi MySQL on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-mysql)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-mysql&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-mysql)
+[![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/mysql/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/mysql/package.json "View known vulnerabilities")
+
 # Scodi MySQL
 
 _Scodi MySQL_ is a _listener_ module of _Scodi_, which reacts to the end of an analysis and stores the results of an analysis in a MySQL database.
