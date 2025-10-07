@@ -2,14 +2,14 @@ import cors, { type FastifyCorsOptions } from "@fastify/cors";
 import {
 	type Config,
 	type GenericReport,
+	getAnalysisValidationSchema,
+	logger,
 	Module,
 	type ModuleAnalysisInterface,
 	type ModuleListenerInterface,
 	type ModuleMetadata,
 	type ModuleServerInterface,
 	type Result,
-	getAnalysisValidationSchema,
-	logger,
 } from "@scodi/common";
 import AjvErrors from "ajv-errors";
 import Fastify, { type FastifyInstance } from "fastify";

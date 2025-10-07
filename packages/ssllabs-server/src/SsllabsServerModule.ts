@@ -1,13 +1,13 @@
 import {
 	type Config,
 	Helper,
+	logger,
 	Module,
 	type ModuleAnalysisInterface,
 	type ModuleMetadata,
 	type SsllabsServerConfig,
 	SsllabsServerReport,
 	SsllabsServerStatus,
-	logger,
 } from "@scodi/common";
 import { Client } from "./api/Client.js";
 import { SsllabsServerError } from "./error/SsllabsServerError.js";

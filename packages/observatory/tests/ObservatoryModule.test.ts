@@ -1,7 +1,7 @@
 import { type ObservatoryConfig, ObservatoryReport } from "@scodi/common";
 import { describe, expect, it, vi } from "vitest";
-import { ObservatoryModule } from "../src/ObservatoryModule.js";
 import { Client } from "../src/api/Client.js";
+import { ObservatoryModule } from "../src/ObservatoryModule.js";
 import { RESULT } from "./data/Result.js";
 
 const ANALYZE_URL = "www.observatory.mozilla-test/results/";

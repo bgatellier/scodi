@@ -42,7 +42,7 @@ export const formatGreenITBlocks = (
 				.split("<br>")
 				.filter((line) => line.length > 0);
 
-			const sections = new Array<SectionBlock>();
+			const sections: SectionBlock[] = [];
 
 			let lineAcc = "";
 			lines.forEach((line, _index) => {

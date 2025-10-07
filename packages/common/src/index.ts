@@ -8,12 +8,9 @@ import type {
 } from "./input/AnalysisInput.js";
 import type { ParsedServerInput } from "./input/ServerInput.js";
 import { logger } from "./logger/logger.js";
-import { Module } from "./module/Module.js";
-import type { ModuleIndex } from "./module/ModuleIndex.js";
-import type { ModuleMetadata } from "./module/ModuleMetadata.js";
 import {
-	type ModuleAnalysisInterface,
 	isModuleAnalysis,
+	type ModuleAnalysisInterface,
 } from "./module/analysis/ModuleAnalysisInterface.js";
 import type { Config } from "./module/config/Config.js";
 import type { GreenITConfig } from "./module/config/greenit/GreeenITConfig.js";
@@ -22,25 +19,28 @@ import type { ObservatoryConfig } from "./module/config/observatory/ObservatoryC
 import type { SsllabsServerConfig } from "./module/config/ssllabs-server/SsllabsServerConfig.js";
 import { createDatabaseConfig } from "./module/listener/ModuleListenerDatabaseConfig.js";
 import {
-	type ModuleListenerDatabaseInterface,
 	isModuleListenerDatabase,
+	type ModuleListenerDatabaseInterface,
 } from "./module/listener/ModuleListenerDatabaseInterface.js";
 import {
-	type ModuleListenerInterface,
 	isModuleListener,
+	type ModuleListenerInterface,
 } from "./module/listener/ModuleListenerInterface.js";
+import { Module } from "./module/Module.js";
+import type { ModuleIndex } from "./module/ModuleIndex.js";
+import type { ModuleMetadata } from "./module/ModuleMetadata.js";
 import {
-	type ModuleServerInterface,
 	isModuleServer,
+	type ModuleServerInterface,
 } from "./module/server/ModuleServerInterface.js";
-import type { GenericReport } from "./report/Report.js";
-import type { Result } from "./report/Result.js";
 import { GreenITReport } from "./report/greenit/GreenITReport.js";
 import { LighthouseReport } from "./report/lighthouse/LighthouseReport.js";
-import { ObservatoryReport } from "./report/observatory/ObservatoryReport.js";
 import { ObservatoryScanState } from "./report/observatory/enum/ObservatoryScanState.js";
-import { SsllabsServerReport } from "./report/ssllabs-server/SsllabsServerReport.js";
+import { ObservatoryReport } from "./report/observatory/ObservatoryReport.js";
+import type { GenericReport } from "./report/Report.js";
+import type { Result } from "./report/Result.js";
 import { SsllabsServerStatus } from "./report/ssllabs-server/enum/SsllabsServerStatus.js";
+import { SsllabsServerReport } from "./report/ssllabs-server/SsllabsServerReport.js";
 import { getPuppeteerBrowserExecutablePath } from "./utils/puppeteer.js";
 import { wait } from "./utils/wait.js";
 import {

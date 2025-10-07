@@ -7,8 +7,8 @@ import {
 } from "@scodi/common";
 import { SsllabsServerError } from "../error/SsllabsServerError.js";
 import {
-	type SsllabsServerApiError,
 	isSsllabsServerApiError,
+	type SsllabsServerApiError,
 } from "./Error.js";
 
 const API_URL = "https://api.ssllabs.com/api/v3";

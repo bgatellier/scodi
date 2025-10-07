@@ -17,9 +17,9 @@ import { startServer } from "../../module/ModuleOrchestrator.js";
 import type { PackageJsonModule } from "../../module/PackageJson.js";
 import { createVerboseOption } from "../CommonOption.js";
 import {
-	type ServerOptions,
 	createCorsOption,
 	createPortOption,
+	type ServerOptions,
 } from "./ServerOption.js";
 
 type ServerSubcommandCallback = (

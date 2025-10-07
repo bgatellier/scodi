@@ -2,10 +2,10 @@ import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { env } from "node:process";
 import {
+	logger,
 	type Module,
 	type ModuleIndex,
 	type ModuleMetadata,
-	logger,
 } from "@scodi/common";
 import Ajv, { type AnySchema, type ErrorObject } from "ajv";
 import AjvErrors from "ajv-errors";
@@ -21,7 +21,7 @@ type ModulesMetadata = [
 	Map<string, PackageJsonModule>,
 ];
 
-const errors = new Array<ErrorObject>();
+const errors: ErrorObject[] = [];
 const ajv = new Ajv.default({ allErrors: true });
 addFormats.default(ajv);
 AjvErrors.default(ajv /*, {singleError: true} */);
@@ -122,8 +122,8 @@ export async function initializeModules<M extends Module>(
 	listenerModulesMap: Map<string, PackageJsonModule>,
 	verbose: boolean,
 ): Promise<M[]> {
-	const paths = new Array<string>();
-	const metadatas = new Array<ModuleMetadata>();
+	const paths: string[] = [];
+	const metadatas: ModuleMetadata[] = [];
 
 	listenerModulesMap.forEach((packageJsonModule, modulePath) => {
 		paths.push(modulePath + packageJsonModule.main);

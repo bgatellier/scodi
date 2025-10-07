@@ -7,9 +7,9 @@ import {
 	getPuppeteerBrowserExecutablePath,
 } from "@scodi/common";
 import {
+	createJsonReports,
 	type JSONReport,
 	type Options,
-	createJsonReports,
 } from "greenit-analysis-cli/src/cli-core/analysis.js";
 import { translator } from "greenit-analysis-cli/src/cli-core/translator.js";
 import puppeteer from "puppeteer-core";

@@ -1,10 +1,10 @@
 import {
 	type GenericReport,
+	logger,
 	Module,
 	type ModuleListenerInterface,
 	type ModuleMetadata,
 	type Result,
-	logger,
 } from "@scodi/common";
 import { Client } from "./api/Client.js";
 import { formatBlocks } from "./formatter/BlocksFormatter.js";

@@ -1,5 +1,5 @@
 import { env } from "node:process";
-import { type MySqlDriver, defineConfig } from "@mikro-orm/mysql";
+import { defineConfig, type MySqlDriver } from "@mikro-orm/mysql";
 import { createDatabaseConfig } from "@scodi/common";
 import { Migration20230702150637 } from "../migrations/Migration20230702150637.js";
 

@@ -1,12 +1,12 @@
 import {
 	Helper,
+	logger,
 	Module,
 	type ModuleAnalysisInterface,
 	type ModuleMetadata,
 	type ObservatoryConfig,
 	ObservatoryReport,
 	ObservatoryScanState,
-	logger,
 } from "@scodi/common";
 import { Client } from "./api/Client.js";
 import { ObservatoryError } from "./error/ObservatoryError.js";

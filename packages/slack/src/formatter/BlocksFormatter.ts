@@ -58,9 +58,7 @@ const createBlocks = (
 		report.resultUrl !== undefined ||
 		report.isThresholdReached() !== undefined
 	) {
-		const elements = new Array<
-			ImageElement | PlainTextElement | MrkdwnElement
-		>();
+		const elements: (ImageElement | PlainTextElement | MrkdwnElement)[] = [];
 
 		if (report.isThresholdReached() !== undefined) {
 			elements.push({
