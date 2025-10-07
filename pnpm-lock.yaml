@@ -109,18 +109,8 @@ importers:
       tsconfig-moon:
         specifier: 1.4.0
         version: 1.4.0
-      vitest:
-        specifier: 'catalog:'
-        version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
 
-  packages/@types/greenit-analysis-cli:
-    devDependencies:
-      '@vitest/coverage-istanbul':
-        specifier: 'catalog:'
-        version: 3.2.4(vitest@3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0))
-      vitest:
-        specifier: 'catalog:'
-        version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
+  packages/@types/greenit-analysis-cli: {}
 
   packages/api:
     dependencies:
