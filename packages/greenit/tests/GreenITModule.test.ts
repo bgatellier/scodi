@@ -30,7 +30,7 @@ describe("Run GreenIT analysis", () => {
 		vi.restoreAllMocks();
 	});
 
-	it("should be able to launch a successful analysis without thresholds", async () => {
+	it("should run a successful analysis without thresholds", async () => {
 		vi.mocked(createJsonReports).mockResolvedValue([
 			{
 				path: "./SuccessReport.json",
@@ -90,7 +90,7 @@ describe("Run GreenIT analysis", () => {
 		);
 	});
 
-	it("should be able to launch a successful analysis with thresholds", async () => {
+	it("should run a successful analysis with thresholds", async () => {
 		vi.mocked(createJsonReports).mockResolvedValue([
 			{
 				path: "./SuccessReport.json",
@@ -130,7 +130,7 @@ describe("Run GreenIT analysis", () => {
 		});
 	});
 
-	it("Should return false when results do not match thresholds objectives", async () => {
+	it("should returns false when results do not match thresholds objectives", async () => {
 		vi.mocked(createJsonReports).mockResolvedValue([
 			{
 				path: "./SuccessReport.json",

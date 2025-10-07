@@ -24,7 +24,7 @@ describe("Starts an analysis", () => {
 		vi.restoreAllMocks();
 	});
 
-	it("should starts an analysis with a valid configuration", async () => {
+	it("should run an analysis with a valid configuration", async () => {
 		vi.mocked(lighthouse).mockResolvedValue(SuccessRunnerResult);
 
 		const module = new LighthouseModule(moduleMetadata, true);
@@ -51,7 +51,7 @@ describe("Starts an analysis", () => {
 		).rejects.toThrowError();
 	});
 
-	it("Should return true status when results match thresholds objectives", async () => {
+	it("should returns true status when results match thresholds objectives", async () => {
 		vi.mocked(lighthouse).mockResolvedValue(SuccessRunnerResult);
 
 		const THRESHOLD = 80;
