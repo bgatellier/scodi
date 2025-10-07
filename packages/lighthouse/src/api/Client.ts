@@ -12,7 +12,7 @@ import { LighthouseError } from "../error/LighthouseError.js";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 /**
- * @see {@link https://github.com/GoogleChrome/lighthouse/blob/main/docs/puppeteer.md#option-2-launch-chrome-with-lighthousechrome-launcher-and-handoff-to-puppeteer}
+ * @see {@link https://github.com/GoogleChrome/lighthouse/blob/main/docs/puppeteer.md#option-1-launch-chrome-with-puppeteer-and-handoff-to-lighthouse}
  */
 export async function requestResult(
 	conf: LighthouseConfig,

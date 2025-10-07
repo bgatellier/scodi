@@ -10,8 +10,8 @@ import {
 	type JSONReport,
 	type Options,
 	createJsonReports,
-} from "greenit-cli/cli-core/analysis.js";
-import { translator } from "greenit-cli/cli-core/translator.js";
+} from "greenit-analysis-cli/src/cli-core/analysis.js";
+import { translator } from "greenit-analysis-cli/src/cli-core/translator.js";
 import puppeteer from "puppeteer-core";
 import { GreenITError } from "../error/GreenITError.js";
 
@@ -31,7 +31,7 @@ export async function requestResult(
 	verbose: boolean,
 ): Promise<GreenITReport["result"]> {
 	const executablePath = getPuppeteerBrowserExecutablePath(
-		join(__dirname, "../../node_modules/greenit-cli"),
+		join(__dirname, "../../node_modules/greenit-analysis-cli"),
 		GreenITError,
 		verbose,
 	);
@@ -81,16 +81,14 @@ export async function requestResult(
 
 		return {
 			...jsonReport.pages[0].actions[0],
-			...{
-				success: jsonReport.success,
-				nbBestPracticesToCorrect: jsonReport.nbBestPracticesToCorrect,
-				date: jsonReport.date,
-				pageInformations: jsonReport.pageInformations,
-				tryNb: jsonReport.tryNb,
-				tabId: jsonReport.tabId,
-				index: jsonReport.index,
-				url: jsonReport.url,
-			},
+			success: jsonReport.success,
+			nbBestPracticesToCorrect: jsonReport.nbBestPracticesToCorrect,
+			date: jsonReport.date,
+			pageInformations: jsonReport.pageInformations,
+			tryNb: jsonReport.tryNb,
+			tabId: jsonReport.tabId,
+			index: jsonReport.index,
+			url: jsonReport.url,
 		};
 	} catch (error) {
 		if (typeof error === "string") {

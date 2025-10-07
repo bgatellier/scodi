@@ -12,7 +12,7 @@
       "path": "./tsconfig.build.json"
     },
     {
-      "path": "../@types/greenit-cli"
+      "path": "../@types/greenit-analysis-cli"
     }
   ],
   "include": [

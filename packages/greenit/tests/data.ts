@@ -1,5 +1,9 @@
 import type { GreenITConfig } from "@scodi/common";
-import type { BestPractices, JSONReport, Page } from "greenit-cli";
+import type {
+	BestPractices,
+	JSONReport,
+	Page,
+} from "greenit-analysis-cli/src/cli-core/analysis.js";
 
 const bestPractices: BestPractices = {
 	AddExpiresOrCacheControlHeaders: { complianceLevel: "" },

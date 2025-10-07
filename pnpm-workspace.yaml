@@ -2,32 +2,25 @@ packages:
   - packages/@types/*
   - packages/*
   - test/
-
-onlyBuiltDependencies:
-- "@biomejs/biome"
-- esbuild
-- greenit-cli
-- puppeteer
-
 catalog:
-  "@biomejs/biome": "^1.9.4"
-  "@fastify/cors": ^11.0.0
-  "@mikro-orm/cli": ^6.0.0
-  "@mikro-orm/core": ^6.0.0
-  "@mikro-orm/migrations": ^6.0.0
-  "@mikro-orm/mysql": ^6.0.0
-  "@mikro-orm/reflection": ^6.0.0
-  "@slack/web-api": ^7.0.0
-  "@types/node": ^20.17.19
-  "@vitest/coverage-istanbul": ^3.0.0
+  '@biomejs/biome': ^1.9.4
+  '@fastify/cors': ^11.0.0
+  '@mikro-orm/cli': ^6.0.0
+  '@mikro-orm/core': ^6.0.0
+  '@mikro-orm/migrations': ^6.0.0
+  '@mikro-orm/mysql': ^6.0.0
+  '@mikro-orm/reflection': ^6.0.0
+  '@slack/web-api': ^7.0.0
+  '@types/node': ^20.17.19
+  '@vitest/coverage-istanbul': ^3.2.4
   ajv: ^8.12.0
   ajv-errors: ^3.0.0
   ajv-formats: ^3.0.0
   commander: ^12.0.0
   dotenv: ^16.3.1
   fastify: ^5.0.0
-  greenit-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#9a14a0899c7013d64eeda58eb80afb4b9d3aaef7
-  lighthouse: ^12.0.0
+  greenit-analysis-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#semver:^0.2.0
+  lighthouse: ^12.6.0
   memfs: ^4.11.1
   ora: ^8.0.1
   pino: ^9.0.0
@@ -36,14 +29,15 @@ catalog:
   ts-node: ^10.9.1
   type-fest: ^4.9.0
   typescript: ^5.6.2
-  vitest: ^3.0.0
+  vitest: ^3.2.4
 
 catalogs:
-  # align puppeteer-core version with the puppeteer version used by the lighthouse or greenit-cli dependency
-  # this allows to:
-  # - limit the number of puppeteer* dependencies installed
-  # - avoid to install additional Chrome browsers in different versions (as puppeteer embed Chrome, but puppeteer-core doesn't)
   puppeteerLighthouse:
-    puppeteer-core: ^23.10.4
+    puppeteer-core: ^24.10.2
   puppeteerGreenIT:
-    puppeteer-core: ^23.9.0
+    puppeteer-core: ^24.10.2
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - esbuild
+  - greenit-analysis-cli
+  - puppeteer
