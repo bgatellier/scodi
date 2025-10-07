@@ -7,6 +7,8 @@ tasks:
       - ^:build
   check:
     command: biome check
+    options:
+      runFromWorkspaceRoot: true
   test:
     command: vitest run
     deps:

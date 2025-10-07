@@ -36,7 +36,6 @@
     "puppeteer-core": "catalog:puppeteerLighthouse"
   },
   "devDependencies": {
-    "@biomejs/biome": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "typescript": "catalog:",
