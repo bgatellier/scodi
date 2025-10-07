@@ -1,4 +1,4 @@
-import type { Options } from "greenit-analysis-cli/cli-core/analysis.js";
+import type { Options } from "greenit-analysis-cli/src/cli-core/analysis.js";
 import type { Config } from "../Config.js";
 
 // use Exclude instead of Pick to allow future new options.

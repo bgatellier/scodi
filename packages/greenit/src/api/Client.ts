@@ -10,8 +10,8 @@ import {
 	type JSONReport,
 	type Options,
 	createJsonReports,
-	translator,
-} from "greenit-analysis-cli";
+} from "greenit-analysis-cli/src/cli-core/analysis.js";
+import { translator } from "greenit-analysis-cli/src/cli-core/translator.js";
 import puppeteer from "puppeteer-core";
 import { GreenITError } from "../error/GreenITError.js";
 

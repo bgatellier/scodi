@@ -1,2 +1,2 @@
-export * from "./cli-core/analysis";
-export * from "./cli-core/translator";
+export * from "./src/cli-core/analysis";
+export * from "./src/cli-core/translator";

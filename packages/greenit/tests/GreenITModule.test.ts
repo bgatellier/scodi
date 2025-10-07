@@ -1,5 +1,5 @@
 import type { ModuleMetadata } from "@scodi/common";
-import { createJsonReports } from "greenit-analysis-cli/cli-core/analysis.js";
+import { createJsonReports } from "greenit-analysis-cli/src/cli-core/analysis.js";
 import { vol } from "memfs";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { GreenITModule } from "../src/GreenITModule.js";
@@ -7,7 +7,7 @@ import { Conf, ErrorReport, SuccessReport } from "./data.js";
 
 vi.mock("node:fs");
 vi.mock(
-	import("greenit-analysis-cli/cli-core/analysis.js"),
+	import("greenit-analysis-cli/src/cli-core/analysis.js"),
 	async (importOriginal) => {
 		const mod = await importOriginal();
 		return {
