@@ -2,9 +2,6 @@ language: typescript
 project: 
   name: Scodi CLI
   description: Starts an analysis by using a CLI
-dependsOn:
-  - id: common
-    scope: production
 stack: backend
 tags:
   - scodi

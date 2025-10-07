@@ -2,11 +2,6 @@ language: typescript
 project: 
   name: Scodi Lighthouse
   description: Analyses URLs with Google Lighthouse
-dependsOn:
-  - id: cli
-    scope: peer
-  - id: common
-    scope: production
 stack: backend
 tags:
   - scodi
