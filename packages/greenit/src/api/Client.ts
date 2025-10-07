@@ -81,16 +81,14 @@ export async function requestResult(
 
 		return {
 			...jsonReport.pages[0].actions[0],
-			...{
-				success: jsonReport.success,
-				nbBestPracticesToCorrect: jsonReport.nbBestPracticesToCorrect,
-				date: jsonReport.date,
-				pageInformations: jsonReport.pageInformations,
-				tryNb: jsonReport.tryNb,
-				tabId: jsonReport.tabId,
-				index: jsonReport.index,
-				url: jsonReport.url,
-			},
+			success: jsonReport.success,
+			nbBestPracticesToCorrect: jsonReport.nbBestPracticesToCorrect,
+			date: jsonReport.date,
+			pageInformations: jsonReport.pageInformations,
+			tryNb: jsonReport.tryNb,
+			tabId: jsonReport.tabId,
+			index: jsonReport.index,
+			url: jsonReport.url,
 		};
 	} catch (error) {
 		if (typeof error === "string") {
