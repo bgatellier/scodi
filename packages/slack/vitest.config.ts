@@ -1,3 +1,3 @@
-import configShared from '../../vitest.shared.js'
+import configShared from '../../vitest.config'
 
 export default configShared

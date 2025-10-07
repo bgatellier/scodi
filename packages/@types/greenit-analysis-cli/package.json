@@ -16,9 +16,5 @@
   "contributors": [
     "Bastien Gatellier <contact@bgatellier.fr>"
   ],
-  "types": "index.d.ts",
-  "devDependencies": {
-    "@vitest/coverage-istanbul": "catalog:",
-    "vitest": "catalog:"
-  }
+  "types": "index.d.ts"
 }

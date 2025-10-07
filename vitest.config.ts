@@ -20,9 +20,7 @@ export default defineConfig({
                 'vitest.config.mts',
                 'vitest.workspace.ts',
             ],
-            // moon handle this coverage results cleaning,
-            // as we have to deal with its caching system (which vitest is not aware of).
-            clean: false
+            clean: true
         },
         passWithNoTests: true,
         environment: 'node',
