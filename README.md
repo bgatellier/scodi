@@ -2,7 +2,7 @@
 <p align="center">A command-line tool to industrialize web quality measurement.</p>
 
 [![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-cli?logo=npm "List Scodi packages on npmjs.com")](https://www.npmjs.com/search?q=%40fabernovel%2Fheart)
-[![Sonar Coverage](https://img.shields.io/sonar/coverage/scodi-cli?server=https%3A%2F%2Fsonarcloud.io&style=flat)](https://sonarcloud.io/organizations/bgatellier/projects?search=scodi "View coverage details")
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-cli&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-cli "View coverage details")
 [![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/cli/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/cli/package.json "View known vulnerabilities")
 
 # Description
@@ -100,13 +100,13 @@ To do so, _Scodi_ is divided in 3 types of packages.
 
 ## packages list
 
-| Name | Type | Purpose | |
-| ------ | ------ | ------ | ------ |
-| Scodi API | Runner | Exposes an HTTP API that starts an analysis when it is requested | [![](https://img.shields.io/npm/v/@fabernovel/heart-api/latest?label=%40fabernovel%2Fheart-api)](https://www.npmjs.com/package/@fabernovel/heart-api "View Scodi API on npmjs.com") |
-| Scodi CLI | Runner | Control the other modules by using a CLI | [![](https://img.shields.io/npm/v/@fabernovel/heart-cli/latest?label=%40fabernovel%2Fheart-cli)](https://www.npmjs.com/package/@fabernovel/heart-cli "View Scodi CLI on npmjs.com") |
-| Scodi GreenIT | Analysis | Analyzes URLs with [GreenIT Analysis](https://chrome.google.com/webstore/detail/greenit-analysis/mofbfhffeklkbebfclfaiifefjflcpad?hl=en) | [![](https://img.shields.io/npm/v/@fabernovel/heart-greenit/latest?label=%40fabernovel%2Fheart-greenit)](https://www.npmjs.com/package/@fabernovel/heart-greenit "View Scodi GreenIT on npmjs.com") |
-| Scodi Lighthouse | Analysis | Analyzes URLs with [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) | [![](https://img.shields.io/npm/v/@fabernovel/heart-lighthouse/latest?label=%40fabernovel%2Fheart-lighthouse)](https://www.npmjs.com/package/@fabernovel/heart-lighthouse "View Scodi Lighthouse on npmjs.com") |
-| Scodi Observatory | Analysis | Analyzes URLs with [Mozilla Observatory](https://observatory.mozilla.org/) | [![](https://img.shields.io/npm/v/@fabernovel/heart-observatory/latest?label=%40fabernovel%2Fheart-observatory)](https://www.npmjs.com/package/@fabernovel/heart-observatory "View Scodi Observatory on npmjs.com") |
-| Scodi SSL Labs Server | Analysis | Analyzes URLs with [Qualys SSL Labs Server](https://www.ssllabs.com/ssltest/) | [![](https://img.shields.io/npm/v/@fabernovel/heart-ssllabs-server/latest?label=%40fabernovel%2Fheart-ssllabs-server)](https://www.npmjs.com/package/@fabernovel/heart-ssllabs-server "View Scodi SSL Labs Server on npmjs.com") |
-| Scodi MySQL | Listener | Stores the results of the analysis into a [MySQL](https://www.mysql.com) database | [![](https://img.shields.io/npm/v/@fabernovel/heart-mysql/latest?label=%40fabernovel%2Fheart-mysql)](https://www.npmjs.com/package/@fabernovel/heart-mysql "View Scodi MySQL on npmjs.com")
-| Scodi Slack | Listener | Sends the results of the analysis to a [Slack](https://slack.com) channel | [![](https://img.shields.io/npm/v/@fabernovel/heart-slack/latest?label=%40fabernovel%2Fheart-slack)](https://www.npmjs.com/package/@fabernovel/heart-slack "View Scodi Slack on npmjs.com") |
+| Name | Type | Purpose |
+| ------ | ------ | ------ |
+| [Scodi API](./packages/api/) | Runner | Exposes an HTTP API that starts an analysis when it is requested |
+| [Scodi CLI](./packages/cli/) | Runner | Control the other modules by using a CLI |
+| [Scodi GreenIT](./packages/greenit/) | Analysis | Analyzes URLs with [GreenIT Analysis](https://chrome.google.com/webstore/detail/greenit-analysis/mofbfhffeklkbebfclfaiifefjflcpad?hl=en) |
+| [Scodi Lighthouse](./packages/lighthouse/) | Analysis | Analyzes URLs with [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) |
+| [Scodi Observatory](./packages/observatory/) | Analysis | Analyzes URLs with [Mozilla Observatory](https://observatory.mozilla.org/) |
+| [Scodi SSL Labs Server](./packages/ssllabs-server/) | Analysis | Analyzes URLs with [Qualys SSL Labs Server](https://www.ssllabs.com/ssltest/) |
+| [Scodi MySQL](./packages/mysql/) | Listener | Stores the results of the analysis into a [MySQL](https://www.mysql.com) database |
+| [Scodi Slack](./packages/slack/) | Listener | Sends the results of the analysis to a [Slack](https://slack.com) channel |
