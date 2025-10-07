@@ -1,12 +1,12 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
 	"files": {
-		"include": [
-			"./*.d.ts", // custom @types packages
-			"src/**/*.ts",
-			"tests/**/*.ts"
-		],
-		"ignore": ["templates/*.ts"]
+		"includes": [
+			"**/*.d.ts",
+			"**/src/**/*.ts",
+			"**/tests/**/*.ts",
+			"!**/templates/**/*.ts"
+		]
 	},
 	"vcs": {
 		"enabled": true,

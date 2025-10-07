@@ -3,7 +3,7 @@ packages:
   - packages/*
   - test/
 catalog:
-  '@biomejs/biome': ^1.9.4
+  '@biomejs/biome': ^2.0.0
   '@fastify/cors': ^11.0.0
   '@mikro-orm/cli': ^6.0.0
   '@mikro-orm/core': ^6.0.0

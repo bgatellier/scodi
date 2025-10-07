@@ -1,9 +1,9 @@
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+	getPuppeteerBrowserExecutablePath,
 	type LighthouseConfig,
 	type LighthouseReport,
-	getPuppeteerBrowserExecutablePath,
 } from "@scodi/common";
 import lighthouse from "lighthouse";
 import puppeteer from "puppeteer-core";

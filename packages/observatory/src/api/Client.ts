@@ -5,7 +5,7 @@ import {
 	Request,
 } from "@scodi/common";
 import { ObservatoryError } from "../error/ObservatoryError.js";
-import { type ScanError, isScanError } from "./error/Error.js";
+import { isScanError, type ScanError } from "./error/Error.js";
 
 export class Client {
 	readonly #analyzeUrl: string;

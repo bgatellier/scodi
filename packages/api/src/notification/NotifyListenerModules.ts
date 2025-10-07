@@ -29,7 +29,7 @@ export function createNotifyListenerModulesHandler(
 		if (reply.statusCode >= 200 && reply.statusCode < 300) {
 			const { except_listeners, only_listeners } = request.body;
 
-			const listenerModulesResolved = new Array<ModuleListenerInterface>();
+			const listenerModulesResolved: ModuleListenerInterface[] = [];
 
 			if (except_listeners !== undefined) {
 				listenerModulesResolved.push(

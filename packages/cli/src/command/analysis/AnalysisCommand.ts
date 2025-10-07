@@ -2,13 +2,13 @@ import {
 	type Config,
 	type GenericReport,
 	InputError,
+	isModuleListenerDatabase,
 	type ModuleAnalysisInterface,
 	type ModuleListenerDatabaseInterface,
 	type ModuleListenerInterface,
 	type ModuleMetadata,
 	type ParsedAnalysisInput,
 	type Result,
-	isModuleListenerDatabase,
 	validateAnalysisInput,
 } from "@scodi/common";
 import { Command, InvalidArgumentError } from "commander";
@@ -65,7 +65,7 @@ export const createAnalysisSubcommand = <C extends Config>(
 		.addOption(createExceptListenersOption())
 		.addOption(createOnlyListenersOption())
 		.action(async (options: CommonOptions & AnalysisOptions) => {
-			const listenerModulesIds = new Array<string>();
+			const listenerModulesIds: string[] = [];
 			listenerModulesMetadataMap.forEach((metadata, _key) => {
 				listenerModulesIds.push(metadata.scodi.id);
 			});

@@ -1,5 +1,5 @@
 import type { Result } from "lighthouse";
-import { type ValidatedAnalysisInput, logger } from "../../index.js";
+import { logger, type ValidatedAnalysisInput } from "../../index.js";
 import type { Service } from "../../service/Service.js";
 import type { GenericReport, ReportArguments } from "../Report.js";
 import type { LighthouseResult } from "./LighthouseResult.js";

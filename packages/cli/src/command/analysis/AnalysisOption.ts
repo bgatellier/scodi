@@ -45,7 +45,7 @@ export function createConfigOption(): Option {
 				// triggered if the file cannot be read (e.g. invalid path)
 				try {
 					return parseConfig(config);
-				} catch (error) {
+				} catch (_error) {
 					throw new InvalidArgumentError(
 						"The configuration is neither a file or a valid stringified JSON. Please check the file path or the JSON syntax.",
 					);

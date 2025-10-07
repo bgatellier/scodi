@@ -2,10 +2,10 @@ import {
 	type Config,
 	type GreenITConfig,
 	GreenITReport,
+	logger,
 	Module,
 	type ModuleAnalysisInterface,
 	type ModuleMetadata,
-	logger,
 } from "@scodi/common";
 import { requestResult } from "./api/Client.js";
 

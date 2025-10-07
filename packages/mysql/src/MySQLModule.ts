@@ -1,10 +1,10 @@
 import {
 	type GenericReport,
+	logger,
 	Module,
 	type ModuleListenerDatabaseInterface,
 	type ModuleMetadata,
 	type Result,
-	logger,
 } from "@scodi/common";
 import { MySQLClient } from "./client/Client.js";
 
