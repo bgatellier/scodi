@@ -5,7 +5,7 @@
 
 # Description
 
-_Scodi Observatory_ is an _analysis_ module of _Scodi_, which analyses URLs with _[Mozilla Observatory](https://observatory.mozilla.org/)_.
+_Scodi Observatory_ is an _analysis_ module of _Scodi_, which analyses URLs with _[MDN HTTP Observatory](https://developer.mozilla.org/en-US/observatory)_.
 
 Read more about [the description and design of _Scodi_](https://github.com/bgatellier/scodi#readme).
 
@@ -25,9 +25,9 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
     npm install @scodi/cli
     ```
 
-2. [Optional] Customize the _Mozilla Observatory_ scanner
+2. [Optional] Customize the _MDN HTTP Observatory_ scanner
 
-    By default, the scanner used is the public one, but you can use your own: [from a local codebase](https://github.com/mozilla/http-observatory#running-a-scan-from-the-local-codebase-without-db-for-continuous-integration) or [with Docker](https://github.com/mozilla/http-observatory#running-a-local-scanner-with-docker).
+    By default, the scanner used is the public one, but you can use your own.
 
     In this case, you must provide the following env values:
     ```dotenv
@@ -47,7 +47,7 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
     npx scodi observatory --config config.json
     ```
 
-    The analysis configuration follows the JSON format and  the [Invoke assessment API Documentation](https://github.com/mozilla/http-observatory/blob/master/httpobs/docs/api.md#invoke-assessment).
+    The analysis configuration follows the JSON format and the [POST /api/v2/scan](https://github.com/mdn/mdn-http-observatory/?tab=readme-ov-file#post-apiv2scan) specifications.
 
 ## Github Action
 
