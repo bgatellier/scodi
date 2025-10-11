@@ -1,7 +1,7 @@
 export interface ScanError {
 	error: unknown;
-	text: string;
+	message: string;
 }
 
 export const isScanError = (object: unknown): object is ScanError =>
-	(object as ScanError).error !== undefined;
+	(object as ScanError).error !== null;
