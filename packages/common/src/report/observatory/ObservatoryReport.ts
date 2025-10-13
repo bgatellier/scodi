@@ -36,11 +36,11 @@ export class ObservatoryReport implements GenericReport<ObservatoryResult> {
 	}
 
 	get grade(): string {
-		return this.#result.scan.grade;
+		return this.#result.grade;
 	}
 
 	get normalizedGrade(): number {
-		return this.#result.scan.score;
+		return this.#result.score;
 	}
 
 	get result(): ObservatoryResult {
