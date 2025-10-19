@@ -9,7 +9,7 @@
 
 Scodi is a tool that centralize the use of famous web quality measurement services ([_Google Lighthouse_](https://pagespeed.web.dev/), [_GreenIT Analysis_](https://www.ecoindex.fr/) or [_Mozilla Observatory_](https://observatory.mozilla.org/)) in a unique CLI.
 
-With his modular approach, it makes easy to process the analysis results into a database to track metrics over time, or send them into a communication tool like _Slack_.
+With his modular approach, it makes easy to process the analysis results into a database to track metrics over time.
 
 Moreover the command-line interface allows a smooth integration into a CI/CD chain.
 
@@ -17,7 +17,6 @@ Moreover the command-line interface allows a smooth integration into a CI/CD cha
 
 Exemple scenario:
 - analyze <https://www.ipcc.ch/> using the _Google Lighthouse_ service.
-- receive the main metrics and advices on a `scodi` Slack channel when the analysis is over.
 - store the results in a _MySQL_ database.
 
 ## Manual, with NPM packages
@@ -25,29 +24,22 @@ Exemple scenario:
 1. Install the packages
     
     ```bash
-    npm install @scodi/lighthouse @scodi/slack @scodi/mysql
+    npm install @scodi/lighthouse @scodi/mysql
     ```
 
-2. Set the credentials for Slack (API key) and MySQL (database URL)
+2. Set the credentials for MySQL (database URL)
     
     ```bash
-    echo SCODI_SLACK_ACCESS_TOKEN=xoxb-rest-of-token >> .env
     echo SCODI_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306 >> .env
     ```
 
-3. Create a Slack channel named `scodi` and a database with the same name.
-
-4. Start the analysis
+3. Start the analysis
 
     ```bash
     npx scodi lighthouse --config '{"url":"https://www.ipcc.ch/"}'
     ```
 
-Once the analysis is over, you will receive a Slack notification to quickly identify what can be improved:
-
-![Analyzed URL, overall grade over 100, several metrics like Speed Index, First Contentful Paint and advices for improvements](./docs/images/slack.png)
-
-And the results will be stored in a `report` table, which you can exploit with tools like _Grafana_:
+Once the analysis is over, the results will be stored in a `report` table, which you can exploit with tools like _Grafana_:
 
 ![Analyzed URL, overall grade over 100, several metrics like Speed Index, First Contentful Paint and advices for improvements](./docs/images/mysql.png)
 
@@ -61,10 +53,9 @@ With the example scenario given previously, the Docker image is used as follow:
 
 ```shell
 docker run --rm\
-    --env SCODI_SLACK_ACCESS_TOKEN=xoxb-rest-of-token\
     --env SCODI_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306\
     fabernovel/heart:latest\
-    lighthouse --config '{"url":"https://www.ipcc.ch"}' --only-listeners=mysql,slack
+    lighthouse --config '{"url":"https://www.ipcc.ch"}' --only-listeners=mysql
 ```
 
 ## Automated, with the GitHub Action
@@ -77,9 +68,8 @@ With the example scenario given previously, the GitHub Action is used as follow:
 - uses: faberNovel/heart-action@v4
   with:
     analysis_service: lighthouse
-    listener_services_only: mysql,slack
+    listener_services_only: mysql
     mysql_database_url: ${{ secrets.MYSQL_DATABASE_URL }}
-    SCODI_SLACK_ACCESS_TOKEN: ${{ secrets.SCODI_SLACK_ACCESS_TOKEN }}
 ```
 
 # Design
@@ -94,7 +84,7 @@ To do so, _Scodi_ is divided in 3 types of packages.
 | ------ | ------ | ------ |
 | Runner | Starts an analysis | using the CLI or the HTTP API |
 | Analysis | Analyzes URLs using third-party services | using _GreenIT Analysis_ |
-| Listener | Do thing with the results of the analysis | send them into a _Slack_ channel |
+| Listener | Do thing with the results of the analysis | store them into a _MySQL_ database |
 
 **The minimum setup you need to run _Scodi_, is to have the _Scodi CLI_ _runner_ module and a single _analysis_ module.**
 
@@ -109,4 +99,3 @@ To do so, _Scodi_ is divided in 3 types of packages.
 | [Scodi Observatory](./packages/observatory/) | Analysis | Analyzes URLs with [Mozilla Observatory](https://observatory.mozilla.org/) |
 | [Scodi SSL Labs Server](./packages/ssllabs-server/) | Analysis | Analyzes URLs with [Qualys SSL Labs Server](https://www.ssllabs.com/ssltest/) |
 | [Scodi MySQL](./packages/mysql/) | Listener | Stores the results of the analysis into a [MySQL](https://www.mysql.com) database |
-| [Scodi Slack](./packages/slack/) | Listener | Sends the results of the analysis to a [Slack](https://slack.com) channel |
