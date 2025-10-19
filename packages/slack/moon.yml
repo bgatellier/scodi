@@ -1,9 +1,0 @@
-language: typescript
-project: 
-  name: Scodi Slack
-  description: Send the analysis results into a Slack channel
-stack: backend
-tags:
-  - scodi
-  - listener
-type: application

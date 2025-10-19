@@ -5,7 +5,6 @@
 "@scodi/greenit": major
 "@scodi/common": major
 "@scodi/mysql": major
-"@scodi/slack": major
 "@scodi/api": major
 "@scodi/cli": major
 ---
