@@ -5,6 +5,4 @@ import type { Config } from "../Config.js";
  */
 export type ObservatoryConfig = Config & {
 	host: string;
-	hidden?: boolean;
-	rescan?: boolean;
 };

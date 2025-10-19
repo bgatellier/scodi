@@ -2,22 +2,13 @@ import { type ObservatoryConfig, ObservatoryReport } from "@scodi/common";
 import { describe, expect, it, vi } from "vitest";
 import { Client } from "../src/api/Client.js";
 import { ObservatoryModule } from "../src/ObservatoryModule.js";
-import { RESULT } from "./data/Result.js";
+import { generateMockResult } from "./data/Result.js";
 
-const ANALYZE_URL = "www.observatory.mozilla-test/results/";
-const CONF: ObservatoryConfig = { host: "ipcc.ch" };
+const MOCK_CONF: ObservatoryConfig = { host: "ipcc.ch" };
+const MOCK_RESULT = generateMockResult(MOCK_CONF);
 
-vi.spyOn(Client.prototype, "getAnalyzeUrl").mockImplementation(
-	() => ANALYZE_URL + CONF.host,
-);
-vi.spyOn(Client.prototype, "requestScan").mockImplementation(() =>
-	Promise.resolve(RESULT.scan),
-);
-vi.spyOn(Client.prototype, "requestTests").mockImplementation(() =>
-	Promise.resolve(RESULT.tests),
-);
-vi.spyOn(Client.prototype, "triggerAnalysis").mockImplementation(() =>
-	Promise.resolve(RESULT.scan),
+vi.spyOn(Client.prototype, "requestResult").mockImplementation(() =>
+	Promise.resolve(MOCK_RESULT),
 );
 
 describe("Starts an analysis", () => {
@@ -34,16 +25,16 @@ describe("Starts an analysis", () => {
 	);
 
 	it("Should start an analysis with a valid configuration without a threshold", async () => {
-		const report = await module.startAnalysis(CONF);
+		const report = await module.startAnalysis(MOCK_CONF);
 
 		const expectedReport = new ObservatoryReport({
 			analyzedUrl: "ipcc.ch",
 			date: report.date,
 			inputs: {
-				config: CONF,
+				config: MOCK_CONF,
 			},
-			result: RESULT,
-			resultUrl: `${ANALYZE_URL}ipcc.ch`,
+			result: MOCK_RESULT,
+			resultUrl: MOCK_RESULT.details_url,
 			service: {
 				name: "Observatory Test",
 			},
@@ -61,38 +52,38 @@ describe("Starts an analysis", () => {
 	});
 
 	it("Should start an analysis with an empty threshold", async () => {
-		const report = await module.startAnalysis(CONF);
+		const report = await module.startAnalysis(MOCK_CONF);
 
 		const expectedReport = new ObservatoryReport({
 			analyzedUrl: "ipcc.ch",
 			date: report.date,
 			inputs: {
-				config: CONF,
+				config: MOCK_CONF,
 			},
-			result: RESULT,
-			resultUrl: `${ANALYZE_URL}ipcc.ch`,
+			result: MOCK_RESULT,
+			resultUrl: MOCK_RESULT.details_url,
 			service: {
 				name: "Observatory Test",
 			},
 		});
 
 		expect(report).toStrictEqual(expectedReport);
-		expect(report).toHaveProperty("inputs", { config: CONF });
+		expect(report).toHaveProperty("inputs", { config: MOCK_CONF });
 	});
 
 	it("Should return false status when results do not match threshold objective", async () => {
 		const THRESHOLD = 98;
-		const report = await module.startAnalysis(CONF, THRESHOLD);
+		const report = await module.startAnalysis(MOCK_CONF, THRESHOLD);
 
 		const expectedReport = new ObservatoryReport({
 			analyzedUrl: "ipcc.ch",
 			date: report.date,
 			inputs: {
-				config: CONF,
+				config: MOCK_CONF,
 				threshold: THRESHOLD,
 			},
-			result: RESULT,
-			resultUrl: `${ANALYZE_URL}ipcc.ch`,
+			result: MOCK_RESULT,
+			resultUrl: MOCK_RESULT.details_url,
 			service: {
 				name: "Observatory Test",
 			},
