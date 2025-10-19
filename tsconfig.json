@@ -28,9 +28,6 @@
       "path": "packages/observatory"
     },
     {
-      "path": "packages/slack"
-    },
-    {
       "path": "packages/ssllabs-server"
     }
   ]

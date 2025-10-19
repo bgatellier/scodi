@@ -10,7 +10,6 @@ catalog:
   '@mikro-orm/migrations': ^6.0.0
   '@mikro-orm/mysql': ^6.0.0
   '@mikro-orm/reflection': ^6.0.0
-  '@slack/web-api': ^7.0.0
   '@types/node': ^20.17.19
   '@vitest/coverage-istanbul': ^3.2.4
   ajv: ^8.12.0
