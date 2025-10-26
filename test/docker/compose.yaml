@@ -1,0 +1,44 @@
+name: scodi-test
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    # https://github.com/docker-library/mysql/issues/930#issuecomment-1463541157
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 2
+      start_period: 0s
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+    env_file: ./env/mysql.env
+  dbgate:
+    container_name: dbgate
+    image: dbgate/dbgate:alpine
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - 8080:3000
+    volumes:
+      - dbgate-data:/root/.dbgate
+    env_file: ./env/dbgate.env
+  grafana:
+    container_name: grafana
+    image: grafana/grafana-oss:11.6.0
+    ports:
+      - 3000:3000
+    volumes:
+      - ./config/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./config/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./config/grafana/provisioning/dashboards:/var/lib/grafana/dashboards
+      - grafana-data:/var/lib/grafana
+    env_file: ./env/grafana.env
+
+volumes:
+  mysql-data:
+  dbgate-data:
+  grafana-data:
