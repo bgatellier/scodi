@@ -67,8 +67,8 @@ catalogs:
       specifier: ^8.0.1
       version: 8.2.0
     pino:
-      specifier: ^9.0.0
-      version: 9.13.1
+      specifier: ^10.0.0
+      version: 10.1.0
     pino-pretty:
       specifier: ^13.0.0
       version: 13.0.0
@@ -208,7 +208,7 @@ importers:
         version: 3.0.0(ajv@8.17.1)
       pino:
         specifier: 'catalog:'
-        version: 9.13.1
+        version: 10.1.0
       pino-pretty:
         specifier: 'catalog:'
         version: 13.0.0
@@ -1131,6 +1131,9 @@ packages:
 
   '@paulirish/trace_engine@0.0.57':
     resolution: {integrity: sha512-s+JNJ53B1MiEqCOD2hnK96wFTRRStxFmtm6QaIe2jiNI+lkS9mYEgnHOH2caQ/dEPn6wY+f2u5dW6aFYjmbaiw==}
+
+  '@pinojs/redact@0.4.0':
+    resolution: {integrity: sha512-k2ENnmBugE/rzQfEcdWHcCY+/FM3VLzH9cYEsbdsoqrvzAKRhUZeRNhAZvB8OitQJ1TBed3yqWtdjzS6wJKBwg==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -3037,6 +3040,10 @@ packages:
   pino-std-serializers@7.0.0:
     resolution: {integrity: sha512-e906FRY0+tV27iq4juKzSYPbUj2do2X2JX4EzSca1631EB2QJQUqGbDuERal7LCtOpxl6x3+nvo9NPZcmjkiFA==}
 
+  pino@10.1.0:
+    resolution: {integrity: sha512-0zZC2ygfdqvqK8zJIr1e+wT1T/L+LF6qvqvbzEQ6tiMAoTqEVK9a1K3YRu8HEUvGEvNqZyPJTtb2sNIoTkB83w==}
+    hasBin: true
+
   pino@9.13.1:
     resolution: {integrity: sha512-Szuj+ViDTjKPQYiKumGmEn3frdl+ZPSdosHyt9SnUevFosOkMY2b7ipxlEctNKPmMD/VibeBI+ZcZCJK+4DPuw==}
     hasBin: true
@@ -4700,6 +4707,8 @@ snapshots:
     dependencies:
       legacy-javascript: 0.0.1
       third-party-web: 0.27.0
+
+  '@pinojs/redact@0.4.0': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -6719,6 +6728,20 @@ snapshots:
       strip-json-comments: 3.1.1
 
   pino-std-serializers@7.0.0: {}
+
+  pino@10.1.0:
+    dependencies:
+      '@pinojs/redact': 0.4.0
+      atomic-sleep: 1.0.0
+      on-exit-leak-free: 2.1.2
+      pino-abstract-transport: 2.0.0
+      pino-std-serializers: 7.0.0
+      process-warning: 5.0.0
+      quick-format-unescaped: 4.0.4
+      real-require: 0.2.0
+      safe-stable-stringify: 2.5.0
+      sonic-boom: 4.2.0
+      thread-stream: 3.1.0
 
   pino@9.13.1:
     dependencies:
