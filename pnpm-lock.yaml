@@ -78,9 +78,6 @@ catalogs:
     type-fest:
       specifier: ^4.9.0
       version: 4.41.0
-    typescript:
-      specifier: ^5.6.2
-      version: 5.8.2
     vitest:
       specifier: ^3.2.4
       version: 3.2.4
@@ -141,7 +138,7 @@ importers:
         version: 3.2.4(vitest@3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0))
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -187,7 +184,7 @@ importers:
         version: 4.41.0
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -236,7 +233,7 @@ importers:
         version: 4.41.0
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -251,7 +248,7 @@ importers:
         version: link:../common
       greenit-analysis-cli:
         specifier: 'catalog:'
-        version: https://codeload.github.com/cnumr/GreenIT-Analysis-cli/tar.gz/c4fec990458591d48871d9bd0668d79962d1a9a3(typescript@5.8.2)
+        version: https://codeload.github.com/cnumr/GreenIT-Analysis-cli/tar.gz/c4fec990458591d48871d9bd0668d79962d1a9a3(typescript@5.9.3)
       puppeteer-core:
         specifier: catalog:puppeteerGreenIT
         version: 24.17.0
@@ -270,7 +267,7 @@ importers:
         version: 4.17.0
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -298,7 +295,7 @@ importers:
         version: 3.2.4(vitest@3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0))
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -332,10 +329,10 @@ importers:
         version: 3.2.4(vitest@3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0))
       ts-node:
         specifier: 'catalog:'
-        version: 10.9.2(@types/node@20.17.58)(typescript@5.8.2)
+        version: 10.9.2(@types/node@20.17.58)(typescript@5.9.3)
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -357,7 +354,7 @@ importers:
         version: 3.2.4(vitest@3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0))
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -382,7 +379,7 @@ importers:
         version: 3.2.4(vitest@3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0))
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -404,7 +401,7 @@ importers:
         version: 3.2.4(vitest@3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0))
       typescript:
         specifier: 'catalog:'
-        version: 5.8.2
+        version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@20.17.58)(jsdom@16.7.0)(yaml@2.7.0)
@@ -3567,8 +3564,8 @@ packages:
   typed-query-selector@2.12.0:
     resolution: {integrity: sha512-SbklCd1F0EiZOyPiW192rrHZzZ5sBijB6xM+cpmrwDqObvdtunOHHIk9fCGsoK5JVIYXoyEp4iEdE3upFH3PAg==}
 
-  typescript@5.8.2:
-    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -5450,14 +5447,14 @@ snapshots:
 
   core-util-is@1.0.3: {}
 
-  cosmiconfig@9.0.0(typescript@5.8.2):
+  cosmiconfig@9.0.0(typescript@5.9.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.8.2
+      typescript: 5.9.3
 
   crc-32@1.2.2: {}
 
@@ -5949,7 +5946,7 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  greenit-analysis-cli@https://codeload.github.com/cnumr/GreenIT-Analysis-cli/tar.gz/c4fec990458591d48871d9bd0668d79962d1a9a3(typescript@5.8.2):
+  greenit-analysis-cli@https://codeload.github.com/cnumr/GreenIT-Analysis-cli/tar.gz/c4fec990458591d48871d9bd0668d79962d1a9a3(typescript@5.9.3):
     dependencies:
       '@influxdata/influxdb-client': 1.34.0
       '@influxdata/influxdb-client-apis': 1.34.0(@influxdata/influxdb-client@1.34.0)
@@ -5959,8 +5956,8 @@ snapshots:
       glob: 10.4.5
       mustache: 4.2.0
       progress: 2.0.3
-      puppeteer: 24.17.0(typescript@5.8.2)
-      puppeteer-har: 1.1.2(puppeteer@24.17.0(typescript@5.8.2))
+      puppeteer: 24.17.0(typescript@5.9.3)
+      puppeteer-har: 1.1.2(puppeteer@24.17.0(typescript@5.9.3))
       sitemapper: 3.2.8
       tough-cookie: 4.1.4
       xml2js: 0.5.0
@@ -6817,18 +6814,18 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer-har@1.1.2(puppeteer@24.17.0(typescript@5.8.2)):
+  puppeteer-har@1.1.2(puppeteer@24.17.0(typescript@5.9.3)):
     dependencies:
       chrome-har: 0.11.12
-      puppeteer: 24.17.0(typescript@5.8.2)
+      puppeteer: 24.17.0(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
 
-  puppeteer@24.17.0(typescript@5.8.2):
+  puppeteer@24.17.0(typescript@5.9.3):
     dependencies:
       '@puppeteer/browsers': 2.10.7
       chromium-bidi: 8.0.0(devtools-protocol@0.0.1475386)
-      cosmiconfig: 9.0.0(typescript@5.8.2)
+      cosmiconfig: 9.0.0(typescript@5.9.3)
       devtools-protocol: 0.0.1475386
       puppeteer-core: 24.17.0
       typed-query-selector: 2.12.0
@@ -7254,7 +7251,7 @@ snapshots:
       '@ts-morph/common': 0.26.1
       code-block-writer: 13.0.3
 
-  ts-node@10.9.2(@types/node@20.17.58)(typescript@5.8.2):
+  ts-node@10.9.2(@types/node@20.17.58)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
@@ -7268,7 +7265,7 @@ snapshots:
       create-require: 1.1.1
       diff: 4.0.2
       make-error: 1.3.6
-      typescript: 5.8.2
+      typescript: 5.9.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
 
@@ -7286,7 +7283,7 @@ snapshots:
 
   typed-query-selector@2.12.0: {}
 
-  typescript@5.8.2: {}
+  typescript@5.9.3: {}
 
   umzug@3.8.2(@types/node@20.17.58):
     dependencies:
