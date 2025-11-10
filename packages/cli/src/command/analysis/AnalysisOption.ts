@@ -88,7 +88,7 @@ export function createThresholdOption(): Option {
  */
 export function createExceptListenersOption(): Option {
 	return new Option(
-		`-le, --${ANALYSIS_OPTIONS.exceptListeners} <${snakeCaseToCamelCase(
+		`--le, --${ANALYSIS_OPTIONS.exceptListeners} <${snakeCaseToCamelCase(
 			ANALYSIS_OPTIONS.exceptListeners,
 		)}>`,
 		"A comma-separated list of listener modules that will not be triggered after the analysis is done",
@@ -102,7 +102,7 @@ export function createExceptListenersOption(): Option {
  */
 export function createOnlyListenersOption(): Option {
 	return new Option(
-		`-lo, --${ANALYSIS_OPTIONS.onlyListeners} <${snakeCaseToCamelCase(
+		`--lo, --${ANALYSIS_OPTIONS.onlyListeners} <${snakeCaseToCamelCase(
 			ANALYSIS_OPTIONS.onlyListeners,
 		)}>`,
 		"A comma-separated list of listener modules that will be triggered after the analysis is done",
