@@ -86,12 +86,12 @@ catalogs:
       version: 4.0.8
   puppeteerGreenIT:
     puppeteer-core:
-      specifier: ^24.10.2
-      version: 24.17.0
+      specifier: ^24.23.0
+      version: 24.29.1
   puppeteerLighthouse:
     puppeteer-core:
-      specifier: ^24.10.2
-      version: 24.17.0
+      specifier: ^24.23.0
+      version: 24.29.1
 
 importers:
 
@@ -254,7 +254,7 @@ importers:
         version: https://codeload.github.com/cnumr/GreenIT-Analysis-cli/tar.gz/c4fec990458591d48871d9bd0668d79962d1a9a3(typescript@5.9.3)
       puppeteer-core:
         specifier: catalog:puppeteerGreenIT
-        version: 24.17.0
+        version: 24.29.1
     devDependencies:
       '@types/greenit-analysis-cli':
         specifier: workspace:^0.1.0
@@ -288,7 +288,7 @@ importers:
         version: 13.0.1
       puppeteer-core:
         specifier: catalog:puppeteerLighthouse
-        version: 24.17.0
+        version: 24.29.1
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
@@ -3462,6 +3462,9 @@ packages:
   third-party-web@0.27.0:
     resolution: {integrity: sha512-h0JYX+dO2Zr3abCQpS6/uFjujaOjA1DyDzGQ41+oFn9VW/ARiq9g5ln7qEP9+BTzDpOMyIfsfj4OvfgXAsMUSA==}
 
+  third-party-web@0.29.0:
+    resolution: {integrity: sha512-nBDSJw5B7Sl1YfsATG2XkW5qgUPODbJhXw++BKygi9w6O/NKS98/uY/nR/DxDq2axEjL6halHW1v+jhm/j1DBQ==}
+
   thread-stream@3.1.0:
     resolution: {integrity: sha512-OqyPZ9u96VohAyMfJykzmivOrY2wfMSf3C5TtFJVgN+Hm6aj+voFhlK+kZEIv2FBh1X6Xp3DlnCOfEQ3B2J86A==}
 
@@ -4713,7 +4716,7 @@ snapshots:
   '@paulirish/trace_engine@0.0.61':
     dependencies:
       legacy-javascript: 0.0.1
-      third-party-web: 0.27.0
+      third-party-web: 0.29.0
 
   '@pinojs/redact@0.4.0': {}
 
@@ -7198,6 +7201,8 @@ snapshots:
       tslib: 2.8.1
 
   third-party-web@0.27.0: {}
+
+  third-party-web@0.29.0: {}
 
   thread-stream@3.1.0:
     dependencies:
