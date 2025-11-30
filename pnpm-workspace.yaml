@@ -20,7 +20,7 @@ catalog:
   dotenv: ^17.0.0
   fastify: ^5.0.0
   greenit-analysis-cli: git+ssh://git@github.com:cnumr/GreenIT-Analysis-cli.git#semver:^0.2.0
-  lighthouse: ^12.6.0
+  lighthouse: ^13.0.0
   memfs: ^4.11.1
   ora: ^9.0.0
   pino: ^10.0.0
@@ -32,9 +32,9 @@ catalog:
 
 catalogs:
   puppeteerLighthouse:
-    puppeteer-core: ^24.10.2
+    puppeteer-core: ^24.23.0
   puppeteerGreenIT:
-    puppeteer-core: ^24.10.2
+    puppeteer-core: ^24.23.0
 onlyBuiltDependencies:
   - '@biomejs/biome'
   - esbuild
