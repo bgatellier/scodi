@@ -109,4 +109,4 @@ const Conf: GreenITConfig = {
 	timeout: 5000,
 };
 
-export { Conf, SuccessReport, ErrorReport };
+export { Conf, ErrorReport, SuccessReport };

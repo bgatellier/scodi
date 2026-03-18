@@ -30,7 +30,7 @@
     "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
-    "@scodi/common": "workspace:^4.0.0",
+    "@scodi/common": "workspace:^",
     "@slack/web-api": "catalog:"
   },
   "devDependencies": {
