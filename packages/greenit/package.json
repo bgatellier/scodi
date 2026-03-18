@@ -37,12 +37,12 @@
     "prepublishOnly": "moon run common:build"
   },
   "dependencies": {
-    "@scodi/common": "workspace:^4.0.0",
+    "@scodi/common": "workspace:^",
     "greenit-analysis-cli": "catalog:",
     "puppeteer-core": "catalog:puppeteerGreenIT"
   },
   "devDependencies": {
-    "@types/greenit-analysis-cli": "workspace:^0.1.0",
+    "@types/greenit-analysis-cli": "workspace:^",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "memfs": "catalog:",

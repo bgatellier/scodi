@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@fastify/cors": "catalog:",
-    "@scodi/common": "workspace:^4.0.0",
+    "@scodi/common": "workspace:^",
     "ajv": "catalog:",
     "ajv-errors": "catalog:",
     "fastify": "catalog:"

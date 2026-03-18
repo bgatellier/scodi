@@ -11,7 +11,6 @@ import {
 	type ModuleServerInterface,
 	type Result,
 } from "@scodi/common";
-import AjvErrors from "ajv-errors";
 import Fastify, { type FastifyInstance } from "fastify";
 import { createNotifyListenerModulesHandler } from "./notification/NotifyListenerModules.js";
 import { createRouteHandler } from "./router/RouteHandler.js";
@@ -67,7 +66,7 @@ export class ApiModule extends Module implements ModuleServerInterface {
 				customOptions: {
 					allErrors: true,
 				},
-				plugins: [AjvErrors.default],
+				plugins: [require("ajv-errors")],
 			},
 		});
 	}
