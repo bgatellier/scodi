@@ -1,9 +1,9 @@
 {
   "devDependencies": {
     "@biomejs/biome": "catalog:",
-    "@changesets/cli": "2.29.8",
-    "jsr": "0.13.5",
-    "tsconfig-moon": "1.4.0"
+    "@changesets/cli": "2.30.0",
+    "jsr": "0.14.3",
+    "tsconfig-moon": "1.4.2"
   },
   "type": "module",
   "engines": {
