@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Moon
-        uses: moonrepo/setup-toolchain@3927d571963592235146e8e0b5261206954796a2 # v0
+        uses: moonrepo/setup-toolchain@8794f0318b9df4a43a5ddc23cefd16f595b423dd # v0
         with:
           auto-install: true
 
@@ -60,7 +60,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Moon toolchain
-        uses: moonrepo/setup-toolchain@3927d571963592235146e8e0b5261206954796a2 # v0
+        uses: moonrepo/setup-toolchain@8794f0318b9df4a43a5ddc23cefd16f595b423dd # v0
         with:
           auto-install: true
 
