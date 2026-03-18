@@ -59,55 +59,44 @@ const Request = {
 };
 
 export type {
-	// Modules
-	ModuleAnalysisInterface,
-	ModuleIndex,
-	ModuleMetadata,
-	ModuleListenerInterface,
-	ModuleListenerDatabaseInterface,
-	ModuleServerInterface,
-	// Reports
-	GenericReport,
-	ObservatoryScanGrade,
-	Result,
-	// Analysis module config
 	Config,
+	GenericReport,
 	GreenITConfig,
 	LighthouseConfig,
+	ModuleAnalysisInterface,
+	ModuleIndex,
+	ModuleListenerDatabaseInterface,
+	ModuleListenerInterface,
+	ModuleMetadata,
+	ModuleServerInterface,
 	ObservatoryConfig,
-	SsllabsServerConfig,
-	// Input
+	ObservatoryScanGrade,
 	ParsedAnalysisInput,
 	ParsedServerInput,
+	Result,
+	SsllabsServerConfig,
 	ValidatedAnalysisInput,
 };
 export {
-	// Database
 	createDatabaseConfig,
-	ReportEntity,
-	ServiceEntity,
-	// Errors
-	InputError,
-	// Logger
-	logger,
-	// Modules
+	GreenITReport,
+	getAnalysisValidationSchema,
+	getPuppeteerBrowserExecutablePath,
 	Helper,
+	InputError,
 	isModuleAnalysis,
 	isModuleListener,
 	isModuleListenerDatabase,
 	isModuleServer,
-	Module,
-	// Reports
-	GreenITReport,
 	LighthouseReport,
+	logger,
+	Module,
 	ObservatoryReport,
-	SsllabsServerReport,
+	ReportEntity,
 	Request,
+	ServiceEntity,
+	SsllabsServerReport,
 	SsllabsServerStatus,
-	// Utils
-	getPuppeteerBrowserExecutablePath,
-	// Validation
-	getAnalysisValidationSchema,
 	validateAnalysisInput,
 	validateServerInput,
 };
