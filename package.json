@@ -3,7 +3,8 @@
     "@biomejs/biome": "catalog:",
     "@changesets/cli": "2.30.0",
     "jsr": "0.14.3",
-    "tsconfig-moon": "1.4.2"
+    "tsconfig-moon": "1.4.2",
+    "vitest": "catalog:"
   },
   "type": "module",
   "engines": {
