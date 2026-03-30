@@ -1,7 +1,7 @@
 {
   "name": "@scodi/greenit",
   "version": "4.0.0",
-  "description": "Analysis module of Scodi, which analyses URLs with GreenIT",
+  "description": "Analyses URLs with GreenIT Analysis",
   "keywords": [
     "greenit",
     "ecoindex",
@@ -53,7 +53,7 @@
     "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
-    "node": ">=20 <24"
+    "node": "^20||^22||^24||^25"
   },
   "scodi": {
     "id": "greenit",

@@ -11,7 +11,7 @@ ONLY_AFFECTED=$1
 
 if [[ "$ONLY_AFFECTED" == "true" ]]; then
     # https://moonrepo.dev/docs/commands/query/projects#affected-projects
-    projects=$(moon query touched-files | moon query projects --affected --tags scodi --json)
+    projects=$(moon query changed-files | moon query projects --affected --tags scodi --json)
 elif [[ "$ONLY_AFFECTED" == "false" ]]; then
     # https://moonrepo.dev/docs/commands/query/projects
     projects=$(moon query projects --tags scodi --json)

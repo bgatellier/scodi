@@ -1,9 +1,11 @@
+$schema: ../../.moon/cache/schemas/project.json
+
 language: typescript
-project: 
-  name: Scodi GreenIT
+project:
   description: Analyses URLs with GreenIT Analysis
+  title: Scodi GreenIT
 stack: backend
 tags:
-  - scodi
-  - analysis
-type: application
+- scodi
+- analysis
+layer: application

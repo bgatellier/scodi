@@ -1,7 +1,7 @@
 {
   "name": "@scodi/ssllabs-server",
   "version": "4.0.0",
-  "description": "Analysis module of Scodi, which analyses URLs with Qualys SSL Labs server",
+  "description": "Analyses URLs with Qualys SSL Labs server",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
@@ -42,7 +42,7 @@
     "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
-    "node": ">=20 <24"
+    "node": "^20||^22||^24||^25"
   },
   "scodi": {
     "id": "ssllabs-server",

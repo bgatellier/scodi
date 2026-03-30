@@ -1,0 +1,17 @@
+$schema: './cache/schemas/toolchains.json'
+
+javascript:
+  packageManager: pnpm
+  inferTasksFromScripts: false
+  syncPackageManagerField: true
+  syncProjectWorkspaceDependencies: true
+
+node:
+  version: '20.20.2'
+
+pnpm:
+  version: '10.33.0'
+
+typescript:
+  pruneProjectReferences: true
+  syncProjectReferences: true

@@ -1,7 +1,7 @@
 {
   "name": "@scodi/api",
   "version": "4.0.0",
-  "description": "Runner module of Scodi, which exposes an API that starts an analysis when it is requested",
+  "description": "Exposes an HTTP REST API that starts an analysis when it is requested",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
@@ -46,7 +46,7 @@
     "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
-    "node": ">=20 <24"
+    "node": "^20||^22||^24||^25"
   },
   "scodi": {
     "id": "api",

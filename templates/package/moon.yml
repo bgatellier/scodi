@@ -1,14 +1,14 @@
 language: typescript
-project: 
-  name: Scodi {{ name }}
+project:
   description: Analyses URLs with {{ name }}
+  title: Scodi {{ name }}
 dependsOn:
-  - id: cli
-    scope: peer
-  - id: common
-    scope: production
+- id: cli
+  scope: peer
+- id: common
+  scope: production
 stack: backend
 tags:
-  - scodi
-  - analysis
-type: application
+- scodi
+- analysis
+layer: application

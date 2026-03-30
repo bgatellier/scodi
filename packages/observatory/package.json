@@ -1,7 +1,7 @@
 {
   "name": "@scodi/observatory",
   "version": "4.0.1",
-  "description": "Analysis module of Scodi, which analyses URLs with Mozilla Observatory",
+  "description": "Analyses URLs with Mozilla Observatory",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"
@@ -42,7 +42,7 @@
     "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
-    "node": ">=20 <24"
+    "node": "^20||^22||^24||^25"
   },
   "scodi": {
     "id": "observatory",
