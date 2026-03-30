@@ -9,7 +9,6 @@
     "@scodi/lighthouse": "workspace:^",
     "@scodi/mysql": "workspace:^",
     "@scodi/observatory": "workspace:^",
-    "@scodi/slack": "workspace:^",
     "@scodi/ssllabs-server": "workspace:^"
   }
 }
