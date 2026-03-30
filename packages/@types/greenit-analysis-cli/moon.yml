@@ -1,7 +1,9 @@
+$schema: ../../../.moon/cache/schemas/project.json
+
 language: typescript
 stack: backend
-type: library
 workspace:
   inheritedTasks:
     include:
-      - check
+    - check
+layer: library

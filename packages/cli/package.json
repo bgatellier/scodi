@@ -1,7 +1,7 @@
 {
   "name": "@scodi/cli",
   "version": "4.0.0",
-  "description": "Runner module of Scodi, which starts an analysis by using a CLI",
+  "description": "Starts an analysis by using a CLI",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"

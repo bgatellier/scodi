@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json.schemastore.org/tsconfig",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.options.json",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
@@ -7,9 +7,6 @@
     "resolveJsonModule": true
   },
   "references": [
-    {
-      "path": "./tsconfig.build.json"
-    },
     {
       "path": "../@types/greenit-analysis-cli"
     }

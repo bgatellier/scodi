@@ -1,9 +1,11 @@
+$schema: ../../.moon/cache/schemas/project.json
+
 language: typescript
-project: 
-  name: Scodi REST API
+project:
   description: Exposes an HTTP REST API that starts an analysis when it is requested
+  title: Scodi API
 stack: backend
 tags:
-  - scodi
-  - runner
-type: application
+- scodi
+- runner
+layer: application

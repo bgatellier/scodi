@@ -1,9 +1,11 @@
+$schema: ../../.moon/cache/schemas/project.json
+
 language: typescript
-project: 
-  name: Scodi MySQL
+project:
   description: Store the results of analysis into a MySQL database
+  title: Scodi MySQL
 stack: backend
 tags:
-  - scodi
-  - listener
-type: application
+- scodi
+- listener
+layer: application

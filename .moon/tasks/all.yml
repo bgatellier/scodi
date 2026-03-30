@@ -1,16 +1,16 @@
-$schema: 'https://moonrepo.dev/schemas/tasks.json'
+$schema: ../cache/schemas/tasks.json
 tasks:
   build:
     command: tsc --project tsconfig.build.json
     deps:
-      # build dependent projects
-      - ^:build
+    # build dependent projects
+    - ^:build
     inputs:
-      - 'src/**/*'
-      - 'package.json'
-      - 'tsconfig*.json'
+    - src/**/*
+    - package.json
+    - tsconfig*.json
     outputs:
-      - 'lib'
+    - lib
   check:
     command: biome check
     options:
@@ -18,9 +18,9 @@ tasks:
   test:
     command: vitest run
     deps:
-      - target: build
+    - target: build
   coverage:
     extends: test
-    args: '--coverage'
+    args: --coverage
   publish:
     command: pnpm jsr publish

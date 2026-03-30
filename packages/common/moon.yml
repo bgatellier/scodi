@@ -1,8 +1,10 @@
+$schema: ../../.moon/cache/schemas/project.json
+
 language: typescript
-project: 
-  name: Scodi Common
-  description: Centralize components needed by every other packages
+project:
+  description: Centralize components needed by every other Scodi packages
+  title: Scodi Common
 stack: backend
 tags:
-  - scodi
-type: library
+- scodi
+layer: library

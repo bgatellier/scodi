@@ -1,7 +1,7 @@
 {
   "name": "@scodi/common",
   "version": "4.0.0",
-  "description": "Centralize helpful code needed by every Scodi packages",
+  "description": "Centralize components needed by every other Scodi packages",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"

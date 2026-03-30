@@ -1,9 +1,11 @@
+$schema: ../../.moon/cache/schemas/project.json
+
 language: typescript
-project: 
-  name: Scodi Slack
+project:
   description: Send the analysis results into a Slack channel
+  title: Scodi Slack
 stack: backend
 tags:
-  - scodi
-  - listener
-type: application
+- scodi
+- listener
+layer: application

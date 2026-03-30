@@ -1,7 +1,7 @@
 {
   "name": "@scodi/slack",
   "version": "4.0.1",
-  "description": "Send the analysis results of Scodi into a Slack channel",
+  "description": "Send the analysis results into a Slack channel",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
     "url": "https://github.com/bgatellier/scodi/issues"

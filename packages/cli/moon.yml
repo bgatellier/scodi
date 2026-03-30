@@ -1,9 +1,11 @@
+$schema: ../../.moon/cache/schemas/project.json
+
 language: typescript
-project: 
-  name: Scodi CLI
+project:
   description: Starts an analysis by using a CLI
+  title: Scodi CLI
 stack: backend
 tags:
-  - scodi
-  - runner
-type: tool
+- scodi
+- runner
+layer: tool

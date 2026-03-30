@@ -1,7 +1,7 @@
 {
   "name": "@scodi/greenit",
   "version": "4.0.0",
-  "description": "Analysis module of Scodi, which analyses URLs with GreenIT",
+  "description": "Analyses URLs with GreenIT Analysis",
   "keywords": [
     "greenit",
     "ecoindex",

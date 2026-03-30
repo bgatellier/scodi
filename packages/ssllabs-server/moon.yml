@@ -1,9 +1,11 @@
+$schema: ../../.moon/cache/schemas/project.json
+
 language: typescript
-project: 
-  name: Scodi SSLLabs Server
+project:
   description: Analyses URLs with Qualys SSL Labs server
+  title: Scodi SSLLabs Server
 stack: backend
 tags:
-  - scodi
-  - analysis
-type: application
+- scodi
+- analysis
+layer: application
