@@ -11,10 +11,10 @@ ONLY_AFFECTED=$1
 
 if [[ "$ONLY_AFFECTED" == "true" ]]; then
     # https://moonrepo.dev/docs/commands/query/projects#affected-projects
-    projects=$(moon query changed-files | moon query projects --affected --tags scodi --json)
+    projects=$(moon query changed-files | moon query projects --affected --tags scodi)
 elif [[ "$ONLY_AFFECTED" == "false" ]]; then
     # https://moonrepo.dev/docs/commands/query/projects
-    projects=$(moon query projects --tags scodi --json)
+    projects=$(moon query projects --tags scodi)
 fi
 
 # remove whitespaces, newlines... https://unix.stackexchange.com/a/32587
