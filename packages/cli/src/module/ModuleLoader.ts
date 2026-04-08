@@ -165,7 +165,7 @@ async function getPaths(cwd: string): Promise<string[]> {
 	const pattern = new RegExp(`^${PACKAGE_PREFIX}(?!cli|common)`);
 	const packageJsonPath = `${cwd}/package.json`;
 	const moduleIndex = (await import(packageJsonPath, {
-		assert: { type: "json" },
+		with: { type: "json" },
 	})) as { default: PackageJson };
 	const packageJson = moduleIndex.default;
 
