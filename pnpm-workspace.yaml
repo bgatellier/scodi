@@ -6,11 +6,11 @@ packages:
 catalog:
   '@biomejs/biome': ^2.4.8
   '@fastify/cors': ^11.2.0
-  '@mikro-orm/cli': ^6.6.9
-  '@mikro-orm/core': ^6.6.9
-  '@mikro-orm/migrations': ^6.6.9
-  '@mikro-orm/mysql': ^6.6.9
-  '@mikro-orm/reflection': ^6.6.9
+  '@mikro-orm/cli': ^7.0.0
+  '@mikro-orm/core': ^7.0.0
+  '@mikro-orm/migrations': ^7.0.0
+  '@mikro-orm/mysql': ^7.0.0
+  '@mikro-orm/reflection': ^7.0.0
   '@types/node': ^20.19.37
   '@vitest/coverage-istanbul': ^4.1.0
   ajv: ^8.18.0
