@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@mikro-orm/core": "catalog:",
+    "@mikro-orm/decorators": "catalog:",
     "@mikro-orm/reflection": "catalog:",
     "ajv": "catalog:",
     "ajv-errors": "catalog:",

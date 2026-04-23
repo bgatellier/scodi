@@ -27,7 +27,7 @@ export class MySQLModule
 	public async hasPendingMigrations(): Promise<boolean> {
 		const migrator = await this.#client.getMigrator();
 
-		const migrations = await migrator.getPendingMigrations();
+		const migrations = await migrator.getPending();
 
 		return migrations.length > 0;
 	}
