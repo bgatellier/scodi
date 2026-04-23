@@ -1,10 +1,10 @@
+import { Cascade } from "@mikro-orm/core";
 import {
-	Cascade,
 	Entity,
 	ManyToOne,
 	PrimaryKey,
 	Property,
-} from "@mikro-orm/core";
+} from "@mikro-orm/decorators/es";
 import type Report from "../report/Report.js";
 import type { GenericReport } from "../report/Report.js";
 import type { ServiceEntity } from "./ServiceEntity.js";
