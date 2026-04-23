@@ -1,8 +1,6 @@
 {
   "extends": "@config/typescript",
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "resolveJsonModule": true
   },
   "references": [

@@ -1,4 +1,4 @@
-import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
+import { Entity, PrimaryKey, Property } from "@mikro-orm/decorators/es";
 import type { Service } from "../service/Service.js";
 
 @Entity({ tableName: "service" })
