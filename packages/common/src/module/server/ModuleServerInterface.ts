@@ -33,6 +33,5 @@ export type ModuleServer = new () => ModuleServerInterface;
 export function isModuleServer(
 	module: Module,
 ): module is ModuleServerInterface {
-	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	return (module as ModuleServerInterface).createServer !== undefined;
 }
