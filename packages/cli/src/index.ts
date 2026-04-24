@@ -14,12 +14,10 @@ const CWD = cwd();
  */
 dotenv.config({ path: `${CWD}/.env` });
 
-void (async () => {
-	try {
-		await start(CWD);
-	} catch (error) {
-		logger.error(error);
+try {
+	await start(CWD);
+} catch (error) {
+	logger.error(error);
 
-		exit(1);
-	}
-})();
+	exit(1);
+}

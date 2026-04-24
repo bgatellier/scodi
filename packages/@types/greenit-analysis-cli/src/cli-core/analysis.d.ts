@@ -151,10 +151,10 @@ type JSONReport = GeneralProperties & {
 
 export {
 	type BestPractices,
-	type Page,
-	type GeneralProperties,
-	type KPIProperties,
 	createJsonReports,
+	type GeneralProperties,
 	type JSONReport,
+	type KPIProperties,
 	type Options,
+	type Page,
 };

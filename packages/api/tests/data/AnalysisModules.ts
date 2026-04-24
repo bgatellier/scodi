@@ -52,9 +52,9 @@ export const analysisModules: ModuleAnalysisInterface<
 							grade: "",
 							score: 100,
 							state: "FINISHED",
-						} as unknown as ObservatoryReport["result"]["scan"],
+						},
 						tests: {},
-					},
+					} as unknown as ObservatoryReport["result"],
 					service: {
 						name: "GreenIT Analysis",
 					},

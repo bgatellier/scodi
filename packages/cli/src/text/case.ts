@@ -6,5 +6,5 @@
 export function snakeCaseToCamelCase(s: string): string {
 	return s
 		.toLowerCase()
-		.replace(/[-_][a-z]/g, (group) => group.slice(-1).toUpperCase());
+		.replaceAll(/[-_][a-z]/g, (group) => group.slice(-1).toUpperCase());
 }
