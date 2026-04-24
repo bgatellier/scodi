@@ -24,10 +24,8 @@ export function isModuleListenerDatabase(
 	module: Module,
 ): module is ModuleListenerDatabaseInterface {
 	return (
-		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 		(module as ModuleListenerDatabaseInterface).hasPendingMigrations !==
 			undefined &&
-		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 		(module as ModuleListenerDatabaseInterface).runPendingMigrations !==
 			undefined
 	);

@@ -42,13 +42,11 @@ describe("Starts an analysis", () => {
 
 		const INVALID_CONF = {
 			...Conf,
-			...{ yolo: true },
+			yolo: true,
 		} as unknown as LighthouseConfig;
 		const module = new LighthouseModule(moduleMetadata, true);
 
-		await expect(() =>
-			module.startAnalysis(INVALID_CONF),
-		).rejects.toThrowError();
+		await expect(() => module.startAnalysis(INVALID_CONF)).rejects.toThrow();
 	});
 
 	it("should returns true status when results match thresholds objectives", async () => {

@@ -12,7 +12,7 @@ export async function migrateListenerDatabase(
 		listenerDatabaseModules.map((m) => m.hasPendingMigrations()),
 	);
 
-	if (hasPendingMigrations.some((hasPendingMigration) => hasPendingMigration)) {
+	if (hasPendingMigrations.some(Boolean)) {
 		const spinner = ora({ spinner: "dots", interval: 200 });
 
 		spinner.start("Update the databases...");
@@ -24,7 +24,7 @@ export async function migrateListenerDatabase(
 
 			spinner.succeed("Databases update completed.");
 
-			return Promise.resolve();
+			return;
 		} catch (error) {
 			let reason = "";
 

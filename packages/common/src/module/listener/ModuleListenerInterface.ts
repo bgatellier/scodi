@@ -22,6 +22,5 @@ export type ModuleListener = new () => ModuleListenerInterface;
 export function isModuleListener(
 	module: Module,
 ): module is ModuleListenerInterface {
-	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	return (module as ModuleListenerInterface).notifyAnalysisDone !== undefined;
 }

@@ -66,8 +66,8 @@ export class ObservatoryReport implements GenericReport<ObservatoryResult> {
 	}
 
 	isThresholdReached(): boolean | undefined {
-		return this.inputs.threshold !== undefined
-			? this.normalizedGrade >= this.inputs.threshold
-			: undefined;
+		return this.inputs.threshold === undefined
+			? undefined
+			: this.normalizedGrade >= this.inputs.threshold;
 	}
 }

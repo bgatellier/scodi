@@ -85,7 +85,7 @@ describe("Run GreenIT analysis", () => {
 
 		const module = new GreenITModule(moduleMetadata, true);
 
-		await expect(() => module.startAnalysis(Conf)).rejects.toThrowError(
+		await expect(() => module.startAnalysis(Conf)).rejects.toThrow(
 			"Error during GreenIT analysis. Increasing the timeout can be a solution",
 		);
 	});

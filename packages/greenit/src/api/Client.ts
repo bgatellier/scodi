@@ -55,9 +55,7 @@ export async function requestResult(
 	const consoleError = console.error;
 
 	try {
-		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		console.log = () => {};
-		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		console.error = () => {};
 
 		const reports = await createJsonReports(

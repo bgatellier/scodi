@@ -11,7 +11,7 @@ describe("delayed execution", () => {
 	});
 
 	it("should run a real timeout", () => {
-		vi.spyOn(global, "setTimeout");
+		vi.spyOn(globalThis, "setTimeout");
 		void wait(30);
 		vi.runAllTimers();
 

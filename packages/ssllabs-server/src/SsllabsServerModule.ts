@@ -53,7 +53,7 @@ export class SsllabsServerModule
 				const e = new SsllabsServerError(
 					`${result.status}: ${result.statusMessage}`,
 				);
-				return Promise.reject(e);
+				throw e;
 			}
 
 			case SsllabsServerStatus.DNS:
@@ -76,7 +76,7 @@ export class SsllabsServerModule
 
 			default: {
 				const e = new SsllabsServerError(result.statusMessage);
-				return Promise.reject(e);
+				throw e;
 			}
 		}
 	}
@@ -89,7 +89,7 @@ export class SsllabsServerModule
 			const e = new SsllabsServerError(
 				`The maximum number of tries (${MAX_TRIES}) to retrieve the report has been reached.`,
 			);
-			return Promise.reject(e);
+			throw e;
 		}
 
 		const result = await this.#client.getResult();

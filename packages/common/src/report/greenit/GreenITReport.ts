@@ -66,8 +66,8 @@ export class GreenITReport implements GenericReport<GreenITResult> {
 	}
 
 	isThresholdReached(): boolean | undefined {
-		return this.inputs.threshold !== undefined
-			? this.normalizedGrade >= this.inputs.threshold
-			: undefined;
+		return this.inputs.threshold === undefined
+			? undefined
+			: this.normalizedGrade >= this.inputs.threshold;
 	}
 }
