@@ -4,31 +4,31 @@
   "files": [],
   "references": [
     {
-      "path": "packages/@types/greenit-analysis-cli"
+      "path": "./packages/@types/greenit-analysis-cli"
     },
     {
-      "path": "packages/api"
+      "path": "./packages/api"
     },
     {
-      "path": "packages/cli"
+      "path": "./packages/cli"
     },
     {
-      "path": "packages/common"
+      "path": "./packages/common"
     },
     {
-      "path": "packages/greenit"
+      "path": "./packages/greenit"
     },
     {
-      "path": "packages/lighthouse"
+      "path": "./packages/lighthouse"
     },
     {
-      "path": "packages/mysql"
+      "path": "./packages/mysql"
     },
     {
-      "path": "packages/observatory"
+      "path": "./packages/observatory"
     },
     {
-      "path": "packages/ssllabs-server"
+      "path": "./packages/ssllabs-server"
     }
   ]
 }

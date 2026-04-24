@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@mikro-orm/core": "catalog:",
+    "@mikro-orm/decorators": "catalog:",
     "@mikro-orm/reflection": "catalog:",
     "ajv": "catalog:",
     "ajv-errors": "catalog:",
@@ -47,6 +48,6 @@
     "vitest": "catalog:"
   },
   "engines": {
-    "node": "^20||^22||^24||^25"
+    "node": "^22||^24||^25"
   }
 }
