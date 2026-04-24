@@ -2,6 +2,7 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "../../tsconfig.options.json",
   "compilerOptions": {
+    "declaration": true,
     "resolveJsonModule": true
   },
   "references": [
