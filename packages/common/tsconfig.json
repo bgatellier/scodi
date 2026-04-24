@@ -1,6 +1,7 @@
 {
   "extends": "@config/typescript",
   "compilerOptions": {
+    "declaration": true,
     "resolveJsonModule": true
   },
   "references": [
