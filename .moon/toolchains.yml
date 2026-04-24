@@ -1,4 +1,4 @@
-$schema: './cache/schemas/toolchains.json'
+$schema: ./cache/schemas/toolchains.json
 
 javascript:
   packageManager: pnpm
