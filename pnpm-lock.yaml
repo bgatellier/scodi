@@ -10,22 +10,22 @@ catalogs:
       specifier: ^11.2.0
       version: 11.2.0
     '@mikro-orm/cli':
-      specifier: ^7.0.11
+      specifier: ^7.0.12
       version: 7.0.12
     '@mikro-orm/core':
-      specifier: ^7.0.11
+      specifier: ^7.0.12
       version: 7.0.12
     '@mikro-orm/decorators':
-      specifier: ^7.0.11
-      version: 7.0.11
+      specifier: ^7.0.12
+      version: 7.0.12
     '@mikro-orm/migrations':
-      specifier: ^7.0.11
+      specifier: ^7.0.12
       version: 7.0.12
     '@mikro-orm/mysql':
-      specifier: ^7.0.11
+      specifier: ^7.0.12
       version: 7.0.12
     '@mikro-orm/reflection':
-      specifier: ^7.0.11
+      specifier: ^7.0.12
       version: 7.0.12
     '@types/node':
       specifier: ^22.19.17
@@ -224,7 +224,7 @@ importers:
         version: 7.0.12(dataloader@2.2.3)
       '@mikro-orm/decorators':
         specifier: 'catalog:'
-        version: 7.0.11(@mikro-orm/core@7.0.12(dataloader@2.2.3))
+        version: 7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))
       '@mikro-orm/reflection':
         specifier: 'catalog:'
         version: 7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))
@@ -896,11 +896,11 @@ packages:
       dataloader:
         optional: true
 
-  '@mikro-orm/decorators@7.0.11':
-    resolution: {integrity: sha512-eU1Zcg/X6hBosUb3OuKsmCxqGjNaFZzu6ptobnVXTirxYxYl759jxLA6xOIz+kOKaxSwkB7zMBDrDz9kwUrPNA==}
+  '@mikro-orm/decorators@7.0.12':
+    resolution: {integrity: sha512-CNK8kzXMxFYAibJpPULxfRF7fHhkZ4i8DqHbvd1cjaQD47WVgCL0g4A+2Tw88RfRu7vgYtY6ms7+vnnEo+lsIQ==}
     engines: {node: '>= 22.17.0'}
     peerDependencies:
-      '@mikro-orm/core': 7.0.11
+      '@mikro-orm/core': 7.0.12
       reflect-metadata: ^0.1.0 || ^0.2.0
     peerDependenciesMeta:
       reflect-metadata:
@@ -4069,7 +4069,7 @@ snapshots:
     optionalDependencies:
       dataloader: 2.2.3
 
-  '@mikro-orm/decorators@7.0.11(@mikro-orm/core@7.0.12(dataloader@2.2.3))':
+  '@mikro-orm/decorators@7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))':
     dependencies:
       '@mikro-orm/core': 7.0.12(dataloader@2.2.3)
 
