@@ -3,8 +3,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.8",
     "@changesets/cli": "2.30.0",
-    "jsr": "0.14.3",
-    "vitest": "catalog:"
+    "jsr": "0.14.3"
   },
   "engines": {
     "node": "20.20.2"

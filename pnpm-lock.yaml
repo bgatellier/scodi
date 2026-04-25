@@ -103,15 +103,18 @@ importers:
       jsr:
         specifier: 0.14.3
         version: 0.14.3
-      vitest:
-        specifier: 'catalog:'
-        version: 4.1.4(@opentelemetry/api@1.9.1)(@types/node@20.19.39)(@vitest/coverage-istanbul@4.1.4)(vite@8.0.8(@types/node@20.19.39)(yaml@2.8.3))
 
   config/typescript:
     devDependencies:
       tsconfig-moon:
         specifier: 'catalog:'
         version: 1.4.2
+
+  config/vitest:
+    devDependencies:
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.4(@opentelemetry/api@1.9.1)(@types/node@20.19.39)(@vitest/coverage-istanbul@4.1.4)(vite@8.0.8(@types/node@20.19.39)(yaml@2.8.3))
 
   packages/@types/greenit-analysis-cli:
     devDependencies:
@@ -143,6 +146,9 @@ importers:
       '@config/typescript':
         specifier: workspace:*
         version: link:../../config/typescript
+      '@config/vitest':
+        specifier: workspace:*
+        version: link:../../config/vitest
       '@types/node':
         specifier: 'catalog:'
         version: 20.19.39
@@ -183,6 +189,9 @@ importers:
       '@config/typescript':
         specifier: workspace:*
         version: link:../../config/typescript
+      '@config/vitest':
+        specifier: workspace:*
+        version: link:../../config/vitest
       '@fastify/cors':
         specifier: 'catalog:'
         version: 11.2.0
@@ -229,6 +238,9 @@ importers:
       '@config/typescript':
         specifier: workspace:*
         version: link:../../config/typescript
+      '@config/vitest':
+        specifier: workspace:*
+        version: link:../../config/vitest
       '@fastify/cors':
         specifier: 'catalog:'
         version: 11.2.0
@@ -275,6 +287,9 @@ importers:
       '@config/typescript':
         specifier: workspace:*
         version: link:../../config/typescript
+      '@config/vitest':
+        specifier: workspace:*
+        version: link:../../config/vitest
       '@types/greenit-analysis-cli':
         specifier: workspace:^
         version: link:../@types/greenit-analysis-cli
@@ -312,6 +327,9 @@ importers:
       '@config/typescript':
         specifier: workspace:*
         version: link:../../config/typescript
+      '@config/vitest':
+        specifier: workspace:*
+        version: link:../../config/vitest
       '@types/node':
         specifier: 'catalog:'
         version: 20.19.39
@@ -346,6 +364,9 @@ importers:
       '@config/typescript':
         specifier: workspace:*
         version: link:../../config/typescript
+      '@config/vitest':
+        specifier: workspace:*
+        version: link:../../config/vitest
       '@mikro-orm/cli':
         specifier: 'catalog:'
         version: 6.6.13
@@ -377,6 +398,9 @@ importers:
       '@config/typescript':
         specifier: workspace:*
         version: link:../../config/typescript
+      '@config/vitest':
+        specifier: workspace:*
+        version: link:../../config/vitest
       '@types/node':
         specifier: 'catalog:'
         version: 20.19.39
@@ -402,6 +426,9 @@ importers:
       '@config/typescript':
         specifier: workspace:*
         version: link:../../config/typescript
+      '@config/vitest':
+        specifier: workspace:*
+        version: link:../../config/vitest
       '@types/node':
         specifier: 'catalog:'
         version: 20.19.39

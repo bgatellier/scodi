@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@config/typescript": "workspace:*",
+    "@config/vitest": "workspace:*",
     "@fastify/cors": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
