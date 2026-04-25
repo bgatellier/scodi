@@ -37,6 +37,8 @@
     "fastify": "catalog:"
   },
   "devDependencies": {
+    "@config/typescript": "workspace:*",
+    "@config/vitest": "workspace:*",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",
     "typescript": "catalog:",

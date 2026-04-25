@@ -33,7 +33,7 @@ jobs:
 
       # git hooks are used to update jsr.jsonc files during the 'changeset version' operation done by the changesets/action below
       - name: Sync Git hooks
-        run: moon sync hooks
+        run: moon sync vcs-hooks
 
       - name: Install workspace dependencies
         run: pnpm install --workspace-root
@@ -49,4 +49,4 @@ jobs:
 
       - name: Publish
         if: steps.changesets.outputs.hasChangesets == 'false'
-        run: moon run :publish
+        run: moon ci :publish

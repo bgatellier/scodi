@@ -1,6 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "../../tsconfig.options.json",
+  "extends": "@config/typescript",
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,6 +14,5 @@
     "src/**/*.ts",
     "src/**/*.json",
     "tests/**/*.ts",
-    "tests/**/*.json"
   ]
 }

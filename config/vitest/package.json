@@ -1,0 +1,10 @@
+{
+    "name": "@config/vitest",
+    "type": "module",
+    "exports": {
+        ".": "./vitest.config.js"
+    },
+    "devDependencies": {
+        "vitest": "catalog:"
+    }
+}

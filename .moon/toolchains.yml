@@ -10,7 +10,7 @@ node:
   version: '20.20.2'
 
 pnpm:
-  version: '10.33.0'
+  version: '10.33.2'
 
 typescript:
   pruneProjectReferences: true

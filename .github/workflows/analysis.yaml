@@ -64,22 +64,8 @@ jobs:
         with:
           auto-install: true
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: echo "pnpm_cache_dir=$(pnpm store path)" >> ${GITHUB_OUTPUT}
-
-      - uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
-        name: Setup pnpm cache
-        with:
-          path: |
-            ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-            /home/runner/.cache/puppeteer
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
-
       - name: Generate coverage report
-        run: moon run ${{ matrix.projects.id }}:coverage
+        run: moon ci ${{ matrix.projects.id }}:coverage
 
       - uses: sonarsource/sonarqube-scan-action@299e4b793aaa83bf2aba7c9c14bedbb485688ec4 # v7
         env:
