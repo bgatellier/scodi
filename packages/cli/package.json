@@ -41,6 +41,7 @@
     "ora": "catalog:"
   },
   "devDependencies": {
+    "@config/typescript": "workspace:*",
     "@fastify/cors": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",

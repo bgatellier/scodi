@@ -36,6 +36,7 @@
     "pino-pretty": "catalog:"
   },
   "devDependencies": {
+    "@config/typescript": "workspace:*",
     "@fastify/cors": "catalog:",
     "@types/greenit-analysis-cli": "workspace:^",
     "@types/node": "catalog:",

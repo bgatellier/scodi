@@ -42,6 +42,7 @@
     "puppeteer-core": "catalog:puppeteerGreenIT"
   },
   "devDependencies": {
+    "@config/typescript": "workspace:*",
     "@types/greenit-analysis-cli": "workspace:^",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",

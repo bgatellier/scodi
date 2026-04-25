@@ -1,0 +1,9 @@
+{
+    "name": "@config/typescript",
+    "exports": {
+        ".": "./tsconfig.json"
+    },
+    "devDependencies": {
+        "tsconfig-moon": "catalog:"
+    }
+}

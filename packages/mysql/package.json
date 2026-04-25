@@ -36,6 +36,7 @@
     "@scodi/common": "workspace:^"
   },
   "devDependencies": {
+    "@config/typescript": "workspace:*",
     "@mikro-orm/cli": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-istanbul": "catalog:",

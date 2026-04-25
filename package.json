@@ -1,12 +1,11 @@
 {
+  "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "catalog:",
+    "@biomejs/biome": "2.4.8",
     "@changesets/cli": "2.30.0",
     "jsr": "0.14.3",
-    "tsconfig-moon": "1.4.2",
     "vitest": "catalog:"
   },
-  "type": "module",
   "engines": {
     "node": "20.20.2"
   },
