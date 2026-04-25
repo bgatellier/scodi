@@ -1,6 +1,6 @@
 {
   "name": "@scodi/api",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Exposes an HTTP REST API that starts an analysis when it is requested",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
@@ -45,7 +45,7 @@
     "vitest": "catalog:"
   },
   "peerDependencies": {
-    "@scodi/cli": "workspace:^4.0.0"
+    "@scodi/cli": "workspace:^5.0.0"
   },
   "engines": {
     "node": "^20||^22||^24||^25"
