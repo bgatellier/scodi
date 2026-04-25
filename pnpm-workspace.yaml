@@ -37,8 +37,6 @@ catalogs:
   puppeteerLighthouse:
     puppeteer-core: ^24.39.1
 
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - esbuild
-  - greenit-analysis-cli
-  - puppeteer
+allowBuilds:
+  greenit-analysis-cli: true
+  puppeteer: true
