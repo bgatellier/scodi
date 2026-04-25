@@ -6,9 +6,6 @@ jobs:
   test:
     name: 🐛 Run tests
     runs-on: ubuntu-latest
-    outputs:
-      # Output the artifact upload id
-      artifact-upload-id: ${{ steps.artifact-upload-step.outputs.artifact-id }}
     timeout-minutes: 8
     defaults:
       run:
@@ -31,19 +28,5 @@ jobs:
         with:
           auto-install: true
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: echo "pnpm_cache_dir=$(pnpm store path)" >> ${GITHUB_OUTPUT}
-
-      - uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5
-        name: Setup pnpm cache
-        with:
-          path: |
-            ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-            /home/runner/.cache/puppeteer
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
-
       - name: Run tests
-        run: moon run :test
+        run: moon ci :test
