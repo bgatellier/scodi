@@ -29,6 +29,8 @@
     "@scodi/common": "workspace:^4.0.0"
   },
   "devDependencies": {
+    "@config/typescript": "workspace:*",
+    "@config/vitest": "workspace:*",
     "@types/node": "catalog:"
   },
   "peerDependencies": {
