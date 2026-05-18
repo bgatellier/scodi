@@ -1,7 +1,7 @@
 {
   "type": "module",
   "devDependencies": {
-    "@biomejs/biome": "2.4.8",
+    "@biomejs/biome": "2.4.15",
     "@changesets/cli": "2.30.0",
     "jsr": "0.14.3"
   },
