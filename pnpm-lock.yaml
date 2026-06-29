@@ -10,23 +10,23 @@ catalogs:
       specifier: ^11.2.0
       version: 11.2.0
     '@mikro-orm/cli':
-      specifier: ^7.0.12
-      version: 7.0.12
+      specifier: ^7.1.5
+      version: 7.1.5
     '@mikro-orm/core':
-      specifier: ^7.0.12
-      version: 7.0.12
+      specifier: ^7.1.5
+      version: 7.1.5
     '@mikro-orm/decorators':
-      specifier: ^7.0.12
-      version: 7.0.12
+      specifier: ^7.1.5
+      version: 7.1.5
     '@mikro-orm/migrations':
-      specifier: ^7.0.12
-      version: 7.0.12
+      specifier: ^7.1.5
+      version: 7.1.5
     '@mikro-orm/mysql':
-      specifier: ^7.0.12
-      version: 7.0.12
+      specifier: ^7.1.5
+      version: 7.1.5
     '@mikro-orm/reflection':
-      specifier: ^7.0.12
-      version: 7.0.12
+      specifier: ^7.1.5
+      version: 7.1.5
     '@types/node':
       specifier: ^22.19.17
       version: 22.19.17
@@ -221,13 +221,13 @@ importers:
     dependencies:
       '@mikro-orm/core':
         specifier: 'catalog:'
-        version: 7.0.12(dataloader@2.2.3)
+        version: 7.1.5(dataloader@2.2.3)
       '@mikro-orm/decorators':
         specifier: 'catalog:'
-        version: 7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))
+        version: 7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))
       '@mikro-orm/reflection':
         specifier: 'catalog:'
-        version: 7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))
+        version: 7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))
       ajv:
         specifier: 'catalog:'
         version: 8.18.0
@@ -353,13 +353,13 @@ importers:
     dependencies:
       '@mikro-orm/core':
         specifier: 'catalog:'
-        version: 7.0.12(dataloader@2.2.3)
+        version: 7.1.5(dataloader@2.2.3)
       '@mikro-orm/migrations':
         specifier: 'catalog:'
-        version: 7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))
+        version: 7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))
       '@mikro-orm/mysql':
         specifier: 'catalog:'
-        version: 7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))(@types/node@22.19.17)
+        version: 7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))(@types/node@22.19.17)
       '@scodi/cli':
         specifier: workspace:^4.0.0
         version: link:../cli
@@ -375,7 +375,7 @@ importers:
         version: link:../../config/vitest
       '@mikro-orm/cli':
         specifier: 'catalog:'
-        version: 7.0.12(dataloader@2.2.3)
+        version: 7.1.5(dataloader@2.2.3)
       '@types/node':
         specifier: 'catalog:'
         version: 22.19.17
@@ -882,13 +882,13 @@ packages:
   '@manypkg/get-packages@1.1.3':
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
 
-  '@mikro-orm/cli@7.0.12':
-    resolution: {integrity: sha512-8X9JP/J0iOrjnYAGVDYyKRtqj2EJt8aeYCnkrxPVrZnZ14Oa+zDC64scPgUi6aJ0DoP+PE8oy9xc/ul7qsMYEg==}
+  '@mikro-orm/cli@7.1.5':
+    resolution: {integrity: sha512-RjjYEoHjZzpXHIrnDqRft0SkW+JJFkvzzDHUzoJ+eZEjHfyVFAwyhoVutzQxgNUWYidXKwaNPtAYxctQYUIC2A==}
     engines: {node: '>= 22.17.0'}
     hasBin: true
 
-  '@mikro-orm/core@7.0.12':
-    resolution: {integrity: sha512-XsqlIufHEDP2E8YUPAFG85wYhSu+YB6qVevbUnXIQpTjml02S/fbnlBn90YxbxNLLLTn3FqAK1iYSzja0eXRSw==}
+  '@mikro-orm/core@7.1.5':
+    resolution: {integrity: sha512-jYsR65PcFF+YKUlg/qytjP0PTyk558JvTKI1GzD6Vy/nshTkbcqMN5fDm2d5GJuxliPk0C8+M8tDn3GXeCAqow==}
     engines: {node: '>= 22.17.0'}
     peerDependencies:
       dataloader: 2.2.3
@@ -896,39 +896,39 @@ packages:
       dataloader:
         optional: true
 
-  '@mikro-orm/decorators@7.0.12':
-    resolution: {integrity: sha512-CNK8kzXMxFYAibJpPULxfRF7fHhkZ4i8DqHbvd1cjaQD47WVgCL0g4A+2Tw88RfRu7vgYtY6ms7+vnnEo+lsIQ==}
+  '@mikro-orm/decorators@7.1.5':
+    resolution: {integrity: sha512-CwK2n8hopvBmGJTKvb7P5iNYqEXln21AUUNUJG6BvS084V6lAB5PeluB2nCP2IomUcGaZZ80jbdg90hlOvprIg==}
     engines: {node: '>= 22.17.0'}
     peerDependencies:
-      '@mikro-orm/core': 7.0.12
+      '@mikro-orm/core': 7.1.5
       reflect-metadata: ^0.1.0 || ^0.2.0
     peerDependenciesMeta:
       reflect-metadata:
         optional: true
 
-  '@mikro-orm/migrations@7.0.12':
-    resolution: {integrity: sha512-8I0tga98tvPkwXF+tlAn9AzCTy7+4jsXmCOwDIY/NprJpkCvXWwEPds/ad19w0OMeG98wpCMikFc9PvHIOz/0g==}
+  '@mikro-orm/migrations@7.1.5':
+    resolution: {integrity: sha512-5d3nZ3ROjxM58W2UJtoMxYMx2uQjY3IPljvH3WfdKCwKubvrmluVJfUgcgmf7nZChEFAnogbBO3pmYbBme4wjg==}
     engines: {node: '>= 22.17.0'}
     peerDependencies:
-      '@mikro-orm/core': 7.0.12
+      '@mikro-orm/core': 7.1.5
 
-  '@mikro-orm/mysql@7.0.12':
-    resolution: {integrity: sha512-o0FaDc17R4cFel/yWT3hcEhBm8q0rUDwG/4EyJCsJNWqHHR4vcbXIOPEYMlFrAePCemV7fpFkE3AD+vnI/5zAA==}
+  '@mikro-orm/mysql@7.1.5':
+    resolution: {integrity: sha512-KfBIXqSr3EDiFrYl2KzVh2K6omzGduQEhFVwjy0YSrQHW6uWIfZB2oFM5mNbxDOzucYnHteVM2vMok/1PlRF3g==}
     engines: {node: '>= 22.17.0'}
     peerDependencies:
-      '@mikro-orm/core': 7.0.12
+      '@mikro-orm/core': 7.1.5
 
-  '@mikro-orm/reflection@7.0.12':
-    resolution: {integrity: sha512-VcPH6LS2hPl0VtcKJsg1USKtB4cgZvD47eWrN2gJPxfeizsVQP/fOmo92TWQozMyd5ce3HaInOMe/uXXnSd8PA==}
+  '@mikro-orm/reflection@7.1.5':
+    resolution: {integrity: sha512-9FuBPK2+uRW9gG0ZEJ3XGEvTEb+KJOGk+KIlr9sHWUM8YpFIBr+6ZND3upU0L5HyT4cqRWkcZYtayOxHUB2oLg==}
     engines: {node: '>= 22.17.0'}
     peerDependencies:
-      '@mikro-orm/core': 7.0.12
+      '@mikro-orm/core': 7.1.5
 
-  '@mikro-orm/sql@7.0.12':
-    resolution: {integrity: sha512-k9nNyGbZn1VNuVaIgTe7b4HCjbzUeth7BNPsw9tzgcR/3nMpWD8lLWc6iGPh2f6+eXLyLYppit/CUyphZX6ZBw==}
+  '@mikro-orm/sql@7.1.5':
+    resolution: {integrity: sha512-WeiyjzVrxx2WHafCFmhbfbNphPSXqN9+7USet6iNcc9EzKqN0ULPvQd555m+5Nh0tmkX151FwPMLm9/a2wG0ng==}
     engines: {node: '>= 22.17.0'}
     peerDependencies:
-      '@mikro-orm/core': 7.0.12
+      '@mikro-orm/core': 7.1.5
 
   '@napi-rs/wasm-runtime@1.1.4':
     resolution: {integrity: sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==}
@@ -2317,9 +2317,9 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  kysely@0.28.16:
-    resolution: {integrity: sha512-3i5pmOiZvMDj00qhrIVbH0AnioVTx22DMP7Vn5At4yJO46iy+FM8Y/g61ltenLVSo3fiO8h8Q3QOFgf/gQ72ww==}
-    engines: {node: '>=20.0.0'}
+  kysely@0.29.2:
+    resolution: {integrity: sha512-s6WVJyEZrbm6jhBpiKHsGHyePMrVQKJ85wZCFCr9W4QHv6WTjWIrdvTmO9hDEA3bNK0xkrE2DqrHsXMLWuZpQg==}
+    engines: {node: '>=22.0.0'}
 
   lazystream@1.0.1:
     resolution: {integrity: sha512-b94GiNHQNy6JNTrt5w6zNyffMrNkXZb3KTkCZJb2V1xaEGCk093vkZ2jk3tpaeP33/OiXC+WvK9AxUebnf5nbw==}
@@ -2532,8 +2532,8 @@ packages:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
-  mikro-orm@7.0.12:
-    resolution: {integrity: sha512-KEiA5XiYrwmFdNZ+RXklE4YpQAWT+XvC+FyZAkf5HX1eCjAzUtS4qEB5UFIgi7pH9i7Hl45EKjQHbT9fN4BsMA==}
+  mikro-orm@7.1.5:
+    resolution: {integrity: sha512-9tQ0yUB9Q4EfVT7BR+sWUThbvY0135+E16uCgNoaB67KwAjMQADPWOowURi4omhlywKdWkyEwxM/PDq1PuJuuw==}
     engines: {node: '>= 22.17.0'}
 
   mimic-function@5.0.1:
@@ -2591,8 +2591,8 @@ packages:
     resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
     hasBin: true
 
-  mysql2@3.22.2:
-    resolution: {integrity: sha512-snC/L6YoCJPFpozZo3p3hiOlt9ItQ7sCnLSziFLlIttEzsPhrdcPT8g21BiQ7Oqif25W4Xq1IFuBzBvoFYDf0Q==}
+  mysql2@3.22.5:
+    resolution: {integrity: sha512-95uZ2TrPWAZdwpB3vvvDbmEMcNG8yIeNCyu6GUcr/QnWEE/wXm7+mhOCsdQfWQDTV7qYT/PDUZ4U4UPP4AsXqQ==}
     engines: {node: '>= 8.0'}
     peerDependencies:
       '@types/node': '>= 8'
@@ -4057,46 +4057,46 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@mikro-orm/cli@7.0.12(dataloader@2.2.3)':
+  '@mikro-orm/cli@7.1.5(dataloader@2.2.3)':
     dependencies:
-      '@mikro-orm/core': 7.0.12(dataloader@2.2.3)
-      mikro-orm: 7.0.12
+      '@mikro-orm/core': 7.1.5(dataloader@2.2.3)
+      mikro-orm: 7.1.5
       yargs: 17.7.2
     transitivePeerDependencies:
       - dataloader
 
-  '@mikro-orm/core@7.0.12(dataloader@2.2.3)':
+  '@mikro-orm/core@7.1.5(dataloader@2.2.3)':
     optionalDependencies:
       dataloader: 2.2.3
 
-  '@mikro-orm/decorators@7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))':
+  '@mikro-orm/decorators@7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))':
     dependencies:
-      '@mikro-orm/core': 7.0.12(dataloader@2.2.3)
+      '@mikro-orm/core': 7.1.5(dataloader@2.2.3)
 
-  '@mikro-orm/migrations@7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))':
+  '@mikro-orm/migrations@7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))':
     dependencies:
-      '@mikro-orm/core': 7.0.12(dataloader@2.2.3)
-      '@mikro-orm/sql': 7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))
+      '@mikro-orm/core': 7.1.5(dataloader@2.2.3)
+      '@mikro-orm/sql': 7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))
 
-  '@mikro-orm/mysql@7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))(@types/node@22.19.17)':
+  '@mikro-orm/mysql@7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))(@types/node@22.19.17)':
     dependencies:
-      '@mikro-orm/core': 7.0.12(dataloader@2.2.3)
-      '@mikro-orm/sql': 7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))
-      kysely: 0.28.16
-      mysql2: 3.22.2(@types/node@22.19.17)
+      '@mikro-orm/core': 7.1.5(dataloader@2.2.3)
+      '@mikro-orm/sql': 7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))
+      kysely: 0.29.2
+      mysql2: 3.22.5(@types/node@22.19.17)
       sqlstring: 2.3.3
     transitivePeerDependencies:
       - '@types/node'
 
-  '@mikro-orm/reflection@7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))':
+  '@mikro-orm/reflection@7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))':
     dependencies:
-      '@mikro-orm/core': 7.0.12(dataloader@2.2.3)
+      '@mikro-orm/core': 7.1.5(dataloader@2.2.3)
       ts-morph: 28.0.0
 
-  '@mikro-orm/sql@7.0.12(@mikro-orm/core@7.0.12(dataloader@2.2.3))':
+  '@mikro-orm/sql@7.1.5(@mikro-orm/core@7.1.5(dataloader@2.2.3))':
     dependencies:
-      '@mikro-orm/core': 7.0.12(dataloader@2.2.3)
-      kysely: 0.28.16
+      '@mikro-orm/core': 7.1.5(dataloader@2.2.3)
+      kysely: 0.29.2
 
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)':
     dependencies:
@@ -5557,7 +5557,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  kysely@0.28.16: {}
+  kysely@0.29.2: {}
 
   lazystream@1.0.1:
     dependencies:
@@ -5770,7 +5770,7 @@ snapshots:
       braces: 3.0.3
       picomatch: 2.3.2
 
-  mikro-orm@7.0.12: {}
+  mikro-orm@7.1.5: {}
 
   mimic-function@5.0.1: {}
 
@@ -5812,7 +5812,7 @@ snapshots:
 
   mustache@4.2.0: {}
 
-  mysql2@3.22.2(@types/node@22.19.17):
+  mysql2@3.22.5(@types/node@22.19.17):
     dependencies:
       '@types/node': 22.19.17
       aws-ssl-profiles: 1.1.2
