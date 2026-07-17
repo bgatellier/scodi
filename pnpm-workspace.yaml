@@ -28,7 +28,7 @@ catalog:
   ts-node: ^10.9.2
   tsconfig-moon: ^1.4.2
   type-fest: ^5.4.4
-  typescript: ^6.0.0
+  typescript: ^7.0.0
   vitest: ^4.1.0
 
 catalogs:
