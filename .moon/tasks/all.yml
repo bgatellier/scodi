@@ -21,5 +21,3 @@ tasks:
   coverage:
     extends: test
     args: --coverage
-  publish:
-    command: pnpm jsr publish
