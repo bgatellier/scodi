@@ -1,14 +1,13 @@
 $schema: ../cache/schemas/tasks.json
 tasks:
   build:
-    command: tsc --project tsconfig.build.json
+    command: bun build --outdir lib --format esm --target node --packages=external --production src/index.ts
     deps:
     # build dependent projects
     - ^:build
     inputs:
     - src/**/*
     - package.json
-    - tsconfig*.json
     outputs:
     - lib
   check:
