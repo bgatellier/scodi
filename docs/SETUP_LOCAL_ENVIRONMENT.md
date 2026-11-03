@@ -2,21 +2,21 @@
 
 ## Install the requirements
 
-Make sure you're using Node.js in the same or superior version to the one indicated in the .nvmrc file.
+Scodi uses [Proto](https://moonrepo.dev/proto) as its toolchain manager. Proto will install all required tools (Bun, Moon, etc.) automatically.
 
-If you have [nvm](https://github.com/nvm-sh/nvm) installed:
-
-```
-nvm use
-```
-
-_Scodi_ handle every packages in a single repository that is managed with [Rush](https://rushjs.io/).
-
-So make sure you have it installed on your computer before you begin:
+To install Proto:
 
 ```shell
-npm install -g @microsoft/rush
+curl -fsSL https://moonrepo.dev/install.sh | bash
 ```
+
+Or on Windows (PowerShell):
+
+```powershell
+iwr https://moonrepo.dev/install.ps1 -useb | iex
+```
+
+_Scodi_ is a monorepo managed with [Moon](https://moonrepo.dev/), and uses [Bun](https://bun.sh/) as its runtime and package manager.
 
 ## Clone the repository
 
@@ -26,18 +26,24 @@ git clone git@github.com:bgatellier/scodi.git
 
 ## Install the dependencies
 
+From the root directory, Proto will automatically install the correct versions of all tools defined in `.prototools`.
+
+Run the following command to install dependencies:
+
 ```shell
-rush install
+bun install
 ```
+
+This will install all workspace dependencies using Bun.
 
 ## Build the packages
 
 As the code is written using TypeScript, it has to be compiled into plain JavaScript.
 
-To do so, a `build` task is defined in the `package.json` of each module.
-
-Rush makes it easy to build only the packages that need to be built. Run the following command from the root directory:
+To do so, Moon provides a build task. Run the following command from the root directory:
 
 ```shell
-rush build
+moon run :build
 ```
+
+This will build all packages that need to be built.
