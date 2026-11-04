@@ -17,7 +17,6 @@
   ],
   "type": "module",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib"
   },
@@ -37,16 +36,13 @@
   },
   "devDependencies": {
     "@config/typescript": "workspace:*",
-    "@config/vitest": "workspace:*",
     "@fastify/cors": "catalog:",
     "@types/greenit-analysis-cli": "workspace:^",
     "@types/node": "catalog:",
-    "@vitest/coverage-istanbul": "catalog:",
     "fastify": "catalog:",
     "lighthouse": "catalog:",
     "type-fest": "catalog:",
-    "typescript": "catalog:",
-    "vitest": "catalog:"
+    "typescript": "catalog:"
   },
   "engines": {
     "node": "^20||^22||^24||^25"

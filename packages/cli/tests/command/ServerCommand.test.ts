@@ -1,6 +1,6 @@
+import { expect, it } from "bun:test";
 import type { ModuleMetadata } from "@scodi/common";
 import { Command } from "commander";
-import { expect, it } from "vitest";
 import { createServerSubcommand } from "../../src/command/server/ServerCommand.js";
 
 it("Create a server command", () => {

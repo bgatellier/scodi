@@ -13,9 +13,9 @@ Before making a new contribution, please check [the issues](https://github.com/b
 ## Reporting Bugs
 
 [Create a new issue](https://github.com/bgatellier/scodi/issues/new/choose) and include as many details as possible, such as:
-* the version of Node.js
+* the version of Bun
 * the list of _Scodi_ packages installed
-* the differents steps that lead to the bug
+* the different steps that lead to the bug
 * ...
 
 ## Suggesting enhancements
@@ -63,26 +63,26 @@ To do so, you have to:
 
     ```shell
     cd test && cp .env.tpl .env
-    ````
+    ```
 
 2. Populate the `.env` file with the environment variables needed by all the packages.
 
 3. Install the packages:
 
     ```shell
-    rush-pnpm install
-    ````
+    bun install
+    ```
 
-4. Starts an analysis using the CLI. You can list the available analysis by using:
+4. Start an analysis using the CLI. You can list the available analysis by using:
 
     ```shell
-    rush-pnpm exec scodi -h
+    bun exec scodi -h
     ```
 
     Example of a CLI command using the _Scodi Lighthouse_ module:
 
     ```shell
-    rush-pnpm exec scodi lighthouse --config '{"url": "https://www.ipcc.ch/"}'
+    bun exec scodi lighthouse --config '{"url": "https://www.ipcc.ch/"}'
     ```
 
 ### [Provide a changelog](docs/PROVIDE_CHANGELOG.md)
