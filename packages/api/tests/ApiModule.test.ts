@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "bun:test";
 import { createServer } from "./build/CreateServer.js";
 import { analysisModules } from "./data/AnalysisModules.js";
 import { listenerModules } from "./data/ListenerModules.js";
