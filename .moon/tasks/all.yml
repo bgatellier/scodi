@@ -15,9 +15,9 @@ tasks:
     options:
       runFromWorkspaceRoot: true
   test:
-    command: vitest run
+    command: bun test src tests
     deps:
     - target: build
   coverage:
     extends: test
-    args: --coverage
+    args: --coverage --coverage-reporter=lcov

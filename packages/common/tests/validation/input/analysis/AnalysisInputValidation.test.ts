@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "bun:test";
 import { InputError } from "../../../../src/error/InputError.js";
 import type { ModuleMetadata } from "../../../../src/index.js";
 import { validateAnalysisInput } from "../../../../src/validation/input/analysis/AnalysisInputValidation.js";
