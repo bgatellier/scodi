@@ -1,5 +1,13 @@
+import {
+	afterAll,
+	beforeAll,
+	describe,
+	expect,
+	it,
+	mock,
+	spyOn,
+} from "bun:test";
 import { type ObservatoryConfig, ObservatoryReport } from "@scodi/common";
-import { describe, expect, it, vi } from "vitest";
 import { Client } from "../src/api/Client.js";
 import { ObservatoryModule } from "../src/ObservatoryModule.js";
 import { generateMockResult } from "./data/Result.js";
@@ -7,11 +15,17 @@ import { generateMockResult } from "./data/Result.js";
 const MOCK_CONF: ObservatoryConfig = { host: "ipcc.ch" };
 const MOCK_RESULT = generateMockResult(MOCK_CONF);
 
-vi.spyOn(Client.prototype, "requestResult").mockImplementation(() =>
-	Promise.resolve(MOCK_RESULT),
-);
-
 describe("Starts an analysis", () => {
+	beforeAll(() => {
+		spyOn(Client.prototype, "requestResult").mockImplementation(() =>
+			Promise.resolve(MOCK_RESULT),
+		);
+	});
+
+	afterAll(() => {
+		mock.restore();
+	});
+
 	const module = new ObservatoryModule(
 		{
 			id: "observatory-test",
