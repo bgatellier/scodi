@@ -15,7 +15,7 @@ tasks:
     options:
       runFromWorkspaceRoot: true
   test:
-    command: bun test src tests
+    command: bun test --pass-with-no-tests src tests
     deps:
     - target: build
   coverage:
