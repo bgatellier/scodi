@@ -30,7 +30,6 @@
   },
   "devDependencies": {
     "@config/typescript": "workspace:*",
-    "@config/vitest": "workspace:*",
     "@types/node": "catalog:"
   },
   "peerDependencies": {
