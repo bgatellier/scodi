@@ -1,14 +1,15 @@
+import { afterEach, describe, expect, it, mock } from "bun:test";
 import type { LighthouseConfig, ModuleMetadata } from "@scodi/common";
-import lighthouse from "lighthouse";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import type { RunnerResult } from "lighthouse";
 import { LighthouseModule } from "../src/LighthouseModule.js";
 import { Conf, SuccessRunnerResult } from "./data.js";
 
-vi.mock(import("lighthouse"), async () => {
-	return {
-		default: vi.fn(),
-	};
-});
+const lighthouseMock = mock(
+	(): Promise<RunnerResult | undefined> => Promise.resolve(undefined),
+);
+mock.module("lighthouse", () => ({
+	default: lighthouseMock,
+}));
 
 const moduleMetadata: ModuleMetadata = {
 	id: "lighthouse-test",
@@ -21,11 +22,11 @@ const moduleMetadata: ModuleMetadata = {
 
 describe("Starts an analysis", () => {
 	afterEach(() => {
-		vi.restoreAllMocks();
+		mock.restore();
 	});
 
 	it("should run an analysis with a valid configuration", async () => {
-		vi.mocked(lighthouse).mockResolvedValue(SuccessRunnerResult);
+		lighthouseMock.mockResolvedValue(SuccessRunnerResult);
 
 		const module = new LighthouseModule(moduleMetadata, true);
 
@@ -38,7 +39,7 @@ describe("Starts an analysis", () => {
 	});
 
 	it("should not starts an analysis with an invalid configuration", async () => {
-		vi.mocked(lighthouse).mockResolvedValue(undefined);
+		lighthouseMock.mockResolvedValue(undefined);
 
 		const INVALID_CONF = {
 			...Conf,
@@ -46,11 +47,11 @@ describe("Starts an analysis", () => {
 		} as unknown as LighthouseConfig;
 		const module = new LighthouseModule(moduleMetadata, true);
 
-		await expect(() => module.startAnalysis(INVALID_CONF)).rejects.toThrow();
+		await expect(module.startAnalysis(INVALID_CONF)).rejects.toThrow();
 	});
 
 	it("should returns true status when results match thresholds objectives", async () => {
-		vi.mocked(lighthouse).mockResolvedValue(SuccessRunnerResult);
+		lighthouseMock.mockResolvedValue(SuccessRunnerResult);
 
 		const THRESHOLD = 80;
 		const module = new LighthouseModule(moduleMetadata, true);
