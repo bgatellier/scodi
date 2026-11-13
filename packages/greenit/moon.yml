@@ -9,3 +9,7 @@ tags:
 - scodi
 - analysis
 layer: application
+
+tasks:
+  test:
+    command: bun run vitest

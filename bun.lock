@@ -39,11 +39,8 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
-        "@config/vitest": "workspace:*",
         "@types/node": "catalog:",
-        "@vitest/coverage-istanbul": "catalog:",
         "typescript": "catalog:",
-        "vitest": "catalog:",
       },
       "peerDependencies": {
         "@scodi/cli": "workspace:^4.0.0",
@@ -66,14 +63,11 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
-        "@config/vitest": "workspace:*",
         "@fastify/cors": "catalog:",
         "@types/node": "catalog:",
-        "@vitest/coverage-istanbul": "catalog:",
         "fastify": "catalog:",
         "type-fest": "catalog:",
         "typescript": "catalog:",
-        "vitest": "catalog:",
       },
     },
     "packages/common": {
@@ -89,16 +83,13 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
-        "@config/vitest": "workspace:*",
         "@fastify/cors": "catalog:",
         "@types/greenit-analysis-cli": "workspace:^",
         "@types/node": "catalog:",
-        "@vitest/coverage-istanbul": "catalog:",
         "fastify": "catalog:",
         "lighthouse": "catalog:",
         "type-fest": "catalog:",
         "typescript": "catalog:",
-        "vitest": "catalog:",
       },
     },
     "packages/greenit": {
@@ -174,11 +165,8 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
-        "@config/vitest": "workspace:*",
         "@types/node": "catalog:",
-        "@vitest/coverage-istanbul": "catalog:",
         "typescript": "catalog:",
-        "vitest": "catalog:",
       },
       "peerDependencies": {
         "@scodi/cli": "workspace:^4.0.0",
@@ -192,11 +180,8 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
-        "@config/vitest": "workspace:*",
         "@types/node": "catalog:",
-        "@vitest/coverage-istanbul": "catalog:",
         "typescript": "catalog:",
-        "vitest": "catalog:",
       },
       "peerDependencies": {
         "@scodi/cli": "workspace:^4.0.0",
