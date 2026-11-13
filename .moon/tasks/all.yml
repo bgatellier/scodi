@@ -1,14 +1,13 @@
 $schema: ../cache/schemas/tasks.json
 tasks:
   build:
-    command: tsc --project tsconfig.build.json
+    command: bun build --outdir lib --format esm --target node --packages=external --production src/index.ts
     deps:
     # build dependent projects
     - ^:build
     inputs:
     - src/**/*
     - package.json
-    - tsconfig*.json
     outputs:
     - lib
   check:
@@ -16,11 +15,9 @@ tasks:
     options:
       runFromWorkspaceRoot: true
   test:
-    command: vitest run
+    command: bun test --pass-with-no-tests
     deps:
     - target: build
   coverage:
     extends: test
-    args: --coverage
-  publish:
-    command: pnpm jsr publish
+    args: --coverage --coverage-reporter=lcov

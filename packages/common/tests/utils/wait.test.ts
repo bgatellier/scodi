@@ -1,21 +1,25 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, mock, spyOn } from "bun:test";
 import { wait } from "../../src/utils/wait.js";
 
 describe("delayed execution", () => {
-	beforeEach(() => {
-		vi.useFakeTimers();
-	});
+	it("should run a real timeout", async () => {
+		const setTimeoutSpy = spyOn(globalThis, "setTimeout");
 
-	afterEach(() => {
-		vi.restoreAllMocks();
-	});
+		// wait returns a promise, so we need to await it
+		// but we also want to check setTimeout was called
+		// We'll check the spy before awaiting to ensure it was called
+		const waitPromise = wait(30);
 
-	it("should run a real timeout", () => {
-		vi.spyOn(globalThis, "setTimeout");
-		void wait(30);
-		vi.runAllTimers();
+		// Give a tiny bit of time for the promise to start
+		// and setTimeout to be called
 
-		expect(setTimeout).toHaveBeenCalledTimes(1);
-		expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 30);
+		expect(setTimeoutSpy).toHaveBeenCalledTimes(1);
+		expect(setTimeoutSpy).toHaveBeenLastCalledWith(expect.any(Function), 30);
+
+		// Clean up
+		mock.restore();
+
+		// Await the promise to complete the test
+		await waitPromise;
 	});
 });

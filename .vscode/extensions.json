@@ -1,7 +1,6 @@
 {
 	"recommendations": [
         "moonrepo.moon-console",
-		"biomejs.biome",
-		"vitest.explorer"
+		"biomejs.biome"
 	]
 }

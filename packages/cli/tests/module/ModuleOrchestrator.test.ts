@@ -1,9 +1,9 @@
+import { expect, it, mock, spyOn } from "bun:test";
 import {
 	type Config,
 	GreenITReport,
 	type ModuleAnalysisInterface,
 } from "@scodi/common";
-import { expect, it, vi } from "vitest";
 import { startAnalysis } from "../../src/module/ModuleOrchestrator.js";
 
 it("Displays the results of an analysis", async () => {
@@ -32,11 +32,11 @@ it("Displays the results of an analysis", async () => {
 		verbose: false,
 	};
 
-	const startAnalysisMock = vi.spyOn(module, "startAnalysis");
+	const startAnalysisMock = spyOn(module, "startAnalysis");
 
 	await startAnalysis(module, {});
 
 	expect(startAnalysisMock).toHaveBeenCalled();
 
-	startAnalysisMock.mockRestore();
+	mock.restore();
 });

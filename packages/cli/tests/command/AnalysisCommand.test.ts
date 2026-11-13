@@ -1,6 +1,6 @@
+import { beforeEach, expect, it } from "bun:test";
 import type { ModuleMetadata } from "@scodi/common";
 import { Command } from "commander";
-import { beforeEach, expect, it } from "vitest";
 import { createAnalysisSubcommand } from "../../src/command/analysis/AnalysisCommand.js";
 import type { PackageJsonModule } from "../../src/module/PackageJson.js";
 

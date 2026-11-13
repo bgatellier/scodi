@@ -1,16 +1,13 @@
 $schema: ./cache/schemas/toolchains.json
 
 javascript:
-  packageManager: pnpm
+  packageManager: bun
   inferTasksFromScripts: false
   syncPackageManagerField: true
   syncProjectWorkspaceDependencies: true
 
-node:
-  version: '20.20.2'
-
-pnpm:
-  version: '10.33.2'
+bun:
+  version: '1.4.4'
 
 typescript:
   pruneProjectReferences: true

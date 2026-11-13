@@ -1,21 +1,22 @@
+import { afterEach, beforeAll, describe, expect, it, mock } from "bun:test";
 import type { ModuleMetadata } from "@scodi/common";
-import { createJsonReports } from "greenit-analysis-cli/src/cli-core/analysis.js";
-import { vol } from "memfs";
-import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
+import type { createJsonReports } from "greenit-analysis-cli/src/cli-core/analysis.js";
+import { fs as memfsFs, vol } from "memfs";
 import { GreenITModule } from "../src/GreenITModule.js";
 import { Conf, ErrorReport, SuccessReport } from "./data.js";
 
-vi.mock("node:fs");
-vi.mock(
-	import("greenit-analysis-cli/src/cli-core/analysis.js"),
-	async (importOriginal) => {
-		const mod = await importOriginal();
-		return {
-			...mod,
-			createJsonReports: vi.fn(),
-		};
-	},
-);
+const createJsonReportsMock = mock<typeof createJsonReports>();
+mock.module("greenit-analysis-cli/src/cli-core/analysis.js", () => ({
+	createJsonReports: createJsonReportsMock,
+}));
+
+// Redirect only readFileSync to the in-memory fs: other fs functions must keep
+// hitting the real fs (e.g. puppeteer checks the browser binary with existsSync)
+const realFs = process.getBuiltinModule("node:fs");
+mock.module("node:fs", () => ({
+	...realFs,
+	readFileSync: memfsFs.readFileSync,
+}));
 
 describe("Run GreenIT analysis", () => {
 	beforeAll(() => {
@@ -27,11 +28,11 @@ describe("Run GreenIT analysis", () => {
 	});
 
 	afterEach(() => {
-		vi.restoreAllMocks();
+		mock.restore();
 	});
 
 	it("should run a successful analysis without thresholds", async () => {
-		vi.mocked(createJsonReports).mockResolvedValue([
+		createJsonReportsMock.mockResolvedValue([
 			{
 				path: "./SuccessReport.json",
 				name: "SuccessReport.json",
@@ -66,7 +67,7 @@ describe("Run GreenIT analysis", () => {
 	});
 
 	it("should be able to handle a failed analysis", async () => {
-		vi.mocked(createJsonReports).mockResolvedValue([
+		createJsonReportsMock.mockResolvedValue([
 			{
 				path: "./ErrorReport.json",
 				name: "ErrorReport.json",
@@ -85,13 +86,13 @@ describe("Run GreenIT analysis", () => {
 
 		const module = new GreenITModule(moduleMetadata, true);
 
-		await expect(() => module.startAnalysis(Conf)).rejects.toThrow(
+		await expect(module.startAnalysis(Conf)).rejects.toThrow(
 			"Error during GreenIT analysis. Increasing the timeout can be a solution",
 		);
 	});
 
 	it("should run a successful analysis with thresholds", async () => {
-		vi.mocked(createJsonReports).mockResolvedValue([
+		createJsonReportsMock.mockResolvedValue([
 			{
 				path: "./SuccessReport.json",
 				name: "SuccessReport.json",
@@ -131,7 +132,7 @@ describe("Run GreenIT analysis", () => {
 	});
 
 	it("should returns false when results do not match thresholds objectives", async () => {
-		vi.mocked(createJsonReports).mockResolvedValue([
+		createJsonReportsMock.mockResolvedValue([
 			{
 				path: "./SuccessReport.json",
 				name: "SuccessReport.json",

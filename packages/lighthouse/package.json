@@ -18,7 +18,6 @@
   ],
   "type": "module",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
   "directories": {
     "lib": "lib"
   },
@@ -37,11 +36,8 @@
   },
   "devDependencies": {
     "@config/typescript": "workspace:*",
-    "@config/vitest": "workspace:*",
     "@types/node": "catalog:",
-    "@vitest/coverage-istanbul": "catalog:",
-    "typescript": "catalog:",
-    "vitest": "catalog:"
+    "typescript": "catalog:"
   },
   "peerDependencies": {
     "@scodi/cli": "workspace:^4.0.0"
