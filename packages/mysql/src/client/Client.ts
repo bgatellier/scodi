@@ -20,7 +20,7 @@ export class MySQLClient {
 	public async getMigrator(): Promise<IMigrator> {
 		const orm = await this.getOrCreateOrm();
 
-		return orm.getMigrator();
+		return orm.migrator;
 	}
 
 	/**
@@ -32,7 +32,7 @@ export class MySQLClient {
 		const em = await this.getOrCreateEntityManager();
 		const orm = await this.getOrCreateOrm();
 
-		await em.persistAndFlush(reportEntity);
+		em.persist(reportEntity).flush();
 
 		return orm.close();
 	}
