@@ -1,6 +1,6 @@
 {
   "name": "@scodi/greenit",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Analyses URLs with GreenIT Analysis",
   "keywords": [
     "greenit",
@@ -48,7 +48,7 @@
     "typescript": "catalog:"
   },
   "peerDependencies": {
-    "@scodi/cli": "workspace:^4.0.0"
+    "@scodi/cli": "workspace:^5.0.0"
   },
   "engines": {
     "node": "^22||^24||^25"

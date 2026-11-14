@@ -1,6 +1,6 @@
 {
   "name": "@scodi/observatory",
-  "version": "4.0.1",
+  "version": "5.0.0",
   "description": "Analyses URLs with Mozilla Observatory",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
@@ -37,7 +37,7 @@
     "typescript": "catalog:"
   },
   "peerDependencies": {
-    "@scodi/cli": "workspace:^4.0.0"
+    "@scodi/cli": "workspace:^5.0.0"
   },
   "engines": {
     "node": "^22||^24||^25"
