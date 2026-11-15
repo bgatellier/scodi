@@ -2,8 +2,7 @@
   "type": "module",
   "workspaces": [
     "config/*",
-    "packages/@types/*",
-    "packages/*",
+    "packages/**",
     "test/"
   ],
   "devDependencies": {
