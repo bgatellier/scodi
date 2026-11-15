@@ -1,13 +1,5 @@
 {
   "extends": "@config/typescript",
-  "references": [
-    {
-      "path": "../cli"
-    },
-    {
-      "path": "../common"
-    }
-  ],
   "include": [
     "src/**/*.ts",
     "tests/**/*.ts"

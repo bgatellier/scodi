@@ -34,6 +34,7 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
+        "@types/bun": "catalog:",
         "@types/node": "catalog:",
         "typescript": "catalog:",
       },
@@ -59,6 +60,7 @@
       "devDependencies": {
         "@config/typescript": "workspace:*",
         "@fastify/cors": "catalog:",
+        "@types/bun": "catalog:",
         "@types/node": "catalog:",
         "fastify": "catalog:",
         "type-fest": "catalog:",
@@ -80,6 +82,7 @@
       "devDependencies": {
         "@config/typescript": "workspace:*",
         "@fastify/cors": "catalog:",
+        "@types/bun": "catalog:",
         "@types/greenit-analysis-cli": "workspace:^",
         "@types/node": "catalog:",
         "fastify": "catalog:",
@@ -98,6 +101,7 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
+        "@types/bun": "catalog:",
         "@types/greenit-analysis-cli": "workspace:^",
         "@types/node": "catalog:",
         "memfs": "catalog:",
@@ -117,6 +121,7 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
+        "@types/bun": "catalog:",
         "@types/node": "catalog:",
         "typescript": "catalog:",
       },
@@ -136,6 +141,7 @@
       "devDependencies": {
         "@config/typescript": "workspace:*",
         "@mikro-orm/cli": "catalog:",
+        "@types/bun": "catalog:",
         "@types/node": "catalog:",
         "ts-node": "catalog:",
         "typescript": "catalog:",
@@ -152,6 +158,7 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
+        "@types/bun": "catalog:",
         "@types/node": "catalog:",
         "typescript": "catalog:",
       },
@@ -167,6 +174,7 @@
       },
       "devDependencies": {
         "@config/typescript": "workspace:*",
+        "@types/bun": "catalog:",
         "@types/node": "catalog:",
         "typescript": "catalog:",
       },
@@ -200,6 +208,7 @@
     "@mikro-orm/migrations": "^7.1.8",
     "@mikro-orm/mysql": "^7.1.8",
     "@mikro-orm/reflection": "^7.1.8",
+    "@types/bun": "^1.4.4",
     "@types/node": "^22.13.14",
     "ajv": "^8.18.0",
     "ajv-errors": "^3.0.0",
@@ -487,6 +496,8 @@
 
     "@tsconfig/node16": ["@tsconfig/node16@1.0.4", "", {}, "sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA=="],
 
+    "@types/bun": ["@types/bun@1.4.4", "", { "dependencies": { "bun-types": "1.4.4" } }, "sha512-9wkRDXUXK124pEnAutE6n/l18j+i9GC5IAHK8TmX/2nlySETmky0OU6yL5U8pW1AoKh++AN9auDCr647BfurjQ=="],
+
     "@types/cacheable-request": ["@types/cacheable-request@6.0.3", "", { "dependencies": { "@types/http-cache-semantics": "*", "@types/keyv": "^3.1.4", "@types/node": "*", "@types/responselike": "^1.0.0" } }, "sha512-IQ3EbTzGxIigb1I3qPZc1rWJnH0BmSKv5QYTalEwweFvyBDLSAe24zP0le/hyi7ecGfZVlIVAg4BZqb8WBwKqw=="],
 
     "@types/greenit-analysis-cli": ["@types/greenit-analysis-cli@workspace:packages/@types/greenit-analysis-cli"],
@@ -632,6 +643,8 @@
     "buffer-indexof-polyfill": ["buffer-indexof-polyfill@1.0.2", "", {}, "sha512-I7wzHwA3t1/lwXQh+A5PbNvJxgfo5r3xulgpYDB5zckTu/Z9oUK9biouBKQUjEqzaz3HnAT6TYoovmE+GqSf7A=="],
 
     "buffers": ["buffers@0.1.1", "", {}, "sha512-9q/rDEGSb/Qsvv2qvzIzdluL5k7AaJOTrw23z9reQthrbF7is4CtlT0DXyO1oei2DCp4uojjzQ7igaSHp1kAEQ=="],
+
+    "bun-types": ["bun-types@1.4.4", "", { "dependencies": { "@types/node": "*", "undici-types": "*" } }, "sha512-yjrJh5oGX7mMPKGd19YXyIjmEuj4G4zNC30bs7PM9Az7NQ3ndF3j6hbeRdvJTRQEhJ/FYQwW0a2moweEi2hMxQ=="],
 
     "bundle-name": ["bundle-name@4.1.1", "", { "dependencies": { "run-applescript": "^7.0.0" } }, "sha512-DdH81/zPLVS11EUgWq3tEu/xn+EzljlMYooDNdzWEnFha3R3NBMpMV1UqYIpjYHV/SgpFKMIX1Oh7o06SjM/oA=="],
 

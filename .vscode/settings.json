@@ -1,3 +1,4 @@
 {
-    "biome.lsp.bin": "./node_modules/@biomejs/biome/bin/biome"
+    "biome.lsp.bin": "./node_modules/@biomejs/biome/bin/biome",
+    "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

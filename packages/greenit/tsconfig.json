@@ -1,16 +1,5 @@
 {
   "extends": "@config/typescript",
-  "references": [
-    {
-      "path": "../@types/greenit-analysis-cli"
-    },
-    {
-      "path": "../cli"
-    },
-    {
-      "path": "../common"
-    }
-  ],
   "include": [
     "src/**/*.ts",
     "tests/**/*.ts"

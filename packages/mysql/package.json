@@ -37,6 +37,7 @@
   "devDependencies": {
     "@config/typescript": "workspace:*",
     "@mikro-orm/cli": "catalog:",
+    "@types/bun": "catalog:",
     "@types/node": "catalog:",
     "ts-node": "catalog:",
     "typescript": "catalog:"
@@ -45,7 +46,8 @@
     "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
-    "node": "^22||^24||^25"
+    "bun": ">=1.0.0",
+    "node": ">=22.0.0"
   },
   "scodi": {
     "id": "mysql",

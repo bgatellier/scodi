@@ -42,12 +42,14 @@
   "devDependencies": {
     "@config/typescript": "workspace:*",
     "@fastify/cors": "catalog:",
+    "@types/bun": "catalog:",
     "@types/node": "catalog:",
     "fastify": "catalog:",
     "type-fest": "catalog:",
     "typescript": "catalog:"
   },
   "engines": {
-    "node": "^22||^24||^25"
+    "bun": ">=1.0.0",
+    "node": ">=22.0.0"
   }
 }

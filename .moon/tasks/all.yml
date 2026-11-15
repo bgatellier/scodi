@@ -1,5 +1,9 @@
 $schema: ../cache/schemas/tasks.json
 tasks:
+  compile:
+    command: tsc --noEmit
+    options:
+      cache: false
   build:
     command: bun build --outdir lib --format esm --target node --packages=external --production src/index.ts
     deps:

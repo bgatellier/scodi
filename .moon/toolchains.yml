@@ -10,5 +10,8 @@ bun:
   version: '1.4.4'
 
 typescript:
-  pruneProjectReferences: true
-  syncProjectReferences: true
+  # Packages are built with bun and no .d.ts is emitted, so project references
+  # would make tsc redirect to missing declaration outputs (TS6305). Workspace
+  # sources are resolved directly via "exports.types" in each package.json.
+  pruneProjectReferences: false
+  syncProjectReferences: false

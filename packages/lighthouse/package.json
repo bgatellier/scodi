@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@config/typescript": "workspace:*",
+    "@types/bun": "catalog:",
     "@types/node": "catalog:",
     "typescript": "catalog:"
   },
@@ -43,7 +44,8 @@
     "@scodi/cli": "workspace:^4.0.0"
   },
   "engines": {
-    "node": "^22||^24||^25"
+    "bun": ">=1.0.0",
+    "node": ">=22.0.0"
   },
   "scodi": {
     "id": "lighthouse",
