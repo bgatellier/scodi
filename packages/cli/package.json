@@ -36,7 +36,6 @@
     "ajv-errors": "catalog:",
     "ajv-formats": "catalog:",
     "commander": "catalog:",
-    "dotenv": "catalog:",
     "ora": "catalog:"
   },
   "devDependencies": {
