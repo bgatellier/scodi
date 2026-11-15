@@ -45,7 +45,7 @@
   },
   "engines": {
     "bun": ">=1.0.0",
-    "node": ">=22.0.0"
+    "node": ">=22.12.0"
   },
   "scodi": {
     "id": "lighthouse",
