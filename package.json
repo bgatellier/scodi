@@ -10,8 +10,7 @@
     "@changesets/cli": "2.30.0"
   },
   "engines": {
-    "bun": ">=1.0.0",
-    "node": ">=20.0.0"
+    "bun": ">=1.0.0"
   },
   "trustedDependencies": [
     "greenit-analysis-cli",
