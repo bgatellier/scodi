@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig-moon/tsconfig.projects.json",
+  "extends": "tsconfig-moon/tsconfig.json",
 
   "compilerOptions": {
     // Disable error reporting for unreachable code.
@@ -8,11 +8,8 @@
     "allowUnusedLabels": false,
     // Raise an error when a function parameter isn't read.
     "noUnusedParameters": true,
-    // Disable emitting comments.
-    "removeComments": true,
-    "emitDeclarationOnly": false,
+    "resolveJsonModule": true,
     "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "target": "esnext"
+    "moduleResolution": "nodenext"
   }
 }

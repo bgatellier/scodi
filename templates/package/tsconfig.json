@@ -4,17 +4,6 @@
     "outDir": "lib",
     "rootDir": "src"
   },
-  "references": [
-    {
-      "path": "./tsconfig.build.json"
-    },
-    {
-      "path": "../cli"
-    },
-    {
-      "path": "../common"
-    }
-  ],
   "include": [
     "src/**/*.ts",
     "tests/**/*.ts"

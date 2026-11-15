@@ -1,16 +1,5 @@
 {
   "extends": "@config/typescript",
-  "compilerOptions": {
-    "declaration": true,
-  },
-  "references": [
-    {
-      "path": "../cli"
-    },
-    {
-      "path": "../common"
-    }
-  ],
   "include": [
     "src/**/*.ts",
     "tests/**/*.ts"
