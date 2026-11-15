@@ -42,8 +42,7 @@
     "id": "{{ name | slugify }}",
     "name": "Scodi {{ name }}",
     "service": {
-      "name": "{{ name }}",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/{{ name | pascal_case }}.png?v=20221126"
+      "name": "{{ name }}"
     }
   }
 }

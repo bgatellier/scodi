@@ -45,7 +45,6 @@ describe("Run GreenIT analysis", () => {
 			name: "Green IT",
 			service: {
 				name: "Green IT",
-				logoUrl: "some-logo",
 			},
 		};
 
@@ -80,7 +79,6 @@ describe("Run GreenIT analysis", () => {
 			name: "Green IT",
 			service: {
 				name: "Green IT",
-				logoUrl: "some-logo",
 			},
 		};
 
@@ -105,7 +103,6 @@ describe("Run GreenIT analysis", () => {
 			name: "Green IT",
 			service: {
 				name: "Green IT",
-				logoUrl: "some-logo",
 			},
 		};
 
@@ -145,7 +142,6 @@ describe("Run GreenIT analysis", () => {
 			name: "Green IT",
 			service: {
 				name: "Green IT",
-				logoUrl: "some-logo",
 			},
 		};
 

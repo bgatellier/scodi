@@ -58,8 +58,7 @@
     "name": "Scodi GreenIT",
     "type": "analysis",
     "service": {
-      "name": "GreenIT Analysis",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/GreenIT.png?v=20221214"
+      "name": "GreenIT Analysis"
     }
   }
 }
