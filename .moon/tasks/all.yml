@@ -21,3 +21,8 @@ tasks:
   coverage:
     extends: test
     args: --coverage --coverage-reporter=lcov
+  pack:
+    command: bun pm pack
+    deps:
+    - target: build
+
