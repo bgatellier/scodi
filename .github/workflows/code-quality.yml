@@ -1,4 +1,4 @@
-name: Check code
+name: Code quality
 
 on:
   pull_request:
@@ -29,3 +29,25 @@ jobs:
         env:
           # disable browser download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
           PUPPETEER_SKIP_DOWNLOAD: true
+
+  test:
+    name: 🐛 Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+
+      - name: Setup Moon toolchain
+        uses: moonrepo/setup-toolchain@261c62cb5b0f580c7be7c8cd0f023a2e96756095 # v0
+        with:
+          auto-install: true
+
+      - name: Run tests
+        run: moon ci :test
