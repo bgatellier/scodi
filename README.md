@@ -1,7 +1,7 @@
 
 <p align="center">A command-line tool to industrialize web quality measurement.</p>
 
-[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-cli?logo=npm "List Scodi packages on npmjs.com")](https://www.npmjs.com/search?q=%40fabernovel%2Fheart)
+[![npm](https://img.shields.io/npm/v/%40scodi%2Fcli?logo=npm "List Scodi packages on npmjs.com")](https://www.npmjs.com/search?q=%40scodi)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-cli&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-cli "View coverage details")
 [![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/cli/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/cli/package.json "View known vulnerabilities")
 
@@ -19,7 +19,7 @@ Exemple scenario:
 - analyze <https://www.ipcc.ch/> using the _Google Lighthouse_ service.
 - store the results in a _MySQL_ database.
 
-## Manual, with NPM packages
+## With NPM packages
 
 1. Install the packages
     
@@ -44,33 +44,6 @@ Once the analysis is over, the results will be stored in a `report` table, which
 ![Analyzed URL, overall grade over 100, several metrics like Speed Index, First Contentful Paint and advices for improvements](./docs/images/mysql.png)
 
 For more options, have a look at the help by using `npx scodi -h`
-
-## Packaged, with the Docker image
-
-Scodi is also available as a [Docker image](https://hub.docker.com/r/fabernovel/heart).
-
-With the example scenario given previously, the Docker image is used as follow:
-
-```shell
-docker run --rm\
-    --env SCODI_MYSQL_DATABASE_URL=login:password@127.0.0.1:3306\
-    fabernovel/heart:latest\
-    lighthouse --config '{"url":"https://www.ipcc.ch"}' --only-listeners=mysql
-```
-
-## Automated, with the GitHub Action
-
-If you're using GitHub, you can simplify the integration of Scodi in your CI scripts by using the [GitHub Action](https://github.com/marketplace/actions/heart-webpages-evaluation).
-
-With the example scenario given previously, the GitHub Action is used as follow:
-
-```yaml
-- uses: faberNovel/heart-action@v4
-  with:
-    analysis_service: lighthouse
-    listener_services_only: mysql
-    mysql_database_url: ${{ secrets.MYSQL_DATABASE_URL }}
-```
 
 # Design
 
