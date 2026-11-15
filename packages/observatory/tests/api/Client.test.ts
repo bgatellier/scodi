@@ -21,8 +21,8 @@ const MOCK_RESULT = generateMockResult(MOCK_CONF);
 describe("Client", () => {
 	beforeAll(() => {
 		env.SCODI_OBSERVATORY_API_URL = API_URL;
-		spyOn(Request, "post").mockImplementation(() =>
-			Promise.resolve(MOCK_RESULT),
+		spyOn(Request, "post").mockImplementation(<T>() =>
+			Promise.resolve(MOCK_RESULT as unknown as T),
 		);
 	});
 
