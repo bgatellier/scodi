@@ -44,6 +44,7 @@
   "devDependencies": {
     "@config/typescript": "workspace:*",
     "@fastify/cors": "catalog:",
+    "@types/bun": "catalog:",
     "@types/greenit-analysis-cli": "workspace:^",
     "@types/node": "catalog:",
     "fastify": "catalog:",

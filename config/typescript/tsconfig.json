@@ -9,6 +9,10 @@
     // Raise an error when a function parameter isn't read.
     "noUnusedParameters": true,
     "resolveJsonModule": true,
+    // Explicit because tsgo does not auto-include @types/bun under bun's
+    // isolated node_modules (@types/bun only references bun-types).
+    // "node" must stay listed: "types" replaces auto-inclusion entirely.
+    "types": ["node", "bun"],
     "module": "nodenext",
     "moduleResolution": "nodenext"
   }

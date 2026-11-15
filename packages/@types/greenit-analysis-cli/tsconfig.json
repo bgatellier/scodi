@@ -1,5 +1,10 @@
 {
   "extends": "@config/typescript",
+  "compilerOptions": {
+    // This package only ships .d.ts files and has no @types/node or
+    // @types/bun installed, so opt out of the base "types" list.
+    "types": []
+  },
   "include": [
     "**/*"
   ],

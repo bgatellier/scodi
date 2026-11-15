@@ -25,6 +25,7 @@
     "@mikro-orm/migrations": "^7.1.8",
     "@mikro-orm/mysql": "^7.1.8",
     "@mikro-orm/reflection": "^7.1.8",
+    "@types/bun": "^1.4.4",
     "@types/node": "^22.13.14",
     "ajv": "^8.18.0",
     "ajv-errors": "^3.0.0",
