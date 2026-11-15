@@ -50,7 +50,7 @@ jobs:
           auto-install: true
 
       - name: Compile
-        run: moon ci :compile
+        run: moon ci --affected :compile
         env:
           # disable browser download on puppeteer install. see https://pptr.dev/api/puppeteer.configuration
           PUPPETEER_SKIP_DOWNLOAD: true
@@ -75,7 +75,7 @@ jobs:
           auto-install: true
 
       - name: Build
-        run: moon ci :build
+        run: moon ci --affected :build
 
   test:
     name: 🐛 Test
@@ -97,4 +97,4 @@ jobs:
           auto-install: true
 
       - name: Run tests
-        run: moon ci :test
+        run: moon ci --affected :test
