@@ -1,5 +1,5 @@
-[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-mysql
- "Scodi MySQL on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-mysql)
+[![npm](https://img.shields.io/npm/v/%40scodi%2Fmysql
+ "Scodi MySQL on npmjs.com")](https://www.npmjs.com/package/@scodi/mysql)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-mysql&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-mysql)
 [![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/mysql/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/mysql/package.json "View known vulnerabilities")
 
@@ -46,7 +46,3 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
     ```
 
     Once the analysis is done, the results are stored in your _MySQL_ database.
-
-## Github Action
-
-If you're using Github, you can simplify the integration of Scodi in your CI scripts by using the [Github Action](https://github.com/marketplace/actions/heart-webpages-evaluation).

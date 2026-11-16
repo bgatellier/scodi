@@ -1,5 +1,5 @@
-[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-greenit
- "Scodi GreenIT on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-greenit)
+[![npm](https://img.shields.io/npm/v/%40scodi%2Fgreenit
+ "Scodi GreenIT on npmjs.com")](https://www.npmjs.com/package/@scodi/greenit)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-greenit&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-greenit)
 [![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/greenit/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/greenit/package.json "View known vulnerabilities")
 
@@ -54,10 +54,6 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
         "device": "galaxyS20"
     }
     ```
-
-## Github Action
-
-If you're using Github, you can simplify the integration of Scodi in your CI scripts by using the [Github Action](https://github.com/marketplace/actions/heart-webpages-evaluation).
 
 # Disclaimer
 
