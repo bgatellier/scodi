@@ -1,6 +1,6 @@
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
-import { env } from "node:process";
+import { env, loadEnvFile } from "node:process";
 import {
 	logger,
 	type Module,
@@ -10,7 +10,6 @@ import {
 import Ajv, { type AnySchema, type ErrorObject } from "ajv";
 import AjvErrors from "ajv-errors";
 import addFormats from "ajv-formats";
-import dotenv from "dotenv";
 import type { PackageJson } from "type-fest";
 import { EnvironmentError } from "../error/EnvironmentError.js";
 import type { PackageJsonModule } from "./PackageJson.js";
@@ -27,7 +26,7 @@ addFormats.default(ajv);
 AjvErrors.default(ajv /*, {singleError: true} */);
 
 const PACKAGE_PREFIX = "@scodi/";
-const DOTENV_DEFAULT_VALUES_NAME = ".env.default";
+const ENV_DEFAULT_VALUES_NAME = ".env.default";
 const ENV_VALIDATION_SCHEMA_NAME = ".env.schema.json";
 
 /**
@@ -91,10 +90,10 @@ export async function loadFiles(
  */
 export async function checkEnv(modulesPaths: string[]): Promise<void> {
 	modulesPaths.forEach((modulePath, _index) => {
-		dotenv.config({
-			path: modulePath + DOTENV_DEFAULT_VALUES_NAME,
-			override: false,
-		});
+		const defaultValuesPath = modulePath + ENV_DEFAULT_VALUES_NAME;
+		if (existsSync(defaultValuesPath)) {
+			loadEnvFile(defaultValuesPath);
+		}
 	});
 
 	const schemasContent = await loadFiles(

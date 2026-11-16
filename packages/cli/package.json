@@ -36,7 +36,6 @@
     "ajv-errors": "catalog:",
     "ajv-formats": "catalog:",
     "commander": "catalog:",
-    "dotenv": "catalog:",
     "ora": "catalog:"
   },
   "devDependencies": {
@@ -50,6 +49,6 @@
   },
   "engines": {
     "bun": ">=1.0.0",
-    "node": ">=22.0.0"
+    "node": ">=22.12.0"
   }
 }
