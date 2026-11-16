@@ -1,9 +1,5 @@
 {
   "extends": "@config/typescript",
-  "compilerOptions": {
-    "outDir": "lib",
-    "rootDir": "src"
-  },
   "include": [
     "src/**/*.ts",
     "tests/**/*.ts"
