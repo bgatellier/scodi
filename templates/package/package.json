@@ -1,6 +1,6 @@
 {
   "name": "@scodi/{{ name | slugify }}",
-  "version": "4.0.0",
+  "version": "0.1.0",
   "description": "{{ name }}",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
@@ -25,14 +25,14 @@
     "prepublishOnly": "moon run {{ name | slugify }}:build"
   },
   "dependencies": {
-    "@scodi/common": "workspace:^4.0.0"
+    "@scodi/common": "workspace:^0.1.0"
   },
   "devDependencies": {
     "@config/typescript": "workspace:*",
     "@types/node": "catalog:"
   },
   "peerDependencies": {
-    "@scodi/cli": "workspace:^4.0.0"
+    "@scodi/cli": "workspace:^0.1.0"
   },
   "engines": {
     "bun": ">=1.0.0",
