@@ -24,7 +24,7 @@
     },
     "packages/api": {
       "name": "@scodi/api",
-      "version": "4.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@fastify/cors": "catalog:",
         "@scodi/common": "workspace:^",
@@ -39,12 +39,12 @@
         "typescript": "catalog:",
       },
       "peerDependencies": {
-        "@scodi/cli": "workspace:^4.0.0",
+        "@scodi/cli": "workspace:^0.1.0",
       },
     },
     "packages/cli": {
       "name": "@scodi/cli",
-      "version": "4.0.0",
+      "version": "0.1.0",
       "bin": {
         "scodi": "bin/scodi.js",
       },
@@ -68,7 +68,7 @@
     },
     "packages/common": {
       "name": "@scodi/common",
-      "version": "4.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@mikro-orm/core": "catalog:",
         "@mikro-orm/decorators": "catalog:",
@@ -92,7 +92,7 @@
     },
     "packages/greenit": {
       "name": "@scodi/greenit",
-      "version": "4.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@scodi/common": "workspace:^",
         "greenit-analysis-cli": "catalog:",
@@ -107,12 +107,12 @@
         "typescript": "catalog:",
       },
       "peerDependencies": {
-        "@scodi/cli": "workspace:^4.0.0",
+        "@scodi/cli": "workspace:^0.1.0",
       },
     },
     "packages/lighthouse": {
       "name": "@scodi/lighthouse",
-      "version": "4.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@scodi/common": "workspace:^",
         "lighthouse": "catalog:",
@@ -125,12 +125,12 @@
         "typescript": "catalog:",
       },
       "peerDependencies": {
-        "@scodi/cli": "workspace:^4.0.0",
+        "@scodi/cli": "workspace:^0.1.0",
       },
     },
     "packages/mysql": {
       "name": "@scodi/mysql",
-      "version": "4.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@mikro-orm/core": "catalog:",
         "@mikro-orm/migrations": "catalog:",
@@ -146,7 +146,7 @@
         "typescript": "catalog:",
       },
       "peerDependencies": {
-        "@scodi/cli": "workspace:^4.0.0",
+        "@scodi/cli": "workspace:^0.1.0",
       },
     },
     "packages/observatory": {
@@ -162,12 +162,12 @@
         "typescript": "catalog:",
       },
       "peerDependencies": {
-        "@scodi/cli": "workspace:^4.0.0",
+        "@scodi/cli": "workspace:^0.1.0",
       },
     },
     "packages/ssllabs-server": {
       "name": "@scodi/ssllabs-server",
-      "version": "4.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@scodi/common": "workspace:^",
       },
@@ -178,12 +178,12 @@
         "typescript": "catalog:",
       },
       "peerDependencies": {
-        "@scodi/cli": "workspace:^4.0.0",
+        "@scodi/cli": "workspace:^0.1.0",
       },
     },
     "test": {
       "name": "@scodi/test",
-      "version": "4.0.0",
+      "version": "0.1.0",
       "dependencies": {
         "@scodi/api": "workspace:^",
         "@scodi/cli": "workspace:^",

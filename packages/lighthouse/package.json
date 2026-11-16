@@ -1,6 +1,6 @@
 {
   "name": "@scodi/lighthouse",
-  "version": "4.0.0",
+  "version": "0.1.0",
   "description": "Analyses URLs with Google Lighthouse",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
@@ -41,7 +41,7 @@
     "typescript": "catalog:"
   },
   "peerDependencies": {
-    "@scodi/cli": "workspace:^4.0.0"
+    "@scodi/cli": "workspace:^0.1.0"
   },
   "engines": {
     "bun": ">=1.0.0",
