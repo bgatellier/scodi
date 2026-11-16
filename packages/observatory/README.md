@@ -1,5 +1,5 @@
-[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-observatory
- "Scodi Observatory on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-observatory)
+[![npm](https://img.shields.io/npm/v/%40scodi%2Fobservatory
+ "Scodi Observatory on npmjs.com")](https://www.npmjs.com/package/@scodi/observatory)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-observatory&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-observatory)
 [![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/observatory/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/observatory/package.json "View known vulnerabilities")
 
@@ -48,7 +48,3 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
     ```
 
     The analysis configuration follows the JSON format and the [POST /api/v2/scan](https://github.com/mdn/mdn-http-observatory/?tab=readme-ov-file#post-apiv2scan) specifications.
-
-## Github Action
-
-If you're using Github, you can simplify the integration of Scodi in your CI scripts by using the [Github Action](https://github.com/marketplace/actions/heart-webpages-evaluation).

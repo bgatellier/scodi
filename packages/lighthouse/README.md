@@ -1,5 +1,5 @@
-[![npm](https://img.shields.io/npm/v/%40fabernovel%2Fheart-lighthouse
- "Scodi Lighthouse on npmjs.com")](https://www.npmjs.com/package/@fabernovel/heart-lighthouse)
+[![npm](https://img.shields.io/npm/v/%40scodi%2Flighthouse
+ "Scodi Lighthouse on npmjs.com")](https://www.npmjs.com/package/@scodi/lighthouse)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scodi-lighthouse&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=scodi-lighthouse)
 [![Known Vulnerabilities](https://snyk.io/test/github/bgatellier/scodi/badge.svg?targetFile=packages/lighthouse/package.json)](https://snyk.io/test/github/bgatellier/scodi?targetFile=packages/lighthouse/package.json "View known vulnerabilities")
 
@@ -57,7 +57,3 @@ Read more about [the description and design of _Scodi_](https://github.com/bgate
         }
     }
     ```
-
-## Github Action
-
-If you're using Github, you can simplify the integration of Scodi in your CI scripts by using the [Github Action](https://github.com/marketplace/actions/heart-webpages-evaluation).
