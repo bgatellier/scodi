@@ -47,7 +47,7 @@
       "puppeteer-core": "^24.39.1"
     },
     "puppeteerLighthouse": {
-      "puppeteer-core": "^24.39.1"
+      "puppeteer-core": "^25.17.0"
     }
   }
 }
