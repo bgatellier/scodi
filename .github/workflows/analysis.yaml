@@ -12,7 +12,7 @@ jobs:
     name: List projects
     runs-on: ubuntu-latest
     outputs:
-      list: ${{ steps.moon-query.outputs.json }}
+      list: ${{ steps.moon-query.outputs.projects }}
     steps:
       - name: Checkout code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -25,17 +25,24 @@ jobs:
           auto-install: true
 
       # Guess projects that have been changed:
-      # - for Pull Requests, guess from changed files only
-      # - for other cases, guess from all files
+      # - for Pull Requests (github.ref starts with 'refs/pull/'), guess from changed files only
+      # - for other cases (push on a branch), guess from all files
       - name: Guess projects
         id: moon-query
-        run: |
-          projects=$(./devops/scripts/list-projects.sh ${{ env.ONLY_AFFECTED }})
-          echo "json=${projects}" >> "$GITHUB_OUTPUT"
+        shell: bash
         env:
-          # Guess if the event that triggered the workflow is a push on a branch or a pull request.
-          # See github.ref possibles values: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#github-context
           ONLY_AFFECTED: ${{ startsWith(github.ref, 'refs/pull/') }}
+        run: |
+          if [[ "$ONLY_AFFECTED" == "true" ]]; then
+            # https://moonrepo.dev/docs/commands/query/projects#affected-projects
+            projects=$(moon query changed-files | moon query projects --affected --tags scodi)
+          else
+            # https://moonrepo.dev/docs/commands/query/projects
+            projects=$(moon query projects --tags scodi)
+          fi
+          # keep the JSON on a single line so it fits in a single $GITHUB_OUTPUT entry
+          projects=$(echo "$projects" | tr -d "[:space:]")
+          echo "projects=${projects}" >> "$GITHUB_OUTPUT"
 
   sonarcloud:
     name: Code coverage
