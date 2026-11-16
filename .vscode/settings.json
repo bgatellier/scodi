@@ -1,4 +1,28 @@
 {
-    "biome.lsp.bin": "./node_modules/@biomejs/biome/bin/biome",
-    "js/ts.tsdk.path": "node_modules/typescript/lib"
+  "biome.lsp.bin": "./node_modules/@biomejs/biome/bin/biome",
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "yaml.schemas": {
+    "./.moon/cache/schemas/extensions.json": [
+      ".moon/extensions.yml"
+    ],
+    "./.moon/cache/schemas/project.json": [
+      "**/moon.yml"
+    ],
+    "./.moon/cache/schemas/tasks.json": [
+      ".moon/tasks.yml",
+      ".moon/tasks/**/*.yml"
+    ],
+    "./.moon/cache/schemas/template.json": [
+      "**/template.yml"
+    ],
+    "./.moon/cache/schemas/toolchain.json": [
+      ".moon/toolchain.yml"
+    ],
+    "./.moon/cache/schemas/toolchains.json": [
+      ".moon/toolchains.yml"
+    ],
+    "./.moon/cache/schemas/workspace.json": [
+      ".moon/workspace.yml"
+    ]
+  }
 }

@@ -1,5 +1,3 @@
-$schema: ./cache/schemas/toolchains.json
-
 javascript:
   packageManager: bun
   inferTasksFromScripts: false
