@@ -1,4 +1,3 @@
-$schema: ./cache/schemas/workspace.json
 projects:
 - packages/@types/*/moon.yml
 - packages/*/moon.yml
