@@ -2,4 +2,4 @@
 "@scodi/lighthouse": major
 ---
 
-Upgrade lighthouse to version 12
+Upgrade lighthouse to version 13

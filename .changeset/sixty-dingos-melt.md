@@ -9,4 +9,4 @@
 "@scodi/cli": major
 ---
 
-Drop support for Node.js 18 and 19
+Drop support for Node.js < 22.12.0
