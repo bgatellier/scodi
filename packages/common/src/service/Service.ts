@@ -7,9 +7,4 @@ export interface Service {
 	 * Example: Mozilla Observatory
 	 */
 	readonly name: string;
-
-	/**
-	 * Public url to the logo
-	 */
-	readonly logoUrl?: string;
 }

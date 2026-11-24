@@ -34,7 +34,6 @@ export function createRouteHandler(
 			resultUrl: report.resultUrl ?? null,
 			service: {
 				name: report.service.name,
-				logoUrl: report.service.logoUrl ?? null,
 			},
 		});
 	};

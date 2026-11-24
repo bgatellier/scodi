@@ -49,8 +49,7 @@
     "name": "Scodi Observatory",
     "type": "analysis",
     "service": {
-      "name": "Mozilla Observatory",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/Observatory.png?v=20221126"
+      "name": "Mozilla Observatory"
     }
   }
 }

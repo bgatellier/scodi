@@ -49,8 +49,7 @@
     "name": "Scodi SSL Labs Server",
     "type": "analysis",
     "service": {
-      "name": "Qualys SSL Labs Server",
-      "logoUrl": "https://raw.githubusercontent.com/bgatellier/scodi/main/assets/images/logos/SSLLabs.png?v=20221126"
+      "name": "Qualys SSL Labs Server"
     }
   }
 }
