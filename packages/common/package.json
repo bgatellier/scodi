@@ -1,6 +1,6 @@
 {
   "name": "@scodi/common",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Centralize components needed by every other Scodi packages",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
