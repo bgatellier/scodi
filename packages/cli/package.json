@@ -1,6 +1,6 @@
 {
   "name": "@scodi/cli",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Starts an analysis by using a CLI",
   "homepage": "https://github.com/bgatellier/scodi",
   "bugs": {
